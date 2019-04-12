@@ -18,6 +18,7 @@
  * Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
@@ -92,11 +93,46 @@ namespace SonarAnalyzer.Rules.CSharp
             ReturnsOrAcceptsFormattableType(methodSymbol) ||
             blacklistMethods.Any(x => Matches(x, methodSymbol));
 
-        private static bool HasOverloadWithFormatOrCulture(InvocationExpressionSyntax invocation, SemanticModel semanticModel) =>
-            semanticModel.GetMemberGroup(invocation.Expression)
+        private static bool HasOverloadWithFormatOrCulture(InvocationExpressionSyntax invocation, SemanticModel semanticModel)
+        {
+            return semanticModel.GetMemberGroup(invocation.Expression)
                 .OfType<IMethodSymbol>()
                 .Where(m => !m.GetAttributes(KnownType.System_ObsoleteAttribute).Any())
-                .Any(HasAnyFormatOrCultureParameter);
+                // must have same number of arguments + 1 (the format and culture argument)
+                .Where(m => m.GetParameters().Count() - invocation.ArgumentList.Arguments.Count == 1)
+                .Any(m => SameParametersExceptLast(m, GetParameters()));
+
+            IEnumerable<IParameterSymbol> GetParameters() =>
+                semanticModel.GetSymbolInfo(invocation.Expression).Symbol?.GetParameters();
+        }
+
+        private static bool SameParametersExceptLast(IMethodSymbol possibleOverload, IEnumerable<IParameterSymbol> parameters)
+        {
+            var overloadParameters = possibleOverload.GetParameters();
+            if (parameters == null || overloadParameters == null)
+            {
+                return false;
+            }
+            // for simplicity, we assume culture info is going to be the either first or last parameter of the overload
+            var formatIsFirst = overloadParameters.First()?.Type?.IsAny(formatAndCultureType) ?? false;
+            var formatIsLast = overloadParameters?.Last()?.Type?.IsAny(formatAndCultureType) ?? false;
+            if (!formatIsFirst && !formatIsLast)
+            {
+                return false;
+            }
+            var invocationParameters = parameters.ToList();
+            var possibleOverloadParameters = possibleOverload.GetParameters().ToList();
+            for (var i = 0; i < invocationParameters.Count; i++)
+            {
+                var invocationIndex = formatIsFirst ? i + 1 : i;
+                var overloadIndex = formatIsFirst ? i : i + 1;
+                if (!invocationParameters[invocationIndex].Type.DerivesOrImplements(possibleOverloadParameters[overloadIndex].Type))
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
 
         private bool ReturnsOrAcceptsFormattableType(IMethodSymbol methodSymbol) =>
             methodSymbol.ReturnType.IsAny(formattableTypes) ||
