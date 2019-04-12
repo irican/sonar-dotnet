@@ -17,6 +17,15 @@ namespace Tests.Diagnostics
         [Obsolete]
         public static int DoStuff2(string foo, IFormatProvider format) => 1;
         public static int DoStuff2(string foo, CultureInfo foo2) => 1;
+
+        public static int DoStuff3(string foo) => 1;
+        public static int DoStuff3(int foo, IFormatProvider format) => 1;
+
+        public static int DoStuff4(string foo, string bar, string quix) => 1;
+        public static int DoStuff4(string foo, string bar, int quix, IFormatProvider format) => 1;
+
+        public static int DoStuff5(string foo, string bar, string quix) => 1;
+        public static int DoStuff5(string foo, string bar, string quix, IFormatProvider format) => 1;
     }
 
     class Program
@@ -43,6 +52,8 @@ namespace Tests.Diagnostics
             char.ToLower('a'); // Noncompliant
 
             "asdasd".ToUpper(); // Noncompliant
+
+            Methods.DoStuff5("foo", "bar", "qix"); // Noncompliant
         }
 
         void ValidCases()
@@ -67,6 +78,10 @@ namespace Tests.Diagnostics
             Convert.ToInt32(1.23);
             Convert.ToInt32('1');
             Convert.ToChar(15);
+
+            Methods.DoStuff3("foo"); // Compliant - the other DoStuff3 does not have the same signature
+
+            Methods.DoStuff4("foo", "", ""); // Compliant - the other DoStuff4 does not have the same signature
         }
     }
 }
