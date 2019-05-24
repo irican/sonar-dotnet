@@ -1,4 +1,4 @@
-/*
+﻿/*
  * SonarAnalyzer for .NET
  * Copyright (C) 2015-2019 SonarSource SA
  * mailto: contact AT sonarsource DOT com
@@ -1520,7 +1520,7 @@ namespace SonarAnalyzer.UnitTest.PackagingTests
             //["1520"],
             //["1521"],
             //["1522"],
-            ["1523"] = "SECURITY_HOTSPOT",
+            //["1523"] = "SECURITY_HOTSPOT",
             //["1524"],
             //["1525"],
             //["1526"],
@@ -4526,7 +4526,7 @@ namespace SonarAnalyzer.UnitTest.PackagingTests
             //["4526"],
             //["4527"],
             //["4528"],
-            ["4529"] = "SECURITY_HOTSPOT",
+            //["4529"] = "SECURITY_HOTSPOT",
             //["4530"],
             //["4531"],
             //["4532"],
@@ -4718,7 +4718,7 @@ namespace SonarAnalyzer.UnitTest.PackagingTests
             //["4718"],
             //["4719"],
             //["4720"],
-            ["4721"] = "SECURITY_HOTSPOT",
+            //["4721"] = "SECURITY_HOTSPOT",
             //["4722"],
             //["4723"],
             //["4724"],
@@ -4794,7 +4794,7 @@ namespace SonarAnalyzer.UnitTest.PackagingTests
             //["4794"],
             //["4795"],
             //["4796"],
-            ["4797"] = "SECURITY_HOTSPOT",
+            //["4797"] = "SECURITY_HOTSPOT",
             //["4798"],
             //["4799"],
             //["4800"],
@@ -4814,7 +4814,7 @@ namespace SonarAnalyzer.UnitTest.PackagingTests
             //["4814"],
             //["4815"],
             //["4816"],
-            ["4817"] = "SECURITY_HOTSPOT",
+            //["4817"] = "SECURITY_HOTSPOT",
             ["4818"] = "SECURITY_HOTSPOT",
             //["4819"],
             //["4820"],
@@ -4822,7 +4822,7 @@ namespace SonarAnalyzer.UnitTest.PackagingTests
             //["4822"],
             ["4823"] = "SECURITY_HOTSPOT",
             //["4824"],
-            ["4825"] = "SECURITY_HOTSPOT",
+            //["4825"] = "SECURITY_HOTSPOT",
             //["4826"],
             //["4827"],
             //["4828"],

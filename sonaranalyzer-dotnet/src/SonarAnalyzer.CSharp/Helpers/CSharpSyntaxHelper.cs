@@ -67,6 +67,11 @@ namespace SonarAnalyzer.Helpers
                 invocation.ArgumentList.Arguments.Count == count;
         }
 
+        public static ExpressionSyntax Get(this ArgumentListSyntax argumentList, int index) =>
+            argumentList != null && argumentList.Arguments.Count > index
+                ? argumentList.Arguments[index].Expression.RemoveParentheses()
+                : null;
+
         public static SyntaxNode RemoveParentheses(this SyntaxNode expression)
         {
             var currentExpression = expression;
@@ -247,6 +252,11 @@ namespace SonarAnalyzer.Helpers
             }
         }
 
+        public static bool IsMethodInvocation(this InvocationExpressionSyntax expression, KnownType type, string methodName, SemanticModel semanticModel) =>
+            semanticModel.GetSymbolInfo(expression).Symbol is IMethodSymbol methodSymbol &&
+            methodSymbol.IsInType(type) &&
+            methodName.Equals(methodSymbol.Name, StringComparison.InvariantCulture);
+
         public static Location FindIdentifierLocation(this BaseMethodDeclarationSyntax methodDeclaration) =>
             GetIdentifierOrDefault(methodDeclaration)?.GetLocation();
 
@@ -336,6 +346,13 @@ namespace SonarAnalyzer.Helpers
             return expression.RemoveParentheses().IsAnyKind(LiteralSyntaxKinds) ||
                 semanticModel.GetConstantValue(expression).HasValue;
         }
+
+        public static string GetStringValue(this SyntaxNode node) =>
+            node != null &&
+            node.IsKind(SyntaxKind.StringLiteralExpression) &&
+            node is LiteralExpressionSyntax literal
+                ? literal.Token.ValueText
+                : null;
 
         public static bool IsLeftSideOfAssignment(this ExpressionSyntax expression)
         {

@@ -120,6 +120,11 @@ namespace SonarAnalyzer.Helpers.VisualBasic
                     return null;
             }
         }
+        public static bool IsMethodInvocation(this InvocationExpressionSyntax expression, KnownType type, string methodName, SemanticModel semanticModel) =>
+            semanticModel.GetSymbolInfo(expression).Symbol is IMethodSymbol methodSymbol &&
+            methodSymbol.IsInType(type) &&
+            // vbnet is case insensitive
+            methodName.Equals(methodSymbol.Name, System.StringComparison.InvariantCultureIgnoreCase);
 
         public static bool IsOnThis(this ExpressionSyntax expression) =>
             IsOn(expression, SyntaxKind.MeExpression);
@@ -175,6 +180,13 @@ namespace SonarAnalyzer.Helpers.VisualBasic
                 semanticModel.GetConstantValue(expression).HasValue;
         }
 
+        public static string GetStringValue(this SyntaxNode node) =>
+            node != null &&
+            node.IsKind(SyntaxKind.StringLiteralExpression) &&
+            node is LiteralExpressionSyntax literal
+                ? literal.Token.ValueText
+                : null;
+
         public static bool IsLeftSideOfAssignment(this ExpressionSyntax expression)
         {
             var topParenthesizedExpression = expression.GetSelfOrTopParenthesizedExpression();
@@ -217,5 +229,10 @@ namespace SonarAnalyzer.Helpers.VisualBasic
                     return null;
             }
         }
+
+        public static ExpressionSyntax Get(this ArgumentListSyntax argumentList, int index) =>
+            argumentList != null && argumentList.Arguments.Count > index
+                ? argumentList.Arguments[index].GetExpression().RemoveParentheses()
+                : null;
     }
 }
