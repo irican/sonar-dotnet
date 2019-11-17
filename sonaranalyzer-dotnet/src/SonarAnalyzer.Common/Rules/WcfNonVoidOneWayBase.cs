@@ -30,7 +30,7 @@ namespace SonarAnalyzer.Rules.Common
         where TLanguageKind : struct
     {
         internal const string DiagnosticId = "S3598";
-        protected const string MessageFormat = "This method can't return any values because it is marked as one-way operation.";
+        protected const string MessageFormat = "此方法不能返回任何值，因为它被标记为了单向操作（one-way operation）。";
 
         protected sealed override void Initialize(SonarAnalysisContext context)
         {

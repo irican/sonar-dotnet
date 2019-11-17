@@ -30,7 +30,7 @@ namespace SonarAnalyzer.Rules
         where TParameterListSyntax : SyntaxNode
     {
         protected const string DiagnosticId = "S107";
-        protected const string MessageFormat = "{0} has {1} parameters, which is greater than the {2} authorized.";
+        protected const string MessageFormat = "{0} 有 {1} 个参数，多于允许的阈值 {2} 。";
 
         protected abstract TSyntaxKind[] SyntaxKinds { get; }
         protected abstract GeneratedCodeRecognizer GeneratedCodeRecognizer { get; }

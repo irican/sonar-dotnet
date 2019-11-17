@@ -28,7 +28,7 @@ namespace SonarAnalyzer.Rules.Common
     public abstract class PropertyWriteOnlyBase : SonarDiagnosticAnalyzer
     {
         protected const string DiagnosticId = "S2376";
-        protected const string MessageFormat = "Provide a getter for '{0}' or replace the property with a 'Set{0}' method.";
+        protected const string MessageFormat = "请为 '{0}' 属性提供一个getter或将其替换为一个 'Set{0}' 方法。";
 
         protected abstract GeneratedCodeRecognizer GeneratedCodeRecognizer { get; }
     }

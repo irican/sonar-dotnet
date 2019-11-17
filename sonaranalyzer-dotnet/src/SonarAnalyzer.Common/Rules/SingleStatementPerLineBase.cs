@@ -30,7 +30,7 @@ namespace SonarAnalyzer.Rules.Common
     public abstract class SingleStatementPerLineBase : SonarDiagnosticAnalyzer
     {
         protected const string DiagnosticId = "S122";
-        protected const string MessageFormat = "Reformat the code to have only one statement per line.";
+        protected const string MessageFormat = "请格式化代码，每行只能由一个语句。";
 
         protected abstract GeneratedCodeRecognizer GeneratedCodeRecognizer { get; }
     }

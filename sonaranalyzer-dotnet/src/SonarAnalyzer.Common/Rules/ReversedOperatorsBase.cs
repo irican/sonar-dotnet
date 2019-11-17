@@ -29,7 +29,7 @@ namespace SonarAnalyzer.Rules
         where TUnaryExpressionSyntax : SyntaxNode
     {
         protected const string DiagnosticId = "S2757";
-        protected const string MessageFormat = "Was '{0}' meant instead?";
+        protected const string MessageFormat = "是要使用这个吗 '{0}' ?";
 
         protected abstract SyntaxToken GetOperatorToken(TUnaryExpressionSyntax e);
 

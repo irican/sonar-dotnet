@@ -27,7 +27,7 @@ namespace SonarAnalyzer.Rules
     public abstract class EnumNameShouldFollowRegexBase : ParameterLoadingDiagnosticAnalyzer
     {
         protected const string DiagnosticId = "S2342";
-        protected const string MessageFormat = "Rename this enumeration to match the regular expression: '{0}'.";
+        protected const string MessageFormat = "请重命名此枚举名，以符合此正则表达式： '{0}'。";
 
         protected abstract GeneratedCodeRecognizer GeneratedCodeRecognizer { get; }
 

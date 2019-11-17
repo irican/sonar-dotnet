@@ -26,7 +26,7 @@ namespace SonarAnalyzer.Rules
         where TSyntaxKind : struct
     {
         protected const string DiagnosticId = "S2255";
-        protected const string MessageFormat = "Make sure that this cookie is written safely.";
+        protected const string MessageFormat = "确认这里的 cookie 写入足够安全。";
 
         protected PropertyAccessTracker<TSyntaxKind> PropertyAccessTracker { get; set; }
 

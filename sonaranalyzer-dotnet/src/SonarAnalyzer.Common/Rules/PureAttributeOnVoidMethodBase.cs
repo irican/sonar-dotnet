@@ -28,7 +28,7 @@ namespace SonarAnalyzer.Rules
     public abstract class PureAttributeOnVoidMethodBase : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3603";
-        protected const string MessageFormat = "Remove the 'Pure' attribute or change the method to return a value.";
+        protected const string MessageFormat = "请移除 'Pure' 属性或令此方法返回一个值。";
 
         protected abstract DiagnosticDescriptor Rule { get; }
 

@@ -28,7 +28,7 @@ namespace SonarAnalyzer.Rules
         where TInvocation : SyntaxNode
     {
         internal const string DiagnosticId = "S3889";
-        protected const string MessageFormat = "Refactor the code to remove this use of '{0}'.";
+        protected const string MessageFormat = "重构此代码，以去除 '{0}' 的使用。";
 
         private readonly IEnumerable<MemberDescriptor> invalidMethods = new List<MemberDescriptor>
         {

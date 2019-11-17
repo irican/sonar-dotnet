@@ -29,7 +29,7 @@ namespace SonarAnalyzer.Rules
     public abstract class FieldShouldNotBePublicBase : SonarDiagnosticAnalyzer
     {
         protected const string DiagnosticId = "S2357";
-        protected const string MessageFormat = "Make '{0}' private.";
+        protected const string MessageFormat = "令 '{0}' 字段为私有的（private）。";
 
         protected static bool FieldIsRelevant(IFieldSymbol fieldSymbol)
         {

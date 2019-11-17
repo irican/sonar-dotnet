@@ -31,7 +31,7 @@ namespace SonarAnalyzer.Rules
         where TLanguageKindEnum : struct
     {
         protected const string DiagnosticId = "S4144";
-        protected const string MessageFormat = "Update this method so that its implementation is not identical to '{0}'.";
+        protected const string MessageFormat = "更新此方法，使得其实现与 '{0}' 不同。";
 
         protected abstract TLanguageKindEnum ClassDeclarationSyntaxKind { get; }
         protected abstract GeneratedCodeRecognizer GeneratedCodeRecognizer { get; }

@@ -31,7 +31,7 @@ namespace SonarAnalyzer.Rules
         where TSyntaxKindEnum : struct
     {
         internal const string DiagnosticId = "S2761";
-        protected const string MessageFormat = "Use the '{0}' operator just once or not at all.";
+        protected const string MessageFormat = "请只使用 '{0}' 一次，或者不使用它。";
 
         protected abstract DiagnosticDescriptor Rule { get; }
 

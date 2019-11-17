@@ -31,8 +31,7 @@ namespace SonarAnalyzer.Rules
     {
         internal const string DiagnosticId = "S4428";
 
-        protected const string MessageFormat = "Add the 'ExportAttribute' or remove 'PartCreationPolicyAttribute'" +
-            " to/from this class definition.";
+        protected const string MessageFormat = "为此类的定义添加 'ExportAttribute' 或移除 'PartCreationPolicyAttribute'。";
 
         protected abstract TClassSyntax GetClassDeclaration(TAttributeSyntax attribute);
 

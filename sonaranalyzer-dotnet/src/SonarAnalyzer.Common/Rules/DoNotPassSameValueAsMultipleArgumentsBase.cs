@@ -30,7 +30,7 @@ namespace SonarAnalyzer.Rules
         protected const string DiagnosticId = "S4142";
 
         protected const string MessageFormat =
-            "Verify that this is the intended value; it is the same as the {0} argument.";
+            "请检验这是否为预期的值，这与 {0} 参数的值一样。";
     }
 
     public abstract class DoNotPassSameValueAsMultipleArgumentsBase<TSyntaxKind, TInvocationSyntax, TArgumentSyntax>

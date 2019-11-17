@@ -28,7 +28,7 @@ namespace SonarAnalyzer.Rules
     public abstract class ThrowReservedExceptionsBase : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S112";
-        internal const string MessageFormat = "'{0}' should not be thrown by user code.";
+        internal const string MessageFormat = "'{0}' 不应由用户代码抛出。";
 
         internal static readonly ImmutableArray<KnownType> ReservedExceptionTypeNames =
             ImmutableArray.Create(

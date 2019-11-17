@@ -29,7 +29,7 @@ namespace SonarAnalyzer.Rules.Common
     public abstract class UseShortCircuitingOperatorBase : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2178";
-        internal const string MessageFormat = "Correct this '{0}' to '{1}'.";
+        internal const string MessageFormat = "请把 '{0}' 改正为 '{1}'。";
 
         protected abstract GeneratedCodeRecognizer GeneratedCodeRecognizer { get; }
 

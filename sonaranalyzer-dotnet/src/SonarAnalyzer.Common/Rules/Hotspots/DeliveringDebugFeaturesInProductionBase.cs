@@ -26,7 +26,7 @@ namespace SonarAnalyzer.Rules
         where TSyntaxKind : struct
     {
         protected const string DiagnosticId = "S4507";
-        protected const string MessageFormat = "Make sure this debug feature is deactivated before delivering the code in production.";
+        protected const string MessageFormat = "确保调试功能在生产代码中处于解除激活状态。";
 
         protected static readonly MemberDescriptor isDevelopmentMethod =
             new MemberDescriptor(KnownType.Microsoft_AspNetCore_Hosting_HostingEnvironmentExtensions, "IsDevelopment");

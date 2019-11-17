@@ -30,9 +30,9 @@ namespace SonarAnalyzer.Rules.Common
     {
         internal const string DiagnosticId = "S3926";
         protected const string MessageFormat = "{0}";
-        protected const string BothDeserializationMethodsMissing = "Add deserialization event handlers.";
-        protected const string OnDeserializedMethodMissing = "Add the missing 'OnDeserializedAttribute' event handler.";
-        protected const string OnDeserializingMethodMissing = "Add the missing 'OnDeserializingAttribute' event handler.";
+        protected const string BothDeserializationMethodsMissing = "添加反序列化事件处理器。";
+        protected const string OnDeserializedMethodMissing = "添加丢失的 'OnDeserializedAttribute' 事件处理器。";
+        protected const string OnDeserializingMethodMissing = "添加丢失的 'OnDeserializingAttribute' 事件处理器。";
 
         internal static readonly ImmutableArray<KnownType> AttributesToFind =
             ImmutableArray.Create(

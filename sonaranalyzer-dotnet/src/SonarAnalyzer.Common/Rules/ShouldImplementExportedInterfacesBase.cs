@@ -30,9 +30,9 @@ namespace SonarAnalyzer.Rules.Common
     public abstract class ShouldImplementExportedInterfacesBase : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4159";
-        protected const string MessageFormat = "{0} '{1}' on '{2}' or remove this export attribute.";
-        protected const string ActionForInterface = "Implement";
-        protected const string ActionForClass = "Derive from";
+        protected const string MessageFormat = "{0} 在 '{2}' 上的 '{1}' 或移除这个导出属性。";
+        protected const string ActionForInterface = "实现";
+        protected const string ActionForClass = "派生于";
 
         internal static readonly ImmutableArray<KnownType> ExportAttributes =
             ImmutableArray.Create(

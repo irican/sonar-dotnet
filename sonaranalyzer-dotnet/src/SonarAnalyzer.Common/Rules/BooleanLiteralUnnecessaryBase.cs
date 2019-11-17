@@ -28,7 +28,7 @@ namespace SonarAnalyzer.Rules
         where TBinaryExpression : SyntaxNode
     {
         internal const string DiagnosticId = "S1125";
-        protected const string MessageFormat = "Remove the unnecessary Boolean literal(s).";
+        protected const string MessageFormat = "请去掉不必要的布尔字面量。";
 
         protected delegate bool IsBooleanLiteralKind(SyntaxNode node);
 

@@ -27,7 +27,7 @@ namespace SonarAnalyzer.Rules
     public abstract class DoNotLockOnSharedResourceBase : SonarDiagnosticAnalyzer
     {
         protected const string DiagnosticId = "S2551";
-        protected const string MessageFormat = "Lock on a dedicated object instance instead.";
+        protected const string MessageFormat = "请在各共享资源的专用的对象上加锁。";
 
         private static readonly ImmutableArray<KnownType> _invalidLockTypes =
            ImmutableArray.Create(

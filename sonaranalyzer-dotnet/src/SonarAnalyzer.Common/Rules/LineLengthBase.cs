@@ -28,7 +28,7 @@ namespace SonarAnalyzer.Rules
     public abstract class LineLengthBase : ParameterLoadingDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S103";
-        internal const string MessageFormat = "Split this {1} characters long line (which is greater than {0} authorized).";
+        internal const string MessageFormat = "请将此含有 {1} 字符的行分离（比要求的数量：{0} 要多）。";
 
         private const int DefaultValueMaximum = 200;
 

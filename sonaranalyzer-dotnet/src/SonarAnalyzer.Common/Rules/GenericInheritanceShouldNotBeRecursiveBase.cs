@@ -28,7 +28,7 @@ namespace SonarAnalyzer.Rules
     public abstract class GenericInheritanceShouldNotBeRecursiveBase : SonarDiagnosticAnalyzer
     {
         protected const string DiagnosticId = "S3464";
-        protected const string MessageFormat = "Refactor this {0} so that the generic inheritance chain is not recursive.";
+        protected const string MessageFormat = "重构此 {0} ，使得其通用的继承链不是递归的。";
         protected static IEnumerable<INamedTypeSymbol> GetBaseTypes(INamedTypeSymbol typeSymbol)
         {
             var interfaces = typeSymbol.Interfaces.Where(IsGenericType);

@@ -29,8 +29,8 @@ namespace SonarAnalyzer.Rules
     public abstract class FileLinesBase : ParameterLoadingDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S104";
-        internal const string MessageFormat = "This file has {1} lines, which is greater than {0} authorized. Split it into " +
-            "smaller files.";
+        internal const string MessageFormat = "此文件有 {1} 行，超过了所要求的 {0} 行。请把它分解成" +
+            "一些小的文件。";
 
         private const int DefaultValueMaximum = 1000;
 

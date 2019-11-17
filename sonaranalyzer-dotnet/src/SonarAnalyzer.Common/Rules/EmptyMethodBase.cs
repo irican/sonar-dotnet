@@ -27,8 +27,8 @@ namespace SonarAnalyzer.Rules
     public abstract class EmptyMethodBase : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1186";
-        protected const string MessageFormat = "Add a nested comment explaining why this method is empty, throw a " +
-            "'NotSupportedException' or complete the implementation.";
+        protected const string MessageFormat = "请加入一个嵌套的注释来解释为什么方法为空，抛出一个 " +
+            "'NotSupportedException' 或完成方法实现。";
     }
 
     public abstract class EmptyMethodBase<TLanguageKindEnum> : EmptyMethodBase

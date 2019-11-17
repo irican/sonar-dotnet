@@ -26,7 +26,7 @@ namespace SonarAnalyzer.Rules
         where TSyntaxKind : struct
     {
         protected const string DiagnosticId = "S5042";
-        protected const string MessageFormat = "Make sure that decompressing this archive file is safe.";
+        protected const string MessageFormat = "确认在这里解压档案文件足够安全。";
 
         protected InvocationTracker<TSyntaxKind> InvocationTracker { get; set; }
 

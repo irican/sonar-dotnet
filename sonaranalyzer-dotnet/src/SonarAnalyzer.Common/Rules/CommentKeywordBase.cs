@@ -32,11 +32,11 @@ namespace SonarAnalyzer.Rules
     {
         private const string TodoKeyword = "TODO";
         protected const string TodoDiagnosticId = "S1135";
-        protected const string TodoMessageFormat = "Complete the task associated to this '" + TodoKeyword + "' comment.";
+        protected const string TodoMessageFormat = "请完成此项 '" + TodoKeyword + "' 注释相关的任务。";
 
         private const string FixMeKeyword = "FIXME";
         protected const string FixMeDiagnosticId = "S1134";
-        protected const string FixMeMessageFormat = "Take the required action to fix the issue indicated by this '" + FixMeKeyword + "' comment.";
+        protected const string FixMeMessageFormat = "请及时采取措施修复有关此项 '" + FixMeKeyword + "' 注释的问题。";
 
         protected abstract DiagnosticDescriptor TodoDiagnostic { get; }
         protected abstract DiagnosticDescriptor FixMeDiagnostic { get; }

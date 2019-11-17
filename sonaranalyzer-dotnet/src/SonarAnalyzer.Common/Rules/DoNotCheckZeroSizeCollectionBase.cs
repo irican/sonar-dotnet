@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules
         protected const string DiagnosticId = "S3981";
 
         protected const string MessageFormat =
-            "The {0} of '{1}' is always '>=0', so fix this test to get the real expected behavior.";
+            "{0} 的 '{1}' 总是大于等于零，请修复此测试以得到预期行为。";
 
         protected abstract TLanguageKindEnum GreaterThanOrEqualExpression { get; }
         protected abstract TLanguageKindEnum LessThanOrEqualExpression { get; }

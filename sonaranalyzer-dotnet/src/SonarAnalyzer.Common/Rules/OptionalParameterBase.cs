@@ -29,7 +29,7 @@ namespace SonarAnalyzer.Rules.Common
     public abstract class OptionalParameterBase : SonarDiagnosticAnalyzer
     {
         protected const string DiagnosticId = "S2360";
-        protected const string MessageFormat = "Use the overloading mechanism instead of the optional parameters.";
+        protected const string MessageFormat = "请使用重载机制以代替可选参数的使用。";
 
         protected abstract GeneratedCodeRecognizer GeneratedCodeRecognizer { get; }
     }

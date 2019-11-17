@@ -25,7 +25,7 @@ namespace SonarAnalyzer.Rules
     public abstract class IfCollapsibleBase : SonarDiagnosticAnalyzer
     {
         protected const string DiagnosticId = "S1066";
-        protected const string MessageFormat = "Merge this if statement with the enclosing one.";
+        protected const string MessageFormat = "请将此if语句与其外围的if语句合并。";
     }
 }
 

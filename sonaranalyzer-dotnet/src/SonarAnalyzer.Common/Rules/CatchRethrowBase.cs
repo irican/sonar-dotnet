@@ -32,7 +32,7 @@ namespace SonarAnalyzer.Rules
             where TCatchClause : SyntaxNode
     {
         internal const string DiagnosticId = "S2737";
-        protected const string MessageFormat = "Add logic to this catch clause or eliminate it and rethrow the exception automatically.";
+        protected const string MessageFormat = "请向catch子句中补充适当逻辑或直接自动抛出异常。";
 
         protected abstract DiagnosticDescriptor Rule { get; }
 

@@ -29,7 +29,7 @@ namespace SonarAnalyzer.Rules
         where TExpressionSyntax : SyntaxNode
     {
         internal const string DiagnosticId = "S3449";
-        protected const string MessageFormat = "Remove this erroneous shift, it will fail because '{0}' can't be implicitly converted to 'int'.";
+        protected const string MessageFormat = "请去掉这个错误的移位，它会因为 '{0}' 不能转化为 'int' 而失败。";
 
         protected abstract DiagnosticDescriptor Rule { get; }
 

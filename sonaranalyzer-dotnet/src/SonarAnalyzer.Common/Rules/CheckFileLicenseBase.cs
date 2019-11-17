@@ -30,7 +30,7 @@ namespace SonarAnalyzer.Rules
     public abstract class CheckFileLicenseBase : ParameterLoadingDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1451";
-        protected const string MessageFormat = "Add or update the header of this file.";
+        protected const string MessageFormat = "请添加或更新此文件的表头。";
 
         internal const string HeaderFormatRuleParameterKey = "headerFormat";
         internal const string HeaderFormatPropertyKey = nameof(HeaderFormat);

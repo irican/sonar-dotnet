@@ -28,7 +28,7 @@ namespace SonarAnalyzer.Rules
     public abstract class ExpressionComplexityBase : ParameterLoadingDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1067";
-        internal const string MessageFormat = "Reduce the number of conditional operators ({1}) used in the expression (maximum allowed {0}).";
+        internal const string MessageFormat = "请减少此语句中条件运算符 ({1}) 的使用（最多允许{0}个）。";
 
         private const int DefaultValueMaximum = 3;
 

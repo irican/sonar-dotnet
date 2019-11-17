@@ -31,7 +31,7 @@ namespace SonarAnalyzer.Rules
         where TSyntaxKind : struct
     {
         internal const string DiagnosticId = "S1110";
-        protected const string MessageFormat = "Remove these redundant parentheses.";
+        protected const string MessageFormat = "请移除多余的括号。";
 
         protected abstract GeneratedCodeRecognizer GeneratedCodeRecognizer { get; }
         protected abstract TSyntaxKind ParenthesizedExpressionSyntaxKind { get; }

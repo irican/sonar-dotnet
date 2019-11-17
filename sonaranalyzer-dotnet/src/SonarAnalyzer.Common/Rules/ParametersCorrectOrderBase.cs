@@ -31,7 +31,7 @@ namespace SonarAnalyzer.Rules
         where TArgumentSyntax : SyntaxNode
     {
         protected const string DiagnosticId = "S2234";
-        protected const string MessageFormat = "Parameters to '{0}' have the same names but not the same order as the method arguments.";
+        protected const string MessageFormat = "对 '{0}' 调用所传的参数具有同样的名称，但不具有相同的顺序。";
 
         protected abstract TypeInfo GetArgumentTypeSymbolInfo(TArgumentSyntax argument, SemanticModel semanticModel);
         protected abstract Location GetMethodDeclarationIdentifierLocation(SyntaxNode syntaxNode);

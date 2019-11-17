@@ -29,7 +29,7 @@ namespace SonarAnalyzer.Rules.Common
     public abstract class StringConcatenationInLoopBase : SonarDiagnosticAnalyzer
     {
         protected const string DiagnosticId = "S1643";
-        protected const string MessageFormat = "Use a StringBuilder instead.";
+        protected const string MessageFormat = "请使用 StringBuilder 。";
 
         protected abstract GeneratedCodeRecognizer GeneratedCodeRecognizer { get; }
     }

@@ -26,7 +26,7 @@ namespace SonarAnalyzer.Rules
         where TSyntaxKind : struct
     {
         protected const string DiagnosticId = "S3011";
-        protected const string MessageFormat = "Make sure that this accessibility bypass is safe here.";
+        protected const string MessageFormat = "请确认这里绕过可访问性足够安全。";
 
         protected FieldAccessTracker<TSyntaxKind> FieldAccessTracker { get; set;  }
 

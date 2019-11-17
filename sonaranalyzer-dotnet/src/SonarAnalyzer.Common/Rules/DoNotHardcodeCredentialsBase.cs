@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules
     {
 
         protected const string DiagnosticId = "S2068";
-        protected const string MessageFormat = "'{0}' detected in this expression, review this potentially hardcoded credential.";
+        protected const string MessageFormat = "疑似的 '{0}' 字段被检测出，请再三确认硬编码凭证的必要性。";
 
         private const string DefaultCredentialWords = "password, passwd, pwd";
 

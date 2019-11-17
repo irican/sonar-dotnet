@@ -31,7 +31,7 @@ namespace SonarAnalyzer.Rules
         where TLanguageKindEnum : struct
     {
         protected const string DiagnosticId = "S1751";
-        protected const string MessageFormat = "Refactor the containing loop to do more than one iteration.";
+        protected const string MessageFormat = "重构此循环，使其迭代次数大于一次。";
 
         protected abstract GeneratedCodeRecognizer GeneratedCodeRecognizer { get; }
 

@@ -25,6 +25,6 @@ namespace SonarAnalyzer.Rules
     public abstract class EmptyNestedBlockBase : SonarDiagnosticAnalyzer
     {
         protected const string DiagnosticId = "S108";
-        protected const string MessageFormat = "Either remove or fill this block of code.";
+        protected const string MessageFormat = "要么删除此代码块，要么填充它。";
     }
 }

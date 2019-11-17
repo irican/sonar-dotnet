@@ -30,7 +30,7 @@ namespace SonarAnalyzer.Rules
     {
         protected const string DiagnosticId = "S4260";
         protected const string MessageFormat =
-            "Change this 'ConstructorArgumentAttribute' value to match one of the existing constructors arguments.";
+            "将此 'ConstructorArgumentAttribute' 值置换为任意一个存在的构造器参数。";
 
         protected static AttributeData GetConstructorArgumentAttributeOrDefault(IPropertySymbol propertySymbol)
         {

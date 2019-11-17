@@ -28,8 +28,8 @@ namespace SonarAnalyzer.Rules.Common
     {
         protected const string DiagnosticId = "S2372";
 
-        protected const string MessageFormat = "Remove the exception throwing from this property getter, or refactor the " +
-            "property into a method.";
+        protected const string MessageFormat = "请从此属性的getter中移除异常的抛出，" +
+            "或把它重构为一个方法。";
 
         protected abstract GeneratedCodeRecognizer GeneratedCodeRecognizer { get; }
 

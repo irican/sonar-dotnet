@@ -30,8 +30,8 @@ namespace SonarAnalyzer.Rules
     {
         internal const string DiagnosticId = "S4210";
         protected const string MessageFormat = "{0}";
-        protected const string AddStaThreadMessage = "Add the 'STAThread' attribute to this entry point.";
-        protected const string ChangeMtaThreadToStaThreadMessage = "Change the 'MTAThread' attribute of this entry point to 'STAThread'.";
+        protected const string AddStaThreadMessage = "请在此入口点处添加 'STAThread' 属性。";
+        protected const string ChangeMtaThreadToStaThreadMessage = "请把此入口点的 'MTAThread' 属性更换为 'STAThread'。";
 
         protected abstract Location GetLocation(TMethodSyntax method);
 

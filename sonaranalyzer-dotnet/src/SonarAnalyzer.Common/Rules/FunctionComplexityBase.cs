@@ -29,7 +29,7 @@ namespace SonarAnalyzer.Rules
     public abstract class FunctionComplexityBase : ParameterLoadingDiagnosticAnalyzer
     {
         protected const string DiagnosticId = "S1541";
-        protected const string MessageFormat = "The Cyclomatic Complexity of this {2} is {1} which is greater than {0} authorized.";
+        protected const string MessageFormat = "此 {2} 的循环复杂度为 {1} ，大于所要求的阈值：{0} 。";
 
         protected const int DefaultValueMaximum = 10;
 

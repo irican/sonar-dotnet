@@ -29,7 +29,7 @@ namespace SonarAnalyzer.Rules
         where TBinaryExpression : SyntaxNode
     {
         internal const string DiagnosticId = "S1940";
-        protected const string MessageFormat = "Use the opposite operator ('{0}') instead.";
+        protected const string MessageFormat = "请使用相反的运算符('{0}')。";
 
         protected abstract bool IsLogicalNot(TBinaryExpression expression, out SyntaxNode logicalNot);
 

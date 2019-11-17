@@ -26,7 +26,7 @@ namespace SonarAnalyzer.Rules
     {
         internal const string DiagnosticId = "S1764";
 
-        protected const string OperatorMessageFormat = "Correct one of the identical expressions on both sides of operator '{0}'.";
-        protected const string EqualsMessage = "Change one instance of '{0}' to a different value; comparing '{0}' to itself always returns true.";
+        protected const string OperatorMessageFormat = "请修改运算符'{0}'任意一侧的值，使得它们不相同。";
+        protected const string EqualsMessage = "把此实例值 '{0}' 换为不同的值，'{0}' 与自己的比较的结果总为true。";
     }
 }

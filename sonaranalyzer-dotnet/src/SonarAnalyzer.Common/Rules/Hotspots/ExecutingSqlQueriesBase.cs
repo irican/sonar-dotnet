@@ -28,7 +28,7 @@ namespace SonarAnalyzer.Rules
         where TExpressionSyntax : SyntaxNode
     {
         protected const string DiagnosticId = "S2077";
-        protected const string MessageFormat = "Make sure that executing SQL queries is safe here.";
+        protected const string MessageFormat = "确认这里执行SQL语句足够安全。";
 
         protected InvocationTracker<TSyntaxKind> InvocationTracker { get; set; }
 

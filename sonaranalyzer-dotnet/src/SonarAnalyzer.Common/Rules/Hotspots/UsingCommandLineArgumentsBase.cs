@@ -26,7 +26,7 @@ namespace SonarAnalyzer.Rules
         where TSyntaxKind : struct
     {
         protected const string DiagnosticId = "S4823";
-        protected const string MessageFormat = "Make sure that command line arguments are used safely here.";
+        protected const string MessageFormat = "请确定这里的命令行参数被安全使用。";
 
         protected MethodDeclarationTracker<TSyntaxKind> MethodDeclarationTracker { get; set; }
 

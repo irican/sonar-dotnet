@@ -32,7 +32,7 @@ namespace SonarAnalyzer.Rules.Common
     public abstract class UseShortCircuitingOperatorFixProviderBase<TBinaryExpression> : SonarCodeFixProvider
         where TBinaryExpression : SyntaxNode
     {
-        internal const string Title = "Use short-circuiting operators";
+        internal const string Title = "使用短路运算符";
 
         public override ImmutableArray<string> FixableDiagnosticIds =>  ImmutableArray.Create(UseShortCircuitingOperatorBase.DiagnosticId);
 

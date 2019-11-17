@@ -31,7 +31,7 @@ namespace SonarAnalyzer.Rules.Common
 {
     public abstract class MultipleVariableDeclarationCodeFixProviderBase : SonarCodeFixProvider
     {
-        internal const string Title = "Separate declarations";
+        internal const string Title = "分离声明";
 
         public sealed override ImmutableArray<string> FixableDiagnosticIds
         {

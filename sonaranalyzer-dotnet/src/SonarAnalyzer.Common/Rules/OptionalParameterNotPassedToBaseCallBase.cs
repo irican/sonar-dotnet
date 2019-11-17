@@ -29,7 +29,7 @@ namespace SonarAnalyzer.Rules
         where TInvocationExpressionSyntax : SyntaxNode
     {
         protected const string DiagnosticId = "S3466";
-        protected const string MessageFormat = "Pass the missing user-supplied parameter value{0} to this 'base' call.";
+        protected const string MessageFormat = "请向此'base'调用传入用户提供的参数值 {0} 。";
 
         protected void ReportOptionalParameterNotPassedToBase(SyntaxNodeAnalysisContext c, TInvocationExpressionSyntax invocation)
         {

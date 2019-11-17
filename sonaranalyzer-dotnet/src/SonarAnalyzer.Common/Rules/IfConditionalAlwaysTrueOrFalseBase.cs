@@ -28,7 +28,7 @@ namespace SonarAnalyzer.Rules
         where TIfSyntax : SyntaxNode
     {
         internal const string DiagnosticId = "S1145";
-        protected const string MessageFormat = "Remove this useless {0}.";
+        protected const string MessageFormat = "请去除掉无用的 {0}。";
 
         protected abstract void ReportIfTrue(TIfSyntax ifSyntax, SyntaxNodeAnalysisContext context);
 

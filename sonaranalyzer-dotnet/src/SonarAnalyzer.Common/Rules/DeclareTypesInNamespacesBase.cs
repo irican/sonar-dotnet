@@ -28,7 +28,7 @@ namespace SonarAnalyzer.Rules
     public abstract class DeclareTypesInNamespacesBase : SonarDiagnosticAnalyzer
     {
         protected const string DiagnosticId = "S3903";
-        protected const string MessageFormat = "Move '{0}' into a named namespace.";
+        protected const string MessageFormat = "请将 '{0}' 移入一个命名空间。";
 
         protected abstract bool IsInnerTypeOrWithinNamespace(SyntaxNode declaration, SemanticModel semanticModel);
 

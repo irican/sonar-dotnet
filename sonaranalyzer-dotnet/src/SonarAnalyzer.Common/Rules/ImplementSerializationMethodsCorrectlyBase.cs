@@ -29,9 +29,9 @@ namespace SonarAnalyzer.Rules
     public abstract class ImplementSerializationMethodsCorrectlyBase : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3927";
-        protected const string MessageFormat = "Make this method {0}.";
-        private const string problemParameterText = "have a single parameter of type 'StreamingContext'";
-        private const string problemGenericParameterText = "have no type parameters";
+        protected const string MessageFormat = "令此方法 {0}。";
+        private const string problemParameterText = "有单个类型为 'StreamingContext' 的参数";
+        private const string problemGenericParameterText = "没有类型参数have no type parameters";
 
         private static readonly ImmutableArray<KnownType> serializationAttributes =
             ImmutableArray.Create(

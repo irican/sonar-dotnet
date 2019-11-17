@@ -29,7 +29,7 @@ namespace SonarAnalyzer.Rules
     public abstract class ExceptionConstructorShouldNotThrowBase : SonarDiagnosticAnalyzer
     {
         protected const string DiagnosticId = "S3693";
-        protected const string MessageFormat = "Avoid throwing exceptions in this constructor.";
+        protected const string MessageFormat = "请避免在这个构造器中抛出异常。";
 
         protected abstract DiagnosticDescriptor Rule {get;}
         protected void ReportAllThrowLocations(SyntaxNodeAnalysisContext c,

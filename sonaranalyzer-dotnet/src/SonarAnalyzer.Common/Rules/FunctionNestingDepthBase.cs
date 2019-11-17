@@ -27,7 +27,7 @@ namespace SonarAnalyzer.Rules
     public abstract class FunctionNestingDepthBase : ParameterLoadingDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S134";
-        internal const string MessageFormat = "Refactor this code to not nest more than {0} control flow statements.";
+        internal const string MessageFormat = "重构此代码，使得其不要嵌套超过 {0} 层的控制流语句。";
 
         internal class NestingDepthCounter
         {

@@ -25,6 +25,6 @@ namespace SonarAnalyzer.Rules
     public abstract class ConditionalStructureSameConditionBase : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1862";
-        internal const string MessageFormat = "This branch duplicates the one on line {0}.";
+        internal const string MessageFormat = "此分支与第 {0} 行逻辑重复。";
     }
 }

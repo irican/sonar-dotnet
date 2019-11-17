@@ -27,7 +27,7 @@ namespace SonarAnalyzer.Rules.Common
     public abstract class DoNotInstantiateSharedClassesBase : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4277";
-        protected const string MessageFormat = "Refactor this code so that it doesn't invoke the constructor of this class.";
+        protected const string MessageFormat = "重构此代码，使其不必调用共享类的构造函数。";
 
         protected static bool IsShared(AttributeData data)
         {

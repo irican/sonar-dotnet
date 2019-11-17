@@ -31,8 +31,8 @@ namespace SonarAnalyzer.Rules
         protected const string DiagnosticId = "S1075";
         protected const string MessageFormat = "{0}";
 
-        protected const string AbsoluteUriMessage = "Refactor your code not to use hardcoded absolute paths or URIs.";
-        protected const string PathDelimiterMessage = "Remove this hardcoded path-delimiter.";
+        protected const string AbsoluteUriMessage = "重构此代码，不要使用硬编码的路径或URI。";
+        protected const string PathDelimiterMessage = "请去除硬编码的路径分隔符。";
 
         // Simplified implementation of specification listed on
         // https://en.wikipedia.org/wiki/Uniform_Resource_Identifier

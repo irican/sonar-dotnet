@@ -1,4 +1,4 @@
- /*
+﻿ /*
  * SonarAnalyzer for .NET
  * Copyright (C) 2015-2019 SonarSource SA
  * mailto: contact AT sonarsource DOT com
@@ -30,7 +30,7 @@ namespace SonarAnalyzer.Rules
     public abstract class VariableUnusedBase : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1481";
-        protected const string MessageFormat = "Remove the unused local variable '{0}'.";
+        protected const string MessageFormat = "请去掉未使用的局部变量 '{0}'。";
 
         protected abstract class UnusedLocalsCollectorBase<TLocalDeclaration>
             where TLocalDeclaration : SyntaxNode

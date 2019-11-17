@@ -28,7 +28,7 @@ namespace SonarAnalyzer.Rules.Common
     public abstract class SwitchWithoutDefaultBase : SonarDiagnosticAnalyzer
     {
         protected const string DiagnosticId = "S131";
-        protected const string MessageFormat = "Add a '{0}' clause to this '{1}' statement.";
+        protected const string MessageFormat = "在这个 '{1}' 语句中添加一个 '{0}' 子句。";
 
         protected abstract GeneratedCodeRecognizer GeneratedCodeRecognizer { get; }
     }

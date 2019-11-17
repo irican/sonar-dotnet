@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules
         where TLiteralExpression : SyntaxNode
     {
         protected const string DiagnosticId = "S1313";
-        protected const string MessageFormat = "Make sure using this hardcoded IP address '{0}' is safe here.";
+        protected const string MessageFormat = "请确保在这里使用此硬编码的IP地址 '{0}' 足够安全。";
 
         private static readonly ISet<string> IgnoredVariableNames =
             new HashSet<string>

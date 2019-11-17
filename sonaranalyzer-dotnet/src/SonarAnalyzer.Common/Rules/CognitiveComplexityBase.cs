@@ -29,7 +29,7 @@ namespace SonarAnalyzer.Rules
     public abstract class CognitiveComplexityBase : ParameterLoadingDiagnosticAnalyzer
     {
         protected const string DiagnosticId = "S3776";
-        protected const string MessageFormat = "Refactor this {0} to reduce its Cognitive Complexity from {1} to the {2} allowed.";
+        protected const string MessageFormat = "重构此 {0} ，将其认知复杂度从 {1} 减少至 {2} 及以下。";
         protected const int DefaultThreshold = 15;
         protected const int DefaultPropertyThreshold = 3;
 

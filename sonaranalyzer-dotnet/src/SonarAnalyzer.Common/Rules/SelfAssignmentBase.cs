@@ -25,6 +25,6 @@ namespace SonarAnalyzer.Rules
     public abstract class SelfAssignmentBase : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1656";
-        internal const string MessageFormat = "Remove or correct this useless self-assignment.";
+        internal const string MessageFormat = "请移除或改正无用的自我赋值。";
     }
 }
