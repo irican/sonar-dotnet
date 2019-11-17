@@ -31,7 +31,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class AesManagedShouldBeWithSecureMode : ObjectShouldBeInitializedCorrectlyBase
     {
         internal const string DiagnosticId = "S4432";
-        private const string MessageFormat = "Use a certified third party library implementing Galois/Counter Mode (GCM) instead.";
+        private const string MessageFormat = "请使用实现了伽罗瓦消息验证/计数器模式（Galois/Counter Mode (GCM)）的第三方库替代它。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class RedundantConditionalAroundAssignment : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3440";
-        private const string MessageFormat = "Remove this useless conditional.";
+        private const string MessageFormat = "请去掉无用的条件检测。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

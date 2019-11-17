@@ -31,7 +31,7 @@ namespace SonarAnalyzer.Rules
 {
     public abstract class MutableFieldsShouldNotBe : SonarDiagnosticAnalyzer
     {
-        protected const string MessageFormat = "Use an immutable collection or reduce the accessibility of the field(s) {0}.";
+        protected const string MessageFormat = "使用不可变的集合或减少字段 {0} 的可访问性。";
 
         private static readonly ImmutableArray<KnownType> MutableBaseTypes =
             ImmutableArray.Create(

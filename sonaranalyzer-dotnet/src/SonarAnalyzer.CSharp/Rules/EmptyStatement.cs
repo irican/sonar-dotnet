@@ -32,7 +32,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class EmptyStatement : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1116";
-        private const string MessageFormat = "Remove this empty statement.";
+        private const string MessageFormat = "请去掉这个空语句。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class UnusedReturnValue : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3241";
-        private const string MessageFormat = "Change return type to 'void'; not a single caller uses the returned value.";
+        private const string MessageFormat = "请把返回值设为'void'类型，此返回值没有被任何调用者使用。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

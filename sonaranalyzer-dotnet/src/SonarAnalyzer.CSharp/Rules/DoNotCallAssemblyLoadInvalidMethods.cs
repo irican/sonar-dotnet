@@ -32,7 +32,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DoNotCallAssemblyLoadInvalidMethods : DoNotCallMethodsCSharpBase
     {
         internal const string DiagnosticId = "S3885";
-        private const string MessageFormat = "Replace this call to '{0}' with 'Assembly.Load'.";
+        private const string MessageFormat = "请使用'Assembly.Load'替换此调用 '{0}' 。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

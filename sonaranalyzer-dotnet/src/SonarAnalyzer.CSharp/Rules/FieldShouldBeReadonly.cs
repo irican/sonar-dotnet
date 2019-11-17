@@ -38,7 +38,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class FieldShouldBeReadonly : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2933";
-        private const string MessageFormat = "Make '{0}' 'readonly'.";
+        private const string MessageFormat = "请令 '{0}' 字段为 'readonly'。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);
