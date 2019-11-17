@@ -1,0 +1,44 @@
+<p><code>IDisposable</code> 对象应该被清理（在有一些很少见的情况下不清理是好的，其中大多数是 <code>Task</code>）。如果一个类有一个 <code>IDisposable</code> 字段，可能会有两种情况：</p>
+<p>- 该类监视着一个由另一个类负责的字段。 </p>
+<p>- 该类拥有这个字段，因此由它负责对其调用 <code>Dispose</code>。</p>
+<p>在第二种情况下，该类确保 <code>Dispose</code> 被调用的最安全的方法是在该类自己的 <code>Dispose</code> 函数中调用它，从而使其自身 <code>IDisposable</code>。如果一个类创建了被 <code>IDisposable</code> 引用的对象，那么它就被视为拥有一个IDisposable字段资源。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+public class ResourceHolder   // 不合规，没有实现IDisposable
+{
+  private FileStream fs;  // 该成员不会被Dispose
+  public void OpenResource(string path)
+  {
+    this.fs = new FileStream(path, FileMode.Open); // I create the FileStream, I'm owning it
+  }
+  public void CloseResource()
+  {
+    this.fs.Close();
+  }
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+public class ResourceHolder : IDisposable
+{
+&nbsp;&nbsp;private FileStream fs;
+&nbsp;&nbsp;public void OpenResource(string path)
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;this.fs = new FileStream(path, FileMode.Open); // I create the FileStream, I'm owning it
+&nbsp;&nbsp;}
+&nbsp;&nbsp;public void CloseResource()
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;this.fs.Close();
+&nbsp;&nbsp;}
+
+&nbsp;&nbsp;public void Dispose()
+&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;this.fs.Dispose();
+&nbsp;&nbsp;}
+}
+</pre>
+<h2>请参阅</h2>
+<ul>
+  <li> <a href="http://cwe.mitre.org/data/definitions/459.html">MITRE, CWE-459</a> - Incomplete Cleanup </li>
+</ul>
+
