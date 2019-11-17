@@ -1,5 +1,5 @@
 {
-  "title": "Tests should include assertions",
+  "title": "测试中应包含断言",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

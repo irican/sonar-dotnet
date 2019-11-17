@@ -1,5 +1,5 @@
 {
-  "title": "Overriding members should do more than simply call the same member in the base class",
+  "title": "重写的成员不能只是调用基类里的成员",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

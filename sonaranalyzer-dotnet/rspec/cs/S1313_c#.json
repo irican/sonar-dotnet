@@ -1,5 +1,5 @@
 {
-  "title": "Using hardcoded IP addresses is security-sensitive",
+  "title": "使用硬编码的IP地址是安全敏感的（security-sensitive）",
   "type": "SECURITY_HOTSPOT",
   "status": "ready",
   "remediation": {
@@ -7,19 +7,10 @@
     "constantCost": "30min"
   },
   "tags": [
-    "cert",
-    "owasp-a3"
-  ],
-  "standards": [
-    "OWASP Top Ten"
+    "cert"
   ],
   "defaultSeverity": "Major",
   "ruleSpecification": "RSPEC-1313",
   "sqKey": "S1313",
-  "scope": "Main",
-  "securityStandards": {
-    "OWASP": [
-      "A3"
-    ]
-  }
+  "scope": "Main"
 }

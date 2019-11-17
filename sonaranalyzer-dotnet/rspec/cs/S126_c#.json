@@ -1,5 +1,5 @@
 {
-  "title": "\"if ... else if\" constructs should end with \"else\" clauses",
+  "title": "\"if ... else if\" 结构应以 \"else\" 语句结尾",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {
@@ -7,7 +7,6 @@
     "constantCost": "5min"
   },
   "tags": [
-    "based-on-misra",
     "misra",
     "cert"
   ],

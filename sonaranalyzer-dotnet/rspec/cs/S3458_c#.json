@@ -1,5 +1,5 @@
 {
-  "title": "Empty \"case\" clauses that fall through to the \"default\" should be omitted",
+  "title": "跳转到 \"default\" 的空 \"case\" 子句应省略",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

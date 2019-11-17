@@ -1,5 +1,5 @@
 {
-  "title": "Sequential tests should not check the same condition",
+  "title": "对同一条件不应进行连续的检查",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

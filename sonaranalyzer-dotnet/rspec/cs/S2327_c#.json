@@ -1,5 +1,5 @@
 {
-  "title": "\"try\" statements with identical \"catch\" and\/or \"finally\" blocks should be merged",
+  "title": "有相同的 \"catch\" 和\/或 \"finally\" 的\"try\" 语句块应该合并",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

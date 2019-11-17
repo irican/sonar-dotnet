@@ -1,5 +1,5 @@
 {
-  "title": "Base class methods should not be hidden",
+  "title": "类方法不应该被隐藏",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

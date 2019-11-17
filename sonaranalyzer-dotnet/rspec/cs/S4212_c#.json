@@ -1,5 +1,5 @@
 {
-  "title": "Serialization constructors should be secured",
+  "title": "应该保护序列化构造函数",
   "type": "VULNERABILITY",
   "status": "ready",
   "remediation": {

@@ -1,10 +1,10 @@
-<p>It is needlessly complex to invert the result of a boolean comparison. The opposite comparison should be made instead.</p>
-<h2>Noncompliant Code Example</h2>
+<p>给布尔类型的比较结果取反会显得整个式子很复杂，而且毫无必要。直接与相反的值比较即可。</p>
+<h2>不合规的代码示例</h2>
 <pre>
-if ( !(a == 2)) { ...}  // Noncompliant
-bool b = !(i &lt; 10);  // Noncompliant
+if ( !(a == 2)) { ...}  // 不合规
+bool b = !(i &lt; 10);  // 不合规
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 if (a != 2) { ...}
 bool b = (i &gt;= 10);

@@ -1,0 +1,57 @@
+<p>如果可以将扩展方法添加到类本身，那么创建扩展方法就没有什么意义了。</p>
+<p>当扩展在与其扩展的类相同的名称空间中声明时，此规则会引发问题。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+namespace MyLibrary
+{
+    public class Foo
+    {
+        // ...
+    }
+
+    public static class MyExtensions
+    {
+        public static void Bar(this Foo a) // 不合规
+        {
+            // ...
+        }
+    }
+}
+</pre>
+<h2>合规的解决方案</h2>
+<p>使用单独的命名空间：</p>
+<pre>
+namespace MyLibrary
+{
+    public class Foo
+    {
+        // ...
+    }
+}
+
+namespace Helpers
+{
+    public static class MyExtensions
+    {
+        public void Bar()
+        {
+            // ...
+        }
+    }
+}
+</pre>
+<p>合并类中的方法：</p>
+<pre>
+namespace MyLibrary
+{
+    public class Foo
+    {
+        // ...
+        public void Bar()
+        {
+            // ...
+        }
+    }
+}
+</pre>
+

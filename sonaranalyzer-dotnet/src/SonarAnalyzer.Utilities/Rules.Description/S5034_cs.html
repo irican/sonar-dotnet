@@ -1,0 +1,44 @@
+<p><code>ValueTask&lt;TResult&gt;</code> 在 .NET Core 2.0 版本时被引入，当函数同步返回它们的结果时，使用它能够<a href="https://devblogs.microsoft.com/dotnet/understanding-the-whys-whats-and-whens-of-valuetask/">优化存储分配</a>。</p>
+<p><code>ValueTask</code> 和 <code>ValueTask&lt;TResult&gt;</code> <strong>不能</strong> 这样使用，会导致条件竞争：</p>
+<ul>
+  <li> 在<code>ValueTask / ValueTask&lt;TResult&gt;</code>*对象上调用多次<code>await</code>。 与<code>Task / Task&lt;TResult&gt;</code>不同（对它们调用多次<code>await</code>可以得到相同的结果），被包装的对象可能被其他操作复用。
+  </li>
+  <li> 在 <code>ValueTask / ValueTask&lt;TResult&gt;</code>*对象上并行调用<code>await</code>。 其中的对象不是线程安全的。而且可能产生与多次在<code>ValueTask / ValueTask&lt;TResult&gt;</code>对象上调用<code>await</code>一样的效果。你可以使用<code>Task / Task&lt;TResult&gt;</code>对象来满足并行<code>await</code>的需求。
+ </li>
+  <li> 未经检查操作是否结束就调用 <code>.Result</code> or <code>.GetAwaiter().GetResult()</code> 。 <code>IValueTaskSource / IValueTaskSource&lt;TResult&gt;</code> 的实现不应该在操作结束前阻塞。另一方面， <code>Task /Task&lt;TResult&gt;</code> 在任务完成前，一直是阻塞状态。</li>
+</ul>
+<p>推荐在函数返回调用await时，或调用<code>ConfigureAwait(false)</code>时，或调用<code>.AsTask()</code>时使用<code>ValueTask / ValueTask&lt;TResult&gt;</code>对象。</p>
+<p>当<code>ValueTask / ValueTask&lt;TResult&gt;</code> 实例被作如下操作时报告问题：</p>
+<ul>
+  <li> 实例被等待多次。 </li>
+  <li> 调用 <code>AsTask</code> 多次。 </li>
+  <li> 调用 <code>.Result</code> or <code>.GetAwaiter().GetResult()</code> 多次。 </li>
+  <li> 操作结束前就调用 <code>.Result</code> 或 <code>.GetAwaiter().GetResult()</code> 。</li>
+  <li> 使用多于一种上述方法消耗实例。</li>
+</ul>
+<h2>不合规的代码示例</h2>
+<pre>
+ValueTask&lt;int&gt; vt = SomeValueTaskReturningMethodAsync();
+int result = await vt;
+int result2 = await vt; // 不合规，变量被等待多次
+
+int value = SomeValueTaskReturningMethodAsync().GetAwaiter().GetResult(); // 不合规，未经确定任务是否完成就调用GetAwaiter().GetResult()
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+int result = await SomeValueTaskReturningMethodAsync();
+
+int result = await SomeValueTaskReturningMethodAsync().ConfigureAwait(false);
+
+Task&lt;int&gt; t = SomeValueTaskReturningMethodAsync().AsTask();
+</pre>
+<h2>例外</h2>
+<p>当 <code>ValueTask / ValueTask&lt;TResult&gt;</code> 在循环中被等待多次时，不报告问题。</p>
+<h2>请参阅</h2>
+<ul>
+  <li> <a href="https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.valuetask-1">ValueTask&lt;TResult&gt; official documentation</a>
+  </li>
+  <li> <a href="https://blogs.msdn.microsoft.com/dotnet/2018/11/07/understanding-the-whys-whats-and-whens-of-valuetask/">Understanding the Whys,
+  Whats, and Whens of ValueTask</a> </li>
+</ul>
+

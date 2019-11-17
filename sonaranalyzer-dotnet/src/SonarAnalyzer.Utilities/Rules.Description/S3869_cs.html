@@ -1,13 +1,11 @@
-<p>Not surprisingly, the <code>SafeHandle.DangerousGetHandle</code> method is dangerous. That's because it may not return a valid handle. Using it can
-lead to leaks and vulnerabilities. While it is possible to use the method successfully, it's extremely difficult to do correctly, so the method should
-simply be avoided altogether.</p>
-<h2>Noncompliant Code Example</h2>
+<p><code>SafeHandle.DangerousGetHandle</code> 方法很危险，这一点并不奇怪。因为该方法可能无法返回有效的句柄，使用它可能会产生泄露和漏洞。成功调用此方法并不困难，但正确地使用它则非常非常困难。因此应该直接避免使用它。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 static void Main(string[] args)
 {
     System.Reflection.FieldInfo fieldInfo = ...;
     SafeHandle handle = (SafeHandle)fieldInfo.GetValue(rKey);
-    IntPtr dangerousHandle = handle.DangerousGetHandle();  // Noncompliant
+    IntPtr dangerousHandle = handle.DangerousGetHandle();  // 不合规
 }
 </pre>
 

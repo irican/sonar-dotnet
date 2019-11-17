@@ -1,5 +1,5 @@
 {
-  "title": "Child class fields should not differ from parent class fields only by capitalization",
+  "title": "子类字段与父类字段不应仅通过大小写不同",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

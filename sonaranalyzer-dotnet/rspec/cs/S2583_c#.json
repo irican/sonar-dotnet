@@ -1,5 +1,5 @@
 {
-  "title": "Conditionally executed blocks should be reachable",
+  "title": "条件执行的语句块应是可以到达并执行的",
   "type": "BUG",
   "status": "ready",
   "remediation": {
@@ -8,7 +8,6 @@
   },
   "tags": [
     "cwe",
-    "based-on-misra",
     "misra",
     "cert",
     "unused",

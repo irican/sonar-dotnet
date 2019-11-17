@@ -1,5 +1,5 @@
 {
-  "title": "\"PartCreationPolicyAttribute\" should be used with \"ExportAttribute\"",
+  "title": "\"PartCreationPolicyAttribute\"应该与\"ExportAttribute\"一起使用",
   "type": "BUG",
   "status": "ready",
   "remediation": {

@@ -1,5 +1,5 @@
 {
-  "title": "Objects should not be disposed more than once",
+  "title": "对象不应被清理多次",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

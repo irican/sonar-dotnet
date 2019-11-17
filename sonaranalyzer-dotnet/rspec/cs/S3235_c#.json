@@ -1,5 +1,5 @@
 {
-  "title": "Redundant parentheses should not be used",
+  "title": "不要出现无用的圆括号",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

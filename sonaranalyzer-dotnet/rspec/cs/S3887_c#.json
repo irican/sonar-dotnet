@@ -1,5 +1,5 @@
 {
-  "title": "Mutable, non-private fields should not be \"readonly\"",
+  "title": "可变的非private字段不应是 \"readonly\" 的",
   "type": "BUG",
   "status": "ready",
   "remediation": {

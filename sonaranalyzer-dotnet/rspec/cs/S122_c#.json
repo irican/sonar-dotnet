@@ -1,5 +1,5 @@
 {
-  "title": "Statements should be on separate lines",
+  "title": "多条语句要分多行排布",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

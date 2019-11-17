@@ -1,19 +1,18 @@
-<p>Properties with only setters are confusing and counterintuitive. Instead, a property getter should be added if possible, or the property should be
-replaced with a setter method.</p>
-<h2>Noncompliant Code Example</h2>
+<p>只有setter的属性是不符合人们的使用习惯的，会让人感到困惑。相反地，如果可能的话应添加一个getter，或者用setter方法替换该属性。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 class Program
 {
-    public int Foo  //Non-Compliant
+    public int Foo  //不合规
     {
         set
         {
-            // ... some code ...
+            // ……一些代码……
         }
     }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 class Program
 {
@@ -21,16 +20,16 @@ class Program
 
     public void SetFoo(int value)
     {
-        // ... some code ...
+        // ……一些代码……
         foo = value;
     }
 }
 </pre>
-<p>or</p>
+<p>或者</p>
 <pre>
 class Program
 {
-  public int Foo { get; set; } // Compliant
+  public int Foo { get; set; } // 合规
 }
 </pre>
 

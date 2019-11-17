@@ -1,5 +1,5 @@
 {
-  "title": "TestCases should contain tests",
+  "title": "测试用例应包含测试方法",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

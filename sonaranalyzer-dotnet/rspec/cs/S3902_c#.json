@@ -1,5 +1,5 @@
 {
-  "title": "\"Assembly.GetExecutingAssembly\" should not be called",
+  "title": "不应调用 \"Assembly.GetExecutingAssembly\"",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

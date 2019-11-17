@@ -1,5 +1,5 @@
 {
-  "title": "Getters and setters should access the expected fields",
+  "title": "Getters和setter应该访问预期的字段",
   "type": "BUG",
   "status": "ready",
   "remediation": {

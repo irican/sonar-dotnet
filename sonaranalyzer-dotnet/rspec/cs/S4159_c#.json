@@ -1,5 +1,5 @@
 {
-  "title": "Classes should implement their \"ExportAttribute\" interfaces",
+  "title": "类应该实现它们的\"ExportAttribute\"接口",
   "type": "BUG",
   "status": "ready",
   "remediation": {

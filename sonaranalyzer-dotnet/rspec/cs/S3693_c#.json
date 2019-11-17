@@ -1,5 +1,5 @@
 {
-  "title": "Exception constructors should not throw exceptions",
+  "title": "异常的构造函数里不应再抛出异常",
   "type": "BUG",
   "status": "ready",
   "remediation": {

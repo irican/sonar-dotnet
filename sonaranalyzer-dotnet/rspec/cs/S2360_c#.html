@@ -1,20 +1,16 @@
-<p>The overloading mechanism should be used in place of optional parameters for several reasons:</p>
+<p>应使用重载机制来代替可选参数的使用，这样做有以下几个原因：</p>
 <ul>
-  <li> Optional parameter values are baked into the method call site code, thus, if a default value has been changed, all referencing assemblies need
-  to be rebuilt, otherwise the original values will be used. </li>
-  <li> The Common Language Specification (CLS) allows compilers to ignore default parameter values, and thus require the caller to explicitly specify
-  the values. For example, if you want to consume a method with default argument from another .NET compatible language (for instance C++/CLI), you
-  will have to provide all arguments. When using method overloads, you could achieve similar behavior as default arguments. </li>
-  <li> Optional parameters prevent muddying the definition of the function contract. Here is a simple example: if there are two optional parameters,
-  when one is defined, is the second one still optional or mandatory? </li>
+  <li> 可选参数的值会被加入到方法调用处的代码中，因此，如果更改了默认值，所有的引用程序集（referencing assemblies）都需要重建，否则会使用最初的原始值。 </li>
+  <li> 公共语言规范（CLS）允许编译器忽视默认的参数值，因此它也要求调用者显式地指定这些值。例如，如果你想从另一种.NET兼容的语言（如C++/CLI）中使用带默认参数的方法，你就需要提供所有的参数。在使用方法重载时，你可以实现与默认参数类似的性质。 </li>
+  <li> 可选参数会防止混淆函数约定的定义。举个简单的例子：如果有两个可选参数，其中一个被定义了，那么另一个是可选的还是必需的？</li>
 </ul>
-<h2>Noncompliant Code Example</h2>
+<h2>不合规的代码示例</h2>
 <pre>
-void Notify(string company, string office = "QJZ") // Noncompliant
+void Notify(string company, string office = "QJZ") // 不合规
 {
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 void Notify(string company)
 {
@@ -24,6 +20,6 @@ void Notify(string company, string office)
 {
 }
 </pre>
-<h2>Exceptions</h2>
-<p>The rule ignores non externally visible methods.</p>
+<h2>例外</h2>
+<p>此规则忽略外部不可见的方法。</p>
 

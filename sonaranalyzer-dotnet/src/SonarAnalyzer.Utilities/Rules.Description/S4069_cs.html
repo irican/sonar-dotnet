@@ -1,0 +1,85 @@
+<p>操作符重载很方便，但不幸的是不能跨语言移植。要从另一种语言访问相同的功能，需要提供一个替代的命名方法，遵循约定：</p>
+<table>
+  <tbody>
+    <tr>
+      <th>操作符</th>
+      <th>方法名</th>
+    </tr>
+    <tr>
+      <th><code>+</code> (二进制)</th>
+      <th>Add</th>
+    </tr>
+    <tr>
+      <th><code>&amp;</code></th>
+      <th>BitwiseAnd</th>
+    </tr>
+    <tr>
+      <th><code>|</code></th>
+      <th>BitwiseOr</th>
+    </tr>
+    <tr>
+      <th><code>/</code></th>
+      <th>Divide</th>
+    </tr>
+    <tr>
+      <th><code>==</code></th>
+      <th>Equals</th>
+    </tr>
+    <tr>
+      <th><code>^</code></th>
+      <th>Xor</th>
+    </tr>
+    <tr>
+      <th><code>&gt;</code></th>
+      <th>Compare</th>
+    </tr>
+    <tr>
+      <th><code>&gt;=</code></th>
+      <th>Compare</th>
+    </tr>
+    <tr>
+      <th><code>!=</code></th>
+      <th>Equals</th>
+    </tr>
+    <tr>
+      <th><code>&lt;</code></th>
+      <th>Compare</th>
+    </tr>
+    <tr>
+      <th><code>&lt;=</code></th>
+      <th>Compare</th>
+    </tr>
+    <tr>
+      <th><code>!</code></th>
+      <th>LogicalNot</th>
+    </tr>
+    <tr>
+      <th><code>%</code></th>
+      <th>Mod</th>
+    </tr>
+    <tr>
+      <th><code>*</code> (二进制)</th>
+      <th>Multiply</th>
+    </tr>
+    <tr>
+      <th><code>~</code></th>
+      <th>OnesComplement</th>
+    </tr>
+    <tr>
+      <th><code>-</code> (二进制)</th>
+      <th>Subtract</th>
+    </tr>
+    <tr>
+      <th><code>-</code> (一目的)</th>
+      <th>Negate</th>
+    </tr>
+    <tr>
+      <th><code>+</code> (一目的)</th>
+      <th>Plus</th>
+    </tr>
+  </tbody>
+</table>
+<p>当没有预期的命名替代方法而存在操作符重载时，此规则会引发问题。</p>
+<h2>例外</h2>
+<p>当类实现比较运算符<code>&gt;</code>，<code>&lt;</code>，<code>&gt;=</code> 和 <code>&lt;=</code>包含一个命名为<code>CompareTo</code>的方法时，此规则不会引起问题。</p>
+

@@ -1,5 +1,5 @@
 {
-  "title": "Methods and properties should be named in PascalCase",
+  "title": "方法和属性应以帕斯卡命名法命名",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

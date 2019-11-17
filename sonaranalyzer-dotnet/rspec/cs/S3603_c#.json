@@ -1,5 +1,5 @@
 {
-  "title": "Methods with \"Pure\" attribute should return a value ",
+  "title": "带有 \"Pure\" 特性的方法应有返回值",
   "type": "BUG",
   "status": "ready",
   "remediation": {

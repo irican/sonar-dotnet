@@ -1,5 +1,5 @@
 {
-  "title": "Generics should be used when appropriate",
+  "title": "应该在适当的时候使用泛型",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

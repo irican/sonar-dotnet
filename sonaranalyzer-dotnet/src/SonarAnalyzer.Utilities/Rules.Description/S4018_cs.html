@@ -1,0 +1,30 @@
+<p>确定泛型方法类型的最佳方法是基于传递给方法的参数类型进行推理。当参数列表中缺少参数类型时，这是不可能的。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+using System;
+
+namespace MyLibrary
+{
+  public class Foo
+  {
+    public void MyMethod&lt;T&gt;()  // 不合规
+    {
+    }
+  }
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+using System;
+
+namespace MyLibrary
+{
+  public class Foo
+  {
+    public void MyMethod&lt;T&gt;(T param)
+    {
+    }
+  }
+}
+</pre>
+

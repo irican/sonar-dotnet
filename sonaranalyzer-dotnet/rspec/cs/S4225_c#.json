@@ -1,5 +1,5 @@
 {
-  "title": "Extension methods should not extend \"object\"",
+  "title": "扩展方法不应该扩展\"object\"",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

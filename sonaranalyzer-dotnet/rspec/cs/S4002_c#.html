@@ -1,17 +1,17 @@
-<p>This rule raises an issue when a disposable type contains fields of the following types and does not implement a finalizer:</p>
+<p>当一次性类型包含以下类型的字段，且未实现终结器时，此规则会引发一个问题：</p>
 <ul>
   <li> <code>System.IntPtr</code> </li>
   <li> <code>System.UIntPtr</code> </li>
   <li> <code>System.Runtime.InteropService.HandleRef</code> </li>
 </ul>
-<h2>Noncompliant Code Example</h2>
+<h2>不合规的代码示例</h2>
 <pre>
 using System;
 using System.Runtime.InteropServices;
 
 namespace MyLibrary
 {
-  public class Foo : IDisposable // Noncompliant: Doesn't have a finalizer
+  public class Foo : IDisposable // 不合规: 没有终结器
   {
     private IntPtr myResource;
     private bool disposed = false;
@@ -20,11 +20,11 @@ namespace MyLibrary
     {
       if (!disposed)
       {
-        // Dispose of resources held by this instance.
+        // 处理此实例所持有的资源。
         FreeResource(myResource);
         disposed = true;
 
-        // Suppress finalization of this disposed instance.
+        // 禁止已处理实例的终结。
         if (disposing)
         {
           GC.SuppressFinalize(this);
@@ -38,7 +38,7 @@ namespace MyLibrary
   }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 using System;
 using System.Runtime.InteropServices;
@@ -54,11 +54,11 @@ namespace MyLibrary
     {
       if (!disposed)
       {
-        // Dispose of resources held by this instance.
+        // 处理此实例所持有的资源。
         FreeResource(myResource);
         disposed = true;
 
-        // Suppress finalization of this disposed instance.
+        // 禁止已处理实例的终结。
         if (disposing)
         {
           GC.SuppressFinalize(this);
@@ -73,8 +73,8 @@ namespace MyLibrary
   }
 }
 </pre>
-<h2>See</h2>
+<h2>请参阅</h2>
 <ul>
-  <li> Related: {rule:csharpsquid:S3881} - "IDisposable" should be implemented correctly </li>
+  <li> 相关项: {rule:csharpsquid:S3881} - "IDisposable" 接口应被正确实现 </li>
 </ul>
 

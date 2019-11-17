@@ -1,0 +1,36 @@
+<p>嵌套的代码块可用于创建一个新的作用域，限制其中变量的可见性。在方法中使用这个特性意味着这个方法做了太多的事情，应该将它们分离到几个小的函数中。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+public void Evaluate()
+{
+    /* ... */
+    {     // Noncompliant - nested code block '{' ... '}'
+          int a = stack.pop();
+          int b = stack.pop();
+          int result = a + b;
+          stack.push(result);
+    }
+    /* ... */
+}
+
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+public void Evaluate()
+{
+    /* ... */
+    StackAdd();
+    /* ... */
+}
+
+private void StackAdd()
+{
+      int a = stack.pop();
+      int b = stack.pop();
+      int result = a + b;
+      stack.push(result);
+}
+</pre>
+<h2>例外</h2>
+<p>在"case"语句后使用嵌套代码块是允许的。</p>
+

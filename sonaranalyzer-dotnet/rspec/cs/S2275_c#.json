@@ -1,5 +1,5 @@
 {
-  "title": "Composite format strings should not lead to unexpected behavior at runtime",
+  "title": "复合格式化字符串不应在运行导致意外的行为",
   "type": "BUG",
   "status": "ready",
   "remediation": {

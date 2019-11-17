@@ -1,5 +1,5 @@
 {
-  "title": "\"static readonly\" constants should be \"const\" instead",
+  "title": "\"static readonly\" 常量应改写为 \"const\" 类型",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

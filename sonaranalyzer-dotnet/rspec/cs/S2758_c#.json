@@ -1,5 +1,5 @@
 {
-  "title": "The ternary operator should not return the same value regardless of the condition",
+  "title": "三元运算符不应无视条件并总返回一样的结果",
   "type": "BUG",
   "status": "deprecated",
   "remediation": {

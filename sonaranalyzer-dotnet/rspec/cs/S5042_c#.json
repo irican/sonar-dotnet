@@ -1,5 +1,5 @@
 {
-  "title": "Expanding archive files is security-sensitive",
+  "title": "扩展存档文件是安全敏感的",
   "type": "SECURITY_HOTSPOT",
   "status": "ready",
   "remediation": {
@@ -8,23 +8,18 @@
   },
   "tags": [
     "cwe",
-    "owasp-a1",
     "cert"
   ],
   "standards": [
-    "CWE",
-    "OWASP Top Ten"
+    "CWE"
   ],
   "defaultSeverity": "Critical",
   "ruleSpecification": "RSPEC-5042",
   "sqKey": "S5042",
-  "scope": "Main",
+  "scope": "All",
   "securityStandards": {
     "CWE": [
       409
-    ],
-    "OWASP": [
-      "A1"
     ]
   }
 }

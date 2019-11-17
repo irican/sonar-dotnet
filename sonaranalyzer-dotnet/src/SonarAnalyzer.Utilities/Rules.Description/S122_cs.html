@@ -1,19 +1,19 @@
-<p>For better readability, do not put more than one statement on a single line.</p>
-<h2>Noncompliant Code Example</h2>
+<p>为了增强可读性，每行只准写入一条语句。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 if(someCondition) DoSomething();
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 if(someCondition)
 {
   DoSomething();
 }
 </pre>
-<h2>Exceptions</h2>
-<p>Anonymous functions containing a single statement are ignored. Block statements are not considered either.</p>
+<h2>例外</h2>
+<p>此规则忽略只有一行的匿名函数和块语句。</p>
 <pre>
-Func&lt;object, bool&gt; item1 = o =&gt; { return true; }; // Compliant
-Func&lt;object, bool&gt; item1 = o =&gt; { var r = false; return r; }; // Noncompliant
+Func&lt;object, bool&gt; item1 = o =&gt; { return true; }; // 合规
+Func&lt;object, bool&gt; item1 = o =&gt; { var r = false; return r; }; //　不合规
 </pre>
 

@@ -1,5 +1,5 @@
 {
-  "title": "Strings should be normalized to uppercase",
+  "title": "字符串应该规范化为大写",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

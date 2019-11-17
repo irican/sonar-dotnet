@@ -1,5 +1,5 @@
 {
-  "title": "Types should be named in PascalCase",
+  "title": "类型名命名应用帕斯卡命名法",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

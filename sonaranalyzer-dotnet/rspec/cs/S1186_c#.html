@@ -1,10 +1,10 @@
-<p>There are several reasons for a method not to have a method body:</p>
+<p>方法的主体（method body）为空可能是由于以下原因：</p>
 <ul>
-  <li> It is an unintentional omission, and should be fixed. </li>
-  <li> It is not yet, or never will be, supported. In this case a <code>NotSupportedException</code> should be thrown. </li>
-  <li> The method is an intentionally-blank override. In this case a nested comment should explain the reason for the blank override. </li>
+  <li> 无心的省略，之后应该将其补全。 </li>
+  <li> 该方法尚不受支持或永远不受支持。这种情况下应抛出一个 <code>NotSupportedException</code> 异常。 </li>
+  <li> 该方法是有意留为空白的重写方法。这种情况下应有嵌套的注释以说明这样做的原因。 </li>
 </ul>
-<h2>Noncompliant Code Example</h2>
+<h2>不合规的代码示例</h2>
 <pre>
 public override void DoSomething()
 {
@@ -14,11 +14,11 @@ public override void DoSomethingElse()
 {
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 public override void DoSomething()
 {
-  // Do nothing because of X and Y.
+  // 此处由于某种原因没有操作。
 }
 
 public override void DoSomethingElse()
@@ -26,11 +26,11 @@ public override void DoSomethingElse()
   throw new NotSupportedException();
 }
 </pre>
-<h2>Exceptions</h2>
-<p>The following methods are ignored:</p>
+<h2>例外</h2>
+<p>此规则忽略以下方法：</p>
 <ul>
-  <li> empty <code>virtual</code> methods, </li>
-  <li> empty methods that override an <code>abstract</code> method, </li>
-  <li> empty overrides in test assemblies. </li>
+  <li> 空的 <code>virtual</code> 方法， </li>
+  <li> 重写了 <code>abstract</code> 方法的空方法， </li>
+  <li> 测试程序集（test assemblies）中空的重写方法。 </li>
 </ul>
 

@@ -1,0 +1,42 @@
+<p>为确保清晰，所有对于同一方法的重载应该放在一起，这样用户和维护者就可以很快理解所有可能的选项。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+interface IMyInterface
+{
+  int DoTheThing(); // 不合规 - 重载方法声明没有放在一起
+  string DoTheOtherThing();
+  int DoTheThing(string s);
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+interface IMyInterface
+{
+  int DoTheThing();
+  int DoTheThing(string s);
+  string DoTheOtherThing();
+}
+</pre>
+<h2>例外</h2>
+<p>将相同访问等级的方法放在一起也是编程的常例，所以访问修饰符不同的重载方法不报告问题。</p>
+<p>例如</p>
+<pre>
+class MyClass
+{
+  private void DoTheThing(string s) // 没问题 - 这是私有（private）方法，另外一个是公共的（public）
+  {
+    // ...
+  }
+
+  private string DoTheOtherThing(string s)
+  {
+    // ...
+  }
+
+  public void DoTheThing()
+  {
+    // ...
+  }
+}
+</pre>
+

@@ -1,5 +1,5 @@
 {
-  "title": "\"static\" fields should be initialized inline",
+  "title": "\"static\" 字段应进行内联的初始化",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

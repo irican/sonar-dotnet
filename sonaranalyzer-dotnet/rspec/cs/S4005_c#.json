@@ -1,5 +1,5 @@
 {
-  "title": "\"System.Uri\" arguments should be used instead of strings",
+  "title": "应该使用\"System.Uri\"参数代替字符串",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

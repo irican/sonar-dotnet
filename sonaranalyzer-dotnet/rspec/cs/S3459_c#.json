@@ -1,5 +1,5 @@
 {
-  "title": "Unassigned members should be removed",
+  "title": "未赋值的成员应该删除",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

@@ -1,5 +1,5 @@
 {
-  "title": "\"Explicit\" conversions of \"foreach\" loops should not be used",
+  "title": "\"foreach\" 循环中的 \"Explicit\" 类型转换不应使用",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

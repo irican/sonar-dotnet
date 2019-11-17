@@ -1,11 +1,10 @@
-<p>Calling <code>Environment.Exit(exitCode)</code> or <code>Application.Exit()</code> terminates the process and returns an exit code to the operating
-system..</p>
-<p>Each of these methods should be used with extreme care, and only when the intent is to stop the whole application.</p>
-<h2>Noncompliant Code Example</h2>
+<p><code>Environment.Exit(exitCode)</code> 或 <code>Application.Exit()</code> 的调用会结束进程并给操作系统返回一个返回码（exit code）。</p>
+<p>这样的方法在使用时应该非常小心，只有在你想停止整个应用程序的时候才能使用。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 Environment.Exit(0);
 Application.Exit();
 </pre>
-<h2>Exceptions</h2>
-<p>These methods are ignored inside <code>Main</code>.</p>
+<h2>例外</h2>
+<p>在 <code>Main</code> 内使用时被此规则忽略。</p>
 

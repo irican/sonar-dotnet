@@ -1,0 +1,38 @@
+<p>根据基于任务的异步模式(TAP)，返回 <code>System.Threading.Tasks.Task</code> 或<code>System.Threading.Tasks.Task&lt;TResult&gt;</code> 的方法被认为是“异步的”。这些方法应该使用<code>Async</code>后缀。相反，不返回此类任务的方法的名称中不应该有"Async"后缀。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+using System;
+using  System.Threading.Tasks;
+
+namespace myLibrary
+{
+
+  public class Foo
+  {
+    public Task Read(byte [] buffer, int offset, int count, // 不合规
+                                CancellationToken cancellationToken)
+  }
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+using System;
+using  System.Threading.Tasks;
+
+namespace myLibrary
+{
+
+  public class Foo
+  {
+    public Task ReadAsync(byte [] buffer, int offset, int count, CancellationToken cancellationToken)
+  }
+}
+</pre>
+<h2>例外</h2>
+<p>当方法是重写或接口实现的一部分时，此规则不会引发问题，因为它不能重命名。</p>
+<h2>请参阅</h2>
+<ul>
+  <li> <a href="https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap">Task-based
+  Asynchronous Pattern</a> </li>
+</ul>
+

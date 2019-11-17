@@ -1,5 +1,5 @@
 {
-  "title": "Optional parameters should not be used",
+  "title": "不要使用可选参数",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

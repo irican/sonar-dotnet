@@ -1,5 +1,5 @@
 {
-  "title": "Static fields should appear in the order they must be initialized ",
+  "title": "静态字段的出现顺序应保证它能被初始化 ",
   "type": "BUG",
   "status": "ready",
   "remediation": {

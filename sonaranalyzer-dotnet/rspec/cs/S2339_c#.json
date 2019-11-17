@@ -1,5 +1,5 @@
 {
-  "title": "Public constant members should not be used",
+  "title": "不要使用公有的常量字段",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

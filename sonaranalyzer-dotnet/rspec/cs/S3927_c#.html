@@ -1,35 +1,33 @@
-<p>Serialization event handlers that don't have the correct signature will simply not be called, thus bypassing any attempts to augment the automated
-de/serialization.</p>
-<p>This rule raises issue when a method marked with one of the following attributes is not <code>private</code>, does not return <code>void</code>,
-has type parameters, or does not have a single parameter of type <code>System.Runtime.Serialization.StreamingContext</code>:</p>
+<p>没有正确签名的序列化事件处理器（serialization event handler）不会被简单地调用，因此绕过了任何增加自动化的序列化／反序列化的尝试。</p>
+<p>当某个方法不是 <code>private</code> 型、不返回 <code>void</code>、拥有类型参数或没有单个 <code>System.Runtime.Serialization.StreamingContext</code> 类型的参数，却拥有以下特性之一时，此规则会引发一个问题：</p>
 <ul>
   <li> <code>System.Runtime.Serialization.OnSerializingAttribute</code> </li>
   <li> <code>System.Runtime.Serialization.OnSerializedAttribute</code> </li>
   <li> <code>System.Runtime.Serialization.OnDeserializingAttribute</code> </li>
   <li> <code>System.Runtime.Serialization.OnDeserializedAttribute</code> </li>
 </ul>
-<h2>Noncompliant Code Example</h2>
+<h2>不合规的代码示例</h2>
 <pre>
 [Serializable]
 public class Foo
 {
     [OnSerializing]
-    public void OnSerializing(StreamingContext context) {} // Noncompliant should be private
+    public void OnSerializing(StreamingContext context) {} // 不合规，应为private型
 
     [OnSerialized]
-    int OnSerialized(StreamingContext context) {} // Noncompliant should return void
+    int OnSerialized(StreamingContext context) {} // 不合规，应返回void
 
     [OnDeserializing]
-    void OnDeserializing() {} // Noncompliant should have a single parameter of type StreamingContext
+    void OnDeserializing() {} // 不合规，应有一个StreamingContext类型的参数
 
     [OnSerializing]
-    public void OnSerializing2&lt;T&gt;(StreamingContext context) {} // Noncompliant should have no type parameters
+    public void OnSerializing2&lt;T&gt;(StreamingContext context) {} // 不合规，不应有类型参数
 
     [OnDeserialized]
-    void OnDeserialized(StreamingContext context, string str) {} // Noncompliant should have a single parameter of type StreamingContext
+    void OnDeserialized(StreamingContext context, string str) {} // 不合规，应有一个StreamingContext类型的参数
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 [Serializable]
 public class Foo

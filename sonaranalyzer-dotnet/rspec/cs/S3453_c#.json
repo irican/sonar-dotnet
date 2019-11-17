@@ -1,5 +1,5 @@
 {
-  "title": "Classes should not have only \"private\" constructors",
+  "title": "类不应只有 \"private\" 的构造函数",
   "type": "BUG",
   "status": "ready",
   "remediation": {

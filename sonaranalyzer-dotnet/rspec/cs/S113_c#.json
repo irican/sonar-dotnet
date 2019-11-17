@@ -1,5 +1,5 @@
 {
-  "title": "Files should contain an empty newline at the end",
+  "title": "文件的末尾应有一个空行",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

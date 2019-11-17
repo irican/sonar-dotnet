@@ -1,0 +1,14 @@
+<p><code>is</code>检查没有必要和null检查一起完成，<code>null</code> 不是任何对象的实例，null检查是多余的。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+if (x != null &amp;&amp; x is MyClass) { ... }  // 不合规
+
+if (x == null || !(x is MyClass)) { ... } // 不合规
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+if (x is MyClass) { ... }
+
+if (!(x is MyClass)) { ... }
+</pre>
+

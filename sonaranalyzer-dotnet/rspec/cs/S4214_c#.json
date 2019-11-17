@@ -1,5 +1,5 @@
 {
-  "title": "\"P\/Invoke\" methods should not be visible",
+  "title": "\"P\/Invoke\" 方法不应可见",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

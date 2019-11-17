@@ -1,5 +1,5 @@
 {
-  "title": "Silly bit operations should not be performed",
+  "title": "不应进行无用的位运算",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

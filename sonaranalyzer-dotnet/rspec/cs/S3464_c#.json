@@ -1,5 +1,5 @@
 {
-  "title": "Type inheritance should not be recursive",
+  "title": "类型继承（Type inheritance）不应是递归的",
   "type": "BUG",
   "status": "ready",
   "remediation": {

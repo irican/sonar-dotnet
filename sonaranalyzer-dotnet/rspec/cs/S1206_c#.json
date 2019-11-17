@@ -1,5 +1,5 @@
 {
-  "title": "\"Equals(Object)\" and \"GetHashCode()\" should be overridden in pairs",
+  "title": "\"Equals(Object)\" 和 \"GetHashCode()\" 应该一起重写",
   "type": "BUG",
   "status": "ready",
   "remediation": {

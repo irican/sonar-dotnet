@@ -1,5 +1,5 @@
 {
-  "title": "Exceptions should not be thrown from property getters",
+  "title": "在属性的getter方法中不应抛出异常",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

@@ -1,5 +1,5 @@
 {
-  "title": "Members should not have conflicting transparency annotations",
+  "title": "成员不应该有相互冲突的透明性注释",
   "type": "VULNERABILITY",
   "status": "ready",
   "remediation": {

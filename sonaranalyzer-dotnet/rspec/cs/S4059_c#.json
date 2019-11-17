@@ -1,5 +1,5 @@
 {
-  "title": "Property names should not match get methods",
+  "title": "属性名称不应匹配get方法",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

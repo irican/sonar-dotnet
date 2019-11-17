@@ -1,5 +1,5 @@
-<p><code>StringBuilder</code> is more efficient than string concatenation, especially when the operator is repeated over and over as in loops.</p>
-<h2>Noncompliant Code Example</h2>
+<p><code>StringBuilder</code> 比字符串连接（string concatenation）更有效率，尤其是连接运算符（“+”）多次重复执行的情况，例如在循环结构里。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 string str = "";
 for (int i = 0; i &lt; arrayOfStrings.Length ; ++i)
@@ -7,7 +7,7 @@ for (int i = 0; i &lt; arrayOfStrings.Length ; ++i)
   str = str + arrayOfStrings[i];
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 StringBuilder bld = new StringBuilder();
 for (int i = 0; i &lt; arrayOfStrings.Length; ++i)

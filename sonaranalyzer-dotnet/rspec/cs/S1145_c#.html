@@ -1,13 +1,12 @@
-<p><code>if</code> statements with conditions that are always false have the effect of making blocks of code non-functional. <code>if</code>
-statements with conditions that are always true are completely redundant, and make the code less readable.</p>
-<p>There are three possible causes for the presence of such code: </p>
+<p>判断条件总是为假的 <code>if</code> 语句会让它包含的整个块语句都失去效力，条件总是为真的 <code>if</code>条件语句实际上是多余的，同时还降低了代码的可读性，应该直接删掉。</p>
+<p>出现这种代码的原因可能有以下三个： </p>
 <ul>
-  <li> An if statement was changed during debugging and that debug code has been committed. </li>
-  <li> Some value was left unset. </li>
-  <li> Some logic is not doing what the programmer thought it did. </li>
+  <li> debug时修改if语句的痕迹被保留。 </li>
+  <li> 一些值还未设定。 </li>
+  <li> 语句的逻辑并不符合开发者的真实意图。 </li>
 </ul>
-<p>In any of these cases, unconditional <code>if</code> statements should be removed.</p>
-<h2>Noncompliant Code Example</h2>
+<p>在这些情况下，<code>if</code> 语句实际上没有执行条件，应该予以删除。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 if (true)
 {
@@ -19,12 +18,12 @@ if (false)
   DoSomethingElse();
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 DoSomething();
 ...
 </pre>
-<h2>See</h2>
+<h2>请参阅</h2>
 <ul>
   <li> <a href="http://cwe.mitre.org/data/definitions/489.html">MITRE, CWE-489</a> - Leftover Debug Code </li>
   <li> <a href="http://cwe.mitre.org/data/definitions/570.html">MITRE, CWE-570</a> - Expression is Always False </li>
@@ -32,6 +31,6 @@ DoSomething();
   <li> MISRA C:2004, 13.7 - Boolean operations whose results are invariant shall not be permitted. </li>
   <li> MISRA C:2012, 14.3 - Controlling expressions shall not be invariant </li>
 </ul>
-<h2>Deprecated</h2>
-<p>This rule is deprecated; use {rule:csharpsquid:S2583} instead.</p>
+<h2>废弃</h2>
+<p>此规则被废弃，请使用{rule:csharpsquid:S2583} 替代它。</p>
 

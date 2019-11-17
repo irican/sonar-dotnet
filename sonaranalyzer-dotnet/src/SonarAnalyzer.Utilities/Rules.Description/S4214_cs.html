@@ -1,0 +1,31 @@
+<p>使用 <code>System.Runtime.InteropServices.DllImportAttribute</code> 属性标记的方法使用平台调用服务访问非托管代码，不应该公开。将它们保持为私有或内部，以确保它们的访问受到控制和适当的管理。</p>
+<p>当使用DllImport声明的方法是公共的或受保护的时，此规则会引发一个问题。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+using System;
+using System.Runtime.InteropServices;
+
+namespace MyLibrary
+{
+    public class Foo
+    {
+        [DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
+        public static extern bool RemoveDirectory(string name);  // 不合规
+    }
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+using System;
+using System.Runtime.InteropServices;
+
+namespace MyLibrary
+{
+    public class Foo
+    {
+        [DllImport("kernel32.dll", CharSet = CharSet.Unicode)]
+        private static extern bool RemoveDirectory(string name);
+    }
+}
+</pre>
+

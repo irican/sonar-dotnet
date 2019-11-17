@@ -1,5 +1,5 @@
 {
-  "title": "Unchanged local variables should be \"const\"",
+  "title": "不变的局部变量应设为 \"const\"",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

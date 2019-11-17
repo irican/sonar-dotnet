@@ -1,5 +1,5 @@
 {
-  "title": "Track use of \"NotImplementedException\"",
+  "title": "跟踪 \"NotImplementedException\" 异常的使用",
   "type": "CODE_SMELL",
   "status": "ready",
   "tags": [

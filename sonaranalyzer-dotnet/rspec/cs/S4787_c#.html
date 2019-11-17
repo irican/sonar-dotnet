@@ -1,57 +1,44 @@
-<p>Encrypting data is security-sensitive. It has led in the past to the following vulnerabilities:</p>
+<p>加密数据是安全敏感的。它在过去导致了以下漏洞：</p>
 <ul>
   <li> <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-7902">CVE-2017-7902</a> </li>
   <li> <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2006-1378">CVE-2006-1378</a> </li>
   <li> <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2003-1376">CVE-2003-1376</a> </li>
 </ul>
-<p>Proper encryption requires both the encryption algorithm and the key to be strong. Obviously the private key needs to remain secret and be renewed
-regularly. However these are not the only means to defeat or weaken an encryption.</p>
+<p>正确的加密要求加密算法和密钥都是强加密。显然，私钥需要保持秘密并定期更新。然而，这些并不是击败或削弱加密的唯一方法。</p>
 <p> </p>
-<p>This rule flags function calls that initiate encryption/decryption. The goal is to guide security code reviews.</p>
-<h2>Ask Yourself Whether</h2>
+<p>此规则标记发起加密/解密的函数调用。目标是指导安全代码审查。</p>
+<h2>检查是否有下列问题：</h2>
 <ul>
-  <li> the private key might not be random, strong enough or the same key is reused for a long long time. </li>
-  <li> the private key might be compromised. It can happen when it is stored in an unsafe place or when it was transferred in an unsafe manner. </li>
-  <li> the key exchange is made without properly authenticating the receiver. </li>
-  <li> the encryption algorithm is not strong enough for the level of protection required. Note that encryption algorithms strength decreases as time
-  passes. </li>
-  <li> the chosen encryption library is deemed unsafe. </li>
-  <li> a nonce is used, and the same value is reused multiple times, or the nonce is not random. </li>
-  <li> the RSA algorithm is used, and it does not incorporate an Optimal Asymmetric Encryption Padding (OAEP), which might weaken the encryption.
-  </li>
-  <li> the CBC (Cypher Block Chaining) algorithm is used for encryption, and it's IV (Initialization Vector) is not generated using a secure random
-  algorithm, or it is reused. </li>
-  <li> the Advanced Encryption Standard (AES) encryption algorithm is used with an unsecure mode. See the recommended practices for more information.
-  </li>
+  <li> 私钥可能不是随机的、不够强或者长时间重用相同的密钥。</li>
+  <li> 私钥可能会被破坏。当它被储存在一个不安全的地方或以不安全的方式转移时，就会发生这种情况。</li>
+  <li> 密钥交换是在没有正确验证接收方的情况下进行的。</li>
+  <li> 加密算法不够强大，不足以达到所需的保护级别。注意，加密算法的强度随着时间的推移而降低。</li>
+  <li> 所选的加密库被认为是不安全的。</li>
+  <li> 使用nonce，并且多次重用相同的值，或者nonce不是随机的。</li>
+  <li> 使用RSA算法，它没有包含最优的非对称加密填充(OAEP)，这可能会削弱加密。</li>
+  <li> CBC (Cypher Block Chaining)算法用于加密，它的IV(初始化向量)不是使用安全随机算法生成的，也不是重用的。</li>
+  <li> 高级加密标准(AES)加密算法用于不安全模式。有关更多信息，请参阅建议的实践。</li>
 </ul>
-<p>You are at risk if you answered yes to any of those questions.</p>
-<h2>Recommended Secure Coding Practices</h2>
+<p>如果对其中任何一个问题的回答是肯定的，那么就有风险。</p>
+<h2>推荐的安全编码实践</h2>
 <ul>
-  <li> Generate encryption keys using secure random algorithms. </li>
-  <li> When generating cryptographic keys (or key pairs), it is important to use a key length that provides enough entropy against brute-force
-  attacks. For the Blowfish algorithm the key should be at least 128 bits long, while for the RSA algorithm it should be at least 2048 bits long.
-  </li>
-  <li> Regenerate the keys regularly. </li>
-  <li> Always store the keys in a safe location and transfer them only over safe channels. </li>
-  <li> If there is an exchange of cryptographic keys, check first the identity of the receiver. </li>
-  <li> Only use strong encryption algorithms. Check regularly that the algorithm is still deemed secure. It is also imperative that they are
-  implemented correctly. Use only encryption libraries which are deemed secure. Do not define your own encryption algorithms as they will most
-  probably have flaws. </li>
-  <li> When a nonce is used, generate it randomly every time. </li>
-  <li> When using the RSA algorithm, incorporate an Optimal Asymmetric Encryption Padding (OAEP). </li>
-  <li> When CBC is used for encryption, the IV must be random and unpredictable. Otherwise it exposes the encrypted value to crypto-analysis attacks
-  like "Chosen-Plaintext Attacks". Thus a secure random algorithm should be used. An IV value should be associated to one and only one encryption
-  cycle, because the IV's purpose is to ensure that the same plaintext encrypted twice will yield two different ciphertexts. </li>
-  <li> The Advanced Encryption Standard (AES) encryption algorithm can be used with various modes. Galois/Counter Mode (GCM) with no padding should be
-  preferred to the following combinations which are not secured:
+  <li> 使用安全随机算法生成加密密钥。</li>
+  <li> 在生成加密密钥(或密钥对)时，重要的是使用密钥长度提供足够的熵来抵御蛮力攻击。对于Blowfish算法，密钥应该至少128位长，而对于RSA算法，密钥应该至少2048位长。</li>
+  <li> 定期重新生成密钥。</li>
+  <li> 始终将密钥存储在安全的位置，并仅通过安全通道传送它们。</li>
+  <li> 如果存在密钥交换，请首先检查接收方的身份。</li>
+  <li> 只使用强加密算法。定期检查算法是否仍然被认为是安全的。同样重要的是，它们必须得到正确的实现。只使用被认为安全的加密库。不要定义自己的加密算法，因为它们很可能有缺陷。</li>
+  <li> 当使用nonce时，每次随机生成它。</li>
+  <li> 当使用RSA算法时，加入一个最优的非对称加密填充(OAEP)。</li>
+  <li> 当使用CBC加密时，IV必须是随机的和不可预测的。否则，它会将加密值暴露给诸如“选择明文攻击（Chosen-Plaintext Attacks）”之类的密码分析攻击。因此，应该使用安全随机算法。
+  IV值应该与一个且仅一个加密周期相关联，因为IV的目的是确保经过两次加密的相同明文将产生两个不同的密文。</li>
+  <li> 高级加密标准(AES)加密算法可用于多种模式。没有填充的Galois/Counter模式(GCM)比下列不安全的组合更可取：
     <ul>
-      <li> Electronic Codebook (ECB) mode: Under a given key, any given plaintext block always gets encrypted to the same ciphertext block. Thus, it
-      does not hide data patterns well. In some senses, it doesn't provide serious message confidentiality, and it is not recommended for use in
-      cryptographic protocols at all. </li>
-      <li> Cipher Block Chaining (CBC) with PKCS#5 padding (or PKCS#7) is susceptible to padding oracle attacks. </li>
+      <li> 电子码本(ECB)模式:在给定密钥下，任何给定的明文块总是被加密到相同的密文块。因此，它不能很好地隐藏数据模式。从某种意义上说，它不提供严重的消息机密性，并且根本不建议在加密协议中使用它。</li>
+      <li> 使用PKCS#5填充(或PKCS#7)的密码块链接(CBC)容易受到填充oracle攻击。</li>
     </ul> </li>
 </ul>
-<h2>Sensitive Code Example</h2>
+<h2>可疑代码示例</h2>
 <pre>
 using System;
 using System.Security.Cryptography;
@@ -66,48 +53,44 @@ namespace MyNamespace
 
             RSA myRSA = RSA.Create();
             RSAEncryptionPadding padding = RSAEncryptionPadding.CreateOaep(HashAlgorithmName.SHA1);
-            // Review all base RSA class' Encrypt/Decrypt calls
-            myRSA.Encrypt(data, padding); // Sensitive
-            myRSA.EncryptValue(data); // Sensitive
-            myRSA.Decrypt(data, padding); // Sensitive
-            myRSA.DecryptValue(data); // Sensitive
+            // 检查所有基本RSA类的加密/解密调用
+            myRSA.Encrypt(data, padding); // 可疑的
+            myRSA.EncryptValue(data); // 可疑的
+            myRSA.Decrypt(data, padding); // 可疑的
+            myRSA.DecryptValue(data); // 可疑的
 
             RSACryptoServiceProvider myRSAC = new RSACryptoServiceProvider();
-            // Review the use of any TryEncrypt/TryDecrypt and specific Encrypt/Decrypt of RSA subclasses.
-            myRSAC.Encrypt(data, false); // Sensitive
-            myRSAC.Decrypt(data, false); // Sensitive
+            // 检查RSA子类的任何TryEncrypt/TryDecrypt和特定加密/解密的使用。
+            myRSAC.Encrypt(data, false); // 可疑的
+            myRSAC.Decrypt(data, false); // 可疑的
             int written;
-            myRSAC.TryEncrypt(data, Span&lt;byte&gt;.Empty, padding, out written); // Sensitive
-            myRSAC.TryDecrypt(data, Span&lt;byte&gt;.Empty, padding, out written); // Sensitive
+            myRSAC.TryEncrypt(data, Span&lt;byte&gt;.Empty, padding, out written); // 可疑的
+            myRSAC.TryDecrypt(data, Span&lt;byte&gt;.Empty, padding, out written); // 可疑的
 
             byte[] rgbKey = {1,2,3};
             byte[] rgbIV = {4,5,6};
             SymmetricAlgorithm rijn = SymmetricAlgorithm.Create();
-            // Review the creation of Encryptors from any SymmetricAlgorithm instance.
-            rijn.CreateEncryptor(); // Sensitive
-            rijn.CreateEncryptor(rgbKey, rgbIV); // Sensitive
-            rijn.CreateDecryptor(); // Sensitive
-            rijn.CreateDecryptor(rgbKey, rgbIV); // Sensitive
+            // 查看从任何对称算法实例创建的加密程序。
+            rijn.CreateEncryptor(); // 可疑的
+            rijn.CreateEncryptor(rgbKey, rgbIV); // 可疑的
+            rijn.CreateDecryptor(); // 可疑的
+            rijn.CreateDecryptor(rgbKey, rgbIV); // 可疑的
         }
 
-        public class MyCrypto : System.Security.Cryptography.AsymmetricAlgorithm // Sensitive
+        public class MyCrypto : System.Security.Cryptography.AsymmetricAlgorithm // 可疑的
         {
             // ...
         }
 
-        public class MyCrypto2 : System.Security.Cryptography.SymmetricAlgorithm // Sensitive
+        public class MyCrypto2 : System.Security.Cryptography.SymmetricAlgorithm // 可疑的
         {
             // ...
         }
     }
 }
 </pre>
-<h2>See</h2>
+<h2>请参阅</h2>
 <ul>
-  <li> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure">OWASP Top 10 2017 Category A3</a> - Sensitive Data Exposure
-  </li>
-  <li> <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration">OWASP Top 10 2017 Category A6</a> - Security
-  Misconfiguration </li>
   <li> <a href="http://cwe.mitre.org/data/definitions/321.html">MITRE, CWE-321</a> - Use of Hard-coded Cryptographic Key </li>
   <li> <a href="http://cwe.mitre.org/data/definitions/322.html">MITRE, CWE-322</a> - Key Exchange without Entity Authentication </li>
   <li> <a href="http://cwe.mitre.org/data/definitions/323.html">MITRE, CWE-323</a> - Reusing a Nonce, Key Pair in Encryption </li>
@@ -116,6 +99,8 @@ namespace MyNamespace
   <li> <a href="http://cwe.mitre.org/data/definitions/326.html">MITRE, CWE-326</a> - Inadequate Encryption Strength </li>
   <li> <a href="http://cwe.mitre.org/data/definitions/327.html">MITRE, CWE-327</a> - Use of a Broken or Risky Cryptographic Algorithm </li>
   <li> <a href="http://cwe.mitre.org/data/definitions/522.html">MITRE, CWE-522</a> - Insufficiently Protected Credentials </li>
+  <li> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure">OWASP Top 10 2017 Category A3</a> - Sensitive Data Exposure </li>
+  <li> [OWASP Top 10 2017 Category A6 - Security Misconfiguration </li>
   <li> <a href="https://www.sans.org/top25-software-errors/#cat3">SANS Top 25</a> - Porous Defenses </li>
 </ul>
 

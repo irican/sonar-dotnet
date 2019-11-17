@@ -1,7 +1,5 @@
-<p>Having two <code>cases</code> in the same <code>switch</code> statement or branches in the same <code>if</code> structure with the same
-implementation is at best duplicate code, and at worst a coding error. If the same logic is truly needed for both instances, then in an
-<code>if</code> structure they should be combined, or for a <code>switch</code>, one should fall through to the other.</p>
-<h2>Noncompliant Code Example</h2>
+<p>只有两条 <code>cases</code> 从句的 <code>switch</code> 语句或是同一个 <code>if</code> 结构中操作相同的分支可能只是代码的重复，但在最坏的情况下则是编码错误（coding error）。如果两个实例确实都需要相同的逻辑，那么在 <code>if</code> 结构里可以把它们写在一起，在 <code>switch</code> 里可以从一个fall through到另一个去。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 switch (i)
 {
@@ -12,7 +10,7 @@ switch (i)
   case 2:
     DoSomethingDifferent();
     break;
-  case 3:  // Noncompliant; duplicates case 1's implementation
+  case 3:  // 不合规；重复了case 1的操作
     DoFirst();
     DoSomething();
     break;
@@ -29,15 +27,14 @@ else if (a &gt;= 10 &amp;&amp; a &lt; 20)
 {
   DoTheOtherThing();
 }
-else if (a &gt;= 20 &amp;&amp; a &lt; 50)   // Noncompliant; duplicates first condition
+else if (a &gt;= 20 &amp;&amp; a &lt; 50)   // 不合规；重复了第一个条件
 {
   DoFirst();
   DoTheThing();
 }
 </pre>
-<h2>Exceptions</h2>
-<p>Blocks in an <code>if</code> chain that contain a single line of code are ignored, as are blocks in a <code>switch</code> statement that contain a
-single line of code with or without a following <code>break</code>.</p>
+<h2>例外</h2>
+<p><code>if</code> 链中只包含一行代码的块语句被此规则忽略，<code>switch</code> 语句中只有一行代码或者没有后跟 <code>break</code>的块语句也是如此。</p>
 <pre>
 if (a &gt;= 0 &amp;&amp; a &lt; 10)
 {
@@ -47,18 +44,16 @@ else if (a &gt;= 10 &amp;&amp; a &lt; 20)
 {
   DoTheOtherThing();
 }
-else if (a &gt;= 20 &amp;&amp; a &lt; 50)    //no issue, usually this is done on purpose to increase the readability
+else if (a &gt;= 20 &amp;&amp; a &lt; 50)    //没有问题，有意这样写通常是为了增强可读性
 {
   DoTheThing();
 }
 </pre>
-<p>But this exception does not apply to <code>if</code> chains without <code>else</code>-s, or to <code>switch</code>-es without default clauses when
-all branches have the same single line of code. In case of <code>if</code> chains with <code>else</code>-s, or of <code>switch</code>-es with default
-clauses, rule {rule:csharpsquid:S3923} raises a bug. </p>
+<p>但是这种例外不包括没有 <code>else</code> 的 <code>if</code> 链，或是在所有分支都只有同一行代码时，没有default子句的 <code>switch</code>，对于 <code>if</code> 链含有 <code>else</code>，或是 <code>switch</code> 语句含有default子句的情况，规则{rule:csharpsquid:S3923}会引发一个问题。 </p>
 <pre>
 if(a == 1)
 {
-  doSomething();  //Noncompliant, this might have been done on purpose but probably not
+  doSomething();  //不合规，有可能是刻意这样写的但可能性极小
 }
 else if (a == 2)
 {

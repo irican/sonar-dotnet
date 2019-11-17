@@ -1,7 +1,6 @@
-<p>Properties are accessed like fields which makes them easier to use.</p>
-<p>This rule raises an issue when the name of a <code>public</code> or <code>protected</code> method starts with <code>Get</code>, takes no parameter,
-and returns a value that is not an array.</p>
-<h2>Noncompliant Code Example</h2>
+<p>属性像字段一样被访问，这使得它们更容易使用。</p>
+<p>当<code>public</code> 或 <code>protected</code> 方法的名称以 <code>Get</code>开始，不接受任何参数，并返回一个不是数组的值时，该规则会引发一个问题。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 using System;
 
@@ -11,14 +10,14 @@ namespace MyLibrary
     {
         private string name;
 
-        public string GetName()  // Noncompliant
+        public string GetName()  // 不合规
         {
             return name;
         }
     }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 using System;
 
@@ -38,14 +37,14 @@ namespace MyLibrary
     }
 }
 </pre>
-<h2>Exceptions</h2>
-<p>The rule doesn't raise an issue when the method:</p>
+<h2>例外</h2>
+<p>当方法出现以下问题时，该规则不会引发问题：</p>
 <ul>
-  <li> Is a constructor </li>
-  <li> Is an <code>override</code> </li>
-  <li> Is an interface implementation </li>
-  <li> Is <code>async</code> </li>
-  <li> Returns <code>Task</code>, <code>Task&lt;T&gt;</code> </li>
-  <li> Is named <code>GetEnumerator</code>, <code>GetAwaiter</code> </li>
+  <li> 是一个构造函数 </li>
+  <li> 是一个<code>override</code> </li>
+  <li> 是一个接口实现 </li>
+  <li> 是<code>async</code> </li>
+  <li> 返回<code>Task</code>，<code>Task&lt;T&gt;</code> </li>
+  <li> 被命名为：<code>GetEnumerator</code>，<code>GetAwaiter</code> </li>
 </ul>
 

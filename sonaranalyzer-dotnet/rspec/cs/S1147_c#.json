@@ -1,5 +1,5 @@
 {
-  "title": "Exit methods should not be called",
+  "title": "退出方法（exit methods）不应随意调用",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

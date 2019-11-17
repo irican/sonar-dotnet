@@ -1,0 +1,19 @@
+<p>如果一个<code>enum</code>成员的名字包含单词"reserved"，这意味着它目前没有被使用，将来会被修改。然而，更改 <code>enum</code>成员是一种破坏性的更改，可能会产生严重的问题。没有必要保留一个<code>enum</code>成员，因为将来可以添加一个新成员，这样的添加通常不会是一个破坏性的更改。</p>
+<p>当枚举成员的名称包含“reserved”时，此规则会引发问题。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+using System;
+
+namespace MyLibrary
+{
+  public enum Color
+  {
+        None,
+        Red,
+        Orange,
+        Yellow,
+        ReservedColor  // 不合规
+    }
+}
+</pre>
+

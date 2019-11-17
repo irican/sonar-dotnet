@@ -1,0 +1,16 @@
+{
+  "title": "根据偏移量寻找子串时，应当优先使用基于偏移量的字符串方法",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "5min"
+  },
+  "tags": [
+    "performance"
+  ],
+  "defaultSeverity": "Critical",
+  "ruleSpecification": "RSPEC-4635",
+  "sqKey": "S4635",
+  "scope": "All"
+}

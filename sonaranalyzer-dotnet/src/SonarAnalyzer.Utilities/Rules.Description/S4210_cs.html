@@ -1,8 +1,6 @@
-<p>When an assembly uses Windows Forms (classes and interfaces from the <code>System.Windows.Forms</code> namespace) its entry point should be marked
-with the <code>STAThreadAttribute</code> to indicate that the threading model should be "Single-Threaded Apartment" (STA) which is the only one
-supported by Windows Forms.</p>
-<p>This rule raises an issue when the entry point (<code>static void Main</code> method) of an assembly using Windows Forms is not marked as STA.</p>
-<h2>Noncompliant Code Example</h2>
+<p>当程序集使用Windows窗体（Forms）(来自<code>System.Windows.Forms</code>名称空间的类和接口)时，它的入口点应标明为<code>STAThreadAttribute</code>，以指示线程模型应为"单线程单元（STA），这是Windows窗体支持的唯一模型。</p>
+<p>当使用Windows窗体的程序集的入口点(<code>static void Main</code> 方法)有标记为STA时，该规则会引发一个问题。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 using System;
 using System.Windows.Forms;
@@ -16,7 +14,7 @@ namespace MyLibrary
             this.Text = "Hello World!";
         }
 
-        public static void Main()  // Noncompliant
+        public static void Main()  // 不合规
         {
             var form = new MyForm();
             Application.Run(form);
@@ -24,7 +22,7 @@ namespace MyLibrary
     }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 using System;
 using System.Windows.Forms;

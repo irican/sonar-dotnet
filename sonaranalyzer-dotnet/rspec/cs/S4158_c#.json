@@ -1,5 +1,5 @@
 {
-  "title": "Empty collections should not be accessed or iterated",
+  "title": "不应该访问或迭代空集合",
   "type": "BUG",
   "status": "ready",
   "remediation": {

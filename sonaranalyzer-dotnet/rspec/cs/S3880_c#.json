@@ -1,5 +1,5 @@
 {
-  "title": "Finalizers should not be empty",
+  "title": "终结器不应为空",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

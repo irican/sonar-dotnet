@@ -1,5 +1,5 @@
 {
-  "title": "Members should not be initialized to default values",
+  "title": "成员不应用默认值进行初始化",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

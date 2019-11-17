@@ -1,0 +1,16 @@
+{
+  "title": "委托方法的 \"BeginInvoke\" 调用应该与\"EndInvoke\"调用配对使用",
+  "type": "BUG",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "15min"
+  },
+  "tags": [
+    
+  ],
+  "defaultSeverity": "Critical",
+  "ruleSpecification": "RSPEC-4583",
+  "sqKey": "S4583",
+  "scope": "All"
+}

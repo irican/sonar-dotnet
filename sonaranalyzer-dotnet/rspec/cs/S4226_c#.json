@@ -1,5 +1,5 @@
 {
-  "title": "Extensions should be in separate namespaces",
+  "title": "扩展应该位于单独的命名空间中",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

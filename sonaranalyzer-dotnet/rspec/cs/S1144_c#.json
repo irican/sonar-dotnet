@@ -1,5 +1,5 @@
 {
-  "title": "Unused private types or members should be removed",
+  "title": "未用到的private类型和private成员应该删除",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

@@ -1,9 +1,10 @@
 {
-  "title": "Using Sockets is security-sensitive",
+  "title": "使用套接字（Sockets）是安全敏感的",
   "type": "SECURITY_HOTSPOT",
   "status": "ready",
   "tags": [
     "cwe",
+    "owasp-a1",
     "sans-top25-risky",
     "sans-top25-porous",
     "owasp-a3"
@@ -23,6 +24,7 @@
       400
     ],
     "OWASP": [
+      "A1",
       "A3"
     ]
   }

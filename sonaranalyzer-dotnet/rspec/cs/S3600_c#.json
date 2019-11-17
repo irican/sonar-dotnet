@@ -1,5 +1,5 @@
 {
-  "title": "\"params\" should not be introduced on overrides",
+  "title": "\"params\" 不应引入方法的重写",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

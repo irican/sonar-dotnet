@@ -1,43 +1,73 @@
-<p>Unused parameters are misleading. Whatever the values passed to such parameters, the behavior will be the same.</p>
-<p>This rule raises an issue when a <code>private</code> method of a class/struct takes a parameter without using it.</p>
-<h2>Noncompliant Code Example</h2>
+<p>没有用到的形参是有误导性的。无论传给形参的值如何，方法的行为应该都是一样的。</p>
+<h2>不合规的代码示例</h2>
 <pre>
-private void DoSomething(int a, int b) // "b" is unused
+void DoSomething(int a, int b) // "b" 没有用到
 {
-    Compute(a);
+  Compute(a);
 }
 
-private void DoSomething2(int a) // value of "a" is unused
+void DoSomething2(int a) // "a" 的值没有用到
 {
-    a = 10;
-    Compute(a);
+  a = 10;
+  Compute(a);
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
-private void DoSomething(int a)
+void DoSomething(int a)
 {
-    Compute(a);
+  Compute(a);
 }
 
-private void DoSomething2()
+void DoSomething2()
 {
-    var a = 10;
-    Compute(a);
+  var a = 10;
+  Compute(a);
 }
 </pre>
-<h2>Exceptions</h2>
-<p>This rule doesn't raise any issue in the following contexts:</p>
-<ul>
-  <li> The <code>this</code> parameter of extension methods. </li>
-  <li> Methods decorated with attributes. </li>
-  <li> Empty methods. </li>
-  <li> Methods which only throw <code>NotImplementedException</code>. </li>
-  <li> Main methods. </li>
-  <li> <code>virtual</code>, <code>override</code> methods. </li>
-  <li> interface implementations. </li>
-</ul>
-<h2>See</h2>
+<h2>例外</h2>
+<p><code>virtual</code>，<code>override</code> 方法以及接口的实现被此规则忽略。</p>
+<pre>
+override void DoSomething(int a, int b) // b未使用，但不会引发问题
+{
+  Compute(a);
+}
+</pre>
+<p>而且扩展方法（extension methods）的 <code>this</code> 参数也被此规则忽略。</p>
+<pre>
+public static class Extensions
+{
+  public static void MyHelper(this HtmlHelper helper) //这里不会引发问题
+  {
+    // 这里没有使用helper
+  }
+}
+</pre>
+<p>带有特性（attribute）的方法不必考虑此规则。</p>
+<pre>
+public class MyDto
+{
+  public string Name { get; set; }
+
+  [OnDeserialized]
+  private void OnDeserialized(StreamingContext context)
+  {
+    // ...
+  }
+}
+</pre>
+<p>空方法或不受支持的方法也被此规则忽略。</p>
+<pre>
+public void DoSomething()
+{}
+
+public void Call()
+{
+  throw new NotImplementedException();
+}
+</pre>
+<p> <code>static void Main(string[] args)</code> 方法显然也不会引发问题</p>
+<h2>请参阅</h2>
 <ul>
   <li> MISRA C++:2008, 0-1-11 - There shall be no unused parameters (named or unnamed) in nonvirtual functions. </li>
   <li> MISRA C:2012, 2.7 - There should be no unused parameters in functions </li>

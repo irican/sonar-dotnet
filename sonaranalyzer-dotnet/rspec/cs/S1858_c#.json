@@ -1,5 +1,5 @@
 {
-  "title": "\"ToString()\" calls should not be redundant",
+  "title": "不要对 \"ToString()\" 进行多余的调用",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

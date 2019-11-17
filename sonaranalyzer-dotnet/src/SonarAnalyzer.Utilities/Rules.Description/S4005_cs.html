@@ -1,0 +1,46 @@
+<p>URIs或URLs的字符串表示很容易出现解析和编码错误，从而导致漏洞。<code>System.Uri</code>类是一种安全的替代方法，应该是首选的。</p>
+<p>当一个被调用的方法有一个字符串参数，其名称包含"uri"，"Uri"，"urn"，"Urn"，"url" 或 "Url"，而声明类型包含一个相应的重载，该重载以 <code>System.Uri</code> 作为参数时，该规则会引发一个问题。</p>
+<p>当有两个重载可供选择时，它们仅在URI的表示形式上不同，用户应该选择接受 <code>System.Uri</code>参数的重载。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+using System;
+
+namespace MyLibrary
+{
+   public class Foo
+   {
+      public void FetchResource(string uriString) { }
+      public void FetchResource(Uri uri) { }
+
+      public string ReadResource(string uriString, string name, bool isLocal) { }
+      public string ReadResource(Uri uri, string name, bool isLocal) { }
+
+      public void Main() {
+        FetchResource("http://www.mysite.com"); // 不合规
+        ReadResource("http://www.mysite.com", "foo-resource", true); // 不合规
+      }
+   }
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+using System;
+
+namespace MyLibrary
+{
+   public class Foo
+   {
+      public void FetchResource(string uriString) { }
+      public void FetchResource(Uri uri) { }
+
+      public string ReadResource(string uriString, string name, bool isLocal) { }
+      public string ReadResource(Uri uri, string name, bool isLocal) { }
+
+      public void Main() {
+        FetchResource(new Uri("http://www.mysite.com"));
+        ReadResource(new Uri("http://www.mysite.com"), "foo-resource", true);
+      }
+   }
+}
+</pre>
+

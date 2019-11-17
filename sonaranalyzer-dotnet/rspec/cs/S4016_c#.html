@@ -1,8 +1,6 @@
-<p>If an <code>enum</code> member's name contains the word "reserved" it implies it is not currently used and will be change in the future. However
-changing an <code>enum</code> member is a breaking change and can create significant problems. There is no need to reserve an <code>enum</code> member
-since a new member can be added in the future, and such an addition will usually not be a breaking change.</p>
-<p>This rule raises an issue when the name of an enumeration member contains "reserved".</p>
-<h2>Noncompliant Code Example</h2>
+<p>如果一个<code>enum</code>成员的名字包含单词"reserved"，这意味着它目前没有被使用，将来会被修改。然而，更改 <code>enum</code>成员是一种破坏性的更改，可能会产生严重的问题。没有必要保留一个<code>enum</code>成员，因为将来可以添加一个新成员，这样的添加通常不会是一个破坏性的更改。</p>
+<p>当枚举成员的名称包含“reserved”时，此规则会引发问题。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 using System;
 
@@ -14,7 +12,7 @@ namespace MyLibrary
         Red,
         Orange,
         Yellow,
-        ReservedColor  // Noncompliant
+        ReservedColor  // 不合规
     }
 }
 </pre>

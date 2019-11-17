@@ -1,5 +1,5 @@
 {
-  "title": "\"abstract\" classes should not have \"public\" constructors",
+  "title": "\"abstract\" 类不应有 \"public\" 型的构造函数",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

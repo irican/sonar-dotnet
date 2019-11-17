@@ -1,5 +1,5 @@
 {
-  "title": "Exceptions should not be explicitly rethrown",
+  "title": "不应显式地再次抛出（rethrow）异常",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

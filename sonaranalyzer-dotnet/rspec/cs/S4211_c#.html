@@ -1,11 +1,6 @@
-<p>Transparency attributes, <code>SecurityCriticalAttribute</code> and <code>SecuritySafeCriticalAttribute</code> are used to identify code that
-performs security-critical operations. The second one indicates that it is safe to call this code from transparent, while the first one does not.
-Since the transparency attributes of code elements with larger scope take precedence over transparency attributes of code elements that are contained
-in the first element a class, for instance, with a <code>SecurityCriticalAttribute</code> can not contain a method with a
-<code>SecuritySafeCriticalAttribute</code>.</p>
-<p>This rule raises an issue when a member is marked with a <code>System.Security</code> security attribute that has a different transparency than the
-security attribute of a container of the member.</p>
-<h2>Noncompliant Code Example</h2>
+<p>透明度属性、<code>SecurityCriticalAttribute</code> 和 <code>SecuritySafeCriticalAttribute</code> 用于标识执行安全关键操作的代码。第二种方法表明从透明中调用这段代码是安全的，而第一种方法则不安全。由于具有较大范围的代码元素的透明属性优先于包含在第一个元素a类中的代码元素的透明属性，例如，具有<code>SecurityCriticalAttribute</code> 的代码不能包含具有<code>SecuritySafeCriticalAttribute</code>的方法。</p>
+<p>当使用 <code>System.Security</code> 安全属性标记成员时，此规则会引发一个问题，该属性的透明度与成员容器的安全属性不同。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 using System;
 using System.Security;
@@ -16,14 +11,14 @@ namespace MyLibrary
     [SecurityCritical]
     public class Foo
     {
-        [SecuritySafeCritical] // Noncompliant
+        [SecuritySafeCritical] // 不合规
         public void Bar()
         {
         }
     }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 using System;
 using System.Security;
@@ -40,8 +35,9 @@ namespace MyLibrary
     }
 }
 </pre>
-<h2>See</h2>
+<h2>请参阅</h2>
 <ul>
-  <li> OWASP Top 10 2017 Category A6 - Security Misconfiguration </li>
+  <li> <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration">OWASP Top 10 2017 Category A6</a> - Security 
+  Misconfiguration </li>
 </ul>
 

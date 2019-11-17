@@ -1,31 +1,30 @@
-<p>Shared naming conventions allow teams to collaborate efficiently. This rule checks that all <code>enum</code> names match a provided regular
-expression.</p>
-<p>The default configuration is the one recommended by Microsoft:</p>
+<p>共享命名约定允许团队高效地协作。此规则检查所有的 <code>enum</code> 类名称是否与提供的正则表达式（regular expression）匹配。</p>
+<p>将Microsoft推荐的配置作为默认配置：</p>
 <ul>
-  <li> Pascal casing, starting with an upper case character, e.g. BackColor </li>
-  <li> Short abbreviations of 2 letters can be capitalized, e.g. GetID </li>
-  <li> Longer abbreviations need to be lower case, e.g. GetHtml </li>
-  <li> If the enum is marked as [Flags] then its name should be plural (e.g. MyOptions), otherwise, names should be singular (e.g. MyOption) </li>
+  <li> 帕斯卡命名法（Pascal casing），即以大写字符开头，例如 BackColor </li>
+  <li> 两个字母构成的缩写可以将它们全都大写，例如 GetID </li>
+  <li> 较长的缩写需要将其小写，例如 GetHtml </li>
+  <li> 如果枚举类被标识为[Flags]那么它的名称应该写为复数（例如 MyOptions），否则将其写为单数（例如 MyOption） </li>
 </ul>
-<h2>Noncompliant Code Example</h2>
-<p>With the default regular expression for non-flags enums: <code>^([A-Z]{1,3}[a-z0-9]+)*([A-Z]{2})?$</code></p>
+<h2>不合规的代码示例</h2>
+<p>对无标识的枚举类使用的正则表达式： <code>^([A-Z]{1,3}[a-z0-9]+)*([A-Z]{2})?$</code></p>
 <pre>
-public enum foo // Noncompliant
+public enum foo // 不合规
 {
     FooValue = 0
 }
 </pre>
-<p>With the default regular expression for flags enums: <code>^([A-Z]{1,3}[a-z0-9]+)*([A-Z]{2})?s$</code></p>
+<p>对有[Flags]标识的枚举类使用的正则表达式： <code>^([A-Z]{1,3}[a-z0-9]+)*([A-Z]{2})?s$</code></p>
 <pre>
 [Flags]
-public enum Option // Noncompliant
+public enum Option // 不合规
 {
     None = 0,
     Option1 = 1,
     Option2 = 2
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 public enum Foo
 {

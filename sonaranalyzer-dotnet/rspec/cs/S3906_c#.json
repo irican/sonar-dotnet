@@ -1,5 +1,5 @@
 {
-  "title": "Event Handlers should have the correct signature",
+  "title": "事件处理器应有正确的签名",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

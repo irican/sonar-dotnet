@@ -1,6 +1,5 @@
-<p>When a method in a derived class has the same name as a method in the base class but with a signature that only differs by types that are weakly
-derived (e.g. <code>object</code> vs <code>string</code>), the result is that the base method becomes hidden.</p>
-<h2>Noncompliant Code Example</h2>
+<p>当派生类中的方法具有与基类中的方法相同的名称，但签名仅因弱派生的类型而不同(例如 <code>object</code> vs <code>string</code>)时，结果是基方法被隐藏。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 using System;
 
@@ -13,11 +12,11 @@ namespace MyLibrary
 
   class Bar : Foo
   {
-    internal void SomeMethod(string s1, object o2) { }  // Noncompliant
+    internal void SomeMethod(string s1, object o2) { }  // 不合规
   }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 using System;
 

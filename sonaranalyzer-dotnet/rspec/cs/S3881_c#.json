@@ -1,5 +1,5 @@
 {
-  "title": "\"IDisposable\" should be implemented correctly",
+  "title": "应正确地实现 \"IDisposable\"",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

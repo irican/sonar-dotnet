@@ -1,31 +1,19 @@
-<p>Shared naming conventions allow teams to collaborate efficiently. This rule checks whether or not type names are using PascalCase. To reduce noise,
-two consecutive upper case characters are allowed unless they form the whole type name. So, <code>MyXClass</code> is compliant, but <code>XC</code> on
-its own is not.</p>
-<h2>Noncompliant Code Example</h2>
+<p>共享命名约定允许团队高效地协作。此规则检查类型名是否使用了帕斯卡命名法（PascalCased）。为了避免误解（reduce noise），两个连续的大写字符只要没有形成完整的类型名，那么就是合规的。因此 <code>MyXClass</code> 是合规的，但 <code>XC</code> 就不合规。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 class my_class {...}
 class SOMEName42 {...}
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 class MyClass {...}
 class SomeName42 {...}
 </pre>
-<h2>Exceptions</h2>
-<ul>
-  <li> The rule ignores types that are marked with <code>ComImportAttribute</code> or <code>InterfaceTypeAttribute</code>. </li>
-  <li> The rule allows for two-letter acronyms in which both letters are capitalized, as shown in the following identifier: <code>IOStream</code>
-  </li>
-  <li> The rule allows having <code>'_'</code> characters in class names inside test projects. </li>
-</ul>
+<h2>例外</h2>
+<p>此规则忽略用 <code>ComImportAttribute</code> 或 <code>InterfaceTypeAttribute</code>标记的类型的成员。此外，此规则允许<code>'_'</code> 字符在测试项目（test projects）的类名称中出现</p>
 <pre>
-class Some_Name___42 {...} // valid in test
-class Some_name___42 {...} // still not valid
-class Some_Name_XC {...} // invalid because of XC, should be Some_Name_Xc
+class Some_Name___42 {...} // 在测试（test）中有效
+class Some_name___42 {...} // 仍然无效
+class Some_Name_XC {...} // 无效 因为出现XC，正确书写应该为 Some_Name_Xc
 </pre>
-<h2>See</h2>
-<ul>
-  <li> <a href="https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/capitalization-conventions">Microsoft Capitalization
-  Conventions</a> </li>
-</ul>
 

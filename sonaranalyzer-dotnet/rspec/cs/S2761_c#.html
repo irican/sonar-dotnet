@@ -1,15 +1,14 @@
-<p>Calling the <code>!</code> or <code>~</code> prefix operator twice does nothing: the second invocation undoes the first. Such mistakes are
-typically caused by accidentally double-tapping the key in question without noticing.</p>
-<p>Either this is a bug, if the operator was actually meant to be called once, or misleading if done on purpose.</p>
-<h2>Noncompliant Code Example</h2>
+<p>连续两次调用前缀运算符 <code>!</code> 或 <code>~</code> 相当于不做操作：因为第二次调用会抵消第一次的效果。这种错误通常都是因为不小心多敲了键盘键。</p>
+<p>如果操作人员实际上只打算调用一次，那么这就是一个bug；如果是故意这样做的，那么这样的行为可能会导致他人的误解。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 int v1 = 0;
 bool v2 = false;
 
-var v3 = !!v1; // Noncompliant
-var v4 = ~~v2; // Noncompliant
+var v3 = !!v1; // 不合规
+var v4 = ~~v2; // 不合规
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 int v1 = 0;
 bool v2 = false;

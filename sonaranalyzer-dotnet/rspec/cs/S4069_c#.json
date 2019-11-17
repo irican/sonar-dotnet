@@ -1,5 +1,5 @@
 {
-  "title": "Operator overloads should have named alternatives",
+  "title": "操作符重载应该有指定的替代方案",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

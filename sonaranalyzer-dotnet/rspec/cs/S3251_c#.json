@@ -1,5 +1,5 @@
 {
-  "title": "Implementations should be provided for \"partial\" methods",
+  "title": "\"partial\" 方法应完成对功能的实现",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

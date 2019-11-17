@@ -1,5 +1,5 @@
 {
-  "title": "\"IDisposables\" should be disposed",
+  "title": "\"IDisposables\" 不应被清理",
   "type": "BUG",
   "status": "ready",
   "remediation": {

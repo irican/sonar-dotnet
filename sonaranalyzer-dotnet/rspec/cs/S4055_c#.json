@@ -1,5 +1,5 @@
 {
-  "title": "Literals should not be passed as localized parameters",
+  "title": "文字不应作为本地化参数传递",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

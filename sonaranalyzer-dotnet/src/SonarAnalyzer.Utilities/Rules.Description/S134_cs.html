@@ -1,21 +1,20 @@
-<p>Nested <code>if</code>, <code>switch</code>, <code>for</code>, <code>foreach</code>, <code>while</code>, <code>do</code>, and <code>try</code>
-statements are key ingredients for making what's known as "Spaghetti code".</p>
-<p>Such code is hard to read, refactor and therefore maintain.</p>
-<h2>Noncompliant Code Example</h2>
-<p>With the default threshold of 3:</p>
+<p>嵌套的 <code>if</code>，<code>switch</code>，<code>for</code>，<code>foreach</code>，<code>while</code>，<code>do</code>，以及 <code>try</code> 语句会形成所谓的“Spaghetti code”。</p>
+<p>这样的代码很难阅读、重构，也就很难去维护。</p>
+<h2>不合规的代码示例</h2>
+<p>默认的嵌套层数阈值为3时：</p>
 <pre>
-if (condition1) // Compliant - depth = 1
+if (condition1) // 合规－depth = 1
 {
   /* ... */
-  if (condition2) // Compliant - depth = 2
+  if (condition2) // 合规－depth = 2
   {
     /* ... */
-    for(int i = 0; i &lt; 10; i++) // Compliant - depth = 3, not exceeding the limit
+    for(int i = 0; i &lt; 10; i++) // 合规－depth = 3, 未超过限制
     {
       /* ... */
-      if (condition4) // Noncompliant - depth = 4
+      if (condition4) // 不合规－depth = 4
       {
-        if (condition5) // Depth = 5, exceeding the limit, but issues are only reported on depth = 4
+        if (condition5) // Depth = 5，超过了限制，但只在depth = 4报错
         {
           /* ... */
         }

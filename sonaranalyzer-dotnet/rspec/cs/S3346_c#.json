@@ -1,5 +1,5 @@
 {
-  "title": "Expressions used in \"Debug.Assert\" should not produce side effects",
+  "title": "用在 \"Debug.Assert\" 中的表达式不应具有其他的附带功能",
   "type": "BUG",
   "status": "ready",
   "remediation": {

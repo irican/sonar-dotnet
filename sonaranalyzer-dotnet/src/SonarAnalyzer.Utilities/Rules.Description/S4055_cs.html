@@ -1,0 +1,62 @@
+<p>嵌入在源代码中的字符串文本将无法正确本地化。</p>
+<p>当文本字符串作为参数或属性传递时，如果下列一种或多种情况为真，则此规则会引发问题：</p>
+<ul>
+  <li> 参数或属性的<code>LocalizableAttribute</code>属性被设置为true。</li>
+  <li> 参数或属性名包含"文本（Text）"，"消息（Message）"，或"标题（Caption）"。</li>
+  <li> 传递给<code>Console.Write</code> 或 <code>Console.WriteLine</code> 方法的字符串参数的名称是“value”或“format”。</li>
+</ul>
+<h2>不合规的代码示例</h2>
+<pre>
+using System;
+using System.Globalization;
+using System.Reflection;
+using System.Windows.Forms;
+
+[assembly: NeutralResourcesLanguageAttribute("en-US")]
+namespace MyLibrary
+{
+    public class Foo
+    {
+        public void SetHour(int hour)
+        {
+            if (hour &lt; 0 || hour &gt; 23)
+            {
+                MessageBox.Show("The valid range is 0 - 23."); // 不合规
+            }
+        }
+    }
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+using System;
+using System.Globalization;
+using System.Reflection;
+using System.Resources;
+using System.Windows.Forms;
+
+
+
+[assembly: NeutralResourcesLanguageAttribute("en-US")]
+namespace MyLibrary
+{
+    public class Foo
+    {
+        ResourceManager rm;
+        public Foo()
+        {
+            rm = new ResourceManager("en-US", Assembly.GetExecutingAssembly());
+        }
+
+        public void SetHour(int hour)
+        {
+            if (hour &lt; 0 || hour &gt; 23)
+            {
+                MessageBox.Show(
+                rm.GetString("OutOfRangeMessage", CultureInfo.CurrentUICulture));
+            }
+        }
+    }
+}
+</pre>
+

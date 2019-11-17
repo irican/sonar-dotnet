@@ -1,5 +1,5 @@
 {
-  "title": "Variables should not be checked against the values they're about to be assigned",
+  "title": "不应用即将赋给变量的值来检查该变量自己",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

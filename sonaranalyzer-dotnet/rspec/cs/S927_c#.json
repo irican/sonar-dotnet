@@ -1,5 +1,5 @@
 {
-  "title": "parameter names should match base declaration and other partial definitions",
+  "title": "形参的名称应与原始声明和其他的partial定义里的名称保持一致",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {
@@ -7,7 +7,6 @@
     "constantCost": "10min"
   },
   "tags": [
-    "based-on-misra",
     "misra",
     "cert",
     "suspicious"

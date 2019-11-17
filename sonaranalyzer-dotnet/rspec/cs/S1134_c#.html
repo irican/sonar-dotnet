@@ -1,14 +1,14 @@
-<p><code>FIXME</code> tags are commonly used to mark places where a bug is suspected, but which the developer wants to deal with later.</p>
-<p>Sometimes the developer will not have the time or will simply forget to get back to that tag.</p>
-<p>This rule is meant to track those tags and to ensure that they do not go unnoticed.</p>
-<h2>Noncompliant Code Example</h2>
+<p>标识 <code>FIXME</code> 通常表示标记处存在开发者留待解决的问题。</p>
+<p>然而有时开发者可能没有时间来解决，或者干脆忘了这件事。</p>
+<p>此规则用来跟踪这些标识，确保它们不会被忽略。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 private int Divide(int numerator, int denominator)
 {
-    return numerator / denominator;  // FIXME denominator value might be  0
+  return numerator / denominator;              // FIXME 分母可能为0
 }
 </pre>
-<h2>See</h2>
+<h2>请参阅</h2>
 <ul>
   <li> <a href="http://cwe.mitre.org/data/definitions/546.html">MITRE, CWE-546</a> - Suspicious Comment </li>
 </ul>

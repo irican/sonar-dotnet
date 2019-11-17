@@ -1,10 +1,10 @@
 {
-  "title": "Empty \"default\" clauses should be removed",
+  "title": "应删除空的 \"default\" 子句",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {
     "func": "Constant\/Issue",
-    "constantCost": " 1min"
+    "constantCost": "\t1min"
   },
   "tags": [
     "unused",

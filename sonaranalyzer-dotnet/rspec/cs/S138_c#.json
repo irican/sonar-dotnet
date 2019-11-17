@@ -1,5 +1,5 @@
 {
-  "title": "Functions should not have too many lines of code",
+  "title": "函数的代码行数不应太多",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

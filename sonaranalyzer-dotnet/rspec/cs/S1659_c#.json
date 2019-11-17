@@ -1,5 +1,5 @@
 {
-  "title": "Multiple variables should not be declared on the same line",
+  "title": "不应在一行中声明多个变量",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {
@@ -8,7 +8,6 @@
   },
   "tags": [
     "convention",
-    "based-on-misra",
     "misra",
     "cert"
   ],

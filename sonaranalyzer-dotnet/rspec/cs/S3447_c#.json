@@ -1,5 +1,5 @@
 {
-  "title": "\"[Optional]\" should not be used on \"ref\" or \"out\" parameters",
+  "title": "\"[Optional]\" 不应用于有 \"ref\" 或 \"out\" 关键字的参数",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

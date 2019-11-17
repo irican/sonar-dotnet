@@ -1,5 +1,5 @@
 {
-  "title": "\"base.Equals\" should not be used to check for reference equality in \"Equals\" if \"base\" is not \"object\"",
+  "title": "如果 \"base\" 不是 \"object\"的话，\"base.Equals\" 不应用来检查 \"Equals\" 中的引用的相等性",
   "type": "BUG",
   "status": "ready",
   "remediation": {

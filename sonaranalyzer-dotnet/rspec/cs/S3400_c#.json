@@ -1,5 +1,5 @@
 {
-  "title": "Methods should not return constants",
+  "title": "方法不应返回常量",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

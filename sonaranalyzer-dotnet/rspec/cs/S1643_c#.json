@@ -1,5 +1,5 @@
 {
-  "title": "Strings should not be concatenated using '+' in a loop",
+  "title": "字符串在循环中不应用'+'来连接",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

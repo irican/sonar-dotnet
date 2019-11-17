@@ -1,8 +1,7 @@
-<p>Having all branches in a <code>switch</code> or <code>if</code> chain with the same implementation is an error. Either a copy-paste error was made
-and something different should be executed, or there shouldn't be a <code>switch</code>/<code>if</code> chain at all.</p>
-<h2>Noncompliant Code Example</h2>
+<p>在 <code>switch</code> 的所有分支或在 <code>if</code> 的链语句中都做相同的实现是一个错误。要么是复制粘贴的错误更改了原本不同的操作，要么就根本不应该有这条 <code>switch</code>／<code>if</code> 链语句。</p>
+<h2>不合规的代码示例</h2>
 <pre>
-if (b == 0)  // Noncompliant
+if (b == 0)  // 不合规
 {
     DoTheThing();
 }
@@ -11,9 +10,9 @@ else
     DoTheThing();
 }
 
-int b = a &gt; 12 ? 4 : 4;  // Noncompliant
+int b = a &gt; 12 ? 4 : 4;  // 不合规
 
-switch (i) // Noncompliant
+switch (i) // 不合规
 {
     case 1:
         DoSomething();
@@ -28,11 +27,10 @@ switch (i) // Noncompliant
         DoSomething();
 }
 </pre>
-<h2>Exceptions</h2>
-<p>This rule does not apply to <code>if</code> chains without <code>else</code>-s, or to <code>switch</code>-es without <code>default</code>
-clauses.</p>
+<h2>例外</h2>
+<p>此规则对没有 <code>else</code> 的 <code>if</code> 链语句以及没有 <code>default</code> 子句的 <code>switch</code> 语句不适用。</p>
 <pre>
-if (b == 0)    //no issue, this could have been done on purpose to make the code more readable
+if (b == 0)    //没有问题，这种写法可能是有意让代码变得易读
 {
     DoSomething();
 }

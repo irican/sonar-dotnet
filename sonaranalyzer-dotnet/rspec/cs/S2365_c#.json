@@ -1,5 +1,5 @@
 {
-  "title": "Properties should not make collection or array copies",
+  "title": "属性里不应该对集合或数组进行复制",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

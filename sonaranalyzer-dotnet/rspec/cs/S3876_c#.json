@@ -1,5 +1,5 @@
 {
-  "title": "Strings or integral types should be used for indexers",
+  "title": "应使用字符串或整型作为索引",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

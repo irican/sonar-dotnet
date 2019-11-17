@@ -1,5 +1,5 @@
 {
-  "title": "Anonymous delegates should not be used to unsubscribe from Events",
+  "title": "匿名委托不应用于取消订阅事件",
   "type": "BUG",
   "status": "ready",
   "remediation": {

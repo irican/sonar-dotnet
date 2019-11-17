@@ -1,5 +1,5 @@
 {
-  "title": "\"ThreadStatic\" should not be used on non-static fields",
+  "title": "\"ThreadStatic\" 不应对非静态字段使用",
   "type": "BUG",
   "status": "ready",
   "remediation": {

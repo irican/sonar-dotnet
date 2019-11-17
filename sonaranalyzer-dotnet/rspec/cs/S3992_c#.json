@@ -1,5 +1,5 @@
 {
-  "title": "Assemblies should explicitly specify COM visibility",
+  "title": "程序集应显式地指明COM的可见性",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

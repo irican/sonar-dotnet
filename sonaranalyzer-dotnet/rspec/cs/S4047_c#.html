@@ -1,8 +1,6 @@
-<p>When a reference parameter (keyword <code>ref</code>) is used, the passed argument type must exactly match the reference parameter type. This means
-that to be able to pass a derived type, it must be cast and assigned to a variable of the proper type. Use of generic methods eliminates that
-cumbersome down casting and should therefore be preferred.</p>
-<p>This rule raises an issue when a method contains a <code>ref</code> parameter of type <code>System.Object</code>.</p>
-<h2>Noncompliant Code Example</h2>
+<p>当使用引用参数(关键字<code>ref</code>)时，传递的参数类型必须与引用参数类型完全匹配。这意味着要传递派生类型，必须强制转换并将其分配给适当类型的变量。通用方法的使用消除了向下强制转换的麻烦，因此应该是首选方法。</p>
+<p>当方法包含类型为<code>System.Object</code>的<code>ref</code>参数时，此规则会引发一个问题。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 using System;
 
@@ -10,13 +8,13 @@ namespace MyLibrary
 {
   public class Foo
   {
-    public void Bar(ref object o1, ref object o2) // Noncompliant
+    public void Bar(ref object o1, ref object o2) // 不合规
     {
     }
   }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 using System;
 

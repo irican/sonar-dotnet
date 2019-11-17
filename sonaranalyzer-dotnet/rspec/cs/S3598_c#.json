@@ -1,5 +1,5 @@
 {
-  "title": "One-way \"OperationContract\" methods should have \"void\" return type",
+  "title": "单向 \"OperationContract\" 方法的返回值类型应为 \"void\"",
   "type": "BUG",
   "status": "ready",
   "remediation": {

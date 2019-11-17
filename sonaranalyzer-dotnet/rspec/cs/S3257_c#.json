@@ -1,5 +1,5 @@
 {
-  "title": "Declarations and initializations should be as concise as possible",
+  "title": "声明和初始化应尽可能简洁",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

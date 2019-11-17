@@ -1,5 +1,5 @@
 {
-  "title": "Interface methods should be callable by derived types",
+  "title": "接口方法应该由派生类型调用",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

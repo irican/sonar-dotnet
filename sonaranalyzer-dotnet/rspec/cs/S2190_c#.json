@@ -1,5 +1,5 @@
 {
-  "title": "Recursion should not be infinite",
+  "title": "不应无限递归",
   "type": "BUG",
   "status": "ready",
   "remediation": {
@@ -7,7 +7,7 @@
     "constantCost": "30min"
   },
   "tags": [
-    "suspicious"
+    
   ],
   "defaultSeverity": "Blocker",
   "ruleSpecification": "RSPEC-2190",

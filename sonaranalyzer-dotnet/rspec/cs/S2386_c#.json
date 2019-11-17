@@ -1,5 +1,5 @@
 {
-  "title": "Mutable fields should not be \"public static\"",
+  "title": "可变字段不应为 \"public static\"",
   "type": "VULNERABILITY",
   "status": "ready",
   "remediation": {

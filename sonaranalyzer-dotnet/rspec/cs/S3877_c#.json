@@ -1,5 +1,5 @@
 {
-  "title": "Exceptions should not be thrown from unexpected methods",
+  "title": "不要从意外的方法中抛出异常",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

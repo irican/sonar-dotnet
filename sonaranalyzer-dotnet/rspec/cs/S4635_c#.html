@@ -1,0 +1,17 @@
+<p>从一个给定字符串中获得给定偏移量开始的子串可以由这样的代码实现：<code>str.Substring(startIndex).IndexOf(char1)</code>。没问题，但是每次调用<code>Substring</code> 方法都会创建一个新的<code>string</code>对象。如果这样的操作在循环中完成，大量<code>strings</code> 被无谓创建，在 <code>str</code> 对象很大时，会导致性能问题。</p>
+<p>为了避免性能问题，<code>string.Substring(startIndex)</code> 不能与下列方法形成链式调用：</p>
+<p>- <code>IndexOf</code></p>
+<p>- <code>IndexOfAny</code></p>
+<p>- <code>LastIndexOf</code></p>
+<p>- <code>LastIndexOfAny</code></p>
+<p>对于上述方法，都存在一个可以提供偏移量的重载版本。</p>
+<p>使用这些方法（的重载版本）可以获得相同的结果，而且可以避免创建新的<code>String</code> 实例。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+str.Substring(StartIndex).IndexOf(char1); // 不合规，Substring方法将创建新的字符串
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+str.IndexOf(char1, startIndex);
+</pre>
+

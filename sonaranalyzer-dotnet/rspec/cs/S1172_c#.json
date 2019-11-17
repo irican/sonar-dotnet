@@ -1,5 +1,5 @@
 {
-  "title": "Unused method parameters should be removed",
+  "title": "未使用的方法形参应该删掉",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {
@@ -7,7 +7,6 @@
     "constantCost": "5min"
   },
   "tags": [
-    "based-on-misra",
     "misra",
     "cert",
     "unused"

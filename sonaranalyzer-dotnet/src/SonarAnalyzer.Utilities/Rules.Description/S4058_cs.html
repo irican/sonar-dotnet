@@ -1,0 +1,33 @@
+<p>许多字符串操作，特别是<code>Compare</code> 和 <code>Equals</code> 方法，提供了一个重载，接受一个<code>StringComparison</code> 枚举值作为参数。调用这些重载并显式地提供此参数可以使代码更清晰、更易于维护。</p>
+<p>当字符串比较操作没有使用接受<code>StringComparison</code>参数的重载时，该规则会引发一个问题。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+using System;
+
+namespace MyLibrary
+{
+  public class Foo
+  {
+    public bool HaveSameNames(string name1, string name2)
+    {
+      return string.Compare(name1, name2) == 0; // 不合规
+    }
+  }
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+using System;
+
+namespace MyLibrary
+{
+  public class Foo
+  {
+    public bool HaveSameNames(string name1, string name2)
+    {
+      return string.Compare(name1, name2, StringComparison.OrdinalIgnoreCase) == 0;
+    }
+  }
+}
+</pre>
+

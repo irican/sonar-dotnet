@@ -1,5 +1,5 @@
 {
-  "title": "Classes that provide \"Equals(<T>)\" should implement \"IEquatable<T>\"",
+  "title": "提供 \"Equals(<T>)\" 的类应该实现 \"IEquatable<T>\"",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

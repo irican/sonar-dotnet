@@ -1,19 +1,17 @@
-<p>While it is technically correct to assign to parameters from within method bodies, doing so before the parameter value is read is likely a bug.
-Instead, initial values of parameters, caught exceptions, and foreach parameters should be, if not treated as <code>final</code>, then at least read
-before reassignment.</p>
-<h2>Noncompliant Code Example</h2>
+<p>在方法主体内给参数赋值尽管从技术角度来说是没有错的，但如果尚未读取过该参数，这样做有可能产生bug。因此，参数的初值、捕获的异常和foreach语句的参数如果不是 <code>final</code> ，那么至少在将他们读取之后再进行重新赋值。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 public void DoTheThing(string str, int i, List&lt;string&gt; strings)
 {
-  str = i.ToString(i);  // Noncompliant
+  str = i.ToString(i);  // 不合规
 
   foreach (var s in strings)
   {
-    s = "hello world";  // Noncompliant
+    s = "hello world";  // 不合规
   }
 }
 </pre>
-<h2>See</h2>
+<h2>请参阅</h2>
 <ul>
   <li> MISRA C:2012, 17.8 - A function parameter should not be modified </li>
 </ul>

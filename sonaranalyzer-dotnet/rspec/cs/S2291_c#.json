@@ -1,5 +1,5 @@
 {
-  "title": "Overflow checking should not be disabled for \"Enumerable.Sum\"",
+  "title": "应始终对 \"Enumerable.Sum\" 进行溢出检查",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

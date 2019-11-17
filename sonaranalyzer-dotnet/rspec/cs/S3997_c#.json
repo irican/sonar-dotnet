@@ -1,5 +1,5 @@
 {
-  "title": "String URI overloads should call \"System.Uri\" overloads",
+  "title": "字符串的URI重载应调用 \"System.Uri\" 重载",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

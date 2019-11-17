@@ -1,5 +1,5 @@
 {
-  "title": "Parameters with \"[DefaultParameterValue]\" attributes should also be marked \"[Optional]\"",
+  "title": "有 \"[DefaultParameterValue]\" 特性的参数应该也标记为 \"[Optional]\"",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

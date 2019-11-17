@@ -1,5 +1,5 @@
 {
-  "title": "Classes directly extending \"object\" should not call \"base\" in \"GetHashCode\" or \"Equals\"",
+  "title": "直接扩展 \"object\" 的类不应在 \"GetHashCode\" 和 \"Equals\" 中调用 \"base\"",
   "type": "BUG",
   "status": "ready",
   "remediation": {

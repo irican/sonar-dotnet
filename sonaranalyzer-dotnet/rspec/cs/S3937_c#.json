@@ -1,5 +1,5 @@
 {
-  "title": "Number patterns should be regular",
+  "title": "数字的格式应符合规范",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

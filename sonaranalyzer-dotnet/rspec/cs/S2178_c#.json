@@ -1,5 +1,5 @@
 {
-  "title": "Short-circuit logic should be used in boolean contexts",
+  "title": "在布尔值的上下文环境里应使用短路逻辑",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

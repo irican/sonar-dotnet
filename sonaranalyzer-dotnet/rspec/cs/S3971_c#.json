@@ -1,5 +1,5 @@
 {
-  "title": "\"GC.SuppressFinalize\" should not be called",
+  "title": "不应调用 \"GC.SuppressFinalize\"",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

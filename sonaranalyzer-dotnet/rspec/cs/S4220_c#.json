@@ -1,5 +1,5 @@
 {
-  "title": "Events should have proper arguments",
+  "title": "事件应该有适当的参数",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

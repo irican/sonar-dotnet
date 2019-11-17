@@ -1,5 +1,5 @@
 {
-  "title": "\"for\" loop increment clauses should modify the loops' counters",
+  "title": "\"for\" 循环的递增子句里递增的应是循环的计数器",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

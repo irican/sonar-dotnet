@@ -1,5 +1,5 @@
 {
-  "title": "Unused type parameters should be removed",
+  "title": "未使用的类型参数应该删除",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

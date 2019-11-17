@@ -1,5 +1,5 @@
 {
-  "title": "Control structures should use curly braces",
+  "title": "控制结构应使用花括号",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {
@@ -7,7 +7,6 @@
     "constantCost": "2min"
   },
   "tags": [
-    "based-on-misra",
     "misra",
     "cert",
     "pitfall"

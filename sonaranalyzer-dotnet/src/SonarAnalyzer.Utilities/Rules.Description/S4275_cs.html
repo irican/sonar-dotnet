@@ -1,15 +1,12 @@
-<p>Properties provide a way to enforce encapsulation by providing <code>public</code>, <code>protected</code> or <code>internal</code> methods that
-give controlled access to <code>private</code> fields. However in classes with multiple fields it is not unusual that cut and paste is used to quickly
-create the needed properties, which can result in the wrong field being accessed by a getter or setter.</p>
-<p>This rule raises an issue in any of these cases:</p>
+<p>属性通过提供 <code>public</code>，<code>protected</code> 或 <code>internal</code>方法来提供对 <code>private</code> 字段的受控访问，从而提供了一种强制封装的方法。然而，在具有多个字段的类中，使用剪切和粘贴来快速创建所需的属性并不少见，这可能导致getter或setter访问了错误的字段。</p>
+<p>这条规则在以下任何情况下都会引起问题：</p>
 <ul>
-  <li> A setter does not update the field with the corresponding name. </li>
-  <li> A getter does not access the field with the corresponding name. </li>
+  <li> setter不使用相应的名称更新字段。</li>
+  <li> getter不访问具有对应名称的字段。</li>
 </ul>
-<p>For simple properties it is better to use <a
-href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/auto-implemented-properties">auto-implemented
-properties</a> (C# 3.0 or later).</p>
-<h2>Noncompliant Code Example</h2>
+<p>对于简单的属性，最好使用 <a
+href="https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/auto-implemented-properties">自动实现的属性</a> (C# 3.0 或之后的版本)。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 class A
 {
@@ -24,12 +21,12 @@ class A
 
     public int Y
     {
-        get { return x; }  // Noncompliant: field 'y' is not used in the return value
-        set { x = value; } // Noncompliant: field 'y' is not updated
+        get { return x; }  // 不合规: 返回值中不使用字段 'y' 
+        set { x = value; } // 不合规: 字段'y'没有更新
     }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 class A
 {

@@ -1,19 +1,16 @@
-<p>Throwing such general exceptions as <code>Exception</code>, <code>SystemException</code>, <code>ApplicationException</code>,
-<code>IndexOutOfRangeException</code>, <code>NullReferenceException</code>, <code>OutOfMemoryException</code> and
-<code>ExecutionEngineException</code> prevents calling methods from handling true, system-generated exceptions differently than application-generated
-errors. </p>
-<h2>Noncompliant Code Example</h2>
+<p>使用throw抛出 <code>Exception</code>，<code>SystemException</code>， <code>ApplicationException</code>，<code>IndexOutOfRangeException</code>，<code>NullReferenceException</code>，<code>OutOfMemoryException</code> 以及 <code>ExecutionEngineException</code> 这样的一般异常，可让调用的方法不必处理真正的、系统产生的异常，而这与应用产生的错误是不同的。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 public void DoSomething(object obj)
 {
   if (obj == null)
   {
-    throw new NullReferenceException("obj");  // Noncompliant
+    throw new NullReferenceException("obj");  // 不合规
   }
-  // ...
+  // ……
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 public void DoSomething(object obj)
 {
@@ -21,10 +18,10 @@ public void DoSomething(object obj)
   {
     throw new ArgumentNullException("obj");
   }
-  // ...
+  // ……
 }
 </pre>
-<h2>See</h2>
+<h2>请参阅</h2>
 <ul>
   <li> <a href="http://cwe.mitre.org/data/definitions/397.html">MITRE, CWE-397</a> - Declaration of Throws for Generic Exception </li>
   <li> <a href="https://www.securecoding.cert.org/confluence/x/BoB3AQ">CERT, ERR07-J.</a> - Do not throw RuntimeException, Exception, or Throwable

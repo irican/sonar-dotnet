@@ -1,5 +1,5 @@
 {
-  "title": "Composite format strings should be used correctly",
+  "title": "应正确使用复合格式字符串",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

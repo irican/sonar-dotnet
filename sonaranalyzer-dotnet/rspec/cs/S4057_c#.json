@@ -1,5 +1,5 @@
 {
-  "title": "Locales should be set for data types",
+  "title": "应该为数据类型设置Locales",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

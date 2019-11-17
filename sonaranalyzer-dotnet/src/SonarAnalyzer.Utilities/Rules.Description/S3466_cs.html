@@ -1,7 +1,5 @@
-<p>Generally, writing the least code that will <em>readably</em> do the job is a good thing, so omitting default parameter values seems to make sense.
-Unfortunately, when you omit them from the <code>base</code> call in an override, you're not actually getting the job done thoroughly, because you're
-ignoring the value the caller passed in. The result will likely not be what the caller expected.</p>
-<h2>Noncompliant Code Example</h2>
+<p>通常来说，以最少的代码完成功能并保证代码的<em>可读性</em>是很好的，因此省略参数的默认值似乎是有意义的。不幸的是，如果你在重写的方法里调用 <code>base</code> 方法时省略了它们，你实际上并没有彻底地完成任务，因为你忽略了调用者传入的值，结果很可能不是调用者期望的。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 public class BaseClass
 {
@@ -15,18 +13,18 @@ public class DerivedClass : BaseClass
 {
     public override void MyMethod(int i = 1)
     {
-        // ...
-        base.MyMethod(); // Noncompliant; caller's value is ignored
+        // ……
+        base.MyMethod(); // 不合规，调用者的值被省略
     }
 
     static int Main(string[] args)
     {
         DerivedClass dc = new DerivedClass();
-        dc.MyMethod(12);  // prints 1
+        dc.MyMethod(12);  // 输出1
     }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 public class BaseClass
 {
@@ -40,7 +38,7 @@ public class DerivedClass : BaseClass
 {
     public override void MyMethod(int i = 1)
     {
-        // ...
+        // ……
         base.MyMethod(i);
     }
 

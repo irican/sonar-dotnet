@@ -1,0 +1,52 @@
+<p>只存储属性值的私有字段是一个典型的死亡存储（dead store）的例子。改变其属性值不会奏效，也意味着这里的代码多半存在严重错误。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+public class Rectangle
+{
+  private readonly int length;
+  private readonly int width;  // 宽度数据被写过，但是没有读过
+
+  public Rectangle(int length, int width)
+  {
+    this.length = length;
+    this.width = width;
+  }
+
+  public int Surface
+  {
+    get
+    {
+      return length * length;
+    }
+  }
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+public class Rectangle
+{
+  private readonly int length;
+  private readonly int width;
+
+  public Rectangle(int length, int width)
+  {
+    this.length = length;
+    this.width= width;
+  }
+
+  public int Surface
+  {
+    get
+    {
+      return length * width;
+    }
+  }
+}
+</pre>
+<h2>请参阅</h2>
+<ul>
+  <li> <a href="http://cwe.mitre.org/data/definitions/563.html">MITRE, CWE-563</a> - Assignment to Variable without Use ('Unused Variable') </li>
+  <li> <a href="https://www.securecoding.cert.org/confluence/x/QYA5">CERT, MSC13-C.</a> - Detect and remove unused values </li>
+  <li> <a href="https://www.securecoding.cert.org/confluence/x/uQCSBg">CERT, MSC56-J.</a> - Detect and remove superfluous code and values </li>
+</ul>
+

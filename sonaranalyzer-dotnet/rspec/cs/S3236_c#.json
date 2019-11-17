@@ -1,5 +1,5 @@
 {
-  "title": "Caller information arguments should not be provided explicitly",
+  "title": "含调用者信息的参数不应显式地提供",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

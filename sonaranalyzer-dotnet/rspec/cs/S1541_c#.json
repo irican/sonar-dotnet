@@ -1,5 +1,5 @@
 {
-  "title": "Methods and properties should not be too complex",
+  "title": "方法和属性不应太复杂",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

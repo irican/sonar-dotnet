@@ -1,5 +1,5 @@
 {
-  "title": "ASP.NET HTTP request validation feature should not be disabled",
+  "title": "不应禁用 ASP.NET HTTP 请求验证功能",
   "type": "VULNERABILITY",
   "status": "ready",
   "remediation": {

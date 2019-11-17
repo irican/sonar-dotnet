@@ -1,0 +1,16 @@
+{
+  "title": "同一方法的不同重载应当放在一起",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "1min"
+  },
+  "tags": [
+    "convention"
+  ],
+  "defaultSeverity": "Minor",
+  "ruleSpecification": "RSPEC-4136",
+  "sqKey": "S4136",
+  "scope": "All"
+}

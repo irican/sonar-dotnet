@@ -1,22 +1,20 @@
-<p>There is no reason to re-assign a variable to itself. Either this statement is redundant and should be removed, or the re-assignment is a mistake
-and some other value or variable was intended for the assignment instead.</p>
-<h2>Noncompliant Code Example</h2>
+<p>没有理由能解释用变量自己给自己再次赋值的行为。这种语句要么是无用的，应该直接删掉，要么就是本想用别的值或变量来赋值但写错了。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 public void SetName(string name)
 {
   name = name;
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 public void SetName(string name)
 {
   this.name = name;
 }
 </pre>
-<h2>See</h2>
+<h2>请参阅</h2>
 <ul>
-  <li> <a href="https://www.securecoding.cert.org/confluence/x/NYA5">CERT, MSC12-C.</a> - Detect and remove code that has no effect or is never
-  executed </li>
+  <li> <a href="https://www.securecoding.cert.org/confluence/x/NYA5">CERT, MSC12-C.</a> - Detect and remove code that has no effect or is never executed </li>
 </ul>
 

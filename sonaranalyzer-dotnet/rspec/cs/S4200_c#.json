@@ -1,5 +1,5 @@
 {
-  "title": "Native methods should be wrapped",
+  "title": "应该封装本机方法（Native methods）",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

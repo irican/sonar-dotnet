@@ -1,5 +1,5 @@
 {
-  "title": "Classes should not be coupled to too many other classes (Single Responsibility Principle)",
+  "title": "一个类不应与太多的其他类有联系（Single Responsibility Principle）",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

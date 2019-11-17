@@ -1,5 +1,5 @@
 {
-  "title": "Exception types should be \"public\"",
+  "title": "异常的类型应为 \"public\"",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {
@@ -11,16 +11,8 @@
     "api-design",
     "owasp-a10"
   ],
-  "standards": [
-    "OWASP Top Ten"
-  ],
   "defaultSeverity": "Critical",
   "ruleSpecification": "RSPEC-3871",
   "sqKey": "S3871",
-  "scope": "All",
-  "securityStandards": {
-    "OWASP": [
-      "A10"
-    ]
-  }
+  "scope": "All"
 }

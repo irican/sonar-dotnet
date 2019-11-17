@@ -1,5 +1,5 @@
 {
-  "title": "\"ServiceContract\" and \"OperationContract\" attributes should be used together",
+  "title": "\"ServiceContract\" 与 \"OperationContract\" 两个特性应同时使用",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

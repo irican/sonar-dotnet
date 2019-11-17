@@ -1,0 +1,75 @@
+<p>调用委托的 <code>BeginInvoke</code> 方法会分配只有调用 <code>EndInvoke</code> 方法才能释放的资源。你必须将<code>BeginInvoke</code>与<code>EndInvoke</code>配对使用来完成异步调用。</p>
+<p>下列情况发生时报告问题：</p>
+<ul>
+  <li> 同一代码块中， <code>BeginInvoke</code> 方法没有指定回调，也没有与<code>EndInvoke</code>配对使用。</li>
+  <li> 一个含有<code>IAsyncResult</code> 类型参数的回调没有调用<code>EndInvoke</code>。 </li>
+</ul>
+<h2>不合规的代码示例</h2>
+<p>不含回调的BeginInvoke</p>
+<pre>
+public delegate string AsyncMethodCaller();
+
+public static void Main()
+{
+    AsyncExample asyncExample = new AsyncExample();
+    AsyncMethodCaller caller = new AsyncMethodCaller(asyncExample.MyMethod);
+
+    // Initiate the asynchronous call.
+    IAsyncResult result = caller.BeginInvoke(null, null); // 不合规 - 没有与EndInvoke配对使用
+}
+</pre>
+<p>含有回调的BeginInvoke</p>
+<pre>
+public delegate string AsyncMethodCaller();
+
+public static void Main()
+{
+    AsyncExample asyncExample = new AsyncExample();
+    AsyncMethodCaller caller = new AsyncMethodCaller(asyncExample.MyMethod);
+
+    IAsyncResult result = caller.BeginInvoke(
+        new AsyncCallback((IAsyncResult ar) =&gt; {}),
+        null); // 不合规 - 没有与EndInvoke配对使用
+}
+</pre>
+<h2>合规的解决方案</h2>
+<p>不含回调的BeginInvoke</p>
+<pre>
+public delegate string AsyncMethodCaller();
+
+public static void Main()
+{
+    AsyncExample asyncExample = new AsyncExample();
+    AsyncMethodCaller caller = new AsyncMethodCaller(asyncExample.MyMethod);
+
+    IAsyncResult result = caller.BeginInvoke(null, null);
+
+    string returnValue = caller.EndInvoke(out threadId, result);
+}
+</pre>
+<p>含有回调的BeginInvoke</p>
+<pre>
+public delegate string AsyncMethodCaller();
+
+public static void Main()
+{
+    AsyncExample asyncExample = new AsyncExample();
+    AsyncMethodCaller caller = new AsyncMethodCaller(asyncExample.MyMethod);
+
+    IAsyncResult result = caller.BeginInvoke(
+        new AsyncCallback((IAsyncResult ar) =&gt;
+            {
+                // Retrieve the delegate.
+                AsyncResult result = (AsyncResult)ar;
+                AsyncMethodCaller caller = (AsyncMethodCaller)result.AsyncDelegate;
+                // Call EndInvoke to retrieve the results.
+                string returnValue = caller.EndInvoke(ar);
+            }),
+            null
+        );
+}
+</pre>
+<h2>请参阅</h2>
+<p><a href="https://docs.microsoft.com/en-us/dotnet/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously">Calling
+Synchronous Methods Asynchronously</a></p>
+

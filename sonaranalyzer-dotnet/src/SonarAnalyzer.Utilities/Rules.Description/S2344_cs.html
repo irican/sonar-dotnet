@@ -1,14 +1,14 @@
-<p>The information that an enumeration type is actually an enumeration or a set of flags should not be duplicated in its name.</p>
-<h2>Noncompliant Code Example</h2>
+<p>不要在枚举类型的名称里再出现说明该类型是枚举（an enumeration type is actually an enumeration）或是一组flag的信息。</p>
+<h2>不合规的代码示例</h2>
 <pre>
-enum FooFlags // Noncompliant
+enum FooFlags // 不合规
 {
     Foo = 1
     Bar = 2
     Baz = 4
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 enum Foo
 {

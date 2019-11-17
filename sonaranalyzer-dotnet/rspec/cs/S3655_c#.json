@@ -1,5 +1,5 @@
 {
-  "title": "Empty nullable value should not be accessed",
+  "title": "不要访问空值",
   "type": "BUG",
   "status": "ready",
   "remediation": {

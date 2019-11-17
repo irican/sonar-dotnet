@@ -1,5 +1,5 @@
 {
-  "title": "Types should not extend outdated base types",
+  "title": "类型不应该扩展过时的基类型",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

@@ -1,5 +1,5 @@
 {
-  "title": "Inheritance list should not be redundant",
+  "title": "继承列表的里不应有无用的表项",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

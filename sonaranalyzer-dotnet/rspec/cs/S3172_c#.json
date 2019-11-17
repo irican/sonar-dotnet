@@ -1,5 +1,5 @@
 {
-  "title": "Delegates should not be subtracted",
+  "title": "不应减去委托（Delegate）",
   "type": "BUG",
   "status": "ready",
   "remediation": {

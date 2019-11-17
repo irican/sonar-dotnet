@@ -1,5 +1,5 @@
 {
-  "title": "Pointers to unmanaged memory should not be visible",
+  "title": "指向非托管内存的指针应不可见",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

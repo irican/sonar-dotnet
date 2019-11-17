@@ -1,5 +1,5 @@
 {
-  "title": "Nullable type comparison should not be redundant",
+  "title": "对可为null的类型的比较不应重复",
   "type": "BUG",
   "status": "ready",
   "remediation": {

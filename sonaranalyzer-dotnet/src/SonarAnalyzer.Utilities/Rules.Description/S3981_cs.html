@@ -1,7 +1,5 @@
-<p>The size of a collection and the length of an array are always greater than or equal to zero. So testing that a size or length is greater than or
-equal to zero doesn't make sense, since the result is always <code>true</code>. Similarly testing that it is less than zero will always return
-<code>false</code>. Perhaps the intent was to check the non-emptiness of the collection or array instead. </p>
-<h2>Noncompliant Code Example</h2>
+<p>集合的大小与数组的长度总是大于等于零的。所以检验它们是否大于等于零是没有意义的，因为结果总为 <code>true</code>。类似地，检验是否小于零也总会返回 <code>false</code>。也许这种检查的意图是判断集合与数组是否非空。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 if(collection.Count &gt;= 0){...}
 
@@ -11,7 +9,7 @@ if(array.Length &gt;= 0){...}
 
 bool result = array.Length &gt;=0;
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 if (list.Any()) { ... }
 

@@ -1,5 +1,5 @@
 {
-  "title": "\"default\" clauses should be first or last",
+  "title": "\"default\" 子句应该在第一或者最后",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {
@@ -7,7 +7,6 @@
     "constantCost": "5min"
   },
   "tags": [
-    "based-on-misra",
     "misra"
   ],
   "defaultSeverity": "Critical",

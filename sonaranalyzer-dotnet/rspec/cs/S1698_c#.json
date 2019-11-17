@@ -1,5 +1,5 @@
 {
-  "title": "\"==\" should not be used when \"Equals\" is overridden",
+  "title": "重写了 \"Equals\" 后不应再使用\"==\"",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

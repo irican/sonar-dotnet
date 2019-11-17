@@ -1,5 +1,5 @@
 {
-  "title": "Console logging should not be used",
+  "title": "不应使用控制台日志记录（console logging）",
   "type": "VULNERABILITY",
   "status": "superseded",
   "remediation": {

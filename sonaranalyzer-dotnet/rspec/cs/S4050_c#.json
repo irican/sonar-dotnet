@@ -1,5 +1,5 @@
 {
-  "title": "Operators should be overloaded consistently",
+  "title": "操作符应该始终重载",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

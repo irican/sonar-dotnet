@@ -1,5 +1,5 @@
 {
-  "title": "Non-constant static fields should not be visible",
+  "title": "非常量的静态字段不应对外可见",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

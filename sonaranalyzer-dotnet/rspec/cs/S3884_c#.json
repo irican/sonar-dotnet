@@ -1,5 +1,5 @@
 {
-  "title": "\"CoSetProxyBlanket\" and \"CoInitializeSecurity\" should not be used",
+  "title": "不应使用 \"CoSetProxyBlanket\" 与 \"CoInitializeSecurity\"",
   "type": "VULNERABILITY",
   "status": "ready",
   "remediation": {
@@ -7,18 +7,10 @@
     "constantCost": "20min"
   },
   "tags": [
-    "owasp-a6"
-  ],
-  "standards": [
-    "OWASP Top Ten"
+    
   ],
   "defaultSeverity": "Blocker",
   "ruleSpecification": "RSPEC-3884",
   "sqKey": "S3884",
-  "scope": "All",
-  "securityStandards": {
-    "OWASP": [
-      "A6"
-    ]
-  }
+  "scope": "All"
 }

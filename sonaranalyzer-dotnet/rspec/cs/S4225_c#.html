@@ -1,6 +1,5 @@
-<p>Creating an extension method that extends <code>object</code> is not recommended because it makes the method available on <em>every</em> type.
-Extensions should be applied at the most specialized level possible, and that is very unlikely to be <code>object</code>.</p>
-<h2>Noncompliant Code Example</h2>
+<p>不建议创建扩展<code>object</code>的扩展方法，因为它使该方法在上对<em>每一个</em>类型都可用。扩展应该应用于最特殊的级别，而且不太可能是 <code>object</code>。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 using System;
 
@@ -8,9 +7,9 @@ namespace MyLibrary
 {
     public static class MyExtensions
     {
-        public static void Foo(this object o)  //Noncompliant
+        public static void Foo(this object o)  //不合规
         {
-            // ...
+            // ......
         }
     }
 }

@@ -1,0 +1,16 @@
+{
+  "title": "应当正确消耗\"ValueTask\"",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "5min"
+  },
+  "tags": [
+    
+  ],
+  "defaultSeverity": "Critical",
+  "ruleSpecification": "RSPEC-5034",
+  "sqKey": "S5034",
+  "scope": "All"
+}

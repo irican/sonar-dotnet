@@ -1,7 +1,6 @@
-<p>When creating a custom Markup Extension that accepts parameters in WPF, the <code>ConstructorArgument</code> markup must be used to identify the
-discrete properties that match these parameters. However since this is done via a string, the compiler will not notice if there are typos.</p>
-<p>This rule raises an issue when the string argument to <code>ConstructorArgumentAttribute</code> doesn't match any parameter of any constructor.</p>
-<h2>Noncompliant Code Example</h2>
+<p>在创建接受WPF参数的自定义标记扩展时，必须使用<code>ConstructorArgument</code>标记来标识匹配这些参数的离散属性。但是，由于这是通过字符串完成的，编译器不会注意到是否有拼写错误。</p>
+<p>当<code>ConstructorArgumentAttribute</code> 的字符串参数不匹配任何构造函数的任何参数时，该规则会引发一个问题。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 using System;
 
@@ -21,7 +20,7 @@ namespace myLibrary
   }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 using System;
 

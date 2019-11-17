@@ -1,5 +1,5 @@
 {
-  "title": "\"ThreadStatic\" fields should not be initialized",
+  "title": "\"ThreadStatic\" 字段不应初始化",
   "type": "BUG",
   "status": "ready",
   "remediation": {

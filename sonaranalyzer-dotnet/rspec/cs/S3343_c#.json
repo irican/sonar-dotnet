@@ -1,5 +1,5 @@
 {
-  "title": "Caller information parameters should come at the end of the parameter list",
+  "title": "调用者信息属性应该在参数列表的末尾",
   "type": "BUG",
   "status": "ready",
   "remediation": {

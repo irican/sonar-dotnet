@@ -1,5 +1,5 @@
 {
-  "title": "NullReferenceException should not be caught",
+  "title": "NullReferenceException不应被捕获",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

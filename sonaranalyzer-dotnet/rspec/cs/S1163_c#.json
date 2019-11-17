@@ -1,5 +1,5 @@
 {
-  "title": "Exceptions should not be thrown in finally blocks",
+  "title": "不应该在finally块中抛出异常",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

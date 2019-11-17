@@ -1,5 +1,5 @@
 {
-  "title": "Neither \"Thread.Resume\" nor \"Thread.Suspend\" should be used",
+  "title": "\"Thread.Resume\" 与 \"Thread.Suspend\" 都不应使用",
   "type": "BUG",
   "status": "ready",
   "remediation": {

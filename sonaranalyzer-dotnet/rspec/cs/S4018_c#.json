@@ -1,5 +1,5 @@
 {
-  "title": "Generic methods should provide type parameters",
+  "title": "泛型方法应该提供类型参数",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

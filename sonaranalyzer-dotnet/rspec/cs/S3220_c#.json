@@ -1,5 +1,5 @@
 {
-  "title": "Method calls should not resolve ambiguously to overloads with \"params\"",
+  "title": "方法不应含混不清地解析为带有 \"params\" 的方法重载",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

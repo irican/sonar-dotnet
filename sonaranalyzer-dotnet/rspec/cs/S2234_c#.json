@@ -1,5 +1,5 @@
 {
-  "title": "Parameters should be passed in the correct order",
+  "title": "应以正确的顺序传入参数",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

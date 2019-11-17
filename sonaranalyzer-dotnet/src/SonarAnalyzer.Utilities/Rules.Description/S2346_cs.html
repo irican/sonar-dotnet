@@ -1,22 +1,21 @@
-<p>Consistent use of "None" in flags enumerations indicates that all flag values are cleared. The value 0 should not be used to indicate any other
-state, since there is no way to check that the bit <code>0</code> is set.</p>
-<h2>Noncompliant Code Example</h2>
+<p>在有位域标记的枚举类型中统一使用“None”来表示清除所有的标志值（flag values）。因此0值不应再表示任何其他的状态，否则会检查不到已经设置了bit <code>0</code>。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 [Flags]
 enum FruitType
 {
-    Void = 0,        // Non-Compliant
+    Void = 0,        // 不合规
     Banana = 1,
     Orange = 2,
     Strawberry = 4
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 [Flags]
 enum FruitType
 {
-    None = 0,        // Compliant
+    None = 0,        // 合规
     Banana = 1,
     Orange = 2,
     Strawberry = 4

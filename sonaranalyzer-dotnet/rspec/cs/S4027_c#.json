@@ -1,5 +1,5 @@
 {
-  "title": "Exceptions should provide standard constructors",
+  "title": "异常应该提供标准构造函数",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

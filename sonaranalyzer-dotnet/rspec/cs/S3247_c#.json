@@ -1,5 +1,5 @@
 {
-  "title": "Duplicate casts should not be made",
+  "title": "不要做重复的强制类型转换",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

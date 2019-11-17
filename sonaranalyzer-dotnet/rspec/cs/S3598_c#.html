@@ -1,16 +1,14 @@
-<p>When declaring a Windows Communication Foundation (WCF) <code>OperationContract</code> method one-way, that service method won't return any result,
-not even an underlying empty confirmation message. These are fire-and-forget methods that are useful in event-like communication. Specifying a return
-type therefore does not make sense.</p>
-<h2>Noncompliant Code Example</h2>
+<p>如果将一个Windows通讯接口（Windows Communication Foundation）的 <code>OperationContract</code> 方法声明为单向的（one-way），那么该方法不会返回任何结果，甚至连基本的空的确认消息都不会返回。这些方法属于“用后即忘”（fire-and-forget）的方法，在类似于事件（event-like）的通信中很有用。因此对它们指明返回值的类型没有任何意义。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 [ServiceContract]
 interface IMyService
 {
   [OperationContract(IsOneWay = true)]
-  int SomethingHappened(int parameter); // Noncompliant
+  int SomethingHappened(int parameter); // 不合规
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 [ServiceContract]
 interface IMyService
@@ -19,6 +17,6 @@ interface IMyService
   void SomethingHappened(int parameter);
 }
 </pre>
-<h2>Exceptions</h2>
-<p>The rule doesn't report if <code>OperationContractAttribute.AsyncPattern</code> is set to <code>true</code>.</p>
+<h2>例外</h2>
+<p>若 <code>OperationContractAttribute.AsyncPattern</code> 被设为 <code>true</code>，则此规则不会报告问题。</p>
 

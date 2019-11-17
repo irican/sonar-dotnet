@@ -1,5 +1,5 @@
 {
-  "title": "Utility classes should not have public constructors",
+  "title": "工具类不应有公有的构造函数",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

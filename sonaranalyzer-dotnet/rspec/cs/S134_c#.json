@@ -1,5 +1,5 @@
 {
-  "title": "Control flow statements \"if\", \"switch\", \"for\", \"foreach\", \"while\", \"do\"  and \"try\" should not be nested too deeply",
+  "title": "控制流语句如 \"if\", \"switch\", \"for\", \"foreach\", \"while\", \"do\" 以及 \"try\" 不应嵌套太多层",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

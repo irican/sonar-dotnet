@@ -1,5 +1,5 @@
 {
-  "title": "\"IDisposables\" created in a \"using\" statement should not be returned",
+  "title": "创建在 \"using\" 语句里的 \"IDisposables\" 不应返回",
   "type": "BUG",
   "status": "ready",
   "remediation": {

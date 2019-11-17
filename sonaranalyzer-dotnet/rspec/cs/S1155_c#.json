@@ -1,5 +1,5 @@
 {
-  "title": "\"Any()\" should be used to test for emptiness",
+  "title": "检查集合是否为空应用\"Any()\"",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

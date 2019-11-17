@@ -1,5 +1,5 @@
 {
-  "title": "Increment (++) and decrement (--) operators should not be used in a method call or mixed with other operators in an expression",
+  "title": "增量（++）与减量（--）运算符不应在方法调用里使用，或是与其他运算符混合在一个表达式里",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {
@@ -7,7 +7,6 @@
     "constantCost": "5min"
   },
   "tags": [
-    "based-on-misra",
     "misra",
     "cert"
   ],

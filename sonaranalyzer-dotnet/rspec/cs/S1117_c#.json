@@ -1,5 +1,5 @@
 {
-  "title": "Local variables should not shadow class fields",
+  "title": "方法中的局部变量名称不应与类的字段的名称冲突",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {
@@ -7,10 +7,7 @@
     "constantCost": "5min"
   },
   "tags": [
-    "based-on-misra",
-    "misra",
     "cert",
-    "suspicious",
     "pitfall"
   ],
   "defaultSeverity": "Major",

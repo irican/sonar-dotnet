@@ -1,5 +1,5 @@
 {
-  "title": "\"switch\/Select\" statements should contain a \"default\/Case Else\" clauses",
+  "title": "\"switch\/Select\" 语句应以 \"default\/Case Else\" 从句结尾",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {
@@ -8,7 +8,6 @@
   },
   "tags": [
     "cwe",
-    "based-on-misra",
     "misra",
     "cert"
   ],

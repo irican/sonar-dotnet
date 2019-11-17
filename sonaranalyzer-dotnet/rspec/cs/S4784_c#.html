@@ -1,32 +1,30 @@
-<p>Using regular expressions is security-sensitive. It has led in the past to the following vulnerabilities:</p>
+<p>使用正则表达式是安全敏感的。它在过去导致了以下漏洞：</p>
 <ul>
   <li> <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-16021">CVE-2017-16021</a> </li>
   <li> <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-13863">CVE-2018-13863</a> </li>
+  <li> <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-8926">CVE-2018-8926</a> </li>
 </ul>
-<p>Evaluating regular expressions against input strings is potentially an extremely CPU-intensive task. Specially crafted regular expressions such as
-<code>(a+)+s</code> will take several seconds to evaluate the input string <code>aaaaaaaaaaaaaaaaaaaaaaaaaaaaabs</code>. The problem is that with
-every additional <code>a</code> character added to the input, the time required to evaluate the regex doubles. However, the equivalent regular
-expression, <code>a+s</code> (without grouping) is efficiently evaluated in milliseconds and scales linearly with the input size.</p>
-<p>Evaluating such regular expressions opens the door to <a
-href="https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS">Regular expression Denial of Service (ReDoS)</a> attacks. In the
-context of a web application, attackers can force the web server to spend all of its resources evaluating regular expressions thereby making the
-service inaccessible to genuine users.</p>
-<p>This rule flags any execution of a hardcoded regular expression which has at least 3 characters and at least two instances of any of the following
-characters: <code>*+{</code>.</p>
-<p>Example: <code>(a+)*</code></p>
-<h2>Ask Yourself Whether</h2>
+<p>正则表达式受到不同类型的漏洞的影响。</p>
+<p> </p>
+<p>首先，根据输入字符串计算正则表达式可能是一项非常cpu密集型的任务。特别设计的正则表达式，如<code>(a+)+</code> 将花费几秒钟来计算输入字符串 <code>aaaaaaaaaaaaaaaaaaaaaaaaaaaaa!</code>。问题是，在输入中每增加一个 <code>a</code> 字符，计算regex所需的时间就会加倍。然而，等价的正则表达式 <code>a+</code> (不分组)以毫秒为单位进行高效计算，并随输入大小线性扩展。</p>
+<p>将用户提供的字符串计算为正则表达式打开了<a href="https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS">正则表达式拒绝服务(ReDoS)</a> 攻击的大门。在web应用程序中，攻击者可以迫使web服务器花费所有资源来评估正则表达式，从而使真正的用户无法访问服务。</p>
+<p> </p>
+<p>当正则表达式用于验证用户输入时，可能会出现另一种类型的漏洞。正则表达式可以用于过滤不安全的输入，方法是在输入有效时匹配整个输入(例如:整个字符串应该只包含字母数字字符)，或者检测输入的危险部分。在这两种情况下，都有可能让危险的值通过。例如，使用正则表达式<code>.*&lt;script&gt;.*</code>搜索某些HTML代码中的 <code>&lt;script&gt;</code> 标签将错过<code>&lt;script id="test"&gt;</code>。</p>
+<p> </p>
+<p>此规则标记任何正则表达式的执行或编译以供查看。</p>
+<h2>检查是否有下列问题：</h2>
 <ul>
-  <li> the executed regular expression is sensitive and a user can provide a string which will be analyzed by this regular expression. </li>
-  <li> your regular expression engine performance decrease with specially crafted inputs and regular expressions. </li>
+  <li> 用户输入字符串作为正则表达式执行，或者插入到正则表达式中。</li>
+  <li> 用户可以提供一个字符串，该字符串将由正则表达式分析。</li>
+  <li> 使用特殊设计的输入和正则表达式会降低正则表达式引擎的性能。</li>
+  <li> 正则表达式用于验证不安全的输入，但它不能检测所有危险值。</li>
 </ul>
-<p>You may be at risk if you answered yes to any of those questions.</p>
-<h2>Recommended Secure Coding Practices</h2>
-<p>Check whether your regular expression engine (the algorithm executing your regular expression) has any known vulnerabilities. Search for
-vulnerability reports mentioning the one engine you're are using.</p>
-<p>If the regular expression is vulnerable to ReDos attacks, mitigate the risk by using a "match timeout" to limit the time spent running the regular
-expression.</p>
-<p>Remember also that a ReDos attack is possible if a user-provided regular expression is executed. This rule won't detect this kind of injection.</p>
-<h2>Sensitive Code Example</h2>
+<p>如果对这些问题中的任何一个回答是肯定的，那么就有可能处于危险之中。</p>
+<h2>推荐的安全编码实践</h2>
+<p>避免将用户输入字符串作为正则表达式执行，或者至少使用<code>preg_quote</code> 来转义正则表达式字符。</p>
+<p>检查正则表达式引擎(执行正则表达式的算法)是否存在已知的漏洞。搜索提及正在使用的一个引擎的漏洞报告。</p>
+<p>使用等价划分、边值分析和健壮性测试等技术测试正则表达式。尽量不要使用复杂的正则表达式，因为它们很难理解和测试。注意，如果不使用锚（anchors），一些正则表达式引擎只匹配部分输入。在PHP中，例如<code>preg_match("/[A-Za-z0-9]+/", $text)</code>将接受任何包含至少一个字母数字字符的字符串，因为它没有锚（anchors）。</p>
+<h2>可疑代码示例</h2>
 <pre>
 using System;
 using System.Collections.Generic;
@@ -39,46 +37,50 @@ namespace N
 {
     public class RegularExpression
     {
-        void Foo(RegexOptions options, TimeSpan matchTimeout, string input,
+        void Foo(string pattern, RegexOptions options, TimeSpan matchTimeout, string input,
                  string replacement, MatchEvaluator evaluator)
         {
-            // All the following instantiations are Sensitive.
-            new System.Text.RegularExpressions.Regex("(a+)+");
-            new System.Text.RegularExpressions.Regex("(a+)+", options);
-            new System.Text.RegularExpressions.Regex("(a+)+", options, matchTimeout);
+            // 以下所有实例都有问题。验证正则表达式和匹配的输入。
+            new System.Text.RegularExpressions.Regex(pattern);
+            new System.Text.RegularExpressions.Regex(pattern, options);
+            new System.Text.RegularExpressions.Regex(pattern, options, matchTimeout);
 
-            // All the following static methods are Sensitive.
-            System.Text.RegularExpressions.Regex.IsMatch(input, "(a+)+");
-            System.Text.RegularExpressions.Regex.IsMatch(input, "(a+)+", options);
-            System.Text.RegularExpressions.Regex.IsMatch(input, "(a+)+", options, matchTimeout);
+            // 下面所有的静态方法都有问题。
+            System.Text.RegularExpressions.Regex.IsMatch(input, pattern);
+            System.Text.RegularExpressions.Regex.IsMatch(input, pattern, options);
+            System.Text.RegularExpressions.Regex.IsMatch(input, pattern, options, matchTimeout);
 
-            System.Text.RegularExpressions.Regex.Match(input, "(a+)+");
-            System.Text.RegularExpressions.Regex.Match(input, "(a+)+", options);
-            System.Text.RegularExpressions.Regex.Match(input, "(a+)+", options, matchTimeout);
+            System.Text.RegularExpressions.Regex.Match(input, pattern);
+            System.Text.RegularExpressions.Regex.Match(input, pattern, options);
+            System.Text.RegularExpressions.Regex.Match(input, pattern, options, matchTimeout);
 
-            System.Text.RegularExpressions.Regex.Matches(input, "(a+)+");
-            System.Text.RegularExpressions.Regex.Matches(input, "(a+)+", options);
-            System.Text.RegularExpressions.Regex.Matches(input, "(a+)+", options, matchTimeout);
+            System.Text.RegularExpressions.Regex.Matches(input, pattern);
+            System.Text.RegularExpressions.Regex.Matches(input, pattern, options);
+            System.Text.RegularExpressions.Regex.Matches(input, pattern, options, matchTimeout);
 
-            System.Text.RegularExpressions.Regex.Replace(input, "(a+)+", evaluator);
-            System.Text.RegularExpressions.Regex.Replace(input, "(a+)+", evaluator, options);
-            System.Text.RegularExpressions.Regex.Replace(input, "(a+)+", evaluator, options, matchTimeout);
-            System.Text.RegularExpressions.Regex.Replace(input, "(a+)+", replacement);
-            System.Text.RegularExpressions.Regex.Replace(input, "(a+)+", replacement, options);
-            System.Text.RegularExpressions.Regex.Replace(input, "(a+)+", replacement, options, matchTimeout);
+            System.Text.RegularExpressions.Regex.Replace(input, pattern, evaluator);
+            System.Text.RegularExpressions.Regex.Replace(input, pattern, evaluator, options);
+            System.Text.RegularExpressions.Regex.Replace(input, pattern, evaluator, options, matchTimeout);
+            System.Text.RegularExpressions.Regex.Replace(input, pattern, replacement);
+            System.Text.RegularExpressions.Regex.Replace(input, pattern, replacement, options);
+            System.Text.RegularExpressions.Regex.Replace(input, pattern, replacement, options, matchTimeout);
 
-            System.Text.RegularExpressions.Regex.Split(input, "(a+)+");
-            System.Text.RegularExpressions.Regex.Split(input, "(a+)+", options);
-            System.Text.RegularExpressions.Regex.Split(input, "(a+)+", options, matchTimeout);
+            System.Text.RegularExpressions.Regex.Split(input, pattern);
+            System.Text.RegularExpressions.Regex.Split(input, pattern, options);
+            System.Text.RegularExpressions.Regex.Split(input, pattern, options, matchTimeout);
         }
     }
 }
 </pre>
-<h2>See</h2>
+<h2>例外</h2>
+<p>无论匹配的字符串是什么，如果一个硬编码正则表达式模式只包含一个字符或字母数字字符，那么它不容易受到ReDoS攻击。这些情况不会引起任何问题。</p>
+<h2>请参阅</h2>
 <ul>
-  <li> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection">OWASP Top 10 2017 Category A1</a> - Injection </li>
-  <li> <a href="https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS">MITRE, CWE-624</a> - Executable Regular Expression Error
+  <li> <a href="https://www.owasp.org/index.php/Regular_expression_Denial_of_Service_-_ReDoS">MITRA, CWE-624</a> - Executable Regular Expression Error
   </li>
+  <li> <a href="https://cwe.mitre.org/data/definitions/185.html">MITRA, CWE-185</a> - Incorrect Regular Expression </li>
   <li> OWASP Regular expression Denial of Service - ReDoS </li>
+  <li> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection">OWASP Top 10 2017 Category A1</a> - Injection </li>
+  <li> <a href="https://www.sans.org/top25-software-errors/#cat3">SANS Top 25</a> - Porous Defenses </li>
 </ul>
 

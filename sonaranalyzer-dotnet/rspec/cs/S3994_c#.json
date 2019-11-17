@@ -1,5 +1,5 @@
 {
-  "title": "URI Parameters should not be strings",
+  "title": "URI参数不应为字符串",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

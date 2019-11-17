@@ -1,12 +1,10 @@
-<p>It is important to inform the <code>ResourceManager</code> of the language used to display the resources of the neutral culture for an assembly.
-This improves lookup performance for the first resource loaded. </p>
-<p>This rule raises an issue when an assembly contains a <code>ResX</code>-based resource but does not have the
-<code>System.Resources.NeutralResourcesLanguageAttribute</code> applied to it.</p>
-<h2>Noncompliant Code Example</h2>
+<p>重要的是通知<code>ResourceManager</code>用于显示程序集的中性区域性资源的语言。这提高了加载的第一个资源的查找性能。</p>
+<p>当程序集包含基于<code>ResX</code>的资源，但没有应用<code>System.Resources.NeutralResourcesLanguageAttribute</code> 时，此规则会引发一个问题。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 using System;
 
-public class MyClass // Noncompliant
+public class MyClass // 不合规
 {
    public static void Main()
    {
@@ -25,7 +23,7 @@ public class MyClass // Noncompliant
    }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 using System;
 

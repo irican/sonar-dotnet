@@ -1,5 +1,5 @@
 {
-  "title": "AES encryption algorithm should be used with secured mode",
+  "title": "AES加密算法应采用安全模式",
   "type": "VULNERABILITY",
   "status": "ready",
   "remediation": {

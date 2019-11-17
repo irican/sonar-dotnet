@@ -1,5 +1,5 @@
 {
-  "title": "Deserialization methods should be provided for \"OptionalField\" members",
+  "title": "反序列化方法应有 \"OptionalField\" 成员",
   "type": "BUG",
   "status": "ready",
   "remediation": {

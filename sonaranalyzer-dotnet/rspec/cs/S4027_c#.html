@@ -1,19 +1,19 @@
-<p>Exceptions types should provide the following constructors:</p>
+<p>异常类型应该提供以下构造函数：</p>
 <ul>
   <li> <code>public MyException()</code> </li>
   <li> <code>public MyException(string)</code> </li>
   <li> <code>public MyException(string, Exception)</code> </li>
-  <li> <code>protected</code> or <code>private MyException(SerializationInfo, StreamingContext)</code> </li>
+  <li> <code>protected</code> 或 <code>private MyException(SerializationInfo, StreamingContext)</code> </li>
 </ul>
-<p>That fourth constructor should be <code>protected</code> in unsealed classes, and <code>private</code> in sealed classes.</p>
-<p>Not having this full set of constructors can make it difficult to handle exceptions.</p>
-<h2>Noncompliant Code Example</h2>
+<p>第四个构造函数在未密封类中应该是<code>protected</code>，在密封类中应该是<code>private</code>。</p>
+<p>如果没有完整的构造函数集，就很难处理异常。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 using System;
 
 namespace MyLibrary
 {
-  public class MyException // Noncompliant: several constructors are missing
+  public class MyException // 不合规：缺少几个构造函数
   {
     public MyException()
     {
@@ -21,7 +21,7 @@ namespace MyLibrary
   }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 using System;
 using System.Runtime.Serialization;

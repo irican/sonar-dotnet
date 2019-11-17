@@ -1,5 +1,5 @@
 {
-  "title": "Collection properties should be readonly",
+  "title": "集合属性应该是只读的",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

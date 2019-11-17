@@ -1,19 +1,17 @@
-<p>When a type name matches the name of a publicly defined namespace, for instance one in the .NET framework class library, it leads to confusion and
-makes the library that much harder to use.</p>
-<p>This rule raises an issue when a name of a public type matches the name of a .NET Framework namespace, or a namespace of the project assembly, in a
-case-insensitive comparison.</p>
-<h2>Noncompliant Code Example</h2>
+<p>当类型名称与公开定义的名称空间的名称匹配时，例如.NET framework类库中的名称空间，它会导致混淆，使库更难使用。</p>
+<p>在不区分大小写的比较中，当公共类型的名称与.NET Framework名称空间或项目程序集的名称空间匹配时，此规则会引发问题。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 using System;
 
 namespace MyLibrary
 {
-  public class Text   // Noncompliant: Collides with System.Text
+  public class Text   // 不合规：与System.Text冲突
   {
   }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 using System;
 

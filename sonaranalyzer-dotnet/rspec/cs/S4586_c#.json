@@ -1,5 +1,5 @@
 {
-  "title": "Non-async \"Task\/Task<T>\" methods should not return null",
+  "title": "非异步\"Task\/Task<T>\"方法不应该返回null",
   "type": "BUG",
   "status": "ready",
   "remediation": {

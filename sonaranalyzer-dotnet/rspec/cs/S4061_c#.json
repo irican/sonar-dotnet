@@ -1,5 +1,5 @@
 {
-  "title": "\"params\" should be used instead of \"varargs\"",
+  "title": "应该使用\"params\" 而不是 \"varargs\"",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

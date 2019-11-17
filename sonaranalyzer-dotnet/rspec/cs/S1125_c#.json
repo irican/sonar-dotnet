@@ -1,5 +1,5 @@
 {
-  "title": "Boolean literals should not be redundant",
+  "title": "多余的布尔常量应该删掉",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

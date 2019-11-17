@@ -1,5 +1,5 @@
 {
-  "title": "Parameter names should not duplicate the names of their methods",
+  "title": "参数名不应与它们所属的方法名相同",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

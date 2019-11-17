@@ -1,5 +1,5 @@
 {
-  "title": "Generic type parameters should be co\/contravariant when possible",
+  "title": "泛型参数应尽可能地协变/逆变",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

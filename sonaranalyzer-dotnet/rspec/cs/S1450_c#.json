@@ -1,5 +1,5 @@
 {
-  "title": "Private fields only used as local variables in methods should become local variables",
+  "title": "仅用作方法的局部变量的私有型字段应直接以局部变量替代",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

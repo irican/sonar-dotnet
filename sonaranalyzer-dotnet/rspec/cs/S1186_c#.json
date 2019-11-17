@@ -1,5 +1,5 @@
 {
-  "title": "Methods should not be empty",
+  "title": "方法不应为空",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

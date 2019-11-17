@@ -1,17 +1,17 @@
-<p>Declaring multiple variable on one line is difficult to read.</p>
-<h2>Noncompliant Code Example</h2>
+<p>在一行里声明多个变量会增加阅读代码的难度。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 class MyClass
 {
-  private int a, b; // Noncompliant
+  private int a, b; // 不合规
 
   public void Method()
   {
-    int c, d; // Noncompliant
+    int c, d; // 不合规
   }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 class MyClass
 {
@@ -25,7 +25,7 @@ class MyClass
   }
 }
 </pre>
-<h2>See</h2>
+<h2>请参阅</h2>
 <ul>
   <li> MISRA C++:2008, 8-0-1 - An init-declarator-list or a member-declarator-list shall consist of a single init-declarator or member-declarator
   respectively </li>

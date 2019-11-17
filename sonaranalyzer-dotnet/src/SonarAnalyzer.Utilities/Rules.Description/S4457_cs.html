@@ -1,0 +1,37 @@
+<p>由于编译器重写 <code>async/await</code>方法的方式，在参数检查期间抛出的任何异常只会在观察到任务时发生。这种情况可能发生在远离错误代码源的地方，也可能永远不会发生在“即发即忘（fire-and-forget）”任务中。</p>
+<p>因此，建议将该方法分为两部分:处理参数检查的外部方法(不使用 <code>async/await</code>)和使用<code>async/await</code> 模式处理迭代器块的内部方法。</p>
+<p>当 <code>async</code> 方法抛出任何源自 <code>ArgumentException</code> 的异常并包含 <code>await</code> 关键字时，该规则会引发一个问题。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+public static async Task SkipLinesAsync(this TextReader reader, int linesToSkip) // 不合格
+{
+    if (reader == null) { throw new ArgumentNullException(nameof(reader)); }
+    if (linesToSkip &lt; 0) { throw new ArgumentOutOfRangeException(nameof(linesToSkip)); }
+
+    for (var i = 0; i &lt; linesToSkip; ++i)
+    {
+        var line = await reader.ReadLineAsync().ConfigureAwait(false);
+        if (line == null) { break; }
+    }
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+public static Task SkipLinesAsync(this TextReader reader, int linesToSkip)
+{
+    if (reader == null) { throw new ArgumentNullException(nameof(reader)); }
+    if (linesToSkip &lt; 0) { throw new ArgumentOutOfRangeException(nameof(linesToSkip)); }
+
+    return reader.SkipLinesInternalAsync(linesToSkip);
+}
+
+private static async Task SkipLinesInternalAsync(this TextReader reader, int linesToSkip)
+{
+    for (var i = 0; i &lt; linesToSkip; ++i)
+    {
+        var line = await reader.ReadLineAsync().ConfigureAwait(false);
+        if (line == null) { break; }
+    }
+}
+</pre>
+

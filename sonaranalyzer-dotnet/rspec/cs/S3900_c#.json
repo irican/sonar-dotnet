@@ -1,5 +1,5 @@
 {
-  "title": "Arguments of public methods should be validated against null",
+  "title": "public方法的参数应该进行null值检查",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

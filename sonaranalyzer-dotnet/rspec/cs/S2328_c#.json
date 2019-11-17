@@ -1,5 +1,5 @@
 {
-  "title": "\"GetHashCode\" should not reference mutable fields",
+  "title": "\"GetHashCode\" 不应引用可变的字段",
   "type": "BUG",
   "status": "ready",
   "remediation": {

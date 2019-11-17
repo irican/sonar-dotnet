@@ -1,5 +1,5 @@
 {
-  "title": "Type names should not match namespaces",
+  "title": "类型名不应与命名空间匹配",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

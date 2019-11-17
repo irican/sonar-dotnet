@@ -1,11 +1,9 @@
-<p>Most developers expect property access to be as efficient as field access. However, if a property returns a copy of an array or collection, it will
-be much slower than simple field access, contrary to the caller's likely expectations. Therefore, such properties should be refactored into methods so
-that callers are not surprised by the unexpectedly poor performance.</p>
-<p>This rule detects calls to <code>ToList</code>, <code>ToArray</code> and array <code>Clone</code>.</p>
-<h2>Noncompliant Code Example</h2>
+<p>大多数开发人员都希望访问属性能像访问字段一样高效。但是，如果属性返回的是一个数组或集合的副本，它就会比简单的字段访问慢得多，这很可能与调用者的期望相反。因此，应将此类属性重构为方法，这样调用者就不会对效能的低下而感到惊讶。</p>
+<p>此规则会探查对 <code>ToList</code>， <code>ToArray</code> 和数组 <code>Clone</code> 的调用。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 private List&lt;string&gt; _foo = new List&lt;string&gt; { "a", "b", "c" };
-public IEnumerable&lt;string&gt; Foo  // Noncompliant
+public IEnumerable&lt;string&gt; Foo  // 不合规
 {
     get
     {
@@ -14,7 +12,7 @@ public IEnumerable&lt;string&gt; Foo  // Noncompliant
 }
 
 private string[] _bar = new string[] { "a", "b", "c" };
-public IEnumerable&lt;string&gt; Bar // Noncompliant
+public IEnumerable&lt;string&gt; Bar // 不合规
 {
     get
     {
@@ -22,7 +20,7 @@ public IEnumerable&lt;string&gt; Bar // Noncompliant
     }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 private List&lt;string&gt; _foo = new List&lt;string&gt; { "a", "b", "c" };
 private string[] _bar = new string[] { "a", "b", "c" };

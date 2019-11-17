@@ -1,5 +1,5 @@
 {
-  "title": "Methods named \"Dispose\" should implement \"IDisposable.Dispose\"",
+  "title": "只有实现了 \"IDisposable.Dispose\" 的方法才能命名为 \"Dispose\"",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

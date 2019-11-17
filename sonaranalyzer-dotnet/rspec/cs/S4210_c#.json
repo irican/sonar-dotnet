@@ -1,5 +1,5 @@
 {
-  "title": "Windows Forms entry points should be marked with STAThread",
+  "title": "Windows窗体入口点应该用STAThread标记",
   "type": "BUG",
   "status": "ready",
   "remediation": {

@@ -1,5 +1,5 @@
 {
-  "title": "Parameter names used into ArgumentException constructors should match an existing one ",
+  "title": "在ArgumentException构造函数中使用的参数名应与现有的参数名匹配",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

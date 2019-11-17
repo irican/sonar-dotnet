@@ -1,17 +1,16 @@
-<p>Property getters should be simple operations that are always safe to call. If exceptions need to be thrown, it is best to convert the property to a
-method. </p>
-<p>It is valid to throw exceptions from indexed property getters and from property setters, which are not detected by this rule.</p>
-<h2>Noncompliant Code Example</h2>
+<p>属性的getter方法应该是可安全调用的简单操作。如果需要抛出异常，最好将属性转换为方法。 </p>
+<p>可以从属性的setter方法和被编入索引的属性所包含的getter方法中抛出异常，此规则并不会对此进行检查。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 public int Foo
 {
     get
     {
-        throw new Exception(); // Noncompliant
+        throw new Exception(); // 不合规
     }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 public int Foo
 {
@@ -21,7 +20,6 @@ public int Foo
     }
 }
 </pre>
-<h2>Exceptions</h2>
-<p>No issue is raised when the thrown exception derives from or is of type <code>NotImplementedException</code>, <code>NotSupportedException</code> or
-<code>InvalidOperationException</code>.</p>
+<h2>例外</h2>
+<p>抛出的异常如果是继承自或本身属于 <code>NotImplementedException</code>， <code>NotSupportedException</code> 或 <code>InvalidOperationException</code> 时不会引发问题。</p>
 

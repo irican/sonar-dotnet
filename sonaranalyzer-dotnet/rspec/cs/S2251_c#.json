@@ -1,0 +1,16 @@
+{
+  "title": "\"for\" 循环的变量更新应该处于正确的方向上",
+  "type": "BUG",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "5min"
+  },
+  "tags": [
+    
+  ],
+  "defaultSeverity": "Major",
+  "ruleSpecification": "RSPEC-2251",
+  "sqKey": "S2251",
+  "scope": "All"
+}

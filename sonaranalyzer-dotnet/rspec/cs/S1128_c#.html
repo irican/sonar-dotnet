@@ -1,0 +1,39 @@
+<p>即使没有必要的 <code>using</code> 语句不会对生成的应用有任何改变，去掉它们会：</p>
+<ul>
+  <li> 提高可读性和可维护性。 </li>
+  <li> 减少编码时集成编辑环境（IDE）自动补全的提示数量。 </li>
+  <li> 可能避免命名冲突。 </li>
+  <li> 由于解析类型时所能寻找的命名空间变少，编译时间会增加。</li>
+  <li> 命名空间从项目中被移除，构筑可能会失败。 </li>
+</ul>
+<h2>不合规的代码示例</h2>
+<pre>
+using System.Collections.Generic; // 不合规 - 不必要的using
+
+namespace Foo
+{
+    public class Bar
+    {
+        public Bar(string path)
+        {
+            File.ReadAllLines(path);
+        }
+    }
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+using System.IO;
+
+namespace Foo
+{
+    public class Bar
+    {
+        public Bar(string path)
+        {
+            File.ReadAllLines(path);
+        }
+    }
+}
+</pre>
+

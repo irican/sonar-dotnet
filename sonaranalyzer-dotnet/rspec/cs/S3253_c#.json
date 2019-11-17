@@ -1,5 +1,5 @@
 {
-  "title": "Constructor and destructor declarations should not be redundant",
+  "title": "不应有多余而无用的构造函数声明与析构函数声明",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

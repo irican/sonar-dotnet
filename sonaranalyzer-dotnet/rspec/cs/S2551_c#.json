@@ -1,5 +1,5 @@
 {
-  "title": "Shared resources should not be used for locking",
+  "title": "Type和 \"this\" 不应被用来锁定对象",
   "type": "BUG",
   "status": "ready",
   "remediation": {

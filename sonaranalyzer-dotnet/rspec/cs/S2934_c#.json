@@ -1,5 +1,5 @@
 {
-  "title": "Property assignments should not be made for \"readonly\" fields not constrained to reference types",
+  "title": "对于引用类型约束的 \"readonly\" 字段，不应对它的属性赋值",
   "type": "BUG",
   "status": "ready",
   "remediation": {

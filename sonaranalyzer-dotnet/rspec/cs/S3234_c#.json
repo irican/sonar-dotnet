@@ -1,5 +1,5 @@
 {
-  "title": "\"GC.SuppressFinalize\" should not be invoked for types without destructors",
+  "title": "\"GC.SuppressFinalize\" 不应对没有析构函数的类型使用",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

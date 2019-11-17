@@ -1,5 +1,5 @@
 {
-  "title": "Interfaces should not simply inherit from base interfaces with colliding members",
+  "title": "接口在继承时应防止父接口里的同名成员发生碰撞",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

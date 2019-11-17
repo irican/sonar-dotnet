@@ -1,16 +1,13 @@
-<p>The <code>PartCreationPolicyAttribute</code> attribute, which is part of the Managed Extensibility Framework (MEF), is used to specify how the
-exported object will be created. Therefore it doesn't make sense not to export this a class with this attribute using the <code>ExportAttribute</code>
-attribute.</p>
-<p>This rule raises an issue when a class is marked as shared with a <code>PartCreationPolicyAttribute</code> but lacks a
-<code>ExportAttribute</code>.</p>
-<h2>Noncompliant Code Example</h2>
+<p>The <code>PartCreationPolicyAttribute</code> 属性是托管扩展框架(MEF)的一部分，用于指定如何创建导出的对象。因此，不使用 <code>ExportAttribute</code> 属性导出具有此属性的类是没有意义的。</p>
+<p>当一个类被标记为与一个 <code>PartCreationPolicyAttribute</code> 共享，但缺少一个<code>ExportAttribute</code>时，这个规则会引发一个问题。</p>
+<h2>不合规的代码示例</h2>
 <pre>
-[PartCreationPolicy(CreationPolicy.Any)] // Noncompliant
+[PartCreationPolicy(CreationPolicy.Any)] // 不合规
 public class FooBar : IFooBar
 {
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 [Export(typeof(IFooBar))]
 [PartCreationPolicy(CreationPolicy.Any)]

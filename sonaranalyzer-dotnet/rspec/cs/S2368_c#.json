@@ -1,5 +1,5 @@
 {
-  "title": "Public methods should not have multidimensional array parameters",
+  "title": "公有类方法的参数不应含有多维数组",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

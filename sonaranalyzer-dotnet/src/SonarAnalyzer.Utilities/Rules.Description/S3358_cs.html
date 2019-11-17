@@ -1,15 +1,13 @@
-<p>Just because you <em>can</em> do something, doesn't mean you should, and that's the case with nested ternary operations. Nesting ternary operators
-results in the kind of code that may seem clear as day when you write it, but six months later will leave maintainers (or worse - future you)
-scratching their heads and cursing.</p>
-<p>Instead, err on the side of clarity, and use another line to express the nested operation as a separate statement.</p>
-<h2>Noncompliant Code Example</h2>
+<p>有些操作尽管你 <em>能</em> 做，但并不意味着你就应该这么做，嵌套的三元运算就是这样。使用嵌套的三元运算符写出的代码，也许在你写的时候觉得意思很明确，但在六个月后维护人员（更糟的是也有可能是你自己）看到它们只能挠头并诅咒。</p>
+<p>所以相反地，应该力求代码的意图明确。此时应另起一行，将嵌套的三元运算符分开写作独立的语句。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 public string GetTitle(Person p)
 {
-  return p.Gender == Gender.MALE ? "Mr. " : p.IsMarried ? "Mrs. " : "Miss ";  // Noncompliant
+  return p.Gender == Gender.MALE ? "Mr. " : p.IsMarried ? "Mrs. " : "Miss ";  // 不合规
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 public string GetTitle(Person p)
 {

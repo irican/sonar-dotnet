@@ -1,5 +1,5 @@
 {
-  "title": "\"ISerializable\" should be implemented correctly",
+  "title": "应正确地实现 \"ISerializable\"",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

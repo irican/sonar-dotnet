@@ -1,0 +1,16 @@
+{
+  "title": "嵌套代码块不应被使用",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "10min"
+  },
+  "tags": [
+    "bad-practice"
+  ],
+  "defaultSeverity": "Minor",
+  "ruleSpecification": "RSPEC-1199",
+  "sqKey": "S1199",
+  "scope": "All"
+}

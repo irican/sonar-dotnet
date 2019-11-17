@@ -1,0 +1,43 @@
+<p>Properties和Get方法应该有能够清楚区分它们的名称。</p>
+<p>当公共或受保护成员的名称以“Get”开头，并且与公共或受保护属性的名称匹配时，此规则会引发问题。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+using System;
+
+namespace MyLibrary
+{
+    public class Foo
+    {
+        public DateTime Date
+        {
+            get { return DateTime.Today; }
+        }
+
+        public string GetDate() // 不合规
+        {
+            return this.Date.ToString();
+        }
+    }
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+using System;
+
+namespace MyLibrary
+{
+    public class Foo
+    {
+        public DateTime Date
+        {
+            get { return DateTime.Today; }
+        }
+
+        public string GetDateAsString()
+        {
+            return this.Date.ToString();
+        }
+    }
+}
+</pre>
+

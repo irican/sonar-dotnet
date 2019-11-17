@@ -1,7 +1,7 @@
 {
-  "title": "SHA-1 and Message-Digest hash algorithms should not be used in secure contexts",
+  "title": "在安全环境里不应使用SHA-1等消息摘要算法",
   "type": "VULNERABILITY",
-  "status": "deprecated",
+  "status": "ready",
   "remediation": {
     "func": "Constant\/Issue",
     "constantCost": "30min"

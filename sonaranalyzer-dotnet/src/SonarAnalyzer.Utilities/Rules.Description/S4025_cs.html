@@ -1,0 +1,44 @@
+<p>子类中的字段与父类的字段的名称仅在大小写上不同，这肯定会引起混淆。这样的子类字段应该重新命名。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+public class Fruit
+{
+  protected string plantingSeason;
+  //...
+}
+
+public class Raspberry : Fruit
+{
+  protected string plantingseason;  // 不合规
+  // ...
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+public class Fruit
+{
+  protected string plantingSeason;
+  //...
+}
+
+public class Raspberry : Fruit
+{
+  protected string whenToPlant;
+  // ...
+}
+</pre>
+<p>或者</p>
+<pre>
+public class Fruit
+{
+  protected string plantingSeason;
+  //...
+}
+
+public class Raspberry : Fruit
+{
+  // 字段删除；将改用父子段
+  // ...
+}
+</pre>
+

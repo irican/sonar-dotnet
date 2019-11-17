@@ -1,0 +1,45 @@
+<p>当外部可见的枚举标记为<code>FlagsAttribute</code>，且其中一个或多个值的幂不是2或其他已定义值的组合时，此规则会引发一个问题。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+using System;
+
+namespace MyLibrary
+{
+    [FlagsAttribute]
+    public enum Color // 不合规，Orange既不是2的幂，也不是任何已定义值的组合
+    {
+        None    = 0,
+        Red     = 1,
+        Orange  = 3,
+        Yellow  = 4
+    }
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+using System;
+
+namespace MyLibrary
+{
+    public enum Color // 合规的 - 没有FlagsAttribute属性
+    {
+        None = 0,
+        Red = 1,
+        Orange = 3,
+        Yellow = 4
+    }
+
+    [FlagsAttribute]
+    public enum Days
+    {
+        None = 0,
+        Monday = 1,
+        Tuesday = 2,
+        Wednesday = 4,
+        Thursday = 8,
+        Friday = 16,
+        All = Monday| Tuesday | Wednesday | Thursday | Friday    // 合规的 - 其他值的组合
+    }
+}
+</pre>
+

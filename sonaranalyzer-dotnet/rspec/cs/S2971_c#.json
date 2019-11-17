@@ -1,5 +1,5 @@
 {
-  "title": "\"IEnumerable\" LINQs should be simplified",
+  "title": "\"IEnumerable\" LINQ应予以简化",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

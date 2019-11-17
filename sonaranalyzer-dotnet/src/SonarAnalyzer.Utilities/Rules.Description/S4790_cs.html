@@ -1,68 +1,55 @@
-<p>Hashing data is security-sensitive. It has led in the past to the following vulnerabilities:</p>
+<p>哈希数据是安全敏感的。它在过去导致了以下漏洞：</p>
 <ul>
   <li> <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-9233">CVE-2018-9233</a> </li>
   <li> <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-5097">CVE-2013-5097</a> </li>
   <li> <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2007-1051">CVE-2007-1051</a> </li>
 </ul>
-<p>Cryptographic hash functions are used to uniquely identify information without storing their original form. When not done properly, an attacker can
-steal the original information by guessing it (ex: with a <a href="https://en.wikipedia.org/wiki/Rainbow_table">rainbow table</a>), or replace the
-original data with another one having the same hash.</p>
-<p>This rule flags code that initiates hashing.</p>
-<h2>Ask Yourself Whether</h2>
+<p>密码哈希函数用于在不存储原始形式的情况下唯一标识信息。如果处理不当，攻击者可以通过猜测来窃取原始信息 (例如:使用 <a href="https://en.wikipedia.org/wiki/Rainbow_table">rainbow表</a>)，或者用具有相同哈希的其他数据替换原始数据。</p>
+<p>此规则标记发起哈希的代码。</p>
+<h2>检查是否有下列问题：</h2>
 <ul>
-  <li> the hashed value is used in a security context. </li>
-  <li> the hashing algorithm you are using is known to have vulnerabilities. </li>
-  <li> <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salts</a> are not automatically generated and applied by the hashing function.
-  </li>
-  <li> any generated salts are cryptographically weak or not credential-specific. </li>
+  <li> 哈希值在安全环境中使用。</li>
+  <li> 已知使用的哈希算法存在漏洞。</li>
+  <li> <a href="https://en.wikipedia.org/wiki/Salt_(cryptography)">salts类</a> 不是由哈希函数自动生成和应用的。</li>
+  <li> 生成的任何盐（salts）类在密码上都是弱的，或者不是特定于凭证的。 </li>
 </ul>
-<p>You are at risk if you answered yes to the first question and any of the following ones.</p>
-<h2>Recommended Secure Coding Practices</h2>
+<p>如果对其中任何一个问题的回答是肯定的，那么就有风险。</p>
+<h2>推荐的安全编码实践</h2>
 <ul>
-  <li> for security related purposes, use only hashing algorithms which are <a
-  href="https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet">currently known to be strong</a>. Avoid using algorithms like MD5 and SHA1
-  completely in security contexts. </li>
-  <li> do not define your own hashing- or salt algorithms as they will most probably have flaws. </li>
-  <li> do not use algorithms that compute too quickly, like SHA256, as it must remain beyond modern hardware capabilities to perform brute force and
-  dictionary based attacks. </li>
-  <li> use a hashing algorithm that generate its own salts as part of the hashing. If you generate your own salts, make sure that a cryptographically
-  strong salt algorithm is used, that generated salts are credential-specific, and finally, that the salt is applied correctly before the hashing.
+  <li> 为了安全相关的目的，只使用 <a href="https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet">目前已知较强</a>的哈希算法。完全避免在安全上下文中使用MD5和SHA1之类的算法。</li>
+  <li> 不要定义自己的哈希-或salt算法，因为它们很可能有缺陷。</li>
+  <li> 不要使用像SHA256这样计算速度过快的算法，因为它必须超出现代硬件的能力来执行暴力和基于字典的攻击。</li>
+  <li> 使用哈希算法生成自己的盐值是哈希的一部分。如果生成自己的salt，请确保使用加密的强salt算法，生成的salt是特定于凭证的，最后，在哈希之前正确应用salt。
   </li>
-  <li> save both the salt and the hashed value in the relevant database record; during future validation operations, the salt and hash can then be
-  retrieved from the database. The hash is recalculated with the stored salt and the value being validated, and the result compared to the stored
-  hash. </li>
-  <li> the strength of hashing algorithms often decreases over time as hardware capabilities increase. Check regularly that the algorithms you are
-  using are still considered secure. If needed, rehash your data using a stronger algorithm. </li>
+  <li> 将salt和hash值保存在相关数据库记录中;在未来的验证操作期间，可以从数据库检索salt和hash。使用存储的salt和正在验证的值重新计算hash，并将结果与存储的hash进行比较。</li>
+  <li> 随着硬件能力的提高，哈希算法的强度通常会随着时间的推移而降低。定期检查您正在使用的算法是否仍然被认为是安全的。如果需要，可以使用更强的算法重新计算数据。</li>
 </ul>
-<h2>Sensitive Code Example</h2>
+<h2>可疑的代码示例</h2>
 <pre>
 using System.Security.Cryptography;
 
 void ComputeHash()
 {
-    // Review all instantiations of classes that inherit from HashAlgorithm, for example:
-    HashAlgorithm hashAlgo = HashAlgorithm.Create(); // Sensitive
-    HashAlgorithm hashAlgo2 = HashAlgorithm.Create("SHA1"); // Sensitive
-    SHA1 sha = new SHA1CryptoServiceProvider(); // Sensitive
-    MD5 md5 = new MD5CryptoServiceProvider(); // Sensitive
+    // 检查从HashAlgorithm继承的所有类的实例化，例如：
+    HashAlgorithm hashAlgo = HashAlgorithm.Create(); // 可疑的
+    HashAlgorithm hashAlgo2 = HashAlgorithm.Create("SHA1"); // 可疑的
+    SHA1 sha = new SHA1CryptoServiceProvider(); // 可疑的
+    MD5 md5 = new MD5CryptoServiceProvider(); // 可疑的
     // ...
 }
 
-class MyHashAlgorithm : HashAlgorithm // Sensitive
+class MyHashAlgorithm : HashAlgorithm // 可疑的
 {
     // ...
 }
 </pre>
-<h2>See</h2>
+<h2>请参阅</h2>
 <ul>
-  <li> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure">OWASP Top 10 2017 Category A3</a> - Sensitive Data Exposure
-  </li>
-  <li> <a href="https://www.owasp.org/index.php/Top_10-2017_A6-Security_Misconfiguration">OWASP Top 10 2017 Category A6</a> - Security
-  Misconfiguration </li>
   <li> <a href="https://cwe.mitre.org/data/definitions/916.html">MITRE, CWE-916</a> - Use of Password Hash With Insufficient Computational Effort
   </li>
   <li> <a href="http://cwe.mitre.org/data/definitions/759.html">MITRE, CWE-759</a> - Use of a One-Way Hash without a Salt </li>
   <li> <a href="http://cwe.mitre.org/data/definitions/760.html">MITRE, CWE-760</a> - Use of a One-Way Hash with a Predictable Salt </li>
+  <li> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure">OWASP Top 10 2017 Category A3</a> - Sensitive Data Exposure </li>
   <li> <a href="https://www.sans.org/top25-software-errors/#cat3">SANS Top 25</a> - Porous Defenses </li>
 </ul>
 

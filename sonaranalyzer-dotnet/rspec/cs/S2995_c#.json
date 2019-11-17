@@ -1,5 +1,5 @@
 {
-  "title": "\"Object.ReferenceEquals\" should not be used for value types",
+  "title": "\"Object.ReferenceEquals\" 不应对值类型的对象使用",
   "type": "BUG",
   "status": "ready",
   "remediation": {

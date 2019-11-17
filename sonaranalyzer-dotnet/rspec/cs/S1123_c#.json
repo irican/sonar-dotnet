@@ -1,5 +1,5 @@
 {
-  "title": "\"Obsolete\" attributes should include explanations",
+  "title": "\"Obsolete\" 特性使用时应附有解释",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

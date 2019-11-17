@@ -1,5 +1,5 @@
 {
-  "title": "\"string.IsNullOrEmpty\" should be used",
+  "title": "应使用 \"string.IsNullOrEmpty\"",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

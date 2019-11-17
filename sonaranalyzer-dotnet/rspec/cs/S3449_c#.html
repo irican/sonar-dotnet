@@ -1,12 +1,9 @@
-<p>Numbers can be shifted with the <code>&lt;&lt;</code> and <code>&gt;&gt;</code> operators, but the right operand of the operation needs to be an
-<code>int</code> or a type that has an implicit conversion to <code>int</code>. However, with <code>dynamic</code>, the compiler's type checking is
-turned off, so you can pass anything to a shift operator and have it compile. And if the argument can't be converted to <code>int</code> at runtime,
-then a <code>RuntimeBinderException</code> will be raised.</p>
-<h2>Noncompliant Code Example</h2>
+<p>可以使用运算符 <code>&lt;&lt;</code> 和 <code>&gt;&gt;</code> 来对数字进行移位，但这需要运算符右侧的操作数是 <code>int</code>或隐式地转换为 <code>int</code> 的类型。然而，在使用 <code>dynamic</code> 时，编译器的类型检查被关闭，所以你可以给移位运算符传递任意的内容并进行编译。如果参数无法在运行时转换为 <code>int</code> ，则会抛出异常 <code>RuntimeBinderException</code>。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 dynamic d = 5;
-var x = d &gt;&gt; 5.4; // Noncompliant
-x = d &gt;&gt; null; // Noncompliant
-x &lt;&lt;= new object(); // Noncompliant
+var x = d &gt;&gt; 5.4; // 不合规
+x = d &gt;&gt; null; // 不合规
+x &lt;&lt;= new object(); // 不合规
 </pre>
 

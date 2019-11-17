@@ -1,5 +1,5 @@
 {
-  "title": "\"ConstructorArgument\" parameters should exist in constructors",
+  "title": "\"ConstructorArgument\" 参数应该存在于构造函数中",
   "type": "BUG",
   "status": "ready",
   "remediation": {

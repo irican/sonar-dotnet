@@ -1,5 +1,5 @@
 {
-  "title": "Collections should not be passed as arguments to their own methods",
+  "title": "集合不应将自身作为参数传给自己的方法",
   "type": "BUG",
   "status": "ready",
   "remediation": {

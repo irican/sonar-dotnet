@@ -1,5 +1,5 @@
 {
-  "title": "Methods should not have too many parameters",
+  "title": "一个方法不应有太多的参数",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

@@ -1,30 +1,22 @@
-<p>Delivering code in production with debug features activated is security-sensitive. It has led in the past to the following vulnerabilities:</p>
+<p>在带有激活的调试特性的生产环境中交付代码是安全敏感的。它在过去导致了以下漏洞：</p>
 <ul>
   <li> <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-1999007">CVE-2018-1999007</a> </li>
   <li> <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2015-5306">CVE-2015-5306</a> </li>
   <li> <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-2006">CVE-2013-2006</a> </li>
 </ul>
-<p>An application's debug features enable developers to find bugs more easily. It often gives access to detailed information on both the system
-running the application and users. Sometime it even enables the execution of custom commands. Thus deploying on production servers an application
-which has debug features activated is extremely dangerous.</p>
-<h2>Ask Yourself Whether</h2>
+<p>应用程序的调试特性使开发人员能够更容易地发现bug。它通常提供对运行应用程序的系统和用户的详细信息的访问。有时甚至可以执行自定义命令。因此，在生产服务器上部署已激活调试功能的应用程序非常危险。</p>
+<h2>询问是否有下列问题：</h2>
 <ul>
-  <li> the code or configuration enabling the application debug features is deployed on production servers. </li>
-  <li> the application runs by default with debug features activated. </li>
+  <li> 支持应用程序调试特性的代码或配置部署在生产服务器上。</li>
+  <li> 应用程序在默认情况下运行，并激活调试功能。</li>
 </ul>
-<p>You are at risk if you answered yes to any of these questions.</p>
-<h2>Recommended Secure Coding Practices</h2>
-<p>Do not enable debug features on production servers.</p>
-<p>The .Net Core framework offers multiple features which help during debug.
-<code>Microsoft.AspNetCore.Builder.IApplicationBuilder.UseDeveloperExceptionPage</code> and
-<code>Microsoft.AspNetCore.Builder.IApplicationBuilder.UseDatabaseErrorPage</code> are two of them. Make sure that those features are disabled in
-production.</p>
-<p> Use <code>if (env.IsDevelopment())</code> to disable debug code.</p>
-<h2>Sensitive Code Example</h2>
-<p>This rule raises issues when the following .Net Core methods are called:
-<code>Microsoft.AspNetCore.Builder.IApplicationBuilder.UseDeveloperExceptionPage</code>,
-<code>Microsoft.AspNetCore.Builder.IApplicationBuilder.UseDatabaseErrorPage</code>. No Issue is raised when those calls are disabled by <code>if
-(env.IsDevelopment())</code>.</p>
+<p> 如果你对这些问题中的任何一个回答是肯定的，那么你就有风险。</p>
+<h2> 推荐的安全编码实践 </h2>
+<p>不要在生产服务器上启用调试功能。</p>
+<p>The .Net Core框架提供了多种特性，可以在调试期间提供帮助。<code>Microsoft.AspNetCore.Builder.IApplicationBuilder.UseDeveloperExceptionPage</code> 和<code>Microsoft.AspNetCore.Builder.IApplicationBuilder.UseDatabaseErrorPage</code> 是它们中的两个。确保在生产中禁用这些特性。</p>
+<p>使用 <code>if (env.IsDevelopment())</code> 禁止调试代码。</p>
+<h2>可疑代码示例</h2>
+<p>当调用下列.Net Core 方法时，此规则会引发代码：<code>Microsoft.AspNetCore.Builder.IApplicationBuilder.UseDeveloperExceptionPage</code>，<code>Microsoft.AspNetCore.Builder.IApplicationBuilder.UseDatabaseErrorPage</code>。当 <code>if(env.IsDevelopment())</code> 禁用这些调用时，不会引发任何问题。</p>
 <pre>
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -37,25 +29,24 @@ namespace mvcApp
         {
             if (env.IsDevelopment())
             {
-                // The following calls are ok because they are disabled in production
+                // 以下调用没有问题，因为它们在生产中是禁用的
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
             }
-            // Those calls are Sensitive because it seems that they will run in production
-            app.UseDeveloperExceptionPage(); // Sensitive
-            app.UseDatabaseErrorPage(); // Sensitive
+            // 些调用是有问题的，因为它们似乎将在生产中运行
+            app.UseDeveloperExceptionPage(); // 可疑的
+            app.UseDatabaseErrorPage(); // 可疑的
         }
     }
 }
 
 </pre>
-<h2>Exceptions</h2>
-<p>This rule does not analyze configuration files. Make sure that debug mode is not enabled by default in those files.</p>
-<h2>See</h2>
+<h2>例外</h2>
+<p>此规则不分析配置文件。确保这些文件中默认没有启用调试模式。</p>
+<h2>请参阅</h2>
 <ul>
-  <li> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure">OWASP Top 10 2017 Category A3</a> - Sensitive Data Exposure
-  </li>
   <li> <a href="http://cwe.mitre.org/data/definitions/489.html">MITRE, CWE-489</a> - Leftover Debug Code </li>
   <li> <a href="http://cwe.mitre.org/data/definitions/215.html">MITRE, CWE-215</a> - Information Exposure Through Debug Information </li>
+  <li> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure">OWASP Top 10 2017 Category A3</a> - Sensitive Data Exposure </li>
 </ul>
 

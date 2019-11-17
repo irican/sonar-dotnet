@@ -1,5 +1,5 @@
 {
-  "title": "Overloads with a \"StringComparison\" parameter should be used",
+  "title": "应该使用带有\"StringComparison\"参数的重载",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

@@ -1,5 +1,5 @@
 {
-  "title": "The length returned from a stream read should be checked",
+  "title": "应对流的读取方法所返回的长度予以检查",
   "type": "BUG",
   "status": "ready",
   "remediation": {

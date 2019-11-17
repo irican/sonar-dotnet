@@ -1,5 +1,5 @@
 {
-  "title": "Enumeration type names should not have \"Flags\" or \"Enum\" suffixes",
+  "title": "枚举类型名里不应有 \"Flags\" 或 \"Enum\" 后缀",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

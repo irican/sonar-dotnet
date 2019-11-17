@@ -1,5 +1,5 @@
 {
-  "title": "Collections should implement the generic interface",
+  "title": "集合应该实现泛型接口",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

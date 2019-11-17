@@ -1,5 +1,5 @@
 {
-  "title": "Types should be defined in named namespaces",
+  "title": "类型应定义在命名过的命名空间中",
   "type": "BUG",
   "status": "ready",
   "remediation": {

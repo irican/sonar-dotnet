@@ -1,48 +1,46 @@
-<p>Reading Standard Input is security-sensitive. It has led in the past to the following vulnerabilities:</p>
+<p>读取标准输入是安全敏感的。它在过去导致了以下漏洞：</p>
 <ul>
   <li> <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2005-2337">CVE-2005-2337</a> </li>
   <li> <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-11449">CVE-2017-11449</a> </li>
 </ul>
-<p>It is common for attackers to craft inputs enabling them to exploit software vulnerabilities. Thus any data read from the standard input (stdin)
-can be dangerous and should be validated.</p>
-<p>This rule flags code that reads from the standard input.</p>
-<h2>Ask Yourself Whether</h2>
+<p>攻击者通常会精心设计输入，使其能够利用软件漏洞。因此，从标准输入(stdin)读取的任何数据都可能是危险的，应该进行验证。</p>
+<p>此规则标记从标准输入中读取的代码。</p>
+<h2>检查是否有下列问题：</h2>
 <ul>
-  <li> data read from the standard input is not sanitized before being used. </li>
+  <li> 从标准输入中读取的数据在使用之前没有经过净化。</li>
 </ul>
-<p>You are at risk if you answered yes to this question.</p>
-<h2>Recommended Secure Coding Practices</h2>
-<p><a href="https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet">Sanitize</a> all data read from the standard input before using it.</p>
-<h2>Sensitive Code Example</h2>
+<p>如果对其中任何一个问题的回答是肯定的，那么就有风险。</p>
+<h2>推荐的安全编码实践</h2>
+<p>在使用标准输入之前对所有读取的数据进行<a href="https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet">净化</a>。</p>
+<h2>可疑的代码示例</h2>
 <pre>
 using System;
 public class C
 {
     public void Main()
     {
-        Console.In; // Sensitive
-        var code = Console.Read(); // Sensitive
-        var keyInfo = Console.ReadKey(...); // Sensitive
-        var text = Console.ReadLine(); // Sensitive
-        Console.OpenStandardInput(...); // Sensitive
+        Console.In; // 可疑的
+        var code = Console.Read(); // 可疑的
+        var keyInfo = Console.ReadKey(...); // 可疑的
+        var text = Console.ReadLine(); // 可疑的
+        Console.OpenStandardInput(...); // 可疑的
     }
 }
 </pre>
-<h2>Exceptions</h2>
-<p>This rule does not raise issues when the return value of the <code>Console.Read</code> <code>Console.ReadKey</code> or
-<code>Console.ReadLine</code> methods is ignored.</p>
+<h2>例外</h2>
+<p>当忽略 <code>Console.Read</code> <code>Console.ReadKey</code> 或 <code>Console.ReadLine</code> 方法的返回值时，此规则不会引发问题。</p>
 <pre>
 using System;
 public class C
 {
     public void Main()
     {
-        Console.ReadKey(...); // Return value is ignored
-        Console.ReadLine(); // Return value is ignored
+        Console.ReadKey(...); // 返回值被忽略
+        Console.ReadLine(); // 返回值被忽略
     }
 }
 </pre>
-<h2>See:</h2>
+<h2>请参阅：</h2>
 <ul>
   <li> <a href="https://cwe.mitre.org/data/definitions/20.html">MITRE, CWE-20</a> - Improper Input Validation </li>
 </ul>

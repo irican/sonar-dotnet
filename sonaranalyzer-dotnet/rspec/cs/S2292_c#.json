@@ -1,5 +1,5 @@
 {
-  "title": "Trivial properties should be auto-implemented",
+  "title": "不重要的属性应是自动实现的",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

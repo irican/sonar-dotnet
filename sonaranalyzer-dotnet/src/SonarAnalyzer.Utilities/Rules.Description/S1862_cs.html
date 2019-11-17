@@ -1,8 +1,6 @@
-<p>A chain of <code>if</code>/<code>else if</code> statements is evaluated from top to bottom. At most, only one branch will be executed: the first
-one with a condition that evaluates to <code>true</code>. </p>
-<p>Therefore, duplicating a condition automatically leads to dead code. Usually, this is due to a copy/paste error. At best, it's simply dead code and
-at worst, it's a bug that is likely to induce further bugs as the code is maintained, and obviously it could lead to unexpected behavior. </p>
-<h2>Noncompliant Code Example</h2>
+<p>一连串的 <code>if</code>/<code>else if</code> 语句会被从上到下地进行评估。然而最多只有一条分支会被执行：即第一个条件判断为<code>true</code> 的分支。</p>
+<p>因此，重复的条件会自动形成死代码。通常这是由于复制／粘贴的错误造成的。最好的情况下，这种行为只会产生伪代码。但是最坏的情况下它会形成一个bug，而且在维护时很可能会引发更多的bug。另外，它显然还可能会导致意外的行为。 </p>
+<h2>不合规的代码示例</h2>
 <pre>
 if (param == 1)
 {
@@ -12,12 +10,12 @@ else if (param == 2)
 {
   CloseWindow();
 }
-else if (param == 1) // Noncompliant
+else if (param == 1) // 不合规
 {
   MoveWindowToTheBackground();
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 if (param == 1)
 {
@@ -32,7 +30,7 @@ else if (param == 3)
   MoveWindowToTheBackground();
 }
 </pre>
-<h2>See</h2>
+<h2>请参阅</h2>
 <ul>
   <li> <a href="https://www.securecoding.cert.org/confluence/x/NYA5">CERT, MSC12-C.</a> - Detect and remove code that has no effect or is never
   executed </li>

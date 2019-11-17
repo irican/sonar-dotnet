@@ -1,5 +1,5 @@
 {
-  "title": "Non-flags enums should not be used in bitwise operations",
+  "title": "进行按位操作的枚举类型应有标记",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

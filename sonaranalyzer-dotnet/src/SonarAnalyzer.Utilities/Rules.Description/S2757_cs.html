@@ -1,21 +1,19 @@
-<p>The use of operators pairs ( <code>=+</code>, <code>=-</code> or <code>=!</code> ) where the reversed, single operator was meant (<code>+=</code>,
-<code>-=</code> or <code>!=</code>) will compile and run, but not produce the expected results.</p>
-<p>This rule raises an issue when <code>=+</code>, <code>=-</code>, or <code>=!</code> is used without any spacing between the two operators and when
-there is at least one whitespace character after.</p>
-<h2>Noncompliant Code Example</h2>
+<p><code>=+</code>，<code>=-</code>，<code>=!</code> 这样的成对运算符其实只是将单运算符 <code>+=</code>，<code>-=</code> 和 <code>!=</code> 写反了。它们仍然可以通过编译并运行，但你得不到想要的运算结果。</p>
+<p>当 <code>=+</code>，<code>=-</code> 或 <code>=!</code> 这样的运算符组合中间没有空格隔开，并且后面至少有一个空格时，此规则会引发一个问题。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 int target = -5;
 int num = 3;
 
-target =- num;  // Noncompliant; target = -3. Is that really what's meant?
-target =+ num; // Noncompliant; target = 3
+target =- num;  // 不合规；target = -3，但这是开发者的本意吗？
+target =+ num; // 不合规；target = 3
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 int target = -5;
 int num = 3;
 
-target = -num;  // Compliant; intent to assign inverse value of num is clear
+target = -num;  // 合规；此处显然是要取num的相反数
 target += num;
 </pre>
 

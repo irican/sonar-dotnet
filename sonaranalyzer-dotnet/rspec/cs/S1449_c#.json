@@ -1,5 +1,5 @@
 {
-  "title": "Culture should be specified for \"string\" operations",
+  "title": "\"string\" 操作应指明所在地区",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

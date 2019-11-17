@@ -1,5 +1,5 @@
 {
-  "title": "Method overloads with default parameter values should not overlap ",
+  "title": "使用默认参数值的方法重载间不应出现重合的部分",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

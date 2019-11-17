@@ -1,10 +1,8 @@
-<p>The requirement for a final <code>default</code> clause is defensive programming. The clause should either take appropriate action, or contain a
-suitable comment as to why no action is taken. Even when the <code>switch</code> covers all current values of an <code>enum</code>, a
-<code>default</code> case should still be used because there is no guarantee that the <code>enum</code> won't be extended.</p>
-<h2>Noncompliant Code Example</h2>
+<p>结尾必须有 <code>default</code> 从句是出于防御性编程（defensive programming）的考虑。该从句要么实现一个相应的功能，要么包含一条适当的注释以说明此处没有实现功能的原因。甚至，在　<code>switch</code> 语句已经涵盖了一个 <code>enum</code> 类型所有的当前值的情况下，也仍然要使用 <code>default</code>，因为无法保证该 <code>enum</code> 变量不发生扩展。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 int foo = 42;
-switch (foo) // Noncompliant
+switch (foo) // 不合规
 {
   case 0:
     Console.WriteLine("foo = 0");
@@ -14,10 +12,10 @@ switch (foo) // Noncompliant
     break;
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 int foo = 42;
-switch (foo) // Compliant
+switch (foo) // 合规
 {
   case 0:
     Console.WriteLine("foo = 0");
@@ -29,7 +27,7 @@ switch (foo) // Compliant
     throw new InvalidOperationException("Unexpected value foo = " + foo);
 }
 </pre>
-<h2>See</h2>
+<h2>请参阅</h2>
 <ul>
   <li> MISRA C:2004, 15.0 - The MISRA C <em>switch</em> syntax shall be used. </li>
   <li> MISRA C:2004, 15.3 - The final clause of a switch statement shall be the default clause </li>

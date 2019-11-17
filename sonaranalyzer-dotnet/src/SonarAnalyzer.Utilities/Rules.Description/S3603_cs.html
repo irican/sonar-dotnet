@@ -1,12 +1,10 @@
-<p>Marking a method with the <code>Pure</code> attribute specifies that the method doesn't make any visible changes; thus, the method should return a
-result, otherwise the call to the method should be equal to no-operation. So <code>Pure</code> on a <code>void</code> method is either a mistake, or
-the method doesn't do any meaningful task.</p>
-<h2>Noncompliant Code Example</h2>
+<p>用 <code>Pure</code> 特性标记某个方法意在指明该方法不会做任何可见的修改。因此该方法应返回一个结果，否则调用此方法等同于无操作。所以，用 <code>Pure</code> 标记 <code>void</code> 型方法要么是个错误，要么说明该方法不做任何有意义的操作。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 class Person
 {
   private int age;
-  [Pure] // Noncompliant. In this case the method makes a possibly visible state change
+  [Pure] // 不合规，该方法可能会进行可见的状态修改
   void ConfigureAge(int age)
   {
     ...
@@ -15,7 +13,7 @@ class Person
   ...
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 class Person
 {

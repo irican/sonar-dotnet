@@ -1,17 +1,14 @@
-<p>In the Attributed Programming Model, the <code>ExportAttribute</code> declares that a part "exports", or provides to the composition container, an
-object that fulfills a particular contract. During composition, parts with imports that have matching contracts will have those dependencies filled by
-the exported object.</p>
-<p>If the type doesn't implement the interface it is exporting there will be an issue at runtime (either a cast exception or just a container not
-filled with the exported type) leading to unexpected behaviors/crashes.</p>
-<p>The rule raises an issue when a class doesn't implement or inherit the type declared in the <code>ExportAttribute</code>. </p>
-<h2>Noncompliant Code Example</h2>
+<p>在属性化编程模型中，<code>ExportAttribute</code> 声明了一个部件“导出”，或者向组合容器提供了一个对象，以满足特定的契约。在组合期间，具有匹配契约的导入部分的依赖项将由导出对象填充。</p>
+<p>如果类型没有实现它导出的接口，那么在运行时就会出现问题(要么是强制转换异常，要么只是容器没有填充导出的类型)，从而导致意外的行为/崩溃。</p>
+<p>当类没有实现或继承<code>ExportAttribute</code>中声明的类型时，该规则会引发一个问题。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 [Export(typeof(ISomeType))]
-public class SomeType // Noncompliant; doesn't implement 'ISomeType'.
+public class SomeType // 不合规；没有实现'ISomeType'。
 {
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 [Export(typeof(ISomeType))]
 public class SomeType : ISomeType

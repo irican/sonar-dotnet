@@ -1,5 +1,5 @@
 {
-  "title": "Threads should not lock on objects with weak identity",
+  "title": "线程不应锁在具有弱特征的对象上",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

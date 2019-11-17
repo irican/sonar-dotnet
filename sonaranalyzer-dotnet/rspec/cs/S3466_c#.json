@@ -1,5 +1,5 @@
 {
-  "title": "Optional parameters should be passed to \"base\" calls",
+  "title": "可选参数应传入对 \"base\" 的调用",
   "type": "BUG",
   "status": "ready",
   "remediation": {

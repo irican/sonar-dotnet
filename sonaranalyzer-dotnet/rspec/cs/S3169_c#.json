@@ -1,5 +1,5 @@
 {
-  "title": "Multiple \"OrderBy\" calls should not be used",
+  "title": "不应出现多重的 \"OrderBy\"调用",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

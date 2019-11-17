@@ -1,5 +1,5 @@
 {
-  "title": "Instance members should not write to \"static\" fields",
+  "title": "实例的成员不应对 \"static\" 字段进行写入操作",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

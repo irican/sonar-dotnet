@@ -1,0 +1,15 @@
+<p>错误构成的SQL语句会导致运行时错误。</p>
+<p>SQL关键字周围的空格缺失时报告问题。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+string select = "SELECT p.fname, p.lname, p.street1, p.street2, p.city, p.state, p.zip" +
+        "FROM person p" +  // 不合规; 会拼接为: p.zipFROM
+        "WHERE p.id = @ID";  // 不合规; 会拼接为: pWHERE
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+string select = "SELECT p.fname, p.lname, p.street1, p.street2, p.city, p.state, p.zip" +
+    " FROM person p" +
+    " WHERE p.id = @ID";
+</pre>
+

@@ -1,10 +1,7 @@
-<p>String representations of URIs or URLs are prone to parsing and encoding errors which can lead to vulnerabilities. The <code>System.Uri</code>
-class is a safe alternative and should be preferred.</p>
-<p>This rule raises an issue when a called method has a string parameter with a name containing "uri", "Uri", "urn", "Urn", "url" or "Url" and the
-declaring type contains a corresponding overload that takes a <code>System.Uri</code> as a parameter.</p>
-<p>When there is a choice between two overloads that differ only regarding the representation of a URI, the user should choose the overload that takes
-a <code>System.Uri</code> argument.</p>
-<h2>Noncompliant Code Example</h2>
+<p>URIs或URLs的字符串表示很容易出现解析和编码错误，从而导致漏洞。<code>System.Uri</code>类是一种安全的替代方法，应该是首选的。</p>
+<p>当一个被调用的方法有一个字符串参数，其名称包含"uri"，"Uri"，"urn"，"Urn"，"url" 或 "Url"，而声明类型包含一个相应的重载，该重载以 <code>System.Uri</code> 作为参数时，该规则会引发一个问题。</p>
+<p>当有两个重载可供选择时，它们仅在URI的表示形式上不同，用户应该选择接受 <code>System.Uri</code>参数的重载。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 using System;
 
@@ -19,13 +16,13 @@ namespace MyLibrary
       public string ReadResource(Uri uri, string name, bool isLocal) { }
 
       public void Main() {
-        FetchResource("http://www.mysite.com"); // Noncompliant
-        ReadResource("http://www.mysite.com", "foo-resource", true); // Noncompliant
+        FetchResource("http://www.mysite.com"); // 不合规
+        ReadResource("http://www.mysite.com", "foo-resource", true); // 不合规
       }
    }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 using System;
 

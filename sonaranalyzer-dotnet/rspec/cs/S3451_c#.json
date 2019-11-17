@@ -1,5 +1,5 @@
 {
-  "title": "\"[DefaultValue]\" should not be used when \"[DefaultParameterValue]\" is meant",
+  "title": "\"[DefaultValue]\" 不应与 \"[DefaultParameterValue]\" 混淆",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

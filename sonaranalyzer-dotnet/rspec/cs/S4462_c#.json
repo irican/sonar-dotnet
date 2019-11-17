@@ -1,5 +1,5 @@
 {
-  "title": "Calls to \"async\" methods should not be blocking",
+  "title": "对\"async\" 方法的调用不应该被阻塞",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

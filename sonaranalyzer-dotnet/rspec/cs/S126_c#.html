@@ -1,37 +1,30 @@
-<p>This rule applies whenever an <code>if</code> statement is followed by one or more <code>else if</code> statements; the final <code>else if</code>
-should be followed by an <code>else</code> statement.</p>
-<p>The requirement for a final <code>else</code> statement is defensive programming.</p>
-<p>The <code>else</code> statement should either take appropriate action or contain a suitable comment as to why no action is taken. This is
-consistent with the requirement to have a final <code>default</code> clause in a <code>switch</code> statement.</p>
-<h2>Noncompliant Code Example</h2>
+<p>此规则应用于一条 <code>if</code> 语句后跟有一条或多条 <code>else if</code> 语句的情况，最后的 <code>else if</code>语句后应跟有 <code>else</code> 语句。</p>
+<p>这种对结尾的 <code>else</code> 语句的要求属于防御性的编程（defensive programming）。</p>
+<p>这种 <code>else</code> 语句里要么实现一个相应的功能，要么包含一条适当的注释来说明没有在此处实现功能的原因。这与必须要有一条 <code>default</code> 分句在 <code>switch</code> 结尾的要求是一致的。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 if (x == 0)
 {
-    DoSomething();
-}
-else if (x == 1)
+  doSomething();
+} else if (x == 1)
 {
-    DoSomethingElse();
+  doSomethingElse();
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 if (x == 0)
 {
-    DoSomething();
-}
-else if (x == 1)
+  doSomething();
+} else if (x == 1)
 {
-    DoSomethingElse();
-}
-else
+  doSomethingElse();
+} else
 {
-    throw new InvalidOperationException();
+  throw new IllegalStateException();
 }
 </pre>
-<h2>Exceptions</h2>
-<p>None</p>
-<h2>See</h2>
+<h2>请参阅</h2>
 <ul>
   <li> MISRA C:2004, 14.10 - All if...else if constructs shall be terminated with an else clause. </li>
   <li> MISRA C++:2008, 6-4-2 - All if...else if constructs shall be terminated with an else clause. </li>

@@ -1,6 +1,6 @@
-<p><code>switch</code> statements are useful when there are many different cases depending on the value of the same expression.</p>
-<p>For just one or two cases however, the code will be more readable with <code>if</code> statements.</p>
-<h2>Noncompliant Code Example</h2>
+<p>使用得当的 <code>switch</code> 语句中，各条分支的选择取决于同一个表达式的取值。</p>
+<p>然而当分句只有一两条时，使用 <code>if</code> 语句会更便于阅读。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 switch (variable)
 {
@@ -12,7 +12,7 @@ switch (variable)
     break;
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 if (variable == 0)
 {
@@ -23,8 +23,10 @@ else
   doSomethingElse();
 }
 </pre>
-<h2>See</h2>
+<h2>请参阅</h2>
 <ul>
+  <li> MISRA C:2004, 15.5 - Every switch statement shall have at least one case clause. </li>
+  <li> MISRA C++:2008, 6-4-8 - Every switch statement shall have at least one case-clause. </li>
   <li> MISRA C:2012, 16.6 - Every switch statement shall have at least two switch-clauses </li>
 </ul>
 

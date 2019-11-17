@@ -1,5 +1,5 @@
 {
-  "title": "Method parameters should be declared with base types",
+  "title": "方法的参数应以基类声明",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

@@ -1,5 +1,5 @@
 {
-  "title": "Type should not be examined on \"System.Type\" instances",
+  "title": "不应对 \"System.Type\" 的实例检查Type",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

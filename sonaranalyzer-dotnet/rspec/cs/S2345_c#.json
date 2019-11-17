@@ -1,5 +1,5 @@
 {
-  "title": "Flags enumerations should explicitly initialize all their members",
+  "title": "有位域标识的枚举类应显式地初始化所有的成员",
   "type": "BUG",
   "status": "ready",
   "remediation": {

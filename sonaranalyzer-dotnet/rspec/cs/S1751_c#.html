@@ -1,22 +1,19 @@
-<p>A loop with at most one iteration is equivalent to the use of an <code>if</code> statement to conditionally execute one piece of code. If the
-initial intention of the author was really to conditionally execute one piece of code, an <code>if</code> statement should be used instead. If that
-was not the initial intention of the author, the body of the loop should be fixed to use the nested <code>return</code>, <code>break</code> or
-<code>throw</code> statements in a more appropriate way.</p>
-<h2>Noncompliant Code Example</h2>
+<p>最多只执行一次迭代的循环相当于使用了 <code>if</code> 语句，即有条件地执行一段代码。如果作者的初衷确实是有条件地执行一段代码，那么就应该改用 <code>if</code>；如果不是，循环的主体应该以更适当的方式使用内嵌的 <code>return</code>，<code>break</code> 或者<code>throw</code> 语句。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 for (int i = 0; i &lt; 10; i++)
 {
     Console.WriteLine(i);
-    break;  // Noncompliant, loop only executes once
+    break;  // 不合规，循环只执行了一次
 }
 ...
 foreach (var item in items)
 {
-    return item;  // Noncompliant, loop only executes once
+    return item;  // 不合规，循环只执行了一次
 }
 ...
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 for (int i = 0; i &lt; 10; i++)
 {

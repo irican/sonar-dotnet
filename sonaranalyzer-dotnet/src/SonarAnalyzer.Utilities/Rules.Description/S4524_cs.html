@@ -1,0 +1,40 @@
+<p><code>switch</code> 可以包含一个 <code>default</code> 子句，原因有很多：处理意外值，以显示所有的情况都得到了正确的考虑。</p>
+<p>为了便于阅读，为了帮助开发人员快速找到 <code>switch</code> 语句的默认行为，建议将<code>default</code> 子句放在 <code>switch</code> 语句的末尾。如果 <code>default</code> 子句不是 <code>switch</code>的 cases中的第一个或最后一个子句，则此规则会引发一个问题。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+switch (param)
+{
+    case 0:
+      DoSomething();
+      break;
+    default: // default 子句应该在第一或者最后一行
+      Error();
+      break;
+    case 1:
+      DoSomethingElse();
+      break;
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+switch (param)
+{
+    case 0:
+      DoSomething();
+      break;
+    case 1:
+      DoSomethingElse();
+      break;
+    default:
+      Error();
+      break;
+}
+</pre>
+<h2>请参阅</h2>
+<ul>
+  <li> MISRA C:2004, 15.3 - The final clause of a switch statement shall be the default clause </li>
+  <li> MISRA C++:2008, 6-4-6 - The final clause of a switch statement shall be the default-clause </li>
+  <li> MISRA C:2012, 16.4 - Every switch statement shall have a default label </li>
+  <li> MISRA C:2012, 16.5 - A default label shall appear as either the first or the last switch label of a switch statement </li>
+</ul>
+

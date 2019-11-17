@@ -1,5 +1,5 @@
 {
-  "title": "Right operands of shift operators should be integers",
+  "title": "移位运算符的右操作数应是整数",
   "type": "BUG",
   "status": "ready",
   "remediation": {

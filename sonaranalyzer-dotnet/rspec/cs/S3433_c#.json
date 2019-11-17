@@ -1,5 +1,5 @@
 {
-  "title": "Test method signatures should be correct",
+  "title": "测试方法的签名应当正确无误",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

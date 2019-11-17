@@ -1,5 +1,5 @@
 {
-  "title": "Literal suffixes should be upper case",
+  "title": "后缀应用大写字符",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {
@@ -8,7 +8,6 @@
   },
   "tags": [
     "convention",
-    "based-on-misra",
     "misra",
     "cert",
     "pitfall"

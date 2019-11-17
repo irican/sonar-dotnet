@@ -1,0 +1,80 @@
+<p>当一次性类型包含以下类型的字段，且未实现终结器时，此规则会引发一个问题：</p>
+<ul>
+  <li> <code>System.IntPtr</code> </li>
+  <li> <code>System.UIntPtr</code> </li>
+  <li> <code>System.Runtime.InteropService.HandleRef</code> </li>
+</ul>
+<h2>不合规的代码示例</h2>
+<pre>
+using System;
+using System.Runtime.InteropServices;
+
+namespace MyLibrary
+{
+  public class Foo : IDisposable // 不合规: 没有终结器
+  {
+    private IntPtr myResource;
+    private bool disposed = false;
+
+    protected virtual void Dispose(bool disposing)
+    {
+      if (!disposed)
+      {
+        // 处理此实例所持有的资源。
+        FreeResource(myResource);
+        disposed = true;
+
+        // 禁止已处理实例的终结。
+        if (disposing)
+        {
+          GC.SuppressFinalize(this);
+        }
+      }
+    }
+
+    public void Dispose() {
+      Dispose(true);
+    }
+  }
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+using System;
+using System.Runtime.InteropServices;
+
+namespace MyLibrary
+{
+  public class Foo : IDisposable
+  {
+    private IntPtr myResource;
+    private bool disposed = false;
+
+    protected virtual void Dispose(bool disposing)
+    {
+      if (!disposed)
+      {
+        // 处理此实例所持有的资源。
+        FreeResource(myResource);
+        disposed = true;
+
+        // 禁止已处理实例的终结。
+        if (disposing)
+        {
+          GC.SuppressFinalize(this);
+        }
+      }
+    }
+
+    ~Foo()
+    {
+      Dispose(false);
+    }
+  }
+}
+</pre>
+<h2>请参阅</h2>
+<ul>
+  <li> 相关项: {rule:csharpsquid:S3881} - "IDisposable" 接口应被正确实现 </li>
+</ul>
+

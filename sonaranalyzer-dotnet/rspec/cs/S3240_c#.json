@@ -1,5 +1,5 @@
 {
-  "title": "The simplest possible condition syntax should be used",
+  "title": "应使用最简洁的条件语法",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

@@ -1,5 +1,5 @@
 {
-  "title": "Child class fields should not shadow parent class fields",
+  "title": "子类的字段不应与父类字段同名",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

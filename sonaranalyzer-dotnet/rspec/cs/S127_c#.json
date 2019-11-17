@@ -1,5 +1,5 @@
 {
-  "title": "\"for\" loop stop conditions should be invariant",
+  "title": "\"for\" 循环的停止条件应为恒定的",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {
@@ -7,7 +7,6 @@
     "constantCost": "10min"
   },
   "tags": [
-    "based-on-misra",
     "misra",
     "pitfall"
   ],

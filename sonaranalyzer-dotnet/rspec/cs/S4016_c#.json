@@ -1,5 +1,5 @@
 {
-  "title": "Enumeration members should not be named \"Reserved\"",
+  "title": "枚举成员不应该被命名为\"Reserved\"",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

@@ -1,5 +1,5 @@
 {
-  "title": "Classes should \"Dispose\" of members from the classes' own \"Dispose\" methods",
+  "title": "每个类应该在它自己的 \"Dispose\"方法里 \"Dispose\"（清理）成员",
   "type": "BUG",
   "status": "ready",
   "remediation": {

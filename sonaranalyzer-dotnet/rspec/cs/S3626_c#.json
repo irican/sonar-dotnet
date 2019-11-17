@@ -1,5 +1,5 @@
 {
-  "title": "Jump statements should not be redundant",
+  "title": "不要有无用的跳转语句",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

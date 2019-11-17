@@ -1,5 +1,5 @@
 {
-  "title": "Types and methods should not have too many generic parameters",
+  "title": "类和方法不应有太多的泛型参数",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

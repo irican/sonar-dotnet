@@ -1,14 +1,12 @@
-<p>Fields should not be part of an API, and therefore should always be private. Indeed, they cannot be added to an interface for instance, and
-validation cannot be added later on without breaking backward compatibility. Instead, developers should encapsulate their fields into properties.
-Explicit property getters and setters can be introduced for validation purposes or to smooth the transition to a newer system.</p>
-<h2>Noncompliant Code Example</h2>
+<p>字段不应成为API的一部分，因此应始终是private型的。例如，它们实际上无法添加到接口中，并且在以后如不破坏其向后兼容性的情况下是无法添加验证（validation）的。因此，开发者反而应将他们的字段封装在属性（property）中。显式的属性getter方法和属性setter方法可以用于验证，也可以实现向新系统的平滑过渡。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 public class Foo
 {
   public int MagicNumber = 42;
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 public class Foo
 {
@@ -18,14 +16,14 @@ public class Foo
   }
 }
 </pre>
-<p>or </p>
+<p>或者 </p>
 <pre>
 public class Foo
 {
   private int MagicNumber = 42;
 }
 </pre>
-<h2>Exceptions</h2>
-<p><code>struct</code>s are ignored, as are <code>static</code> and <code>const</code> fields in classes. </p>
-<p>Further, an issue is only raised when the real accessibility is <code>public</code>, taking into account the class accessibility.</p>
+<h2>例外</h2>
+<p>此规则忽略 <code>struct</code>，类中的 <code>static</code> 和 <code>const</code> 字段也是一样。 </p>
+<p>另外，考虑类的可访问性的话，只有其真正的可访问性是 <code>public</code> 时才会引发问题。</p>
 

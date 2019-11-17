@@ -1,5 +1,5 @@
 {
-  "title": "Empty arrays and collections should be returned instead of null",
+  "title": "应该用空的数列和集合来代替null作返回值",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

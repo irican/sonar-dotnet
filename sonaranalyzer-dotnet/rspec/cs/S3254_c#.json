@@ -1,5 +1,5 @@
 {
-  "title": "Default parameter values should not be passed as arguments",
+  "title": "默认参数不应再作为参数传入",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

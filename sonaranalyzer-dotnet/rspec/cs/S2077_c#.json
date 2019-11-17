@@ -1,5 +1,5 @@
 {
-  "title": "Formatting SQL queries is security-sensitive",
+  "title": "执行SQL查询是安全敏感的行为",
   "type": "SECURITY_HOTSPOT",
   "status": "ready",
   "remediation": {
@@ -10,7 +10,6 @@
     "cwe",
     "owasp-a1",
     "sans-top25-insecure",
-    "bad-practice",
     "cert",
     "sql"
   ],

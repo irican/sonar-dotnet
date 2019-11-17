@@ -1,0 +1,90 @@
+<p>在实现操作符重载时，确保所有相关的操作符和方法在实现中是一致的是非常重要的。</p>
+<p>应遵循下列准则:</p>
+<ul>
+  <li> 当提供<code>operator ==</code> 时，还应该提供<code>operator !=</code> 反之亦然。</li>
+  <li> 当提供<code>operator ==</code> 时，应该提供 <code>Equals(Object)</code> 和 <code>GetHashCode()</code>。</li>
+  <li> 当提供 <code>operator +</code> 或 <code>operator -</code> 时，还应该提供<code>operator ==</code>，尊从之前的指导方针。</li>
+</ul>
+<p>当这些指导方针中的任何一条没有遵循于公共可见类型时(public, protected or protected internal)，这条规则就会引发一个问题。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+using System;
+
+namespace MyLibrary
+{
+  public class Foo // 不合规
+  {
+    private int left;
+    private int right;
+
+    public Foo(int l, int r)
+    {
+      this.left = l;
+      this.right = r;
+    }
+
+    public static Foo operator +(Foo a, Foo b)
+    {
+      return new Foo(a.left + b.left, a.right + b.right);
+    }
+
+    public static Foo operator -(Foo a, Foo b)
+    {
+      return new Foo(a.left - b.left, a.right - b.right);
+    }
+  }
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+using System;
+
+namespace MyLibrary
+{
+  public class Foo
+  {
+    private int left;
+    private int right;
+
+    public Foo(int l, int r)
+    {
+      this.left = l;
+      this.right = r;
+    }
+
+    public static Foo operator +(Foo a, Foo b)
+    {
+      return new Foo(a.left + b.left, a.right + b.right);
+    }
+
+    public static Foo operator -(Foo a, Foo b)
+    {
+      return new Foo(a.left - b.left, a.right - b.right);
+    }
+
+    public static bool operator ==(Foo a, Foo b)
+    {
+      return (a.left == b.left &amp;&amp; a.right == b.right);
+    }
+
+    public static bool operator !=(Foo a, Foo b)
+    {
+      return !(a == b);
+    }
+
+    public override bool Equals(Object obj)
+    {
+      Foo a = obj as Foo;
+      if (a == null)
+        return false;
+      return this == a;
+    }
+
+    public override int GetHashCode()
+    {
+       return (this.left * 10) + this.right;
+    }
+  }
+}
+</pre>
+

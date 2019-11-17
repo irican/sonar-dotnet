@@ -1,0 +1,24 @@
+<p>未经编码的控制字符和空白字符往往会弄坏你的代码，它们不可见，或难以辨认，当字符串并非开发者预期时往往会引发bug。如果你确实需要它们，请使用它们的编码版本(例如：ASCII <code>\n,\t,</code>... 或 Unicode <code>U+000D, U+0009,</code>...).</p>
+<p>当字符串包含以下字符时报告问题：</p>
+<ul>
+  <li> <a href="https://en.wikipedia.org/wiki/ASCII#Control_characters">ASCII 控制字符</a> (字符索引 &lt; 32 或 = 127) </li>
+  <li> Unicode <a href="https://en.wikipedia.org/wiki/Unicode_character_property#Whitespace">空白字符</a> </li>
+  <li> Unicode <a href="https://en.wikipedia.org/wiki/C0_and_C1_control_codes">C0 控制字符</a> </li>
+  <li> Unicode 字符 <code>U+200B, U+200C, U+200D, U+2060, U+FEFF, U+2028, U+2029</code> </li>
+</ul>
+<p>单独的空格字符，例如 Unicode <code>U+0020</code>, ASCII 32 不会报告问题。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+string tabInside = "A	B";  // 不合规，包含了制表符
+string zeroWidthSpaceInside = "foo​bar"; // 不合规，使用了 U+200B 字符
+Console.WriteLine(zeroWidthSpaceInside); // 打印 "foo?bar"
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+string tabInside = "A\tB";  // 合规，使用了转义值
+string zeroWidthSpaceInside = "foo\u200Bbar";  // 合规，使用了转义值
+Console.WriteLine(zeroWidthSpaceInside); // 打印 "foo?bar"
+</pre>
+<h2>例外</h2>
+<p>逐字符字面量没有转义字符机制。</p>
+

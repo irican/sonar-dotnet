@@ -1,5 +1,5 @@
 {
-  "title": "Methods should be named according to their synchronicities",
+  "title": "方法应该根据它们的同步性来命名",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

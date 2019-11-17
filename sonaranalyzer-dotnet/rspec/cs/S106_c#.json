@@ -1,5 +1,5 @@
 {
-  "title": "Standard outputs should not be used directly to log anything",
+  "title": "标准输出不应直接用于记录任何内容",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

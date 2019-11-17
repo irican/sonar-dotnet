@@ -1,5 +1,5 @@
 {
-  "title": "Constructors should only call non-overridable methods",
+  "title": "构造函数只能调用不可重写的方法",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

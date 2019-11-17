@@ -1,5 +1,5 @@
 {
-  "title": "Inner class members should not shadow outer class \"static\" or type members",
+  "title": "内部类的成员不应与外部类的 \"static\" 字段或类型成员使用相同的名称",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

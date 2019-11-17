@@ -1,5 +1,5 @@
 {
-  "title": "Fields that are only assigned in the constructor should be \"readonly\"",
+  "title": "只在构造函数里赋值的字段应设为 \"readonly\"",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

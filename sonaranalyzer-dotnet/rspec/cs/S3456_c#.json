@@ -1,5 +1,5 @@
 {
-  "title": "\"string.ToCharArray()\" should not be called redundantly",
+  "title": "可省略 \"string.ToCharArray()\" 时不应再调用它",
   "type": "BUG",
   "status": "ready",
   "remediation": {

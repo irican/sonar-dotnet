@@ -1,5 +1,5 @@
 {
-  "title": "Events should be invoked",
+  "title": "事件应该被调用",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

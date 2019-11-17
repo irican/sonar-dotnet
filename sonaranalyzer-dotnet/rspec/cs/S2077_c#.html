@@ -1,15 +1,12 @@
-<p>Concatenating or formatting strings used as SQL queries is security-sensitive. It has led in the past to the following vulnerabilities:</p>
+<p>执行SQL查询是安全敏感的，它已经造成了以下的漏洞：</p>
 <ul>
   <li> <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-9019">CVE-2018-9019</a> </li>
   <li> <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-7318">CVE-2018-7318</a> </li>
   <li> <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-5611">CVE-2017-5611</a> </li>
 </ul>
-<p>SQL queries often need to use a hardcoded SQL string with a dynamic parameter coming from a user request. Concatenating or formatting a string to
-add those parameters to the request is a bad practice as it can result in an <a href="https://www.owasp.org/index.php/SQL_Injection">SQL
-injection</a>. The safe way to add parameters to a SQL query is to use SQL binding mechanisms.</p>
-<p>This rule flags the execution of SQL queries which are built using concatenation or formatting of strings, even if there is no injection. This rule
-does not detect SQL injections. The goal is to guide security code reviews and to prevent a common bad practice.</p>
-<p>The following specific method signatures are tested:</p>
+<p><a href="https://www.owasp.org/index.php/SQL_Injection">SQL注入</a> 仍然是十大安全漏洞之一。执行SQL命令的应用程序应在这些指令中清除由任何外界提供的值。如果不这样做，攻击者就可能会加入内容更改查询，以执行意外的指令或获取敏感信息。清除这些数据应该使用SQL绑定机制（SQL binding mechanisms）而不是手动操作；该机制可以自动执行并将其完全清理。</p>
+<p>此规则会检查各种可能因使用不当而受到SQL注入攻击的方法。任何从String或RawSqlString中生成的SQL查询都被认为是易受影响的，此规则的目的是指导对代码的安全审查。</p>
+<p>下列方法的签名会被测试：</p>
 <ul>
   <li> <code>System.Data.SqlClient.SqlCommand.SqlCommand(string, ...)</code> </li>
   <li> <code>System.Data.SqlClient.SqlDataAdapter.SqlDataAdapter(string, ...)</code> </li>
@@ -28,79 +25,68 @@ does not detect SQL injections. The goal is to guide security code reviews and t
   <li> <code>System.Data.SqlServerCe.SqlCeCommand.CommandText.set</code> </li>
   <li> <code>System.Data.OracleClient.OracleCommand.CommandText.set</code> </li>
 </ul>
-<p>The following formatting and concatenation methods will raise an issue:</p>
+<h2>需要考虑的问题</h2>
 <ul>
-  <li> <code>String.Concat</code> </li>
-  <li> <code>String.Format</code> </li>
-  <li> <code>FormattableString</code>, with some exceptions (see the Exceptions section) </li>
+  <li> SQL查询是否含有由用户或不受信任的源提供的未净化的输入 </li>
 </ul>
-<h2>Ask Yourself Whether</h2>
+<p>如果你的回答是“是”，那么就很可能存在威胁。</p>
+<h2>推荐的安全编码习惯</h2>
 <ul>
-  <li> the SQL query is built using concatenation or string formatting. </li>
-  <li> some of the values are coming from an untrusted source and are not sanitized. </li>
-</ul>
-<p>You may be at risk if you answered yes to this question.</p>
-<h2>Recommended Secure Coding Practices</h2>
-<ul>
-  <li> Avoid building queries manually using concatenation or formatting. If you do it anyway, do not include user input in this building process.
+  <li> 避免人工地利用连锁（concatenation）或格式化的方法构造查询。如果在构造中必须这么做，那就不要在查询中加入用户的输入。
   </li>
-  <li> Use <a href="https://www.owasp.org/index.php/Query_Parameterization_Cheat_Sheet">parameterized queries, prepared statements, or stored
-  procedures</a> whenever possible. </li>
-  <li> You may also use ORM frameworks such as Hibernate which, if used correctly, reduce injection risks. </li>
-  <li> Avoid executing SQL queries containing unsafe input in stored procedures or functions. </li>
-  <li> <a href="https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet">Sanitize</a> every unsafe input. </li>
+  <li> 尽可能地使用 <a href="https://www.owasp.org/index.php/Query_Parameterization_Cheat_Sheet">参数化查询、现有的语句（prepared statements）或是已存储的过程（stored procedures）</a>。 </li>
+  <li> 你还可以使用ORM架构，例如Hibernate，如果使用得当，它可以降低注入的风险。 </li>
+  <li> 避免在已存储的过程和函数中执行那些包含不安全输入的SQL查询。 </li>
+  <li> <a href="https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet">净化</a> 每一次不安全的输入。</li>
 </ul>
-<p>You can also reduce the impact of an attack by using a database account with low privileges.</p>
-<h2>Sensitive Code Example</h2>
+<p>你还可以使用权限低的账户来减小攻击可能造成的影响。</p>
+<h2>可疑的代码示例</h2>
 <pre>
-public void Foo(DbContext context, string query, string param)
+public void Foo(DbContext context, string query)
 {
-    string sensitiveQuery = string.Concat(query, param);
-    context.Database.ExecuteSqlCommand(sensitiveQuery); // Sensitive
-    context.Query&lt;User&gt;().FromSql(sensitiveQuery); // Sensitive
-
-    context.Database.ExecuteSqlCommand($"SELECT * FROM mytable WHERE mycol={value}", param); // Sensitive, the FormattableString is evaluated and converted to RawSqlString
-    string query = $"SELECT * FROM mytable WHERE mycol={param}";
-    context.Database.ExecuteSqlCommand(query); // Sensitive, the FormattableString has already been evaluated, it won't be converted to a parametrized query.
+    context.Database.ExecuteSqlCommand(query); // 可疑
+    context.Query&lt;User&gt;().FromSql(query); // 可疑
 }
 
-public void Bar(SqlConnection connection, string param)
+public void Bar(SqlConnection connection, string query)
 {
     SqlCommand command;
-    string sensitiveQuery = string.Format("INSERT INTO Users (name) VALUES (\"{0}\")", param);
-    command = new SqlCommand(sensitiveQuery); // Sensitive
+    command = new SqlCommand(query); // 可疑
 
-    command.CommandText = sensitiveQuery; // Sensitive
+    command.CommandText = query; // 可疑
 
     SqlDataAdapter adapter;
-    adapter = new SqlDataAdapter(sensitiveQuery, connection); // Sensitive
+    adapter = new SqlDataAdapter(query, connection); // 可疑
 }
 </pre>
-<h2>Exceptions</h2>
-<p>No issue will be raised in the following cases:</p>
+<h2>例外</h2>
+<p>下列情形不会引发问题：</p>
 <ul>
-  <li> When the SQL query is a FormattableString provided <strong>directly</strong> to <code>ExecuteSqlCommand</code>,
-  <code>ExecuteSqlCommandAsync</code> or <code>FromSql</code>. In this case the FormattableString is automatically converted to a parametrized query.
-  This feature was added in Entity Framework Core 2.0. See <a
-  href="https://docs.microsoft.com/en-us/ef/core/what-is-new/ef-core-2.0#string-interpolation-in-fromsql-and-executesqlcommand">Entity Framework's
-  documentation</a> for more information. </li>
+  <li> 被硬编码为字符串的SQL查询。 </li>
+  <li> 当本次SQL查询是 <strong>directly</strong> 提供给 <code>ExecuteSqlCommand</code>，<code>ExecuteSqlCommandAsync</code>或 <code>FromSql</code>的FormattableString时，这条FormattableString会自动转换为参数化的查询。
+  </li>
 </ul>
 <pre>
-public void Foo(DbContext context, string value)
+public void Foo(DbContext context, string query, string value, params object[] parameters)
 {
-    context.Database.ExecuteSqlCommand("SELECT * FROM mytable"); // No issue raised. The query is hard-coded. Thus no injection is possible.
+    context.Database.ExecuteSqlCommand("SELECT * FROM mytable"); // 不会引发问题，这条查询是硬编码的。因此不可能发生注入。
 
-    context.Database.ExecuteSqlCommand($"SELECT * FROM mytable WHERE mycol={value}"); // No issue raised. The FormattableString is transformed into a parametrized query.
+
+    context.Database.ExecuteSqlCommand($"SELECT * FROM mytable WHERE mycol={value}"); // 不会引发问题。这里的FormattableString会转变为参数化查询。
+    // However these need to be reviewed
+    context.Database.ExecuteSqlCommand($"SELECT * FROM mytable WHERE mycol={value}", parameters); // 可疑，这里的FormattableString会被计算并转变为RawSqlString
+    string query = $"SELECT * FROM mytable WHERE mycol={value}"
+    context.Database.ExecuteSqlCommand(query); // 可疑，这里的FormattableString已经计算过，不会再被转换参数化查询。
 }
 </pre>
-<h2>See</h2>
+<h2>请参阅</h2>
 <ul>
-  <li> <a href="https://www.owasp.org/index.php/Top_10-2017_A1-Injection">OWASP Top 10 2017 Category A1</a> - Injection </li>
   <li> <a href="http://cwe.mitre.org/data/definitions/89">MITRE, CWE-89</a> - Improper Neutralization of Special Elements used in an SQL Command </li>
   <li> <a href="http://cwe.mitre.org/data/definitions/564.html">MITRE, CWE-564</a> - SQL Injection: Hibernate </li>
   <li> <a href="http://cwe.mitre.org/data/definitions/20.html">MITRE, CWE-20</a> - Improper Input Validation </li>
   <li> <a href="http://cwe.mitre.org/data/definitions/943.html">MITRE, CWE-943</a> - Improper Neutralization of Special Elements in Data Query Logic
   </li>
+  <li> OWASP Top 10 2017 Category A1 - Injection </li>
   <li> <a href="https://www.securecoding.cert.org/confluence/x/PgIRAg">CERT, IDS00-J.</a> - Prevent SQL injection </li>
   <li> <a href="https://www.sans.org/top25-software-errors/#cat1">SANS Top 25</a> - Insecure Interaction Between Components </li>
   <li> Derived from FindSecBugs rules <a href="http://h3xstream.github.io/find-sec-bugs/bugs.htm#SQL_INJECTION_JPA">Potential SQL/JPQL Injection

@@ -1,5 +1,5 @@
 {
-  "title": "\"interface\" instances should not be cast to concrete types",
+  "title": "\"interface\" 的实例不应强制转换为具体类",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

@@ -1,8 +1,5 @@
-<p>It may be a good idea to raise an exception in a constructor if you're unable to fully flesh the object in question, but not in an
-<code>exception</code> constructor. If you do, you'll interfere with the exception that was originally being thrown. Further, it is highly unlikely
-that an exception raised in the creation of an exception will be properly handled in the calling code, and the unexpected, unhandled exception will
-lead to program termination.</p>
-<h2>Noncompliant Code Example</h2>
+<p>如果你无法提供某个对象的所有内容（flesh the object fully），在构造函数里就抛出异常可能会是个好办法，但不要在 <code>exception</code> 的构造函数里抛出。如果这样做了，你会干扰到最初抛出的异常。另外，在创建异常时抛出的异常很可能不会在调用代码中得到正确的处理，并且，意外的、未处理的异常会导致程序的终结。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 class MyException: Exception
 {
@@ -10,9 +7,11 @@ class MyException: Exception
     {
          if (bad_thing)
          {
-             throw new Exception("A bad thing happened");  // Noncompliant
+             throw new Exception("A bad thing happened");  // 不合规
           }
     }
 }
 </pre>
+<h2>已废弃</h2>
+<p>本条规则已经被标记为废弃状态，在以后的版本中将被移除。</p>
 

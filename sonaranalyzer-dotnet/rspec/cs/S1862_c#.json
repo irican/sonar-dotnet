@@ -1,5 +1,5 @@
 {
-  "title": "Related \"if\/else if\" statements should not have the same condition",
+  "title": "同一组的 \"if\/else if\" 语句不应有相同的判断条件",
   "type": "BUG",
   "status": "ready",
   "remediation": {

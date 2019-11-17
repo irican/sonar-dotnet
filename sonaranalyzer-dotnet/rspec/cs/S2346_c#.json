@@ -1,5 +1,5 @@
 {
-  "title": "Flags enumerations zero-value members should be named \"None\"",
+  "title": "有位域标签的枚举类的零值成员应该命名为\"None\"",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

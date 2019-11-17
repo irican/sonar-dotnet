@@ -1,27 +1,26 @@
-<p>Certain characters, once normalized to lowercase, cannot make a round trip. That is, they can not be converted from one locale to another and then
-accurately restored to their original characters.</p>
-<p>It is therefore strongly recommended to normalize characters and strings to uppercase instead.</p>
-<h2>Noncompliant Code Example</h2>
+<p>某些字符，一旦规范化为小写，就不能反复。也就是说，它们不能从一种语言环境转换到另一种语言环境，然后精确地恢复到原来的字符。</p>
+<p>因此，强烈建议将字符和字符串规范化为大写。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 Thread.CurrentThread.CurrentCulture = new CultureInfo("tr-TR");
-var areStringEqual = "INTEGER".ToLower() == "integer"; // Noncompliant, the result is false as the ToLower will resolve to "ınteger"
-var areCharEqual = char.ToLower('I') == 'i'; // Noncompliant, the result is false as the ToLower will resolve to "ı"
+var areStringEqual = "INTEGER".ToLower() == "integer"; // 不合规，结果是假ToLower将解决“ınteger”
+var areCharEqual = char.ToLower('I') == 'i'; // 不合规，结果是假ToLower将解决“ı”
 
-var incorrectRoundtrip = "İ".ToLowerInvariant().ToUpper() == "I".ToLowerInvariant().ToUpper(); // Noncompliant, because of the lower we lose the information about the correct uppercase character
+var incorrectRoundtrip = "İ".ToLowerInvariant().ToUpper() == "I".ToLowerInvariant().ToUpper(); // 不合规，因为值越低，我们就会丢失关于正确大写字母的信息
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 Thread.CurrentThread.CurrentCulture = new CultureInfo("tr-TR");
 var areStringEqual = "ınteger".ToUpperInvariant() == "ıNTEGER";
 var areCharEqual = char.ToUpperInvariant('ı') == 'ı';
 var correctRoundtrip = "İ".ToUpperInvariant().ToLower() != "I".ToUpperInvariant().ToLower();
 </pre>
-<h2>See</h2>
+<h2>请参阅</h2>
 <ul>
   <li> <a href="http://www.i18nguy.com/unicode/turkish-i18n.html">Internationalization for Turkish</a> </li>
   <li> <a href="https://gingter.org/2018/07/10/how-to-correctly-normalize-strings-and-how-to-compare-them-in-net/">How to correctly normalize
   strings</a> </li>
-  <li> [Best Practices for Using Strings in .NET|
-  https://docs.microsoft.com/en-us/dotnet/standard/base-types/best-practices-strings#recommendations-for-string-usage] </li>
+  <li> <a href="https://docs.microsoft.com/en-us/dotnet/standard/base-types/best-practices-strings#recommendations-for-string-usage">Best Practices 
+  for Using Strings in .NET</a> </li>
 </ul>
 

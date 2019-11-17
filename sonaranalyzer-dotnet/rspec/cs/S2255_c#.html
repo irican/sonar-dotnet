@@ -1,50 +1,62 @@
-<p>Using cookies is security-sensitive. It has led in the past to the following vulnerabilities:</p>
+<p>使用cookies是安全敏感的（security-sensitive）的。该行为已经导致了以下漏洞的产生：</p>
 <ul>
-  <li> <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-11639">CVE-2018-11639</a> </li>
+  <li> <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-7772">CVE-2018-7772</a> </li>
+  <li> <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-10085">CVE-2018-10085</a> </li>
   <li> <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-6537">CVE-2016-6537</a> </li>
 </ul>
-<p>Attackers can use widely-available tools to read cookies, sensitive information written by the server will be exposed.</p>
-<p>This rule flags code that writes cookies.</p>
-<h2>Ask Yourself Whether</h2>
+<p>攻击者可使用那些广泛应用的工具读取和修改cookies，因此：</p>
 <ul>
-  <li> sensitive information is stored inside the cookie. </li>
+  <li> 服务器所写的敏感信息会被泄露。 </li>
+  <li> 客户端发送的cookies可以被设计来攻击服务器漏洞。 </li>
 </ul>
-<p>You are at risk if you answered yes to this question.</p>
-<h2>Recommended Secure Coding Practices</h2>
-<p>Cookies should only be used to manage the user session. The best practice is to keep all user-related information server-side and link them to the
-user session, never sending them to the client. In a very few corner cases, cookies can be used for non-sensitive information that need to live longer
-than the user session.</p>
-<p>Do not try to encode sensitive information in a non human-readable format before writing them in a cookie. The encoding can be reverted and the
-original information will be exposed.</p>
-<p>Using cookies only for session IDs doesn't make them secure. Follow <a
-href="https://www.owasp.org/index.php/Session_Management_Cheat_Sheet#Cookies">OWASP best practices</a> when you configure your cookies.</p>
-<p>As a side note, every information read from a cookie should be <a
-href="https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet">Sanitized</a>.</p>
-<h2>Sensitive Code Example</h2>
+<p>此规则会标记读取或写入cookies的代码</p>
+<h2>需要考虑的问题</h2>
+<ul>
+  <li> cookie中是否存有敏感信息。 </li>
+  <li> 在使用cookie前是不是没有对其净化。 </li>
+</ul>
+<p>如果你对以上任何一个问题的回答都是“是”，那么风险就是存在的。</p>
+<h2>推荐的安全编码习惯</h2>
+<p>Cookies应该只用于管理用户会话。最好的做法是将所有与用户有关的信息保存在服务器端，并将他们链接到用户会话，决不将它们发送给用户端。在极少数情况下，可以用cookies记录那些需要在用户会话结束后存活，但又不敏感的信息。</p>
+<p>在将敏感信息写入cookie前，不要试图将它们以读不懂的格式编码。因为即使如此，编码也可以恢复，原始的信息也会暴露。</p>
+<p>所有从cookie中读取的信息在使用前都要<a href="https://www.owasp.org/index.php/Input_Validation_Cheat_Sheet">净化</a>。</p>
+<p>仅对会话ID使用cookie并不能保证它们的安全。配置cookies时，请遵循 <a href="https://www.owasp.org/index.php/Session_Management_Cheat_Sheet#Cookies">OWASP最佳实例</a>。</p>
+<h2>可疑的代码示例</h2>
 <pre>
 // === .Net Framework ===
 
 HttpCookie myCookie = new HttpCookie("UserSettings");
-myCookie["CreditCardNumber"] = "1234 1234 1234 1234"; // Sensitive; sensitive data stored
-myCookie.Values["password"] = "5678"; // Sensitive
-myCookie.Value = "mysecret"; // Sensitive
+myCookie["CreditCardNumber"] = "1234 1234 1234 1234"; // 有问题的，包含了敏感信息
+myCookie.Values["password"] = "5678"; // 有问题的
+myCookie.Value = "mysecret"; // 有问题的
 ...
 Response.Cookies.Add(myCookie);
+
+if (Request.Cookies["myCookie"] != null &amp;&amp; Request.Cookies["myCookie"]["myValue"] != null) // 有问题的，在读取cookie的值
+{
+    string value = Request.Cookies["myCookie"]["myValue"]; // 有问题的
+    value = Request.Cookies["myCookie"].Values["myValue"]; // 有问题的
+}
+
+string value2 = Request.Cookies["myCookie2"].Value; // 有问题的
 
 
 // === .Net Core ===
 
-Response.Headers.Add("Set-Cookie", ...); // Sensitive
-Response.Cookies.Append("mykey", "myValue"); // Sensitive
+Response.Headers.Add("Set-Cookie", ...); // 有问题的
+Response.Cookies.Append("mykey", "myValue"); // 有问题的
+
+Request.Cookies; // 有问题的
 </pre>
-<h2>See</h2>
+<h2>请参阅</h2>
 <ul>
-  <li> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure">OWASP Top 10 2017 Category A3</a> - Sensitive Data Exposure
-  </li>
   <li> <a href="http://cwe.mitre.org/data/definitions/312.html">MITRE, CWE-312</a> - Cleartext Storage of Sensitive Information </li>
   <li> <a href="http://cwe.mitre.org/data/definitions/315.html">MITRE, CWE-315</a> - Cleartext Storage of Sensitive Information in a Cookie </li>
-  <li> <a href="https://wiki.sei.cmu.edu/confluence/display/java/FIO52-J.+Do+not+store+unencrypted+sensitive+information+on+the+client+side">CERT,
-  FIO52-J.</a> - Do not store unencrypted sensitive information on the client side </li>
+  <li> <a href="https://cwe.mitre.org/data/definitions/565.html">MITRE CWE-565</a> - Reliance on Cookies without Validation and Integrity Checking
+  </li>
+  <li> OWASP Top 10 2017 Category A1 - Injection </li>
+  <li> OWASP Top 10 2017 Category A3 - Sensitive Data Exposure </li>
+  <li> <a href="https://wiki.sei.cmu.edu/confluence/display/java/FIO52-J.+Do+not+store+unencrypted+sensitive+information+on+the+client+side">CERT, FIO52-J.</a> - Do not store unencrypted sensitive information on the client side </li>
   <li> Derived from FindSecBugs rule <a href="https://find-sec-bugs.github.io/bugs.htm#COOKIE_USAGE">COOKIE_USAGE</a> </li>
 </ul>
 

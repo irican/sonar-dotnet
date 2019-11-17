@@ -1,0 +1,39 @@
+<p>本地方法（Native methods）是驻留在虚拟机外部库中的函数。能够调用它们对于与用其他编程语言编写的应用程序和库的互操作性非常有用，特别是在执行特定于平台的操作时。然而，这样做会带来额外的风险，因为这意味着退出虚拟机的安全模型。因此，强烈建议在调用本地方法时采取额外的步骤，比如输入验证。最好的方法是使本地方法<code>private</code>，并提供执行这些额外步骤和验证的包装器。</p>
+<p>当本机方法声明为<code>public</code>或其包装器太简单时，此规则会引发问题。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+using System;
+using System.Runtime.InteropServices;
+
+namespace MyLibrary
+{
+  class Foo
+  {
+    [DllImport("mynativelib")]
+    extern public static void Bar(string s, int x); // 不合规
+  }
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+using System;
+using System.Runtime.InteropServices;
+
+namespace MyLibrary
+{
+  class Foo
+  {
+    [DllImport("mynativelib")]
+    extern private static void Bar(string s, int x);
+
+    public void BarWrapper(string s, int x)
+    {
+      if (s != null &amp;&amp; x &gt;= 0  &amp;&amp; x &lt; s.Length)
+      {
+        bar(s, x);
+      }
+    }
+  }
+}
+</pre>
+

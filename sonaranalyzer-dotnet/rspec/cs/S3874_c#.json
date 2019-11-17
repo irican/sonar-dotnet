@@ -1,5 +1,5 @@
 {
-  "title": "\"out\" and \"ref\" parameters should not be used",
+  "title": "不要使用 \"out\" 和 \"ref\" 修饰的参数",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

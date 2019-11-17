@@ -1,5 +1,5 @@
 {
-  "title": "Using pseudorandom number generators (PRNGs) is security-sensitive",
+  "title": "使用伪随机数生成器（PRNGs）是安全敏感的",
   "type": "SECURITY_HOTSPOT",
   "status": "ready",
   "remediation": {
@@ -23,7 +23,8 @@
     "CWE": [
       338,
       330,
-      326
+      326,
+      310
     ],
     "OWASP": [
       "A3"

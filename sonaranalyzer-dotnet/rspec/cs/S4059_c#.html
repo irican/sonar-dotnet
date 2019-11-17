@@ -1,7 +1,6 @@
-<p>Properties and Get method should have names that makes them clearly distinguishable.</p>
-<p>This rule raises an issue when the name of a public or protected member starts with 'Get' and otherwise matches the name of a public or protected
-property.</p>
-<h2>Noncompliant Code Example</h2>
+<p>Properties和Get方法应该有能够清楚区分它们的名称。</p>
+<p>当公共或受保护成员的名称以“Get”开头，并且与公共或受保护属性的名称匹配时，此规则会引发问题。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 using System;
 
@@ -14,14 +13,14 @@ namespace MyLibrary
             get { return DateTime.Today; }
         }
 
-        public string GetDate() // Noncompliant
+        public string GetDate() // 不合规
         {
             return this.Date.ToString();
         }
     }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 using System;
 

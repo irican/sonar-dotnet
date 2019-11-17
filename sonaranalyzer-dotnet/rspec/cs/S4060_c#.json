@@ -1,5 +1,5 @@
 {
-  "title": "Non-abstract attributes should be sealed",
+  "title": "非抽象属性应该密封",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

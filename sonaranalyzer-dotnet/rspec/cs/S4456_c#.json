@@ -1,5 +1,5 @@
 {
-  "title": "Parameter validation in yielding methods should be wrapped",
+  "title": "应该封装yielding方法中的参数验证",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

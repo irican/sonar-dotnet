@@ -1,5 +1,5 @@
 {
-  "title": "Results of integer division should not be assigned to floating point variables",
+  "title": "整型的除法运算结果不应再赋值给浮点型的变量",
   "type": "BUG",
   "status": "ready",
   "remediation": {
@@ -9,7 +9,6 @@
   "tags": [
     "cwe",
     "overflow",
-    "based-on-misra",
     "sans-top25-risky",
     "misra",
     "cert"

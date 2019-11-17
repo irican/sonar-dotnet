@@ -1,25 +1,23 @@
-<p>Exposing methods with multidimensional array parameters requires developers to have advanced knowledge about the language in order to be able to
-use them. Moreover, what exactly to pass to such parameters is not intuitive. Therefore, such methods should not be exposed, but can be used
-internally.</p>
-<h2>Noncompliant Code Example</h2>
+<p>使用多维数组做参数的公开方法需要开发人员掌握语言的高级知识才能使用。此外，传递给此类参数的内容并不直观，因此这样的方法不应对外公开，但在内部可以使用。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 public class Program
 {
-    public void WriteMatrix(int[][] matrix) // Non-Compliant
+    public void WriteMatrix(int[][] matrix) // 不合规
     {
     }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 public class Matrix
 {
-    // ...
+    // ……
 }
 
 public class Program
 {
-    public void WriteMatrix(Matrix matrix) // Compliant
+    public void WriteMatrix(Matrix matrix) // 合规
     {
     }
 }

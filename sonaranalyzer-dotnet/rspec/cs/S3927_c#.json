@@ -1,5 +1,5 @@
 {
-  "title": "Serialization event handlers should be implemented correctly",
+  "title": "应进行正确实现序列化事件处理器",
   "type": "BUG",
   "status": "ready",
   "remediation": {

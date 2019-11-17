@@ -1,5 +1,5 @@
 {
-  "title": "Runtime type checking should be simplified",
+  "title": "运行时类型检查应尽量简化",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

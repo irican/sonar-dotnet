@@ -1,5 +1,5 @@
 {
-  "title": "Value types should implement \"IEquatable<T>\"",
+  "title": "值类型应该实现 \"IEquatable<T>\"",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

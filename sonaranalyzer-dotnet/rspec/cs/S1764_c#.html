@@ -1,34 +1,32 @@
-<p>Using the same value on either side of a binary operator is almost always a mistake. In the case of logical operators, it is either a copy/paste
-error and therefore a bug, or it is simply wasted code, and should be simplified. In the case of bitwise operators and most binary mathematical
-operators, having the same value on both sides of an operator yields predictable results, and should be simplified.</p>
-<h2>Noncompliant Code Example</h2>
+<p>在二元运算符的两侧使用同样的值几乎都是错的。如果是逻辑运算符，这种情况要么是一个复制／粘贴错误——或者说是因此产生的bug，要么就是应该简化的无用代码。如果是位运算符和大多数的二元算术运算符（bitwise operators and most binary mathematical），运算符两侧值相同时运算结果是可以预料到的，所以应该将其简化。</p>
+<h2>不合规的代码示例</h2>
 <pre>
-if ( a == a ) // always true
+if ( a == a ) // 总是为真
 {
   doZ();
 }
-if ( a != a ) // always false
+if ( a != a ) // 总是为假
 {
   doY();
 }
-if ( a == b &amp;&amp; a == b ) // if the first one is true, the second one is too
+if ( a == b &amp;&amp; a == b ) // 如果第一个表达式为真，则第二个也是真
 {
   doX();
 }
-if ( a == b || a == b ) // if the first one is true, the second one is too
+if ( a == b || a == b ) // 如果第一个表达式为真，则第二个也是真
 {
   doW();
 }
 
-int j = 5 / 5; //always 1
-int k = 5 - 5; // always 0
+int j = 5 / 5; //总是为 1
+int k = 5 - 5; //总是为 0
 
-c.Equals(c);    //always true
-Object.Equals(c, c); //always true
+c.Equals(c);    //总是为真
+Object.Equals(c, c); //总是为真
 </pre>
-<h2>Exceptions</h2>
-<p>This rule ignores <code>*</code>, <code>+</code>, <code>=</code>, <code>&lt;&lt;</code>, and <code>&gt;&gt;</code>.</p>
-<h2>See</h2>
+<h2>例外</h2>
+<p>此规则忽略这些运算符： <code>*</code>， <code>+</code>， <code>=</code>， <code>&lt;&lt;</code> 和 <code>&gt;&gt;</code></p>
+<h2>请参阅</h2>
 <ul>
   <li> <a href="https://www.securecoding.cert.org/confluence/x/NYA5">CERT, MSC12-C.</a> - Detect and remove code that has no effect or is never
   executed </li>

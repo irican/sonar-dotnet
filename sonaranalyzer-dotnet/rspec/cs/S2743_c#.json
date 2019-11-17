@@ -1,5 +1,5 @@
 {
-  "title": "Static fields should not be used in generic types",
+  "title": "在泛型类中不应使用静态字段",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

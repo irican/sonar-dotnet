@@ -1,5 +1,5 @@
 {
-  "title": "Enumerations should have \"Int32\" storage",
+  "title": "枚举应该有\"Int32\"存储",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

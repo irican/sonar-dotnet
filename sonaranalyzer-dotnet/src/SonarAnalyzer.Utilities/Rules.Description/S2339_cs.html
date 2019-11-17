@@ -1,19 +1,15 @@
-<p>Constant members are copied at compile time to the call sites, instead of being fetched at runtime.</p>
-<p>As an example, say you have a library with a constant <code>Version</code> member set to <code>1.0</code>, and a client application linked to it.
-This library is then updated and <code>Version</code> is set to <code>2.0</code>. Unfortunately, even after the old DLL is replaced by the new one,
-<code>Version</code> will still be <code>1.0</code> for the client application. In order to see <code>2.0</code>, the client application would need to
-be rebuilt against the new version of the library.</p>
-<p>This means that you should use constants to hold values that by definition will never change, such as <code>Zero</code>. In practice, those cases
-are uncommon, and therefore it is generally better to avoid constant members.</p>
-<p>This rule only reports issues on public constant fields, which can be reached from outside the defining assembly.</p>
-<h2>Noncompliant Code Example</h2>
+<p>常量成员会在编译时复制到调用处，而不是运行时才得到它的值。</p>
+<p>例如，假如某个库有一个名为 <code>Version</code> 的常量成员被设为 <code>1.0</code>，并且有一个客户端的应用程序链接到它。然后这个库经过更新，<code>Version</code> 的值被设为了 <code>2.0</code>。不幸的是，即使旧的DLL被新的替换，客户端应用程序的<code>Version</code> 仍然为 <code>1.0</code> 。为了得到 <code>2.0</code>，客户端应用程序需要根据新版本的库进行重建。</p>
+<p>这意味你应该用常量来保存那些定义上永远不会改变的值，比如 <code>Zero</code>。但在实际开发中，这种情况并不多见，因此通常来说最好应避免使用常量成员。</p>
+<p>此规则只报告公有的常量字段（public constant field），因为他们可以从定义程序集之外访问。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 public class Foo
 {
-    public const double Version = 1.0;           // Noncompliant
+    public const double Version = 1.0;           // 不合规
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 public class Foo
 {

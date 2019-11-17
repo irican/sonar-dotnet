@@ -1,5 +1,5 @@
 {
-  "title": "\"sealed\" classes should not have \"protected\" members",
+  "title": "\"sealed\" 类不应有 \"protected\" 成员",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

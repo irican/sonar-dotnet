@@ -1,12 +1,11 @@
-<p>String literals embedded in the source code will not be localized properly.</p>
-<p>This rule raises an issue when a literal string is passed as a parameter or property and one or more of the following cases is true:</p>
+<p>嵌入在源代码中的字符串文本将无法正确本地化。</p>
+<p>当文本字符串作为参数或属性传递时，如果下列一种或多种情况为真，则此规则会引发问题：</p>
 <ul>
-  <li> The <code>LocalizableAttribute</code> attribute of the parameter or property is set to true. </li>
-  <li> The parameter or property name contains "Text", "Message", or "Caption". </li>
-  <li> The name of the string parameter that is passed to a <code>Console.Write</code> or <code>Console.WriteLine</code> method is either "value" or
-  "format". </li>
+  <li> 参数或属性的<code>LocalizableAttribute</code>属性被设置为true。</li>
+  <li> 参数或属性名包含"文本（Text）"，"消息（Message）"，或"标题（Caption）"。</li>
+  <li> 传递给<code>Console.Write</code> 或 <code>Console.WriteLine</code> 方法的字符串参数的名称是“value”或“format”。</li>
 </ul>
-<h2>Noncompliant Code Example</h2>
+<h2>不合规的代码示例</h2>
 <pre>
 using System;
 using System.Globalization;
@@ -22,13 +21,13 @@ namespace MyLibrary
         {
             if (hour &lt; 0 || hour &gt; 23)
             {
-                MessageBox.Show("The valid range is 0 - 23."); // Noncompliant
+                MessageBox.Show("The valid range is 0 - 23."); // 不合规
             }
         }
     }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 using System;
 using System.Globalization;

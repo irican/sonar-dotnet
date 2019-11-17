@@ -1,11 +1,9 @@
-<p>Flags enumerations should not rely on the language to initialize the values of their members. Implicit initialization will set the first member to
-0, and increment the value by one for each subsequent member. This implicit behavior does not allow members to be combined using the bitwise or
-operator in a useful way.</p>
-<p>Instead, 0 and powers of two (i.e. 1, 2, 4, 8, 16, ...) should be used to explicitly initialize all the members.</p>
-<h2>Noncompliant Code Example</h2>
+<p>有位域标签的枚举类不应依赖语言来初始化成员的值。隐式的初始化会给第一个成员赋值为0，然后递增并依次为之后的成员赋值，这种隐式的行为不允许以有效的方式使用按位或运算符来组合枚举成员。</p>
+<p>相反地，0和2的幂（例如 1，2，4，8，16，……）应显式地初始化所有成员。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 [Flags]
-enum FruitType    // Noncompliant
+enum FruitType    // 不合规
 {
   None,
   Banana,
@@ -17,12 +15,12 @@ class Program
     static void Main()
     {
         var bananaAndStrawberry = FruitType.Banana | FruitType.Strawberry;
-        // Will display only Strawberry!
+        // 只会显示 Strawberry！
         Console.WriteLine(bananaAndStrawberry.ToString());
     }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 [Flags]
 enum FruitType
@@ -37,12 +35,11 @@ class Program
     static void Main()
     {
         var bananaAndStrawberry = FruitType.Banana | FruitType.Strawberry;
-        // Will display Banana and Strawberry, as expected.
+        // 会显示Banana和Strawberry，同预想的一致
         Console.WriteLine(bananaAndStrawberry.ToString());
     }
 }
 </pre>
-<h2>Exceptions</h2>
-<p>The default initialization of 0, 1, 2, 3, 4, ... matches 0, 1, 2, 4, 8 ... in the first three values, so no issue is reported if the first three
-members of the enumeration is not initialized.</p>
+<h2>例外</h2>
+<p>默认的初始化会在前三个值中用0，1，2，3，4……来匹配0，1，2，4，8……，因此如果枚举的前三个成员没有初始化则不会报告任何问题。</p>
 

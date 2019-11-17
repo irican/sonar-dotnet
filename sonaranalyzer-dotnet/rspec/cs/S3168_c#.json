@@ -1,5 +1,5 @@
 {
-  "title": "\"async\" methods should not return \"void\"",
+  "title": "\"async\" 方法不应返回 \"void\"",
   "type": "BUG",
   "status": "ready",
   "remediation": {

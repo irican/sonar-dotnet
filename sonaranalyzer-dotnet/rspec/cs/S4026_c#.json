@@ -1,5 +1,5 @@
 {
-  "title": "Assemblies should be marked with \"NeutralResourcesLanguageAttribute\"",
+  "title": "程序集应该用\"NeutralResourcesLanguageAttribute\"标记",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

@@ -1,5 +1,5 @@
 {
-  "title": "Member initializer values should not be redundant",
+  "title": "类成员的初始化不应重复",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

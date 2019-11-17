@@ -1,0 +1,50 @@
+<p>属性像字段一样被访问，这使得它们更容易使用。</p>
+<p>当<code>public</code> 或 <code>protected</code> 方法的名称以 <code>Get</code>开始，不接受任何参数，并返回一个不是数组的值时，该规则会引发一个问题。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+using System;
+
+namespace MyLibrary
+{
+    public class Foo
+    {
+        private string name;
+
+        public string GetName()  // 不合规
+        {
+            return name;
+        }
+    }
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+using System;
+
+namespace MyLibrary
+{
+    public class Foo
+    {
+        private string name;
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+        }
+    }
+}
+</pre>
+<h2>例外</h2>
+<p>当方法出现以下问题时，该规则不会引发问题：</p>
+<ul>
+  <li> 是一个构造函数 </li>
+  <li> 是一个<code>override</code> </li>
+  <li> 是一个接口实现 </li>
+  <li> 是<code>async</code> </li>
+  <li> 返回<code>Task</code>，<code>Task&lt;T&gt;</code> </li>
+  <li> 被命名为：<code>GetEnumerator</code>，<code>GetAwaiter</code> </li>
+</ul>
+

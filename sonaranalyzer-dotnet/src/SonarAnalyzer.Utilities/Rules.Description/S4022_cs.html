@@ -1,0 +1,28 @@
+<p>默认情况下，<code>enum</code> 的存储类型是 <code>Int32</code>。在大多数情况下，没有必要改变这种情况。特别是，使用较小的数据类型(例如 <code>Byte</code>) 不会获得任何性能提升，而且可能会限制未来的使用。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+using System;
+
+namespace MyLibrary
+{
+    public enum Visibility : sbyte // 不合规
+    {
+        Visible = 0,
+        Invisible = 1,
+    }
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+using System;
+
+namespace MyLibrary
+{
+    public enum Visibility
+    {
+        Visible = 0,
+        Invisible = 1,
+    }
+}
+</pre>
+

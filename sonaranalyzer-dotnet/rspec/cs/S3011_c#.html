@@ -1,36 +1,33 @@
-<p>Changing or bypassing accessibility is security-sensitive. For example, it has led in the past to the following vulnerability:</p>
+<p>更改或绕过可访问性是安全敏感的。举例来说，它已经造成了以下漏洞的产生：</p>
 <ul>
   <li> <a href="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-4681">CVE-2012-4681</a> </li>
 </ul>
-<p><code>private</code> methods were made <code>private</code> for a reason, and the same is true of every other visibility level. Altering or
-bypassing the accessibility of classes, methods, or fields violates the encapsulation principle and could introduce security holes.</p>
-<p>This rule raises an issue when reflection is used to change the visibility of a class, method or field, and when it is used to directly update a
-field value.</p>
-<h2>Ask Yourself Whether</h2>
+<p><code>private</code> 方法被设为 <code>private</code> 是有原因的，其他的可见性级别也是如此。更改或绕过类、方法或字段的可访问性违反了封装的原则，还可能会引入安全漏洞。</p>
+<p>当反射（reflection）被用于改变类、方法或字段的可访问性以及直接更改字段的值的时候，此规则会引发一个问题。</p>
+<h2>需要考虑的问题</h2>
 <ul>
-  <li> there is a good reason to override the existing accessibility level of the method/field. This is very rarely the case. Accessing hidden fields
-  and methods will make your code unstable as they are not part of the public API and may change in future versions. </li>
-  <li> this method is called by untrusted code. <strong>*</strong> </li>
-  <li> it is possible to modify or bypass the accessibility of sensitive methods or fields using this code. <strong>*</strong> </li>
+  <li> 是否有充足的理由来重写现有的方法／字段的可访问级别。因为这种情况很少发生。访问隐藏的字段和方法会让你的代码不稳定，因为它们
+  不是公共API的一部分，并且可能会在未来的版本中发生改变。 </li>
+  <li> 此方法是否被不受信任的代码调用。<strong>＊</strong> </li>
+  <li> 使用此代码能否修改或绕过敏感方法与字段的可访问性。<strong>＊</strong> </li>
 </ul>
-<p><strong>*</strong> You are at risk if you answered yes to those questions.</p>
-<h2>Recommended Secure Coding Practices</h2>
-<p>Don't change or bypass the accessibility of any method or field if possible.</p>
-<p>If untrusted code can execute this method, make sure that it cannot decide which method or field's accessibility can be modified or bypassed.</p>
-<h2>Sensitive Code Example</h2>
+<p><strong>＊</strong>如果你对这些问题的回答是“是”，那么就存在安全风险。</p>
+<h2>推荐的安全编码习惯</h2>
+<p>尽可能不要改变或绕过任何方法与字段的可访问性。</p>
+<p>如果不受信任的代码可以执行这个方法，那么确保该方法无法决定可以修改或绕过哪一个方法与字段的可访问性。</p>
+<h2>可疑的代码示例</h2>
 <pre>
 using System.Reflection;
 
 Type dynClass = Type.GetType("MyInternalClass");
-// Sensitive. Using BindingFlags.NonPublic will return non-public members
+// 可疑，使用BindingFlags.NonPublic会返回非public型的成员
 BindingFlags bindingAttr = BindingFlags.NonPublic | BindingFlags.Static;
 MethodInfo dynMethod = dynClass.GetMethod("mymethod", bindingAttr);
 object result = dynMethod.Invoke(dynClass, null);
 </pre>
-<h2>See</h2>
+<h2>请参阅</h2>
 <ul>
-  <li> <a href="https://www.owasp.org/index.php/Top_10-2017_A3-Sensitive_Data_Exposure">OWASP Top 10 2017 Category A3</a> - Sensitive Data Exposure
-  </li>
+  <li> OWASP Top 10 2017 Category A3 - Sensitive Data Exposure </li>
   <li> <a href="https://www.securecoding.cert.org/confluence/x/3YEVAQ">CERT, SEC05-J.</a> - Do not use reflection to increase accessibility of
   classes, methods, or fields </li>
 </ul>

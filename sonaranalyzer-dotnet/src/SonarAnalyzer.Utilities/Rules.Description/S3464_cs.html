@@ -1,11 +1,10 @@
-<p>Recursion is acceptable in methods, where you can break out of it. But with class types, you end up with code that will compile but not run if you
-try to instantiate the class.</p>
-<h2>Noncompliant Code Example</h2>
+<p>递归在方法中是可以使用的，因为在方法中它可以结束。但若是在类中使用，在试图实例化该类时，代码能够编译但不会运行。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 class C1&lt;T&gt;
 {
 }
-class C2&lt;T&gt; : C1&lt;C2&lt;C2&lt;T&gt;&gt;&gt; // Noncompliant
+class C2&lt;T&gt; : C1&lt;C2&lt;C2&lt;T&gt;&gt;&gt; // 不合规
 {
 }
 

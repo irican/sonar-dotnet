@@ -1,5 +1,5 @@
 {
-  "title": "Floating point numbers should not be tested for equality",
+  "title": "不应对浮点数进行相等性的判断",
   "type": "BUG",
   "status": "ready",
   "remediation": {
@@ -7,7 +7,6 @@
     "constantCost": "5min"
   },
   "tags": [
-    "based-on-misra",
     "misra"
   ],
   "defaultSeverity": "Major",

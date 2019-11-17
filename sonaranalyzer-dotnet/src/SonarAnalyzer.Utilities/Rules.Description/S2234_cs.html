@@ -1,36 +1,34 @@
-<p>When the names of parameters in a method call match the names of the method arguments, it contributes to clearer, more readable code. However, when
-the names match, but are passed in a different order than the method arguments, it indicates a mistake in the parameter order which will likely lead
-to unexpected results.</p>
-<h2>Noncompliant Code Example</h2>
+<p>调用方法时，相同的形参名和实参名能使代码更清晰易懂。但如果名称相同，参数顺序却不匹配，这说明传入参数时的顺序可能有错，最后也很可能会得到一个意外的结果。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 public double Divide(int divisor, int dividend)
 {
-    return divisor/dividend;
+  return divisor/dividend;
 }
 
 public void DoTheThing()
 {
-    int divisor = 15;
-    int dividend = 5;
+  int divisor = 15;
+  int dividend = 5;
 
-    double result = Divide(dividend, divisor);  // Noncompliant; operation succeeds, but result is unexpected
-    //...
+  double result = Divide(dividend, divisor);  // 不合规；操作是成功的，但结果并不是想要的
+  //……
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 public double Divide(int divisor, int dividend)
 {
-    return divisor/dividend;
+  return divisor/dividend;
 }
 
 public void DoTheThing()
 {
-    int divisor = 15;
-    int dividend = 5;
+  int divisor = 15;
+  int dividend = 5;
 
-    double result = Divide(divisor, dividend);
-    //...
+  double result = Divide(divisor, dividend);
+  //……
 }
 </pre>
 

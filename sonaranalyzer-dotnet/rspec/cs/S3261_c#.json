@@ -1,5 +1,5 @@
 {
-  "title": "Namespaces should not be empty",
+  "title": "命名空间不应为空",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

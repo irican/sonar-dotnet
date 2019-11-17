@@ -1,5 +1,5 @@
 {
-  "title": "\"Equals\" and the comparison operators should be overridden when implementing \"IComparable\"",
+  "title": "在实现 \"IComparable\" 时应重写 \"Equals\" 和比较运算符",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

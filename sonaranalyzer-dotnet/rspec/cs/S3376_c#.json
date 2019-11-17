@@ -1,5 +1,5 @@
 {
-  "title": "Attribute, EventArgs, and Exception type names should end with the type being extended",
+  "title": "Attribute，EventArgs和Exception类的名称应以被它们扩展的类结尾",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

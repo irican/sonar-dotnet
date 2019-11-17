@@ -1,5 +1,5 @@
 {
-  "title": "Cognitive Complexity of methods should not be too high",
+  "title": "方法的认知复杂度不应太高",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

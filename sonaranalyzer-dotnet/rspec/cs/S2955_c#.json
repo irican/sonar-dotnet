@@ -1,5 +1,5 @@
 {
-  "title": "Generic parameters not constrained to reference types should not be compared to \"null\"",
+  "title": "未限制为引用类型的泛型参数不应与 \"null\" 比较",
   "type": "BUG",
   "status": "ready",
   "remediation": {

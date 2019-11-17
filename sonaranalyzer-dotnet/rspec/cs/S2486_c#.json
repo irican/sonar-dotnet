@@ -1,5 +1,5 @@
 {
-  "title": "Generic exceptions should not be ignored",
+  "title": "一般异常（generic exception）不应忽略",
   "type": "VULNERABILITY",
   "status": "ready",
   "remediation": {

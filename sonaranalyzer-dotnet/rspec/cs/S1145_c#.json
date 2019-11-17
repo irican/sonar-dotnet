@@ -1,5 +1,5 @@
 {
-  "title": "Useless \"if(true) {...}\" and \"if(false){...}\" blocks should be removed",
+  "title": " \"if(true) {...}\" 和 \"if(false){...}\" 这样无用的块语句应该删除",
   "type": "BUG",
   "status": "deprecated",
   "remediation": {

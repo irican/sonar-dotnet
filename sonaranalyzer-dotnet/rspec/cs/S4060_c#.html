@@ -1,14 +1,13 @@
-<p>The .NET framework class library provides methods for retrieving custom attributes. Sealing the attribute eliminates the search through the
-inheritance hierarchy, and can improve performance.</p>
-<p>This rule raises an issue when a public type inherits from <code>System.Attribute</code>, is not abstract, and is not sealed.</p>
-<h2>Noncompliant Code Example</h2>
+<p>.NET框架类库提供了检索自定义属性的方法。密封属性可以消除对继承层次结构的搜索，并提高性能。</p>
+<p>当公共类型继承自<code>System.Attribute</code>，不是抽象的，也不是密封的时候，这个规则就会引发一个问题。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 using System;
 
 namespace MyLibrary
 {
     [AttributeUsage(AttributeTargets.Class|AttributeTargets.Struct)]
-    public class MyAttribute: Attribute // Noncompliant
+    public class MyAttribute: Attribute // 不合规
     {
         private string nameValue;
         public MyAttribute(string name)
@@ -26,7 +25,7 @@ namespace MyLibrary
     }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 using System;
 

@@ -1,5 +1,5 @@
 {
-  "title": "break statements should not be used except for switch cases",
+  "title": "除了在switch语句中，其他场合不要使用break语句",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

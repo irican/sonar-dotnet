@@ -1,0 +1,16 @@
+{
+  "title": "字面量中的空字符和控制字符应当有明确含义",
+  "type": "CODE_SMELL",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "10min"
+  },
+  "tags": [
+    "pitfall"
+  ],
+  "defaultSeverity": "Critical",
+  "ruleSpecification": "RSPEC-2479",
+  "sqKey": "S2479",
+  "scope": "Main"
+}

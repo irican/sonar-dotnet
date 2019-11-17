@@ -1,5 +1,5 @@
 {
-  "title": "URI properties should not be strings",
+  "title": "URI属性不应是字符串",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

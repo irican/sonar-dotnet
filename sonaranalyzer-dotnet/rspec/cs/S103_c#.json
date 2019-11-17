@@ -1,5 +1,5 @@
 {
-  "title": "Lines should not be too long",
+  "title": "单行的代码不应太长",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

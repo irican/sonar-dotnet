@@ -1,5 +1,5 @@
 {
-  "title": "Assemblies should have version information",
+  "title": "程序集应有版本号信息",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

@@ -1,5 +1,5 @@
 {
-  "title": "Destructors should not throw exceptions",
+  "title": "析构函数不应抛出异常",
   "type": "BUG",
   "status": "ready",
   "remediation": {
@@ -7,7 +7,6 @@
     "constantCost": "30min"
   },
   "tags": [
-    "based-on-misra",
     "misra"
   ],
   "defaultSeverity": "Blocker",

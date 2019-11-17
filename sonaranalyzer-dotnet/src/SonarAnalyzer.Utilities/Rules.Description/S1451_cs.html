@@ -1,8 +1,7 @@
-<p>Each source file should start with a header stating file ownership and the license which must be used to distribute the application. </p>
-<p>This rule must be fed with the header text that is expected at the beginning of every file.</p>
-<p>The <code>headerFormat</code> must end with an empty line if you want to have an empty line between the file header and the first line for your
-source file (<code>using</code>, <code>namespace</code>...).</p>
-<p>For example, if you want the source file to look like this</p>
+<p>每个源文件都应该应该以一个标头（header）开始，说明文件的所有权和分发应用程序时必须使用的证书。 </p>
+<p>此规则必须与每个文件开头预期的标头文本一起提供。</p>
+<p>如果你想让文件标头和你的代码首行（<code>using</code>，<code>namespace</code>……）用空行隔开的话，<code>headerFormat</code> 必须以空行结尾。</p>
+<p>例如，如果你想让源文件呈以下格式</p>
 <pre>
 // Copyright (c) SonarSource. All Rights Reserved. Licensed under the LGPL License.  See License.txt in the project root for license information.
 
@@ -10,12 +9,12 @@ namespace Foo
 {
 }
 </pre>
-<p>then the <code>headerFormat</code> parameter should end with an empty line like this</p>
+<p>那么 <code>headerFormat</code> 参数应该像这样以空行结尾</p>
 <pre>
 // Copyright (c) SonarSource. All Rights Reserved. Licensed under the LGPL License.  See License.txt in the project root for license information.
 
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 /*
  * SonarQube, open source software quality management tool.

@@ -1,16 +1,15 @@
-<p>Types are declared in namespaces in order to prevent name collisions and as a way to organize them into the object hierarchy. Types that are
-defined outside any named namespace are in a global namespace that cannot be referenced in code.</p>
-<h2>Noncompliant Code Example</h2>
+<p>为防止名称冲突，类型要在命名空间内声明，并且这也是将它们组织到对象层次（object hierarchy）中的方法。定义在任何命名空间之外的类型都处于全局命名空间中，而全局命名空间是无法在代码中引用的。</p>
+<h2>不合规的代码示例</h2>
 <pre>
-public class Foo // Noncompliant
+public class Foo // 不合规
 {
 }
 
-public struct Bar // Noncompliant
+public struct Bar // 不合规
 {
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 namespace SomeSpace
 {

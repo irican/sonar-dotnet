@@ -1,5 +1,5 @@
 {
-  "title": "\"params\" should be used on overrides",
+  "title": "\"params\" 应在重写方法里写明",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

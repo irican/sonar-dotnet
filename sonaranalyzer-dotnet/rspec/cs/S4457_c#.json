@@ -1,5 +1,5 @@
 {
-  "title": "Parameter validation in \"async\"\/\"await\" methods should be wrapped",
+  "title": "应该包装\"async\"\/\"await\"方法中的参数验证",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

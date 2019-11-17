@@ -1,0 +1,25 @@
+<p>当类型名称与公开定义的名称空间的名称匹配时，例如.NET framework类库中的名称空间，它会导致混淆，使库更难使用。</p>
+<p>在不区分大小写的比较中，当公共类型的名称与.NET Framework名称空间或项目程序集的名称空间匹配时，此规则会引发问题。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+using System;
+
+namespace MyLibrary
+{
+  public class Text   // 不合规：与System.Text冲突
+  {
+  }
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+using System;
+
+namespace MyLibrary
+{
+  public class MyText
+  {
+  }
+}
+</pre>
+

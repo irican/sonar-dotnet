@@ -1,5 +1,5 @@
 {
-  "title": "Inherited member visibility should not be decreased",
+  "title": "继承的成员可见性不应降低",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

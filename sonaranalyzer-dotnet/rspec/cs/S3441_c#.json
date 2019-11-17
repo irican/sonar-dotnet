@@ -1,5 +1,5 @@
 {
-  "title": "Redundant property names should be omitted in anonymous classes",
+  "title": "在匿名类中冗余的属性名称应该删除",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

@@ -1,0 +1,17 @@
+<p>嵌套类型是类型参数，也是泛型类型。使用这种嵌套类型参数调用方法需要复杂而混乱的代码。应该尽量避免这种情况。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+using System;
+using System.Collections.Generic;
+
+namespace MyLibrary
+{
+  public class Foo
+  {
+    public void DoSomething(ICollection&lt;ICollection&lt;int&gt;&gt; outerCollect) // 不合规
+    {
+    }
+  }
+}
+</pre>
+

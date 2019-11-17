@@ -1,5 +1,5 @@
 {
-  "title": "Custom attributes should be marked with \"System.AttributeUsageAttribute\"",
+  "title": "自定义特性应用 \"System.AttributeUsageAttribute\" 标记",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

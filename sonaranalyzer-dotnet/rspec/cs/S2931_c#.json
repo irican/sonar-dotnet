@@ -1,5 +1,5 @@
 {
-  "title": "Classes with \"IDisposable\" members should implement \"IDisposable\"",
+  "title": "有 \"IDisposable\" 成员的类应该实现 \"IDisposable\"",
   "type": "BUG",
   "status": "ready",
   "remediation": {

@@ -1,5 +1,5 @@
 {
-  "title": "Empty statements should be removed",
+  "title": "空语句应该删掉",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {
@@ -7,7 +7,6 @@
     "constantCost": "2min"
   },
   "tags": [
-    "based-on-misra",
     "misra",
     "cert",
     "unused"

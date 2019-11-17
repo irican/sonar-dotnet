@@ -1,13 +1,12 @@
-<p>Operator overloading is convenient but unfortunately not portable across languages. To be able to access the same functionality from another
-language you need to provide an alternate named method following the convention:</p>
+<p>操作符重载很方便，但不幸的是不能跨语言移植。要从另一种语言访问相同的功能，需要提供一个替代的命名方法，遵循约定：</p>
 <table>
   <tbody>
     <tr>
-      <th>Operator</th>
-      <th>Method Name</th>
+      <th>操作符</th>
+      <th>方法名</th>
     </tr>
     <tr>
-      <th><code>+</code> (binary)</th>
+      <th><code>+</code> (二进制)</th>
       <th>Add</th>
     </tr>
     <tr>
@@ -59,7 +58,7 @@ language you need to provide an alternate named method following the convention:
       <th>Mod</th>
     </tr>
     <tr>
-      <th><code>*</code> (binary)</th>
+      <th><code>*</code> (二进制)</th>
       <th>Multiply</th>
     </tr>
     <tr>
@@ -67,21 +66,20 @@ language you need to provide an alternate named method following the convention:
       <th>OnesComplement</th>
     </tr>
     <tr>
-      <th><code>-</code> (binary)</th>
+      <th><code>-</code> (二进制)</th>
       <th>Subtract</th>
     </tr>
     <tr>
-      <th><code>-</code> (unary)</th>
+      <th><code>-</code> (一目的)</th>
       <th>Negate</th>
     </tr>
     <tr>
-      <th><code>+</code> (unary)</th>
+      <th><code>+</code> (一目的)</th>
       <th>Plus</th>
     </tr>
   </tbody>
 </table>
-<p>This rule raises an issue when there is an operator overload without the expected named alternative method.</p>
-<h2>Exceptions</h2>
-<p>This rule does not raise an issue when the class implementing the comparison operators <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code> and
-<code>&lt;=</code> contains a method named <code>CompareTo</code>.</p>
+<p>当没有预期的命名替代方法而存在操作符重载时，此规则会引发问题。</p>
+<h2>例外</h2>
+<p>当类实现比较运算符<code>&gt;</code>，<code>&lt;</code>，<code>&gt;=</code> 和 <code>&lt;=</code>包含一个命名为<code>CompareTo</code>的方法时，此规则不会引起问题。</p>
 

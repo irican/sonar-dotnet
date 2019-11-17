@@ -1,5 +1,5 @@
 {
-  "title": "Disposable types should declare finalizers",
+  "title": "一次性类型应该声明终结器",
   "type": "CODE_SMELL",
   "status": "ready",
   "tags": [

@@ -1,5 +1,5 @@
 {
-  "title": "Integral numbers should not be shifted by zero or more than their number of bits-1",
+  "title": "整数的移位位数不应为零或多于它的位数减一",
   "type": "BUG",
   "status": "ready",
   "remediation": {

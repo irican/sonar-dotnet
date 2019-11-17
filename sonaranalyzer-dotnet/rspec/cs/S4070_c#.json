@@ -1,5 +1,5 @@
 {
-  "title": "Non-flags enums should not be marked with \"FlagsAttribute\"",
+  "title": "非标记枚举不应该用\"FlagsAttribute\"标记",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

@@ -1,49 +1,47 @@
-<p>A <code>catch</code> clause that only rethrows the caught exception has the same effect as omitting the <code>catch</code> altogether and letting
-it bubble up automatically, but with more code and the additional detriment of leaving maintainers scratching their heads. </p>
-<p>Such clauses should either be eliminated or populated with the appropriate logic.</p>
-<h2>Noncompliant Code Example</h2>
+<p>只将已捕获的异常重新抛出的 <code>catch</code> 子句与完全省略该 <code>catch</code> 子句让异常自己跳出来实际是一样的。前者不仅反而让代码增多，还会让维护人员感到困惑。</p>
+<p>这样的子句要么直接删除，要么给它补充适当的逻辑。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 string s = "";
 try
 {
   s = File.ReadAllText(fileName);
 }
-catch (Exception e)  // Noncompliant
+catch (Exception e)  // 不合规
 {
   throw;
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 string s = "";
 try
 {
   s = File.ReadAllText(fileName);
 }
-catch (Exception e) // Compliant
+catch (Exception e) // 合规
 {
   logger.LogError(e);
   throw;
 }
 </pre>
-<p>or</p>
+<p>或者</p>
 <pre>
 string s = File.ReadAllText(fileName);
 </pre>
-<h2>Exceptions</h2>
-<p>This rule will not generate issues for <code>catch</code> blocks with just <code>throw</code> inside if they are followed by a <code>catch</code>
-block for a more general exception type that does more than just rethrowing the exception.</p>
+<h2>例外</h2>
+<p>对于只含有 <code>throw</code> 的 <code>catch</code> 块语句而言，如果它后面跟着的 <code>catch</code> 块能捕获更一般的异常类型，而且它不只是重新引发异常的话，此规则不会产生问题。</p>
 <pre>
 var s = ""
 try
 {
     s = File.ReadAllText(fileName);
 }
-catch (IOException) // Compliant, if removed will change the logic
+catch (IOException) // 合规，如果移除的话就会改变逻辑
 {
     throw;
 }
-catch (Exception)  // Compliant, does more than just rethrow
+catch (Exception)  // 合规，除了重新引发异常还有别的操作
 {
     logger.LogError(e);
     throw;

@@ -1,5 +1,5 @@
 {
-  "title": "\"Shared\" parts should not be created with \"new\"",
+  "title": "不应该使用\"new\"创建\"Shared\"部分",
   "type": "BUG",
   "status": "ready",
   "remediation": {

@@ -1,5 +1,5 @@
 {
-  "title": "Fields should not have public accessibility",
+  "title": "字段的可访问性不应为公有型",
   "type": "VULNERABILITY",
   "status": "ready",
   "remediation": {

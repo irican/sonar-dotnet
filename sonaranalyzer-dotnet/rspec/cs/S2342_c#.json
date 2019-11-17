@@ -1,5 +1,5 @@
 {
-  "title": "Enumeration types should comply with a naming convention",
+  "title": "枚举类型应该遵从命名约定",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

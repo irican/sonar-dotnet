@@ -1,5 +1,5 @@
 {
-  "title": "Array covariance should not be used",
+  "title": "不应使用数组协变（array covariance）",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

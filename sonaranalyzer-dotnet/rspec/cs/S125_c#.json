@@ -1,5 +1,5 @@
 {
-  "title": "Sections of code should not be commented out",
+  "title": "注释中不应出现代码",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {
@@ -7,7 +7,6 @@
     "constantCost": "5min"
   },
   "tags": [
-    "based-on-misra",
     "misra",
     "unused"
   ],

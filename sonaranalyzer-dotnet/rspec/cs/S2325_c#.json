@@ -1,5 +1,5 @@
 {
-  "title": "Methods and properties that don't access instance data should be static",
+  "title": "不访问实例数据的方法和属性应设为静态类型",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

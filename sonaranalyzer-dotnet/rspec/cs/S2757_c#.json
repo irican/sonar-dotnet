@@ -1,5 +1,5 @@
 {
-  "title": "\"=+\" should not be used instead of \"+=\"",
+  "title": "\"+=\" 不应用作 \"=+\"",
   "type": "BUG",
   "status": "ready",
   "remediation": {

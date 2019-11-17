@@ -1,15 +1,13 @@
-<p>When a collection is empty it makes no sense to access or iterate it. Doing so anyway is surely an error; either population was accidentally
-omitted or the developer doesn't understand the situation.</p>
-<p>This rule raises an issue when any use is made of an empty collection other than the following ignored calls: <code>Add</code>,
-<code>AddRange</code>, <code>Equals</code>, <code>GetHashCode</code>.</p>
-<h2>Noncompliant Code Example</h2>
+<p>当集合为空时，访问或迭代它没有任何意义。论如何这样做肯定是一个错误;要么是意外遗漏了人口，要么是开发人员不理解这种情况。</p>
+<p>当使用空集合时，除了以下被忽略的调用之外，该规则还会引发一个问题：<code>Add</code>，<code>AddRange</code>，<code>Equals</code>，<code>GetHashCode</code>。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 var strings = new List&lt;string&gt;();
 
-strings.Remove("bar");  // Noncompliant
+strings.Remove("bar");  // 不合规
 
-if (strings.Contains("foo")) {}  // Noncompliant
+if (strings.Contains("foo")) {}  // 不合规
 
-foreach (var str in strings) {}  // Noncompliant
+foreach (var str in strings) {}  // 不合规
 </pre>
 

@@ -1,36 +1,27 @@
-<p>Shared resources should not be used for locking as it increases the chance of deadlocks. Any other thread could acquire (or attempt to acquire) the
-same lock for another unrelated purpose. </p>
-<p>Instead, a dedicated <code>object</code> instance should be used for each shared resource, to avoid deadlocks or lock contention.</p>
-<p>The following objects are considered as shared resources:</p>
-<ul>
-  <li> <code>this</code> </li>
-  <li> a <code>Type</code> object </li>
-  <li> a string literal </li>
-  <li> a string instance </li>
-</ul>
-<h2>Noncompliant Code Example</h2>
+<p>锁定在当前的对象实例（即 <code>this</code>）或是 <code>Type</code> 对象上会增加死锁的可能性，因为任何其他的线程都可能为其他不相关的目的获取（或尝试获取）同一个锁。</p>
+<p>相反，应该为每个共享的资源使用一个专用的 <code>object</code> 实例，以避免死锁或者锁的争用。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 public void MyLockingMethod()
 {
-    lock (this) // Noncompliant
-    {
-        // ...
-    }
+  lock (this) // 不合规
+  {
+    // ……
+  }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 private readonly object lockObj = new object();
 
 public void MyLockingMethod()
 {
-    lock (lockObj)
-    {
-        // ...
-    }
+  lock (lockObj)
+  {
+    // ……
+  }
 }
 </pre>
-<h2>See</h2>
-<p><a href="https://docs.microsoft.com/en-us/dotnet/standard/threading/managed-threading-best-practices">Microsoft Documentation: Managed Threading
-Best Practices</a></p>
+<h2>请参阅</h2>
+<p><a href="https://docs.microsoft.com/en-us/dotnet/standard/threading/managed-threading-best-practices">Microsoft Documentation: Managed Threading Best Practices</a></p>
 

@@ -1,19 +1,18 @@
-<p>A class with only <code>private</code> constructors can't be instantiated, thus, it seems to be pointless code.</p>
-<h2>Noncompliant Code Example</h2>
+<p>只有 <code>private</code> 型构造函数的类无法被实例化。因此，有关该类的代码应该是无用的。</p>
+<h2>不合规的代码示例</h2>
 <pre>
-public class MyClass // Noncompliant
+public class MyClass // 不合规
 {
   private MyClass() { ... }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 public class MyClass
 {
   public MyClass() { ... }
 }
 </pre>
-<h2>Exceptions</h2>
-<p>Classes that themselves access their private constructors (singletons or smart enums) are ignored. Classes with only <code>static</code> members
-are also ignored because they are covered by Rule S1118.</p>
+<h2>例外</h2>
+<p>此规则忽略访问自身private型构造函数的类（singleton或smart enums）。只有 <code>static</code> 成员的类也忽略，因为他们已被规则S1118覆盖。</p>
 

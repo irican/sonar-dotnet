@@ -1,5 +1,5 @@
 {
-  "title": "\"value\" parameters should be used",
+  "title": "\"value\" 参数不应使用",
   "type": "CODE_SMELL",
   "status": "ready",
   "remediation": {

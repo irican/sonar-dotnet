@@ -1,0 +1,35 @@
+<p>将继承的成员更改为<code>private</code>不会阻止对基类实现的访问。</p>
+<p>当未密封类型中的<code>private</code>方法具有与基类型中声明的<code>public</code>方法相同的签名时，此规则会引发一个问题。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+using System;
+
+namespace MyLibrary
+{
+  public class Foo
+  {
+    public void SomeMethod(int count) { }
+  }
+  public class Bar:Foo
+  {
+    private void SomeMethod(int count) { } // 不合规
+  }
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+using System;
+
+namespace MyLibrary
+{
+  public class Foo
+  {
+    public void SomeMethod(int count) { }
+  }
+  public sealed class Bar : Foo
+  {
+    private void SomeMethod(int count) { }
+  }
+}
+</pre>
+

@@ -1,28 +1,26 @@
-<p>If Finalize or an override of Finalize throws an exception, and the runtime is not hosted by an application that overrides the default policy, the
-runtime terminates the process immediately without graceful cleanup (finally blocks and finalizers are not executed). This behavior ensures process
-integrity if the finalizer cannot free or destroy resources.</p>
-<p>The rule reports on throw statements used in finalizers.</p>
-<h2>Noncompliant Code Example</h2>
+<p>如果Finalize方法或Finalize的重写方法抛出一个异常，并且运行时（runtime）不由重写了默认策略的应用程序管理，那么运行时就会立刻终结进程而无法优雅地（graceful）完成清理（块和终结器不会执行）。如果终结器无法释放或销毁资源，那么此行为可确保进程的完整性。</p>
+<p>此规则会报告终结器里的异常抛出语句。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 class MyClass
 {
     ~MyClass()
     {
-        throw new NotImplementedException(); // Noncompliant
+        throw new NotImplementedException(); // 不合规
     }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 class MyClass
 {
     ~MyClass()
     {
-        // no throw
+        // 无异常抛出
     }
 }
 </pre>
-<h2>See</h2>
+<h2>请参阅</h2>
 <ul>
   <li> MISRA C++:2008, 15-5-1 - A class destructor shall not exit with an exception. </li>
 </ul>

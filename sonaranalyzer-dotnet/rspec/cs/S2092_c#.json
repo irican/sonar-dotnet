@@ -1,5 +1,5 @@
 {
-  "title": "Creating cookies without the \"secure\" flag is security-sensitive",
+  "title": "创建cookies而不带 \"secure\" 标识是安全敏感的行为",
   "type": "SECURITY_HOTSPOT",
   "status": "ready",
   "remediation": {

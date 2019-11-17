@@ -1,0 +1,28 @@
+<p>计数器变化方向错误的 <code>for</code> 并不是无限循环。由于环绕（wraparound）原因，循环最终会停止，如果这样做了，循环运行次数会远远多于预期，导致非预期行为。</p>
+<h2>不合规的代码示例</h2>
+<pre>
+public void DoSomething(string[] strings)
+{
+  for (int i = 0; i &lt; strings.Length; i--)  // 不合规
+  {
+    string s = strings[i];  // i的值到达-1时会抛出IndexOutOfRangeException
+    // 做点别的
+  }
+}
+</pre>
+<h2>合规的解决方案</h2>
+<pre>
+public void DoSomething(string[] strings)
+{
+  for (int i = 0; i &lt; strings.Length; i++)
+  {
+    string s = strings[i];
+    // 做点别的
+  }
+}
+</pre>
+<h2>请参阅</h2>
+<ul>
+  <li> <a href="https://www.securecoding.cert.org/confluence/x/zYEzAg">CERT, MSC54-J.</a> - Avoid inadvertent wrapping of loop counters </li>
+</ul>
+

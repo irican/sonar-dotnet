@@ -1,0 +1,16 @@
+{
+  "title": "For循环的条件至少要满足一次",
+  "type": "BUG",
+  "status": "ready",
+  "remediation": {
+    "func": "Constant\/Issue",
+    "constantCost": "10min"
+  },
+  "tags": [
+    
+  ],
+  "defaultSeverity": "Major",
+  "ruleSpecification": "RSPEC-2252",
+  "sqKey": "S2252",
+  "scope": "All"
+}

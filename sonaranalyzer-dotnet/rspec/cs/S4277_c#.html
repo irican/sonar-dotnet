@@ -1,8 +1,6 @@
-<p>Marking a class with <code>PartCreationPolicy(CreationPolicy.Shared)</code>, which is part of Managed Extensibility Framework (MEF), means that a
-single, shared instance of the exported object will be created. Therefore it doesn't make sense to create new instances using the constructor and it
-will most likely result in unexpected behaviours.</p>
-<p>This rule raises an issue when a constructor of a class marked shared with a <code>PartCreationPolicyAttribute</code> is invoked.</p>
-<h2>Noncompliant Code Example</h2>
+<p>使用 <code>PartCreationPolicy(CreationPolicy.Shared)</code>（这是托管扩展框架(MEF)的一部分）标记一个类，这意味着将创建导出对象的一个共享实例。因此，使用构造函数创建新实例没有意义，而且很可能会导致意外行为。</p>
+<p>当调用与<code>PartCreationPolicyAttribute</code>共享的类的构造函数时，该规则会引发一个问题。</p>
+<h2>不合规的代码示例</h2>
 <pre>
 [Export(typeof(IFooBar))]
 [PartCreationPolicy(CreationPolicy.Shared)]
@@ -14,11 +12,11 @@ public class Program
 {
     public static void Main()
     {
-        var fooBar = new FooBar(); // Noncompliant;
+        var fooBar = new FooBar(); // 不合规
     }
 }
 </pre>
-<h2>Compliant Solution</h2>
+<h2>合规的解决方案</h2>
 <pre>
 [Export(typeof(IFooBar))]
 [PartCreationPolicy(CreationPolicy.Shared)]
