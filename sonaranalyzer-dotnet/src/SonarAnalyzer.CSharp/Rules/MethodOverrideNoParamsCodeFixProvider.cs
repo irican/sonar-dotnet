@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class MethodOverrideNoParamsCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Add the 'params' modifier";
+        internal const string Title = "添加 'params' 标识符";
         public override ImmutableArray<string> FixableDiagnosticIds
         {
             get

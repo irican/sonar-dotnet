@@ -1,4 +1,4 @@
-/*
+﻿/*
  * SonarAnalyzer for .NET
  * Copyright (C) 2015-2019 SonarSource SA
  * mailto: contact AT sonarsource DOT com
@@ -36,8 +36,8 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class PropertyNamesShouldNotMatchGetMethods : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4059";
-        private const string MessageFormat = "Change either the name of property '{0}' or the name of " +
-            "method '{1}' to make them distinguishable.";
+        private const string MessageFormat = "请改变属性'{0}'的名字或" +
+            "方法'{1}'的名字，让它们的名称可以区分。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

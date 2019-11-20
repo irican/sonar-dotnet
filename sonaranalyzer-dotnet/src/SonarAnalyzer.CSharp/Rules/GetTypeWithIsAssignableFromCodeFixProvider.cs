@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class GetTypeWithIsAssignableFromCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Simplify type checking";
+        internal const string Title = "简化类型检查";
 
         public override ImmutableArray<string> FixableDiagnosticIds =>
             ImmutableArray.Create(GetTypeWithIsAssignableFrom.DiagnosticId);

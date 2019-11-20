@@ -31,7 +31,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class CookieShouldBeHttpOnly : ObjectShouldBeInitializedCorrectlyBase
     {
         internal const string DiagnosticId = "S3330";
-        private const string MessageFormat = "Set the 'HttpOnly' property of this cookie to 'true'.";
+        private const string MessageFormat = "请设置cookie的 'HttpOnly' 属性为 'true'.";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

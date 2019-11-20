@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class TestMethodShouldContainAssertion : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2699";
-        private const string MessageFormat = "Add at least one assertion to this test case.";
+        private const string MessageFormat = "请给测试用例添加至少一条断言。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * SonarAnalyzer for .NET
  * Copyright (C) 2015-2019 SonarSource SA
  * mailto: contact AT sonarsource DOT com
@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class OperatorOverloadsShouldHaveNamedAlternatives : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4069";
-        private const string MessageFormat = "Implement alternative method '{0}' for the operator '{1}'.";
+        private const string MessageFormat = "请为操作符 '{1}' 实现一个替代的 '{0}' 方法。";
 
         private static readonly Dictionary<string, string> operatorAlternatives = new Dictionary<string, string>
         {

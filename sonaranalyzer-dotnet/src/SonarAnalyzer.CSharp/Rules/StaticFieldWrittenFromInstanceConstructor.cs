@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class StaticFieldWrittenFromInstanceConstructor : StaticFieldWrittenFrom
     {
         internal const string DiagnosticId = "S3010";
-        private const string MessageFormat = "Remove this assignment of '{0}' or initialize it statically.";
+        private const string MessageFormat = "请移除对 '{0}' 的赋值或为其静态初始化。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

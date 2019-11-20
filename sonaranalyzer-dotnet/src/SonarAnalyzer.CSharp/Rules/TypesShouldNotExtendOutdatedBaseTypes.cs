@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class TypesShouldNotExtendOutdatedBaseTypes : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4052";
-        private const string MessageFormat = "Refactor this type not to derive from an outdated type '{0}'.";
+        private const string MessageFormat = "请重构此类型，不要派生于过期的'{0}'类型。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

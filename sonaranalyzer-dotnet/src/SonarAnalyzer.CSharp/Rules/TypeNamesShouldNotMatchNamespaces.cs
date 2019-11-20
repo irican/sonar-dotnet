@@ -1,4 +1,4 @@
-/*
+﻿/*
  * SonarAnalyzer for .NET
  * Copyright (C) 2015-2019 SonarSource SA
  * mailto: contact AT sonarsource DOT com
@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class TypeNamesShouldNotMatchNamespaces : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4041";
-        private const string MessageFormat = "Change the name of type '{0}' to be different from an existing framework namespace.";
+        private const string MessageFormat = "请重命名类型 '{0}' 为一个不同于已存在类库名称的名字。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

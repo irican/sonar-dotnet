@@ -1,4 +1,4 @@
-/*
+﻿/*
  * SonarAnalyzer for .NET
  * Copyright (C) 2015-2019 SonarSource SA
  * mailto: contact AT sonarsource DOT com
@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ExtensionMethodShouldNotExtendObject : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4225";
-        private const string MessageFormat = "Refactor this extension to extend a more concrete type.";
+        private const string MessageFormat = "重构此方法，使其扩展一个更加具体的类型。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

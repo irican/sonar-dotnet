@@ -1,4 +1,4 @@
-/*
+﻿/*
  * SonarAnalyzer for .NET
  * Copyright (C) 2015-2019 SonarSource SA
  * mailto: contact AT sonarsource DOT com
@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ExceptionsShouldBeUsed : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3984";
-        private const string MessageFormat = "Throw this exception or remove this useless statement.";
+        private const string MessageFormat = "要么抛出异常，要么移除无用的语句。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

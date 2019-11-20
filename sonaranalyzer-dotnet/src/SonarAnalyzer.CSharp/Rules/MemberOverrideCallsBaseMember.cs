@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class MemberOverrideCallsBaseMember : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1185";
-        private const string MessageFormat = "Remove this {1} '{0}' to simply inherit its behavior.";
+        private const string MessageFormat = "去除只是对'{0}'方法简单继承的{1}。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

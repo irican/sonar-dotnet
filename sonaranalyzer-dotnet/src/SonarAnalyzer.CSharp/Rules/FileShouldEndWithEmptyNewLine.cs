@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class FileShouldEndWithEmptyNewLine : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S113";
-        private const string MessageFormat = "Add a new line at the end of the file '{0}'.";
+        private const string MessageFormat = "请在文件 '{0}' 结尾添加新行。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

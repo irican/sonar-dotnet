@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class PropertiesShouldBePreferred : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4049";
-        private const string MessageFormat = "Consider making method '{0}' a property.";
+        private const string MessageFormat = "请考虑把方法 '{0}' 重构为一个属性。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ParameterNamesShouldNotDuplicateMethodNames : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3872";
-        private const string MessageFormat = "Rename the parameter '{0}' so that it does not duplicate the method name.";
+        private const string MessageFormat = "请重命名参数 '{0}' ，不要与方法名重复。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

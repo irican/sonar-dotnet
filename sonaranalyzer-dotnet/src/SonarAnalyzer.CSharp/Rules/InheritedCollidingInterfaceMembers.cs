@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class InheritedCollidingInterfaceMembers : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3444";
-        private const string MessageFormat = "Rename or add member{1} {0} to this interface to resolve ambiguities.";
+        private const string MessageFormat = "请重命名或向接口中添加成员{1} {0} 以解决歧义。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

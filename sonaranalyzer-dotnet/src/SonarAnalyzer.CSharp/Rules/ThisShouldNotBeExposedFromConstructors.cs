@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ThisShouldNotBeExposedFromConstructors : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3366";
-        private const string MessageFormat = "Make sure the use of 'this' doesn't expose partially-constructed instances of this class in multi-threaded environments.";
+        private const string MessageFormat = "请确保this的使用不会在多线程环境中暴露此类中部分构造的实例。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

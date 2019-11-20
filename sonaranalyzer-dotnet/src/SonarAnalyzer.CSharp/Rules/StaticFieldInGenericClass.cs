@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     {
         internal const string DiagnosticId = "S2743";
         private const string MessageFormat =
-            "A static field in a generic type is not shared among instances of different close constructed types.";
+            "一个泛型的静态字段将不在不同的封闭构造类型实例中共享。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

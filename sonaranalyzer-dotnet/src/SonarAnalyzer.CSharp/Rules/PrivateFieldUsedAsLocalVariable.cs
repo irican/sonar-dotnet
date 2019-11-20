@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class PrivateFieldUsedAsLocalVariable : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1450";
-        private const string MessageFormat = "Remove the field '{0}' and declare it as a local variable in the relevant methods.";
+        private const string MessageFormat = "请移除字段 '{0}' ，然后在相关方法中把它声明为一个局部变量。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

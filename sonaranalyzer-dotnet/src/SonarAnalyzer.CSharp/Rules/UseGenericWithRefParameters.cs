@@ -1,4 +1,4 @@
-/*
+﻿/*
  * SonarAnalyzer for .NET
  * Copyright (C) 2015-2019 SonarSource SA
  * mailto: contact AT sonarsource DOT com
@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class UseGenericWithRefParameters : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4047";
-        private const string MessageFormat = "Make this method generic and replace the 'object' parameter with a type parameter.";
+        private const string MessageFormat = "请令此方法为泛型的，并将'object'类型的参数换成相应的具体类型参数。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

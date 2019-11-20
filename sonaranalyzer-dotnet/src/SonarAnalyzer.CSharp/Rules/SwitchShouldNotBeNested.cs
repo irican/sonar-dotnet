@@ -32,7 +32,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [Rule(DiagnosticId)]
     public sealed class SwitchShouldNotBeNested : SwitchShouldNotBeNestedBase
     {
-        private const string MessageFormat = "Refactor the code to eliminate this nested 'switch'.";
+        private const string MessageFormat = "请重构此代码，以去除嵌套的'switch'语句。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

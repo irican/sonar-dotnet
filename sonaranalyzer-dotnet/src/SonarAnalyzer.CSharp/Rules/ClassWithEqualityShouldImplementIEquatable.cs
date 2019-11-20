@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ClassWithEqualityShouldImplementIEquatable : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3897";
-        private const string MessageFormat = "Implement 'IEquatable<{0}>'.";
+        private const string MessageFormat = "请实现 'IEquatable<{0}>'。";
         private const string EqualsMethodName = nameof(object.Equals);
 
         private static readonly DiagnosticDescriptor rule =

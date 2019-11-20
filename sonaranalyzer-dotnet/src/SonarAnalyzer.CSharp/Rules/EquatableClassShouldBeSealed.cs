@@ -1,4 +1,4 @@
-/*
+﻿/*
  * SonarAnalyzer for .NET
  * Copyright (C) 2015-2019 SonarSource SA
  * mailto: contact AT sonarsource DOT com
@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class EquatableClassShouldBeSealed : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4035";
-        private const string MessageFormat = "Seal class '{0}' or implement 'IEqualityComparer<T>' instead.";
+        private const string MessageFormat = "请密封 '{0}' 类或实现 'IEqualityComparer<T>' 。";
         private const string EqualsMethodName = nameof(object.Equals);
 
         private static readonly DiagnosticDescriptor rule =

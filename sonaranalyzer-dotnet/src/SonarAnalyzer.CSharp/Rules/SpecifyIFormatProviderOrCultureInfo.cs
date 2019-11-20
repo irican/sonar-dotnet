@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class SpecifyIFormatProviderOrCultureInfo : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4056";
-        private const string MessageFormat = "Use the overload that takes a 'CultureInfo' or 'IFormatProvider' parameter.";
+        private const string MessageFormat = "请使用接受 'CultureInfo' 或 'IFormatProvider' 参数的重载版本。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

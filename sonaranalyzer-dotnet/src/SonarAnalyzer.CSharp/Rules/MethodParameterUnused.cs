@@ -37,9 +37,9 @@ namespace SonarAnalyzer.Rules.CSharp
     [Rule(DiagnosticId)]
     public sealed class MethodParameterUnused : MethodParameterUnusedBase
     {
-        private const string MessageFormat = "Remove this {0}.";
-        internal const string MessageUnused = "unused method parameter '{0}'";
-        internal const string MessageDead = "parameter '{0}', whose value is ignored in the method";
+        private const string MessageFormat = "请去除这个{0}。";
+        internal const string MessageUnused = "未使用的 '{0}' 参数";
+        internal const string MessageDead = " '{0}' 参数，它的值在方法中被忽略了。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

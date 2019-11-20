@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class TryStatementsWithIdenticalCatchShouldBeMerged : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2327";
-        private const string MessageFormat = "Combine this 'try' with the one starting on line {0}.";
+        private const string MessageFormat = "请将此'try'语句将第{0}行开头的语句结合。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

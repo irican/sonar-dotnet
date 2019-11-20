@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class SillyBitwiseOperation : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2437";
-        private const string MessageFormat = "Remove this silly bit operation.";
+        private const string MessageFormat = "请移除这个略显愚蠢的位运算。";
         internal const string IsReportingOnLeftKey = "IsReportingOnLeft";
 
         private static readonly DiagnosticDescriptor rule =

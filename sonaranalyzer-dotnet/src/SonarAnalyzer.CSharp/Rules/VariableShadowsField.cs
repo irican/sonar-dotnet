@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class VariableShadowsField : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1117";
-        private const string MessageFormat = "Rename '{0}' which hides the {1} with the same name.";
+        private const string MessageFormat = "请重命名 '{0}' ，它以同样的名称隐藏了 {1} 。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

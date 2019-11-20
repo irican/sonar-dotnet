@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class RedundantJumpStatement : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3626";
-        private const string MessageFormat = "Remove this redundant jump.";
+        private const string MessageFormat = "请移除多余的跳转语句（jump）。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

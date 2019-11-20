@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class NameOfShouldBeUsed : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2302";
-        private const string MessageFormat = "Replace the string '{0}' with 'nameof({0})'.";
+        private const string MessageFormat = "请将字符串 '{0}' 换为 'nameof({0})'。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class GetHashCodeEqualsOverride : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3249";
-        private const string MessageFormat = "Remove this 'base' call to 'object.{0}', which is directly based on the object reference.";
+        private const string MessageFormat = "请去除对 'object.{0}' 的base调用, 它是基于对象引用的。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

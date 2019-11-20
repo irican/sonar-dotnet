@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class TestClassShouldHaveTestMethod : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2187";
-        private const string MessageFormat = "Add some tests to this class.";
+        private const string MessageFormat = "请给此类添加一些测试。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

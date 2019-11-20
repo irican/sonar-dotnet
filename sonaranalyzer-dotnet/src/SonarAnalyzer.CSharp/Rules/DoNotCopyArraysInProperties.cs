@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DoNotCopyArraysInProperties : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2365";
-        private const string MessageFormat = "Refactor '{0}' into a method, properties should not copy collections.";
+        private const string MessageFormat = "请将 '{0}' 重构为一个方法，属性不应该复制集合。";
 
         private static readonly DiagnosticDescriptor s2365 =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

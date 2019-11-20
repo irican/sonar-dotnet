@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DoNotMarkEnumsWithFlags : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4070";
-        private const string MessageFormat = "Remove the 'FlagsAttribute' from this enum.";
+        private const string MessageFormat = "请从此枚举中去除 'FlagsAttribute' 。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

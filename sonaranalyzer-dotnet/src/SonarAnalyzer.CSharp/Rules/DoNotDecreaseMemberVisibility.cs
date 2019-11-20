@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DoNotDecreaseMemberVisibility : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4015";
-        private const string MessageFormat = "This member hides '{0}'. Make it non-private or seal the class.";
+        private const string MessageFormat = "这个成员隐藏了 '{0}'，请将其设为非私有的（non-private）或密封（seal）此类。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

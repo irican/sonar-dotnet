@@ -31,7 +31,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class MarkAssemblyWithClsCompliantAttribute : MarkAssemblyWithAttributeBase
     {
         internal const string DiagnosticId = "S3990";
-        private const string MessageFormat = "Mark this assembly with 'System.CLSCompliantAttribute'";
+        private const string MessageFormat = "请将此程序集标记为 'System.CLSCompliantAttribute'。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

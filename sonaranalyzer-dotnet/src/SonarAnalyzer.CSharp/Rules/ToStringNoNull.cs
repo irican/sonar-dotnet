@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ToStringNoNull : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2225";
-        private const string MessageFormat = "Return empty string instead.";
+        private const string MessageFormat = "请返回空的字符串。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

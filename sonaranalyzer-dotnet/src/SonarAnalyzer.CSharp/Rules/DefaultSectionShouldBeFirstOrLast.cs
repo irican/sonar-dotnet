@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DefaultSectionShouldBeFirstOrLast : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4524";
-        private const string MessageFormat = "Move this 'default:' case to the beginning or end of this 'switch' statement.";
+        private const string MessageFormat = "请将 'default:' 语句移至 'switch' 语句的开头或结尾。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

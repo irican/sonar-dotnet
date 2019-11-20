@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class CallToAsyncMethodShouldNotBeBlocking : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4462";
-        private const string MessageFormat = "Replace this use of '{0}' with '{1}'.";
+        private const string MessageFormat = "请将此种用法 '{0}' 换为 '{1}'。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

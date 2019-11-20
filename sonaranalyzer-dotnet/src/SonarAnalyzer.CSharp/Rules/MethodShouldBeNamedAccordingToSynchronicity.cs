@@ -35,8 +35,8 @@ namespace SonarAnalyzer.Rules.CSharp
     {
         internal const string DiagnosticId = "S4261";
         private const string MessageFormat = "{0}";
-        private const string AddAsyncSuffixMessage = "Add the 'Async' suffix to the name of this method.";
-        private const string RemoveAsyncSuffixMessage = "Remove the 'Async' suffix to the name of this method.";
+        private const string AddAsyncSuffixMessage = "在此方法名称后添加 'Async' 后缀。";
+        private const string RemoveAsyncSuffixMessage = "移除此方法名称的 'Async' 后缀。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

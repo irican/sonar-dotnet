@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class StaticFieldInitializerOrder : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3263";
-        private const string MessageFormat = "Move this field's initializer into a static constructor.";
+        private const string MessageFormat = "请将此类的初始化器移入一个静态的构造器中。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

@@ -32,7 +32,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DoNotCallAssemblyGetExecutingAssemblyMethod : DoNotCallMethodsCSharpBase
     {
         internal const string DiagnosticId = "S3902";
-        private const string MessageFormat = "Replace this call to 'Assembly.GetExecutingAssembly()' with 'Type.Assembly'.";
+        private const string MessageFormat = "请使用 'Type.Assembly' 代替 'Assembly.GetExecutingAssembly()' 调用。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

@@ -1,4 +1,4 @@
-/*
+﻿/*
  * SonarAnalyzer for .NET
  * Copyright (C) 2015-2019 SonarSource SA
  * mailto: contact AT sonarsource DOT com
@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class PreferJaggedArraysOverMultidimensional : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3967";
-        private const string MessageFormat = "Change this multidimensional array to a jagged array.";
+        private const string MessageFormat = "请使用交替数组代替多维数组。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

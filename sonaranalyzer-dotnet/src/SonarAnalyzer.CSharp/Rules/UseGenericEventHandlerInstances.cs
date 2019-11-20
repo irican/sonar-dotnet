@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class UseGenericEventHandlerInstances : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3908";
-        private const string MessageFormat = "Refactor this delegate to use 'System.EventHandler<TEventArgs>'.";
+        private const string MessageFormat = "请重构此委托，以使用'System.EventHandler<TEventArgs>'。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

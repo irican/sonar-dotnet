@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class SwitchCaseFallsThroughToDefaultCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Remove useless 'case'";
+        internal const string Title = "去除无用的'case'语句";
         public override ImmutableArray<string> FixableDiagnosticIds
         {
             get

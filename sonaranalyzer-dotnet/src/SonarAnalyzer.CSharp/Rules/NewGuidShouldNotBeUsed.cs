@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class NewGuidShouldNotBeUsed : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4581";
-        private const string MessageFormat = "Use 'Guid.NewGuid()' or 'Guid.Empty' or add arguments to this Guid instantiation.";
+        private const string MessageFormat = "请使用 'Guid.NewGuid()' 或 'Guid.Empty' 或对此Guid实例添加参数。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

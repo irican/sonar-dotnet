@@ -37,7 +37,7 @@ namespace SonarAnalyzer.Rules.CSharp
     {
         internal const string DiagnosticId = "S2758";
         private const string MessageFormat =
-            "This operation returns the same value whether the condition is 'true' or 'false'.";
+            "无论条件为 'true' 还是 'false'，该操作返回相同的值。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

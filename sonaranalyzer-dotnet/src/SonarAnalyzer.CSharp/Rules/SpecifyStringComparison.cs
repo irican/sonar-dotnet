@@ -34,8 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class SpecifyStringComparison : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4058";
-        private const string MessageFormat = "Change this call to '{0}' to an overload that accepts a " +
-            "'StringComparison' as a parameter.";
+        private const string MessageFormat = "请将对 '{0}' 的调用改为接受'StringComparison'参数的重载版本。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

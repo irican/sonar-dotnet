@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     {
         internal const string DiagnosticId = "S3427";
         private const string MessageFormat =
-            "This method signature overlaps the one defined on line {0}{1}, the default parameter value {2}.";
+            "此方法的签名与第{0}{1}行的定义重复，默认值是 {2} 。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class UnaryPrefixOperatorRepeatedCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Remove repeated prefix operator(s)";
+        internal const string Title = "移除重复的前缀运算符";
         public override ImmutableArray<string> FixableDiagnosticIds
         {
             get

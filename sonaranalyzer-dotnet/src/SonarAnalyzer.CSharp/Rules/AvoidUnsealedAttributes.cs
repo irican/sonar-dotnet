@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class AvoidUnsealedAttributes : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4060";
-        private const string MessageFormat = "Seal this attribute or make it abstract.";
+        private const string MessageFormat = "密封这个属性，或者使其为抽象（abstract）的。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

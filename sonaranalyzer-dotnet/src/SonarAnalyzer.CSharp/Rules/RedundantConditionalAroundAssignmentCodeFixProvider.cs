@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class RedundantConditionalAroundAssignmentCodeFixProvider : SonarCodeFixProvider
     {
-        private const string Title = "Remove redundant conditional";
+        private const string Title = "去除多余的条件检测";
 
         public override ImmutableArray<string> FixableDiagnosticIds => ImmutableArray.Create(RedundantConditionalAroundAssignment.DiagnosticId);
 

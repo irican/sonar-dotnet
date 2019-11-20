@@ -38,8 +38,8 @@ namespace SonarAnalyzer.Rules.CSharp
     {
         internal const string DiagnosticId = "S1944";
         private const string MessageFormat = "{0}";
-        internal const string MessageReviewFormat = "Review this cast; in this project there's no type that {0}.";
-        internal const string MessageDefinite = "Nullable is known to be empty, this cast throws an exception.";
+        internal const string MessageReviewFormat = "请审视此转换，在本项目中没有类型{0}。";
+        internal const string MessageDefinite = "Nullable 一定是空（empty）的，此转换会抛出异常。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);
@@ -202,8 +202,8 @@ namespace SonarAnalyzer.Rules.CSharp
             var expressionTypeName = expressionType.ToMinimalDisplayString(context.SemanticModel, issueLocation.SourceSpan.Start);
 
             var messageReasoning = expressionType.IsInterface()
-                ? $"implements both '{expressionTypeName}' and '{interfaceTypeName}'"
-                : $"extends '{expressionTypeName}' and implements '{interfaceTypeName}'";
+                ? $"同时实现了 '{expressionTypeName}' 和 '{interfaceTypeName}'两种接口"
+                : $"扩展 '{expressionTypeName}' 并实现了 '{interfaceTypeName}'";
 
             context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, issueLocation, string.Format(MessageReviewFormat, messageReasoning)));
         }

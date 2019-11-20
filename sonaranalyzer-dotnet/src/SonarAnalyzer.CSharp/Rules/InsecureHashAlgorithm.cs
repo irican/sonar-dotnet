@@ -32,7 +32,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class InsecureHashAlgorithm : DoNotCallInsecureSecurityAlgorithm
     {
         internal const string DiagnosticId = "S2070";
-        private const string MessageFormat = "Use a stronger hashing/asymmetric algorithm.";
+        private const string MessageFormat = "请使用更强的摘要（Hashing）算法。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

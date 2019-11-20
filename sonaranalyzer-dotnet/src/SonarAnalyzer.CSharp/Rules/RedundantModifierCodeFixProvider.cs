@@ -36,10 +36,10 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class RedundantModifierCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string TitleUnsafe = "Remove redundant 'unsafe' modifier";
-        internal const string TitleChecked = "Remove redundant 'checked' and 'unchecked' modifier";
-        internal const string TitlePartial = "Remove redundant 'partial' modifier";
-        internal const string TitleSealed = "Remove redundant 'sealed' modifier";
+        internal const string TitleUnsafe = "移除多余的 'unsafe' 修饰符";
+        internal const string TitleChecked = "移除多余的 'checked' 和 'unchecked' 修饰符";
+        internal const string TitlePartial = "移除多余的 'partial' 修饰符";
+        internal const string TitleSealed = "移除多余的 'sealed' 修饰符";
 
         public override ImmutableArray<string> FixableDiagnosticIds
         {

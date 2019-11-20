@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class PropertyToAutoProperty : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2292";
-        private const string MessageFormat = "Make this an auto-implemented property and remove its backing field.";
+        private const string MessageFormat = "请令其为一个可以自动实现的属性，并移除它的set和get字段。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

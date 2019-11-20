@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ArrayCovariance : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2330";
-        private const string MessageFormat = "Refactor the code to not rely on potentially unsafe array conversions.";
+        private const string MessageFormat = "重构此代码，使其不必依赖于可能不安全的数组转换。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

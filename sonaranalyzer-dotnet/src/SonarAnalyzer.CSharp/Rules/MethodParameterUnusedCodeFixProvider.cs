@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class MethodParameterUnusedCodeFixProvider : SonarCodeFixProvider
     {
-        private const string Title = "Remove unused parameter";
+        private const string Title = "移除未使用的参数";
 
         public override ImmutableArray<string> FixableDiagnosticIds => ImmutableArray.Create(MethodParameterUnused.DiagnosticId);
 

@@ -37,9 +37,9 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class PublicMethodArgumentsShouldBeCheckedForNull : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3900";
-        private const string MessageFormat = "Refactor this {0}.";
-        private const string Constructor = "constructor to avoid using members of parameter '{0}' because it could be null";
-        private const string Method = "method to add validation of parameter '{0}' before using it";
+        private const string MessageFormat = "重构此 {0}。";
+        private const string Constructor = "构造器以避免使用可能含有为空（null）的参数'{0}'";
+        private const string Method = "方法以在使用前添加对参数'{0}'的验证";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

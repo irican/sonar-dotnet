@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class EmptyNamespaceCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Remove empty namespace";
+        internal const string Title = "去除空的命名空间";
         public override ImmutableArray<string> FixableDiagnosticIds =>
             ImmutableArray.Create(EmptyNamespace.DiagnosticId);
 

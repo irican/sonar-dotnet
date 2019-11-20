@@ -34,9 +34,9 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class RedundancyInConstructorDestructorDeclarationCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string TitleRemoveBaseCall = "Remove 'base()' call";
-        internal const string TitleRemoveConstructor = "Remove constructor";
-        internal const string TitleRemoveDestructor = "Remove destructor";
+        internal const string TitleRemoveBaseCall = "移除 'base()' 调用";
+        internal const string TitleRemoveConstructor = "移除构造器";
+        internal const string TitleRemoveDestructor = "移除析构函数";
 
         public override ImmutableArray<string> FixableDiagnosticIds
         {

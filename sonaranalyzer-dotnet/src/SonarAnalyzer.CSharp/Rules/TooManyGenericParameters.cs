@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public class TooManyGenericParameters : ParameterLoadingDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2436";
-        internal const string MessageFormat = "Reduce the number of generic parameters in the '{0}' {1} to no more than the {2} authorized.";
+        internal const string MessageFormat = "请减少在'{0}'中泛型参数的数量{1}至不多于{2}个的要求。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager,

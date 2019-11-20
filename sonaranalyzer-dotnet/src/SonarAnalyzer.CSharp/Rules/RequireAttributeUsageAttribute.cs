@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class RequireAttributeUsageAttribute : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3993";
-        private const string MessageFormat = "Specify AttributeUsage on '{0}'{1}.";
+        private const string MessageFormat = "在'{0}'上具体指明 AttributeUsage {1}。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);
@@ -56,7 +56,7 @@ namespace SonarAnalyzer.Rules.CSharp
                 }
 
                 var additionalText = InheritsAttributeUsage(classSymbol)
-                    ? " to improve readability, even though it inherits it from its base type"
+                    ? " 以提升可读性，即使它从基类继承而来"
                     : string.Empty;
 
                 c.ReportDiagnosticWhenActive(Diagnostic.Create(rule, classDeclaration.Identifier.GetLocation(),

@@ -67,7 +67,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public class DoNotWriteToStandardOutput : DoNotWriteToStandardOutputBase
     {
         private const string DiagnosticId = "S106";
-        private const string MessageFormat = "Remove this logging statement.";
+        private const string MessageFormat = "请去除logging语句。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

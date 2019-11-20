@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class LiteralsShouldNotBePassedAsLocalizedParameters : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4055";
-        private const string MessageFormat = "Replace this string literal with a string retrieved through an instance of the 'ResourceManager' class.";
+        private const string MessageFormat = "请将此字面量替换为从ResourceManager类实例中取回的字符串。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DontMixIncrementOrDecrementWithOtherOperators : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S881";
-        private const string MessageFormat = "Extract this {0} operation into a dedicated statement.";
+        private const string MessageFormat = "请分离 {0} 操作到一个单独的语句上。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

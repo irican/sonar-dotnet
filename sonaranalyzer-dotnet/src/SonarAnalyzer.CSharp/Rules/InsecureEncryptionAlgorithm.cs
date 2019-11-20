@@ -32,7 +32,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class InsecureEncryptionAlgorithm : DoNotCallInsecureSecurityAlgorithm
     {
         internal const string DiagnosticId = "S2278";
-        private const string MessageFormat = "Use the recommended AES (Advanced Encryption Standard) instead.";
+        private const string MessageFormat = "请使用推荐的AES (Advanced Encryption Standard，高级加密标准) 算法。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

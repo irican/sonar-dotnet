@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class CryptographicKeyShouldNotBeTooShort : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4426";
-        private const string MessageFormat = "Use a key length of at least '{0}' bits.";
+        private const string MessageFormat = "请至少使用 '{0}' bits 长的密钥长度。";
 
         private const int MinimalKeyLengthForRsa = 2048;
 

@@ -36,10 +36,10 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class FieldShadowsParentField : SonarDiagnosticAnalyzer
     {
         internal const string S2387DiagnosticId = "S2387";
-        private const string S2387MessageFormat = "'{0}' is the name of a field in '{1}'.";
+        private const string S2387MessageFormat = "'{0}' 在 '{1}' 中是一个字段的名字。";
 
         internal const string S4025DiagnosticId = "S4025";
-        private const string S4025MessageFormat = "Rename this field; it may be confused with '{0}' in '{1}'.";
+        private const string S4025MessageFormat = "请重命名此字段，'{0}' 在 '{1}' 中可能会引起令人困惑的行为。";
 
         private static readonly DiagnosticDescriptor s2387 =
             DiagnosticDescriptorBuilder.GetDescriptor(S2387DiagnosticId, S2387MessageFormat, RspecStrings.ResourceManager);

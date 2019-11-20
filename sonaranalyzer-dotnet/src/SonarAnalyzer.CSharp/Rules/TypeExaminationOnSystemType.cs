@@ -34,9 +34,9 @@ namespace SonarAnalyzer.Rules.CSharp
     {
         internal const string DiagnosticId = "S3443";
         private const string MessageFormat = "{0}";
-        internal const string MessageGetType = "Remove this use of 'GetType' on a 'System.Type'.";
-        internal const string MessageIsInstanceOfType = "Pass an argument that is not a 'System.Type' or consider using 'IsAssignableFrom'.";
-        internal const string MessageIsInstanceOfTypeWithGetType = "Consider removing the 'GetType' call, it's suspicious in an 'IsInstanceOfType' call.";
+        internal const string MessageGetType = "请移除在'System.Type'对象上'GetType'的使用。";
+        internal const string MessageIsInstanceOfType = "请传非'System.Type'类型的参数或考虑使用'IsAssignableFrom'。";
+        internal const string MessageIsInstanceOfTypeWithGetType = "请考虑移除'GetType'调用，在'IsInstanceOfType'调用中，它是可疑的。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

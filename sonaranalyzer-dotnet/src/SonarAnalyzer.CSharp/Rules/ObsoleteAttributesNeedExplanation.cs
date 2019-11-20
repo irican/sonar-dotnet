@@ -1,4 +1,4 @@
-/*
+﻿/*
  * SonarAnalyzer for .NET
  * Copyright (C) 2015-2019 SonarSource SA
  * mailto: contact AT sonarsource DOT com
@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ObsoleteAttributesNeedExplanation : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1123";
-        private const string MessageFormat = "Add an explanation.";
+        private const string MessageFormat = "请添加解释。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

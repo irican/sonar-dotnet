@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     {
         internal const string DiagnosticId = "S2955";
         private const string MessageFormat =
-            "Use a comparison to 'default({0})' instead or add a constraint to '{0}' so that it can't be a value type.";
+            "使用与 'default({0})' 的比较或向 '{0}' 添加限制，使其不要为值类型。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

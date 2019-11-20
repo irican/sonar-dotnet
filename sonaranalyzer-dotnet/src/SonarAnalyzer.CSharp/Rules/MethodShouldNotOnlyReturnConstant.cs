@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class MethodShouldNotOnlyReturnConstant : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3400";
-        private const string MessageFormat = "Remove this method and declare a constant for this value.";
+        private const string MessageFormat = "请去除这个方法，并为此值声明一个常数。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

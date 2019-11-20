@@ -36,8 +36,8 @@ namespace SonarAnalyzer.Rules.CSharp
     {
         internal const string DiagnosticId = "S4200";
         private const string MessageFormat = "{0}";
-        private const string MakeThisMethodPrivateMessage = "Make this native method private and provide a wrapper.";
-        private const string MakeThisWrapperLessTrivialMessage = "Make this wrapper for native method '{0}' less trivial.";
+        private const string MakeThisMethodPrivateMessage = "请令本地方法为私有的，并为其提供一个包装器。";
+        private const string MakeThisWrapperLessTrivialMessage = "请不要让本地方法'{0}'的包装器实现过于简单。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

@@ -36,13 +36,13 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class RedundantDeclarationCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string TitleRedundantArraySize = "Remove redundant array size";
-        internal const string TitleRedundantArrayType = "Remove redundant array type";
-        internal const string TitleRedundantLambdaParameterType = "Remove redundant type declaration";
-        internal const string TitleRedundantExplicitDelegate = "Remove redundant explicit delegate creation";
-        internal const string TitleRedundantExplicitNullable = "Remove redundant explicit nullable creation";
-        internal const string TitleRedundantObjectInitializer = "Remove redundant object initializer";
-        internal const string TitleRedundantDelegateParameterList = "Remove redundant parameter list";
+        internal const string TitleRedundantArraySize = "移除多余的数组大小";
+        internal const string TitleRedundantArrayType = "移除多余的数组类型";
+        internal const string TitleRedundantLambdaParameterType = "移除多余的类型声明";
+        internal const string TitleRedundantExplicitDelegate = "移除多余的直接委托创建";
+        internal const string TitleRedundantExplicitNullable = "移除多余的直接nullable创建";
+        internal const string TitleRedundantObjectInitializer = "移除多余的object初始化器";
+        internal const string TitleRedundantDelegateParameterList = "移除多余的参数列表";
 
         public override ImmutableArray<string> FixableDiagnosticIds => ImmutableArray.Create(RedundantDeclaration.DiagnosticId);
 

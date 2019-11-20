@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class OrderByRepeatedCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Change 'OrderBy' to 'ThenBy'";
+        internal const string Title = "将 'OrderBy' 改变为 'ThenBy'";
         public override ImmutableArray<string> FixableDiagnosticIds
         {
             get

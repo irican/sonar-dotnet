@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class FinalizerShouldNotBeEmpty : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3880";
-        private const string MessageFormat = "Remove this empty finalizer.";
+        private const string MessageFormat = "请移除空的终结器。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

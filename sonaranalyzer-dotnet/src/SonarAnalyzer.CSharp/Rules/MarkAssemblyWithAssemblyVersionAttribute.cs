@@ -31,7 +31,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class MarkAssemblyWithAssemblyVersionAttribute : MarkAssemblyWithAttributeBase
     {
         internal const string DiagnosticId = "S3904";
-        private const string MessageFormat = "Provide an 'AssemblyVersion' attribute for this assembly.";
+        private const string MessageFormat = "请为此程序集提供 'AssemblyVersion' 属性。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

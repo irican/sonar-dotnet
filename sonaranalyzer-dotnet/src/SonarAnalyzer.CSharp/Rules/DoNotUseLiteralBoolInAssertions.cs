@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DoNotUseLiteralBoolInAssertions : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2701";
-        private const string MessageFormat = "Remove or correct this assertion.";
+        private const string MessageFormat = "请去除或改正此断言。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

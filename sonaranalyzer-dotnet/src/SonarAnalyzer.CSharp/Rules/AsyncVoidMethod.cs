@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class AsyncVoidMethod : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3168";
-        private const string MessageFormat = "Return 'Task' instead.";
+        private const string MessageFormat = "请返回 'Task' 对象。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

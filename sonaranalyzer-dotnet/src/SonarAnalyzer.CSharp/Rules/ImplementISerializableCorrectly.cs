@@ -36,8 +36,8 @@ namespace SonarAnalyzer.Rules.CSharp
     public class ImplementISerializableCorrectly : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3925";
-        internal const string MessageFormat = "Update this implementation of 'ISerializable' to conform to the " +
-            "recommended serialization pattern.";
+        internal const string MessageFormat = "请修改 'ISerializable' 的实现以遵从" +
+            "推荐的序列化过程。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

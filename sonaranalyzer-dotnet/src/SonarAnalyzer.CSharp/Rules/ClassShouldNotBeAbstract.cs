@@ -34,9 +34,9 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ClassShouldNotBeAbstract : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1694";
-        private const string MessageFormat = "Convert this 'abstract' class to {0}.";
-        internal const string MessageToInterface = "an interface";
-        internal const string MessageToConcreteClass = "a concrete class with a protected constructor";
+        private const string MessageFormat = "请将此抽象类转化为{0}。";
+        internal const string MessageToInterface = "一个接口";
+        internal const string MessageToConcreteClass = "一个含有保护（protected）级构造器的具体类";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

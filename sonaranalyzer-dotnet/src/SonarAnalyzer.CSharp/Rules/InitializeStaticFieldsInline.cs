@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class InitializeStaticFieldsInline : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3963";
-        private const string MessageFormat = "Initialize all 'static fields' inline and remove the 'static constructor'.";
+        private const string MessageFormat = "请内联初始化所有的静态字段，并移除静态的构造器。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DisposableTypesNeedFinalizers : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4002";
-        private const string MessageFormat = "Implement a finalizer that calls your 'Dispose' method.";
+        private const string MessageFormat = "请实现一个调用你的 'Dispose' 方法的终结器（finalizer）。";
 
         private static readonly DiagnosticDescriptor rule
             = DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

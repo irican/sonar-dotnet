@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ForLoopCounterChanged : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S127";
-        private const string MessageFormat = "Do not update the loop counter '{0}' within the loop body.";
+        private const string MessageFormat = "请不要在循环体内更新循环计数变量 '{0}' 。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

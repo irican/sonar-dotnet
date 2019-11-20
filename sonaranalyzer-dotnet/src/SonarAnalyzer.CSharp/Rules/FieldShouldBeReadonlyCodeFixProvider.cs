@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class FieldShouldBeReadonlyCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Add 'readonly' keyword";
+        internal const string Title = "添加 'readonly' 关键字";
         public override ImmutableArray<string> FixableDiagnosticIds
         {
             get

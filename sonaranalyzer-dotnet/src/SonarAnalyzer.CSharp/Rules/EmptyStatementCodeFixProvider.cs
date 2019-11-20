@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class EmptyStatementCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Remove empty statement";
+        internal const string Title = "去掉空的语句";
         public override ImmutableArray<string> FixableDiagnosticIds
         {
             get

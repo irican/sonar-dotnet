@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DisposableReturnedFromUsing : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2997";
-        private const string MessageFormat = "Remove the 'using' statement; it will cause automatic disposal of {0}.";
+        private const string MessageFormat = "去除这个 'using' 语句，它会导致 {0} 的自动处置。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

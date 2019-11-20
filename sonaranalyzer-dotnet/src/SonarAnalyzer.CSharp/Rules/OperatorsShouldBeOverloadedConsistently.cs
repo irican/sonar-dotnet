@@ -1,4 +1,4 @@
-/*
+﻿/*
  * SonarAnalyzer for .NET
  * Copyright (C) 2015-2019 SonarSource SA
  * mailto: contact AT sonarsource DOT com
@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class OperatorsShouldBeOverloadedConsistently : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4050";
-        private const string MessageFormat = "Provide an implementation for: {0}.";
+        private const string MessageFormat = "请为{0}提供实现。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

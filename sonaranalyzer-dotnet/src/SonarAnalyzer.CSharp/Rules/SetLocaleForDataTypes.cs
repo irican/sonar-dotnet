@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class SetLocaleForDataTypes : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4057";
-        private const string MessageFormat = "Set the locale for this '{0}'.";
+        private const string MessageFormat = "请为 '{0}' 进行本地化设置。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

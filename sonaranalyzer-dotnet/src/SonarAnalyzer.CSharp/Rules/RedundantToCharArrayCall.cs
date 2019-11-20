@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class RedundantToCharArrayCall : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3456";
-        private const string MessageFormat = "Remove this redundant 'ToCharArray' call.";
+        private const string MessageFormat = "请移除多余的 'ToCharArray' 调用。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

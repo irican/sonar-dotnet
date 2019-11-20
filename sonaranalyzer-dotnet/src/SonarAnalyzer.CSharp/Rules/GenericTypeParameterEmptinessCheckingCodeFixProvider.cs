@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class GenericTypeParameterEmptinessCheckingCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Change null checking";
+        internal const string Title = "改变null检查";
         public override ImmutableArray<string> FixableDiagnosticIds
         {
             get

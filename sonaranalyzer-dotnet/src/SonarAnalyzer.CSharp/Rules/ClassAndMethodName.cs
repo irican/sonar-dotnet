@@ -40,9 +40,9 @@ namespace SonarAnalyzer.Rules.CSharp
         internal const string MethodNameDiagnosticId = "S100";
         internal const string TypeNameDiagnosticId = "S101";
 
-        private const string MessageFormat = "Rename {0} '{1}' to match pascal case naming rules, {2}.";
-        internal const string MessageFormatNonUnderscore = "consider using '{0}'";
-        internal const string MessageFormatUnderscore = "trim underscores from the name";
+        private const string MessageFormat = "重命名 {0} 为 '{1}' 以符合帕斯卡命名规则， {2}。";
+        internal const string MessageFormatNonUnderscore = "请考虑使用 '{0}'";
+        internal const string MessageFormatUnderscore = "从名字中修剪多余的下划线";
 
         private static readonly DiagnosticDescriptor methodNameRule =
             DiagnosticDescriptorBuilder.GetDescriptor(MethodNameDiagnosticId, MessageFormat, RspecStrings.ResourceManager);

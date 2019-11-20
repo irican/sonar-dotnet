@@ -37,12 +37,12 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DoNotUseCollectionInItsOwnMethodCalls : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2114";
-        private const string MessageFormat = "Change one instance of '{0}' to a different value; {1}";
-        private const string AlwaysEmptyCollectionMessage = "This operation always produces an empty collection.";
-        private const string AlwaysSameCollectionMessage = "This operation always produces the same collection.";
-        private const string AlwaysTrueMessage = "Comparing to itself always returns true.";
-        private const string AlwaysFalseMessage = "Comparing to itself always returns false.";
-        private const string UnexpectedBehaviorMessage = "This operation will probably result in an unexpected behavior.";
+        private const string MessageFormat = "请将实例 '{0}' 改为不同的值，{1}";
+        private const string AlwaysEmptyCollectionMessage = "此操作总会得到一个空的集合。";
+        private const string AlwaysSameCollectionMessage = "此操作总会得到一个相同的集合。";
+        private const string AlwaysTrueMessage = "与其本身相比总是返回 true。";
+        private const string AlwaysFalseMessage = "与其本身相比总是返回 false。";
+        private const string UnexpectedBehaviorMessage = "此操作可能不能按照预期工作。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

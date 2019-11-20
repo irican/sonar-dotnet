@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class NormalizeStringsToUppercase : DoNotCallMethodsCSharpBase
     {
         internal const string DiagnosticId = "S4040";
-        private const string MessageFormat = "Change this normalization to 'ToUpperInvariant()'.";
+        private const string MessageFormat = "请将这个标准化换为 'ToUpperInvariant()'调用。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

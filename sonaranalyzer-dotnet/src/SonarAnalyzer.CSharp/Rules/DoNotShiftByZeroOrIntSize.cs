@@ -38,10 +38,10 @@ namespace SonarAnalyzer.Rules.CSharp
         internal const string DiagnosticId = "S2183";
 
         private const string MessageFormat_UseLargerTypeOrPromote
-            = "Either promote shift target to a larger integer type or shift by {0} instead.";
-        private const string MessageFormat_ShiftTooLarge = "Correct this shift; shift by {0} instead.";
-        private const string MessageFormat_RightShiftTooLarge = "Correct this shift; '{0}' is larger than the type size.";
-        private const string MessageFormat_UselessShift = "Remove this useless shift by {0}.";
+            = "要么将移位操作的目标提升至一个更大的整数类型，或移位 {0} 。";
+        private const string MessageFormat_ShiftTooLarge = "改正这个移位，请移位 {0} 。";
+        private const string MessageFormat_RightShiftTooLarge = "改正这个移位， '{0}' 大于移位后数据类型的大小。";
+        private const string MessageFormat_UselessShift = "去除无用的 {0} 移位。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, "{0}", RspecStrings.ResourceManager);

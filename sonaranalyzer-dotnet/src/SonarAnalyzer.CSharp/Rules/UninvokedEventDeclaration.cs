@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class UninvokedEventDeclaration : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3264";
-        private const string MessageFormat = "Remove the unused event '{0}' or invoke it.";
+        private const string MessageFormat = "请移除未使用的 '{0}' 事件，或引发它。";
 
         private static readonly Accessibility maxAccessibility = Accessibility.Public;
 

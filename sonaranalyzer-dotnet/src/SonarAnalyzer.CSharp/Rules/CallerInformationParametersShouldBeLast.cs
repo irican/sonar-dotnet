@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class CallerInformationParametersShouldBeLast : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3343";
-        private const string MessageFormat = "Move '{0}' to the end of the parameter list.";
+        private const string MessageFormat = "请将参数 '{0}' 移至参数列表末尾。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

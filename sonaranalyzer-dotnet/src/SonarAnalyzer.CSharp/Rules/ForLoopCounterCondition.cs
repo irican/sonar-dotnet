@@ -38,9 +38,9 @@ namespace SonarAnalyzer.Rules.CSharp
         internal const string DiagnosticId = "S1994";
         private const string MessageFormat = "{0}";
         internal const string MessageFormatNotEmpty =
-            "This loop's stop condition tests {0} but the incrementer updates {1}.";
+            "此循环的停止条件测试了 {0} 但是递增语句在更新 {1}。";
         internal const string MessageFormatEmpty =
-            "This loop's stop incrementer updates {0} but the stop condition doesn't test any variables.";
+            "此循环的递增器在更新 {0} 但是停止条件没有测试任何变量。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

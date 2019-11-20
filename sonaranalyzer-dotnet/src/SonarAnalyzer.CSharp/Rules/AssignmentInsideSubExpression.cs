@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class AssignmentInsideSubExpression : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1121";
-        private const string MessageFormat = "Extract the assignment of '{0}' from this expression.";
+        private const string MessageFormat = "请从表达式中分离对此变量 '{0}' 的赋值。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ExpectedExceptionAttributeShouldNotBeUsed : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3431";
-        private const string MessageFormat = "Replace the 'ExpectedException' attribute with a try/catch block.";
+        private const string MessageFormat = "请使用try/catch语句块替换 'ExpectedException' 属性。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

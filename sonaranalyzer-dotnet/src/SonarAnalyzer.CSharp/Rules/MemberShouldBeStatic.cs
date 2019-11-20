@@ -37,7 +37,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class MemberShouldBeStatic : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2325";
-        internal const string MessageFormat = "Make '{0}' a static {1}.";
+        internal const string MessageFormat = "请令 '{0}' 为一静态 {1}。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

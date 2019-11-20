@@ -34,10 +34,10 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class GetTypeWithIsAssignableFrom : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2219";
-        private const string MessageFormat = "Use {0} instead.";
-        internal const string MessageIsOperator = "the 'is' operator";
-        internal const string MessageIsInstanceOfType = "the 'IsInstanceOfType()' method";
-        internal const string MessageNullCheck = "a 'null' check";
+        private const string MessageFormat = "请使用 {0} 。";
+        internal const string MessageIsOperator = "'is' 操作符";
+        internal const string MessageIsInstanceOfType = "'IsInstanceOfType()' 方法";
+        internal const string MessageNullCheck = "'null' 检查";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

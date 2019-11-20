@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DoNotExposeListT : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3956";
-        private const string MessageFormat = "Refactor this {0} to use a generic collection designed for inheritance.";
+        private const string MessageFormat = "重构 {0} ，以使用专门为继承设计的泛型集合。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

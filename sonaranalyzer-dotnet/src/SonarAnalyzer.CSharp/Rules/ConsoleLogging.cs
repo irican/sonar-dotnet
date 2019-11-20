@@ -27,13 +27,13 @@ using SonarAnalyzer.Helpers;
 
 namespace SonarAnalyzer.Rules.CSharp
 {
-    [Obsolete("This rule is superseded by S106.")]
+    [Obsolete("此规则被 S106 代替。")]
     [DiagnosticAnalyzer(LanguageNames.CSharp)]
     [Rule(DiagnosticId)]
     public sealed class ConsoleLogging : DoNotWriteToStandardOutputBase
     {
         private const string DiagnosticId = "S2228";
-        private const string MessageFormat = "Remove this logging statement.";
+        private const string MessageFormat = "请去除 logging 语句。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

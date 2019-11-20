@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class SuppressFinalizeUselessCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Remove useless 'SuppressFinalize' call";
+        internal const string Title = "去除无用的'SuppressFinalize'调用";
         public override ImmutableArray<string> FixableDiagnosticIds
         {
             get

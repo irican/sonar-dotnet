@@ -32,7 +32,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class ThreadStaticNonStaticFieldCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Remove 'ThreadStatic' attribute";
+        internal const string Title = "去除'ThreadStatic'属性";
         public override ImmutableArray<string> FixableDiagnosticIds
         {
             get

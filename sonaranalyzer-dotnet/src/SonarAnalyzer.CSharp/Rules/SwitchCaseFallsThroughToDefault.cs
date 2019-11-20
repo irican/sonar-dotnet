@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class SwitchCaseFallsThroughToDefault : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3458";
-        private const string MessageFormat = "Remove this empty 'case' clause.";
+        private const string MessageFormat = "请去除空的 'case' 语句。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

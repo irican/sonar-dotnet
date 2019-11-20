@@ -31,7 +31,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class CookieShouldBeSecure : ObjectShouldBeInitializedCorrectlyBase
     {
         internal const string DiagnosticId = "S2092";
-        private const string MessageFormat = "Make sure creating this cookie without setting the 'Secure' property is safe here.";
+        private const string MessageFormat = "请确保在这里创建没有设置‘Secure’属性的cookie足够安全。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager)

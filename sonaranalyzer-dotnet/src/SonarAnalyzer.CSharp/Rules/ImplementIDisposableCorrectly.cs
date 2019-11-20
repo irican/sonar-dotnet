@@ -37,7 +37,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ImplementIDisposableCorrectly : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3881";
-        private const string MessageFormat = "Fix this implementation of 'IDisposable' to conform to the dispose pattern.";
+        private const string MessageFormat = "请修改 'IDisposable' 的实现以遵从一般的处置规则。";
 
         private static readonly ISet<SyntaxKind> notAllowedDisposeModifiers = new HashSet<SyntaxKind>
         {

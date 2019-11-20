@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DoNotCatchSystemException : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2221";
-        private const string MessageFormat = "Catch a list of specific exception subtype or use exception filters instead.";
+        private const string MessageFormat = "请捕获一个含有详细异常类型的列表，或使用异常过滤器。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

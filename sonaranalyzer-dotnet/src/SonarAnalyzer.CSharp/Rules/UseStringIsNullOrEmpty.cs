@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     {
         internal const string DiagnosticId = "S3256";
         private const string MessageFormat =
-            "Use 'string.IsNullOrEmpty()' instead of comparing to empty string.";
+            "请使用 'string.IsNullOrEmpty()' ，而不是与空字符串比较。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

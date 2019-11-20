@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class EqualityOnFloatingPoint : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1244";
-        private const string MessageFormat = "Do not check floating point {0} with exact values, use a range instead.";
+        private const string MessageFormat = "不要与具体值比较浮点数 {0} ，请使用范围。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

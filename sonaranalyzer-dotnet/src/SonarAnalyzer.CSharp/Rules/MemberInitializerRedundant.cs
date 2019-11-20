@@ -42,7 +42,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class MemberInitializerRedundant : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3604";
-        private const string MessageFormat = "Remove the member initializer, all constructors set an initial value for the member.";
+        private const string MessageFormat = "请去除成员初始化器，每一个构造器已经对它设置了初始值。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

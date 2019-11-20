@@ -35,8 +35,8 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class AvoidExcessiveClassCoupling : ParameterLoadingDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1200";
-        private const string MessageFormat = "Split this {0} into smaller and more specialized ones to reduce its " +
-            "dependencies on other classes from {1} to the maximum authorized {2} or less.";
+        private const string MessageFormat = "请分离 {0} 为更小的类来减少它对其他类的依赖，" +
+            "最大的可接受数量为 {2} ，目前的数量为 {1} 。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager,

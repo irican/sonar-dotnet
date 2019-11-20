@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DebugAssertHasNoSideEffects : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3346";
-        private const string MessageFormat = "Expressions used in 'Debug.Assert' should not produce side effects.";
+        private const string MessageFormat = "在 'Debug.Assert' 中使用的语句不应有副作用。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

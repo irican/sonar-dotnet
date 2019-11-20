@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class RedundancyInConstructorDestructorDeclaration : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3253";
-        private const string MessageFormat = "Remove this redundant {0}.";
+        private const string MessageFormat = "请去除多余的 {0}。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

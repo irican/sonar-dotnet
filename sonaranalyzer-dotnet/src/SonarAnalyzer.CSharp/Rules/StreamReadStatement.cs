@@ -37,7 +37,7 @@ namespace SonarAnalyzer.Rules.CSharp
     {
         internal const string DiagnosticId = "S2674";
         private const string MessageFormat =
-            "Check the return value of the '{0}' call to see how many bytes were read.";
+            "请检查'{0}'调用的返回值，以得知有多少字节被阅读到。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class MemberInitializedToDefaultCodeFixProvider : SonarCodeFixProvider
     {
-        private const string Title = "Remove redundant initializer";
+        private const string Title = "去除多余的初始化器";
 
         public override ImmutableArray<string> FixableDiagnosticIds =>
             ImmutableArray.Create(MemberInitializedToDefault.DiagnosticId, MemberInitializerRedundant.DiagnosticId);

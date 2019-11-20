@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class MethodsShouldUseBaseTypes : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3242";
-        private const string MessageFormat = "Consider using more general type '{0}' instead of '{1}'.";
+        private const string MessageFormat = "请考虑使用更加一般的类型 '{0}' 以替代 '{1}'。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

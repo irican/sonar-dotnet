@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class EnumerableSumInUnchecked : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2291";
-        private const string MessageFormat = "Refactor this code to handle 'OverflowException'.";
+        private const string MessageFormat = "重构此段代码，以处理 'OverflowException'。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

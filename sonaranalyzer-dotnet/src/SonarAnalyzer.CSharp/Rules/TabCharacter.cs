@@ -31,7 +31,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class TabCharacter : TabCharacterBase
     {
         private const string DiagnosticId = "S105";
-        private const string MessageFormat = "Replace all tab characters in this file by sequences of white-spaces.";
+        private const string MessageFormat = "请将文件中所有制表符换为空格字符序列。";
 
         internal static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

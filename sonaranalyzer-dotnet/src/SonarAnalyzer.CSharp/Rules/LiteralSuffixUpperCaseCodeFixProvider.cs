@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class LiteralSuffixUpperCaseCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Make literal suffix upper case";
+        internal const string Title = "大写此字面量后缀";
         public override ImmutableArray<string> FixableDiagnosticIds
         {
             get

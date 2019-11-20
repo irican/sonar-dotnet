@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class UseCurlyBraces : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S121";
-        private const string MessageFormat = "Add curly braces around the nested statement(s) in this '{0}' block.";
+        private const string MessageFormat = "请向'{0}'块中的嵌套语句周围添加花括号。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

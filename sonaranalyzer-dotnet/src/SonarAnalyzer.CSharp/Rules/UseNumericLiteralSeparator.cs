@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class UseNumericLiteralSeparator : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2148";
-        private const string MessageFormat = "Add underscores to this numeric value for readability.";
+        private const string MessageFormat = "为提升可读性，请在数字常量中加入下划线。";
 
         private const int BinaryMinimumDigits = 9 + 2; // +2 for 0b
         private const int HexadecimalMinimumDigits = 9 + 2; // +2 for 0x

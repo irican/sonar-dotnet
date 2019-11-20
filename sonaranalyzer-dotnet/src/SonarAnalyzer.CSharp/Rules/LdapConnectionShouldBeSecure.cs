@@ -32,7 +32,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class LdapConnectionShouldBeSecure : ObjectShouldBeInitializedCorrectlyBase
     {
         internal const string DiagnosticId = "S4433";
-        private const string MessageFormat = "Set the 'AuthenticationType' property of this DirectoryEntry to 'AuthenticationTypes.Secure'.";
+        private const string MessageFormat = "请设置DirectoryEntry的'AuthenticationType'属性为'AuthenticationTypes.Secure'。";
         private const int AuthenticationTypes_Secure = 1;
 
         private static readonly DiagnosticDescriptor rule =

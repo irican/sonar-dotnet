@@ -33,9 +33,9 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class WcfMissingContractAttribute : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3597";
-        private const string MessageFormat = "Add the '{0}' attribute to {1}.";
-        internal const string MessageOperation = "the methods of this {0}";
-        internal const string MessageService = " this {0}";
+        private const string MessageFormat = "向{1}中添加 '{0}' 属性。";
+        internal const string MessageOperation = "此{0}的方法";
+        internal const string MessageService = " 此{0}";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

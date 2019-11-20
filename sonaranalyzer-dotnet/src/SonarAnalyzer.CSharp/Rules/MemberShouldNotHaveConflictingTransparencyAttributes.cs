@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class MemberShouldNotHaveConflictingTransparencyAttributes : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4211";
-        private const string MessageFormat = "Change or remove this attribute to be consistent with its container.";
+        private const string MessageFormat = "请修改或移除这个属性，它们在容器中需要是前后一致的。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

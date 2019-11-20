@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DoNotUseOutRefParameters : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3874";
-        private const string MessageFormat = "Consider refactoring this method in order to remove the need for this '{0}' modifier.";
+        private const string MessageFormat = "请重构此代码，以移除 '{0}' 标识符的使用。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

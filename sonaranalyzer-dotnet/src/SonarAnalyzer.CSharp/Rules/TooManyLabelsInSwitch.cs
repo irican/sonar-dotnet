@@ -35,8 +35,8 @@ namespace SonarAnalyzer.Rules.CSharp
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager,
                 isEnabledByDefault: false);
 
-        private const string MessageFormat = "Consider reworking this 'switch' to reduce the number of 'case's" +
-            " from {1} to at most {0}.";
+        private const string MessageFormat = "请考虑改写 'switch' 语句，以减少'case'语句的数量：" +
+            " 从 {1} 个到最多 {0} 个。";
 
         protected override SyntaxKind[] SyntaxKinds { get; } =
             new[] { SyntaxKind.SwitchStatement };

@@ -31,7 +31,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class MarkAssemblyWithComVisibleAttribute : MarkAssemblyWithAttributeBase
     {
         internal const string DiagnosticId = "S3992";
-        private const string MessageFormat = "Mark this assembly with 'System.Runtime.InteropServices.ComVisibleAttribute'";
+        private const string MessageFormat = "请将此程序集标记为 'System.Runtime.InteropServices.ComVisibleAttribute'。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

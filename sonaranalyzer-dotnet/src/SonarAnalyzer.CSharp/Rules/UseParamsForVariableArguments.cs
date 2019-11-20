@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class UseParamsForVariableArguments : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4061";
-        private const string MessageFormat = "Use the 'params' keyword instead of '__arglist'.";
+        private const string MessageFormat = "请使用'params'关键字，而不是'__arglist'。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

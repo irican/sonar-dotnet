@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class ConditionalSimplificationCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Simplify condition";
+        internal const string Title = "简化条件";
 
         public override ImmutableArray<string> FixableDiagnosticIds =>
             ImmutableArray.Create(ConditionalSimplification.DiagnosticId);

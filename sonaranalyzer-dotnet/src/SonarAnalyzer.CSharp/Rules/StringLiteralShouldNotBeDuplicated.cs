@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class StringLiteralShouldNotBeDuplicated : ParameterLoadingDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1192";
-        private const string MessageFormat = "Define a constant instead of using this literal '{0}' {1} times.";
+        private const string MessageFormat = "请定义一个常量，而不是重复使用这个字面量 '{0}' {1} 次。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager,

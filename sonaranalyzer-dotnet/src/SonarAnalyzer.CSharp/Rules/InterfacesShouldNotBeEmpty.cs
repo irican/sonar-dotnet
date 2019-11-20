@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class InterfacesShouldNotBeEmpty : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4023";
-        private const string MessageFormat = "Remove this interface or add members to it.";
+        private const string MessageFormat = "要么去掉这个接口，要么向其中添加成员。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class RedundantNullableTypeComparison : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3610";
-        private const string MessageFormat = "Remove this redundant type comparison.";
+        private const string MessageFormat = "请移除多余的类型比较。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

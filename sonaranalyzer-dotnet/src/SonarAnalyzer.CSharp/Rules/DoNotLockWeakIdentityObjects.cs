@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DoNotLockWeakIdentityObjects : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3998";
-        private const string MessageFormat = "Replace this lock on '{0}' with a lock against an object that cannot be accessed across application domain boundaries.";
+        private const string MessageFormat = "请将 '{0}' 上的锁替换为不能跨应用域访问的的对象上。";
 
         private static readonly ImmutableArray<KnownType> weakIdentityTypes =
             ImmutableArray.Create(

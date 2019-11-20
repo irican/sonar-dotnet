@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class UseValueParameter : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3237";
-        private const string MessageFormat = "Use the 'value' parameter in this {0} accessor declaration.";
+        private const string MessageFormat = "请在{0}访问器声明中使用 'value' 参数。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class ExceptionRethrowCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Change to 'throw;'";
+        internal const string Title = "改变为 'throw;'";
         public override ImmutableArray<string> FixableDiagnosticIds
         {
             get

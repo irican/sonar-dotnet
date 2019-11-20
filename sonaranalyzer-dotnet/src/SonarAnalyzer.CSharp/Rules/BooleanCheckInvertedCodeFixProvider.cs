@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class BooleanCheckInvertedCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Invert 'Boolean' check";
+        internal const string Title = "反转布尔检查";
         public override ImmutableArray<string> FixableDiagnosticIds
         {
             get

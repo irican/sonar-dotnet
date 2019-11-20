@@ -31,7 +31,7 @@ namespace SonarAnalyzer.Rules
         internal const string DiagnosticId = "S3927";
         protected const string MessageFormat = "令此方法 {0}。";
         private const string problemParameterText = "有单个类型为 'StreamingContext' 的参数";
-        private const string problemGenericParameterText = "没有类型参数have no type parameters";
+        private const string problemGenericParameterText = "没有类型参数";
 
         private static readonly ImmutableArray<KnownType> serializationAttributes =
             ImmutableArray.Create(

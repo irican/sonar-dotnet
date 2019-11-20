@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class CompareNaN : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2688";
-        private const string MessageFormat = "Use {0}.IsNaN() instead.";
+        private const string MessageFormat = "请使用 {0}.IsNaN() 。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

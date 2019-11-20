@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [Rule(DiagnosticId)]
     public sealed class IfChainWithoutElse : IfChainWithoutElseBase
     {
-        private const string MessageFormat = "Add the missing 'else' clause.";
+        private const string MessageFormat = "请添加缺失的 'else' 语句。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

@@ -38,7 +38,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class EmptyNullableValueAccess : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3655";
-        private const string MessageFormat = "'{0}' is null on at least one execution path.";
+        private const string MessageFormat = "'{0}' 在至少一个执行路径上是空（null）的。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

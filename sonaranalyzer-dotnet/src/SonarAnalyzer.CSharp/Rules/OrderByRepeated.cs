@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class OrderByRepeated : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3169";
-        private const string MessageFormat = "Use 'ThenBy' instead.";
+        private const string MessageFormat = "请使用 'ThenBy' 。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

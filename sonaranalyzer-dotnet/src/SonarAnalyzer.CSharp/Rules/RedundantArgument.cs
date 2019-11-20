@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class RedundantArgument : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3254";
-        private const string MessageFormat = "Remove this default value assigned to parameter '{0}'.";
+        private const string MessageFormat = "请移除对参数 '{0}' 的默认赋值。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

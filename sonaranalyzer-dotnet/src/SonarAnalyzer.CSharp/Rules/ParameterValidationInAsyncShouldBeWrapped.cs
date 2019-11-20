@@ -34,8 +34,8 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ParameterValidationInAsyncShouldBeWrapped : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4457";
-        private const string MessageFormat = "Split this method into two, one handling parameters check and the other " +
-           "handling the asynchronous code.";
+        private const string MessageFormat = "请将此方法分开为两个，一个检查参数，另外一个" +
+           "处理异步代码。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

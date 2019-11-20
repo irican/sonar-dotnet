@@ -34,8 +34,8 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ParameterValidationInYieldShouldBeWrapped : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4456";
-        private const string MessageFormat = "Split this method into two, one handling parameters check and the other " +
-           "handling the iterator.";
+        private const string MessageFormat = "请将此方法分开为两个，一个检查参数，另外一个" +
+           "处理迭代器。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

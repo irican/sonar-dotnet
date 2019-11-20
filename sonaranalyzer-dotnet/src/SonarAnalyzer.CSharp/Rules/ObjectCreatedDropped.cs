@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ObjectCreatedDropped : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1848";
-        private const string MessageFormat = "Either remove this useless object instantiation of class '{0}' or use it.";
+        private const string MessageFormat = "要么移除无用的'{0}'类对象初始化，或使用它。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

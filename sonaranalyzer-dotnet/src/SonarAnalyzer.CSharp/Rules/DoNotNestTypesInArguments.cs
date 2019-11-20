@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DoNotNestTypesInArguments : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4017";
-        private const string MessageFormat = "Refactor this method to remove the nested type argument.";
+        private const string MessageFormat = "重构此方法，以移除嵌套的类型参数。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

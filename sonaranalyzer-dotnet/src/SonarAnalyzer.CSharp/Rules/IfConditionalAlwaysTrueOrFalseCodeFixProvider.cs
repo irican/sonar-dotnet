@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class IfConditionalAlwaysTrueOrFalseCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Remove useless 'if' statement";
+        internal const string Title = "去除无用的 'if' 语句";
         public override ImmutableArray<string> FixableDiagnosticIds
         {
             get

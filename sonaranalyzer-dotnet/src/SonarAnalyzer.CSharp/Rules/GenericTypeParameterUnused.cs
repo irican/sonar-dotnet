@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class GenericTypeParameterUnused : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2326";
-        private const string MessageFormat = "'{0}' is not used in the {1}.";
+        private const string MessageFormat = "'{0}' 没有在 {1} 中使用。";
 
 
         private static readonly DiagnosticDescriptor rule =

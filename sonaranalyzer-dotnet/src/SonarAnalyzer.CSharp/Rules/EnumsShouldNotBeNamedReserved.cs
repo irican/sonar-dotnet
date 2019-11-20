@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class EnumsShouldNotBeNamedReserved : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4016";
-        private const string MessageFormat = "Remove or rename this enum member.";
+        private const string MessageFormat = "请去除或重命名此枚举成员。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

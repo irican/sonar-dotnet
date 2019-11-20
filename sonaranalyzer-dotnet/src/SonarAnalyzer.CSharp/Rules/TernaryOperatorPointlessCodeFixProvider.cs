@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class TernaryOperatorPointlessCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Remove the ternary operator";
+        internal const string Title = "移除三元运算符";
         public override ImmutableArray<string> FixableDiagnosticIds
         {
             get

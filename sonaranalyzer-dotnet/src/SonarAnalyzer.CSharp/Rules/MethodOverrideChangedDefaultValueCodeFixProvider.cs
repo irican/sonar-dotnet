@@ -35,8 +35,8 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class MethodOverrideChangedDefaultValueCodeFixProvider : SonarCodeFixProvider
     {
-        private const string TitleGeneral = "Synchronize default parameter value";
-        private const string TitleExplicitInterface = "Remove default parameter value from explicit interface implementation";
+        private const string TitleGeneral = "同步默认的参数值";
+        private const string TitleExplicitInterface = "从明确的接口实现中移除默认的参数值";
 
         public override ImmutableArray<string> FixableDiagnosticIds =>
             ImmutableArray.Create(MethodOverrideChangedDefaultValue.DiagnosticId);

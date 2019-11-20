@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class RedundantCast : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1905";
-        private const string MessageFormat = "Remove this unnecessary cast to '{0}'.";
+        private const string MessageFormat = "请移除对 '{0}' 不必要的类型转换。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

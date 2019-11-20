@@ -1,4 +1,4 @@
-/*
+﻿/*
  * SonarAnalyzer for .NET
  * Copyright (C) 2015-2019 SonarSource SA
  * mailto: contact AT sonarsource DOT com
@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DoNotCatchNullReferenceException : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1696";
-        private const string MessageFormat = "Do not catch NullReferenceException; test for null instead.";
+        private const string MessageFormat = "请不要捕获 NullReferenceException，请进行null测试。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

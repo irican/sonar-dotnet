@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ReferenceEqualityCheckWhenEqualsExists : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1698";
-        private const string MessageFormat = "Consider using 'Equals' if value comparison was intended.";
+        private const string MessageFormat = "值比较必要时，请考虑使用 'Equals' 。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

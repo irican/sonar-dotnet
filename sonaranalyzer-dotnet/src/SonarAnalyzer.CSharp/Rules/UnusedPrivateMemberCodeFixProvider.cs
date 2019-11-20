@@ -32,7 +32,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public class UnusedPrivateMemberCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Remove unused member";
+        internal const string Title = "移除未使用的成员";
         public sealed override ImmutableArray<string> FixableDiagnosticIds => ImmutableArray.Create(UnusedPrivateMember.DiagnosticId);
         public sealed override FixAllProvider GetFixAllProvider() => DocumentBasedFixAllProvider.Instance;
 

@@ -38,7 +38,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class EmptyCollectionsShouldNotBeEnumerated : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4158";
-        private const string MessageFormat = "Remove this call, the collection is known to be empty here.";
+        private const string MessageFormat = "请去除这个调用，此集合在这里已知为空。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

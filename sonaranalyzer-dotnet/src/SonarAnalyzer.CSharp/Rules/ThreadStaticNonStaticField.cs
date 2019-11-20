@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ThreadStaticNonStaticField : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3005";
-        private const string MessageFormat = "Remove the 'ThreadStatic' attribute from this definition.";
+        private const string MessageFormat = "请从定义中去除 'ThreadStatic' 属性。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class CatchRethrowCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Remove redundant catch";
+        internal const string Title = "去除多余的catch语句";
         public override ImmutableArray<string> FixableDiagnosticIds
         {
             get

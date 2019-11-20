@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DoNotCallGCSuppressFinalizeMethod : DoNotCallMethodsCSharpBase
     {
         internal const string DiagnosticId = "S3971";
-        private const string MessageFormat = "Do not call 'GC.SuppressFinalize'.";
+        private const string MessageFormat = "请不要调用 'GC.SuppressFinalize'。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

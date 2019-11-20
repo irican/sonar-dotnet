@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class SillyBitwiseOperationCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Remove bitwise operation";
+        internal const string Title = "移除位运算";
         public override ImmutableArray<string> FixableDiagnosticIds
         {
             get

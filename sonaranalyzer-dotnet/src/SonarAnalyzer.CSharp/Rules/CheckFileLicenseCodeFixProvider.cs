@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class CheckFileLicenseCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Add or update license header";
+        internal const string Title = "添加或更新版权标头";
         public override ImmutableArray<string> FixableDiagnosticIds => ImmutableArray.Create(CheckFileLicense.DiagnosticId);
         public override FixAllProvider GetFixAllProvider() => WellKnownFixAllProviders.BatchFixer;
 

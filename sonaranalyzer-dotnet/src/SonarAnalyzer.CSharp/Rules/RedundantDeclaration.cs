@@ -37,7 +37,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class RedundantDeclaration : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3257";
-        private const string MessageFormat = "Remove the {0}; it is redundant.";
+        private const string MessageFormat = "请移除 {0}，这是多余的。";
 
 
         private static readonly DiagnosticDescriptor rule =

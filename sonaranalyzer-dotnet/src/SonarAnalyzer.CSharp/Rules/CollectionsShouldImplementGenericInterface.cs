@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class CollectionsShouldImplementGenericInterface : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3909";
-        private const string MessageFormat = "Refactor this collection to implement '{0}'.";
+        private const string MessageFormat = "重构此集合，使其实现 '{0}'。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class RedundantPropertyNamesInAnonymousClassCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Remove redundant explicit property names";
+        internal const string Title = "移除多余的直接属性名（explicit property names）";
         public override ImmutableArray<string> FixableDiagnosticIds => ImmutableArray.Create(RedundantPropertyNamesInAnonymousClass.DiagnosticId);
 
         public override FixAllProvider GetFixAllProvider() => DocumentBasedFixAllProvider.Instance;

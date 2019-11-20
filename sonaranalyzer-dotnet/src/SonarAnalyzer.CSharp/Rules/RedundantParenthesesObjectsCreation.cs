@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class RedundantParenthesesObjectsCreation : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3235";
-        private const string MessageFormat = "Remove these redundant parentheses.";
+        private const string MessageFormat = "请移除多余的圆括号。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ParameterNamesInPartialMethod : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S927";
-        private const string MessageFormat = "Rename parameter '{0}' to '{1}' to match the {2} declaration.";
+        private const string MessageFormat = "请重命名参数'{0}' 至 '{1}' 以符合声明 {2}。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

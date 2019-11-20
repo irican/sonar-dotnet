@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class ForeachLoopExplicitConversionCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Filter collection for the expected type";
+        internal const string Title = "为预期的类型过滤集合";
         public override ImmutableArray<string> FixableDiagnosticIds { get; } =
             ImmutableArray.Create(ForeachLoopExplicitConversion.DiagnosticId);
 

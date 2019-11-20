@@ -39,7 +39,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ObjectsShouldNotBeDisposedMoreThanOnce : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3966";
-        private const string MessageFormat = "Refactor this code to make sure '{0}' is disposed only once.";
+        private const string MessageFormat = "请重构此段代码，以确保 '{0}' 只被处置一次。";
 
         private static readonly ImmutableArray<KnownType> typesDisposingUnderlyingStream =
             ImmutableArray.Create(

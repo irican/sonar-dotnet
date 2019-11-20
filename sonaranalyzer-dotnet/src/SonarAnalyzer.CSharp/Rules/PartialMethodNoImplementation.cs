@@ -34,8 +34,8 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class PartialMethodNoImplementation : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3251";
-        private const string MessageFormat = "Supply an implementation for {0} partial method{1}.";
-        internal const string MessageAdditional = ", otherwise this call will be ignored";
+        private const string MessageFormat = "请为 {0} 部分方法{1}提供一个实现。";
+        internal const string MessageAdditional = "，否则此调用会被忽略";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

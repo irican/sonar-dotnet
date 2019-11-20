@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DoNotHideBaseClassMethods : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4019";
-        private const string MessageFormat = "Remove or rename that method because it hides '{0}'.";
+        private const string MessageFormat = "请移除或重命名方法，因为它隐藏了 '{0}'。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

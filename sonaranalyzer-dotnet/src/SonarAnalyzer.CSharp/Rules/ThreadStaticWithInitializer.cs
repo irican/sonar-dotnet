@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ThreadStaticWithInitializer : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2996";
-        private const string MessageFormat = "Remove this initialization of '{0}' or make it lazy.";
+        private const string MessageFormat = "请去除对 '{0}' 的初始化，或使其为延时加载（lazy）方式。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

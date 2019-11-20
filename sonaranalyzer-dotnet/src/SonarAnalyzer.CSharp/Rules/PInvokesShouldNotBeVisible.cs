@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class PInvokesShouldNotBeVisible : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4214";
-        private const string MessageFormat = "Make this 'P/Invoke' method private or internal.";
+        private const string MessageFormat = "请令这个 'P/Invoke' 为私有（private）或内部（internal）方法。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

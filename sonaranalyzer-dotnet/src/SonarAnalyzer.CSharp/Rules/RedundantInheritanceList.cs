@@ -39,9 +39,9 @@ namespace SonarAnalyzer.Rules.CSharp
     {
         internal const string DiagnosticId = "S1939";
         private const string MessageFormat = "{0}";
-        internal const string MessageEnum = "'int' should not be explicitly used as the underlying type.";
-        internal const string MessageObjectBase = "'Object' should not be explicitly extended.";
-        internal const string MessageAlreadyImplements = "'{0}' implements '{1}' so '{1}' can be removed from the inheritance list.";
+        internal const string MessageEnum = "'int' 不应该被直接以此种类型使用。";
+        internal const string MessageObjectBase = "'Object' 类不能被直接扩展。";
+        internal const string MessageAlreadyImplements = "'{0}' 实现了 '{1}' ，所以 '{1}' 可以从继承列表中移除。";
         internal const string RedundantIndexKey = "redundantIndex";
 
         private static readonly DiagnosticDescriptor rule =

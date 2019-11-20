@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class SuppressFinalizeUseless : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3234";
-        private const string MessageFormat = "Remove this useless call to 'GC.SuppressFinalize'.";
+        private const string MessageFormat = "请去除对'GC.SuppressFinalize'的无用调用。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

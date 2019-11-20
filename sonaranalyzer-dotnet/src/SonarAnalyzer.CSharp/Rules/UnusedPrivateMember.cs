@@ -37,7 +37,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class UnusedPrivateMember : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1144";
-        private const string MessageFormat = "Remove the unused {0} {1} '{2}'.";
+        private const string MessageFormat = "去除未使用的 {0} {1} '{2}'。";
 
         private static readonly ImmutableArray<KnownType> IgnoredTypes =
             ImmutableArray.Create(

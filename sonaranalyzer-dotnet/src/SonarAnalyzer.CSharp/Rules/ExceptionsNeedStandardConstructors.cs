@@ -1,4 +1,4 @@
-/*
+﻿/*
  * SonarAnalyzer for .NET
  * Copyright (C) 2015-2019 SonarSource SA
  * mailto: contact AT sonarsource DOT com
@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ExceptionsNeedStandardConstructors : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4027";
-        private const string MessageFormat = "Implement the missing constructors for this exception.";
+        private const string MessageFormat = "请实现此异常缺失的构造器。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

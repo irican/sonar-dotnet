@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ForeachLoopExplicitConversion : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3217";
-        private const string MessageFormat = "Either change the type of '{0}' to '{1}' or iterate on a generic collection of type '{2}'.";
+        private const string MessageFormat = "要么将 '{0}' 的类型置换为 '{1}' ，要么在更加通用的类型为 '{2}' 的集合上进行迭代。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

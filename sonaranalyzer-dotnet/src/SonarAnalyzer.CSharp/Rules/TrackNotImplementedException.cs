@@ -1,4 +1,4 @@
-/*
+﻿/*
  * SonarAnalyzer for .NET
  * Copyright (C) 2015-2019 SonarSource SA
  * mailto: contact AT sonarsource DOT com
@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class TrackNotImplementedException : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3717";
-        private const string MessageFormat = "Implement this method or throw 'NotSupportedException' instead.";
+        private const string MessageFormat = "请实现这个方法，或抛出'NotSupportedException'异常。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

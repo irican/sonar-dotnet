@@ -32,7 +32,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class RedundantParenthesesCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Remove redundant parentheses";
+        internal const string Title = "移除多余的圆括号";
         public override ImmutableArray<string> FixableDiagnosticIds =>
             ImmutableArray.Create(RedundantParentheses.DiagnosticId, RedundantParenthesesObjectsCreation.DiagnosticId);
 

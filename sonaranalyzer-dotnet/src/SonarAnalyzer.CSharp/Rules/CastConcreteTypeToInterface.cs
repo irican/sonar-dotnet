@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class CastConcreteTypeToInterface : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3215";
-        private const string MessageFormat = "Remove this cast and edit the interface to add the missing functionality.";
+        private const string MessageFormat = "请去除转换，编辑这个接口以添加缺失的功能。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

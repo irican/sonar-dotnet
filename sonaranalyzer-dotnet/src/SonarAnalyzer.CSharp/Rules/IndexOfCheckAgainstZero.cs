@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class IndexOfCheckAgainstZero : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2692";
-        private const string MessageFormat = "0 is a valid index, but this check ignores it.";
+        private const string MessageFormat = "0 是一个有效的下标，但是检查忽略了这种情况。";
 
         private static readonly ImmutableArray<KnownType> CheckedTypes =
             ImmutableArray.Create(

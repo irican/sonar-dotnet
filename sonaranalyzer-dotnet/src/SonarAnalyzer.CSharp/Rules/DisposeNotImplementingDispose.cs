@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DisposeNotImplementingDispose : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2953";
-        private const string MessageFormat = "Either implement 'IDisposable.Dispose', or totally rename this method to prevent confusion.";
+        private const string MessageFormat = "要么实现 'IDisposable.Dispose'，要么重命名此方法以避免混乱。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

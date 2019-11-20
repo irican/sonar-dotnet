@@ -39,7 +39,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class InfiniteRecursion : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2190";
-        private const string MessageFormat = "Add a way to break out of this {0}.";
+        private const string MessageFormat = "请想办法跳出这个 {0}。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

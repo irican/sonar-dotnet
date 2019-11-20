@@ -35,8 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class TestMethodShouldNotBeIgnored : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1607";
-        private const string MessageFormat = "Either remove this 'Ignore' attribute or add an explanation about why " +
-            "this test is ignored.";
+        private const string MessageFormat = "要么去除 'Ignore' 属性，要么就为什么测试被忽略添加说明。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

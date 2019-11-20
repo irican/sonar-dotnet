@@ -36,8 +36,8 @@ namespace SonarAnalyzer.Rules.CSharp
     {
         internal const string DiagnosticId = "S1449";
         private const string MessageFormat = "{0}";
-        internal const string MessageDefineLocale = "Define the locale to be used in this string operation.";
-        internal const string MessageChangeCompareTo = "Use 'CompareOrdinal' or 'Compare' with the locale specified instead of 'CompareTo'.";
+        internal const string MessageDefineLocale = "请在此字符串操作中定义地区。";
+        internal const string MessageChangeCompareTo = "请在使用 'CompareOrdinal' 或 'Compare' 时指定地区，而不是单独使用 'CompareTo'。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

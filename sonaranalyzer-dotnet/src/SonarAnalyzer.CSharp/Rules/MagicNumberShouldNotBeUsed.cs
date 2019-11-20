@@ -34,8 +34,8 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class MagicNumberShouldNotBeUsed : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S109";
-        private const string MessageFormat = "Assign this magic number '{0}' to a well-named (variable|constant), " +
-            "and use the (variable|constant) instead.";
+        private const string MessageFormat = "请将此魔术数 '{0}' 赋值给一个命名变量（或常量）" +
+            "并使用它。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

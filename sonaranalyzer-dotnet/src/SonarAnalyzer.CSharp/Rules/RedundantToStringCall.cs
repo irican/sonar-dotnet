@@ -35,9 +35,9 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class RedundantToStringCall : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1858";
-        private const string MessageFormat = "There's no need to call 'ToString()'{0}.";
-        internal const string MessageCallOnString = " on a string";
-        internal const string MessageCompiler = ", the compiler will do it for you";
+        private const string MessageFormat = "没有必要调用 'ToString()'{0}。";
+        internal const string MessageCallOnString = " 在字符串上";
+        internal const string MessageCompiler = "，编译器会帮你调用";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

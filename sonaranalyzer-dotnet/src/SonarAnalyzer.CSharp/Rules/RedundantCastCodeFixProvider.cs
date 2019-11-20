@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class RedundantCastCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Remove redundant cast";
+        internal const string Title = "移除多余的转换";
         public override ImmutableArray<string> FixableDiagnosticIds
         {
             get

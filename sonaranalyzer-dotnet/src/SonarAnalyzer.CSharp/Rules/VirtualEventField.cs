@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class VirtualEventField : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2290";
-        private const string MessageFormat = "Remove this 'virtual' modifier of {0}.";
+        private const string MessageFormat = "请去除{0}的 'virtual' 修饰符。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

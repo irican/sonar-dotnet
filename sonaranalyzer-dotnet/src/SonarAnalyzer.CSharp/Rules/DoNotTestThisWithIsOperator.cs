@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DoNotTestThisWithIsOperator : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3060";
-        private const string MessageFormat = "Offload the code that's conditional on this 'is' test to the appropriate subclass and remove the test.";
+        private const string MessageFormat = "卸载此'is'测试相关的代码到相关子类中，并去除这个测试。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

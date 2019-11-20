@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DoNotUseRandom : HotspotDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2245";
-        private const string MessageFormat = "Make sure that using this pseudorandom number generator is safe here.";
+        private const string MessageFormat = "请确保在这里使用随机数生成器足够安全。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager)

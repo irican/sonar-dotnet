@@ -34,11 +34,11 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class MethodOverrideChangedDefaultValue : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1006";
-        private const string MessageFormat = "{0} the default parameter value {1}.";
-        internal const string MessageAdd = "defined in the overridden method";
-        internal const string MessageRemove = "to match the signature of overridden method";
-        internal const string MessageUseSame = "defined in the overridden method";
-        internal const string MessageRemoveExplicit = "from this explicit interface implementation";
+        private const string MessageFormat = "{0} 默认参数值 {1}。";
+        internal const string MessageAdd = "在重载方法中定义的";
+        internal const string MessageRemove = "以符合重载方法的签名";
+        internal const string MessageUseSame = "在重载方法中定义的";
+        internal const string MessageRemoveExplicit = "从明确的接口实现中";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

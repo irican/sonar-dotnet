@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [Rule(DiagnosticId)]
     public sealed class DoNotNestTernaryOperators : DoNotNestTernaryOperatorsBase
     {
-        private const string MessageFormat = "Extract this nested ternary operation into an independent statement.";
+        private const string MessageFormat = "请将这个嵌套的三目运算符展开为单个语句。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

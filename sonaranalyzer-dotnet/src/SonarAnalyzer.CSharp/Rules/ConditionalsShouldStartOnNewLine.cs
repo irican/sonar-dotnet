@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ConditionalsShouldStartOnNewLine : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3972";
-        private const string MessageFormat = "Move this 'if' to a new line or add the missing 'else'.";
+        private const string MessageFormat = "请移动 'if' 语句至一新行或添加缺失的 'else' 语句。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

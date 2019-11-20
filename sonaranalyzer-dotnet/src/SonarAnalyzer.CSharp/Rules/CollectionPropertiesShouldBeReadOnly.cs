@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class CollectionPropertiesShouldBeReadOnly : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4004";
-        private const string MessageFormat = "Make the '{0}' property read-only by removing the property setter or making it private.";
+        private const string MessageFormat = "请移除属性 '{0}' 的setter或令其为私有的（private），来使它为只读状态。";
 
         private static readonly ImmutableArray<KnownType> collectionTypes =
             ImmutableArray.Create(

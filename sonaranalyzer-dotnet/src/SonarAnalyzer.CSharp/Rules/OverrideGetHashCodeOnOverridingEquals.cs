@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class OverrideGetHashCodeOnOverridingEquals : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1206";
-        private const string MessageFormat = "This {0} overrides '{1}' and should therefore also override '{2}'.";
+        private const string MessageFormat = "{0} 重写了'{1}'，也应该重写 '{2}' 方法。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

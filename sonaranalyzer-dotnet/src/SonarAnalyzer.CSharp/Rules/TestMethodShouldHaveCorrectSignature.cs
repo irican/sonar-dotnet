@@ -34,10 +34,10 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class TestMethodShouldHaveCorrectSignature : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3433";
-        private const string MessageFormat = "Make this test method {0}.";
-        private const string MakePublicMessage = "'public'";
-        private const string MakeNonAsyncOrTaskMessage = "non-'async' or return 'Task'";
-        private const string MakeNotGenericMessage = "non-generic";
+        private const string MessageFormat = "请令此测试方法为 {0}。";
+        private const string MakePublicMessage = "公共的";
+        private const string MakeNonAsyncOrTaskMessage = "同步的，或返回'Task'";
+        private const string MakeNotGenericMessage = "非通用的";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

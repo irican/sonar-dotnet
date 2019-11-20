@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class NonFlagsEnumInBitwiseOperationCodeFixProvider : SonarCodeFixProvider
     {
-        private const string Title = "Add [Flags] to enum declaration";
+        private const string Title = "向枚举声明中添加 [Flags] ";
 
         public override ImmutableArray<string> FixableDiagnosticIds => ImmutableArray.Create(NonFlagsEnumInBitwiseOperation.DiagnosticId);
 

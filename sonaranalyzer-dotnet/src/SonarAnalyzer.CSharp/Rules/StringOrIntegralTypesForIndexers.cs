@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class StringOrIntegralTypesForIndexers : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3876";
-        private const string MessageFormat = "Use string or an integral type here, or refactor this indexer into a method.";
+        private const string MessageFormat = "请使用字符或其他基本（integral）的类型，或重构此索引器为一个方法。";
 
         private static readonly ImmutableArray<KnownType> allowedIndexerTypes =
             new[] { KnownType.System_Object, KnownType.System_String }

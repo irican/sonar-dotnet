@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class BooleanLiteralUnnecessaryCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Remove the unnecessary Boolean literal(s)";
+        internal const string Title = "去掉不必要的布尔字面量";
         public override ImmutableArray<string> FixableDiagnosticIds
         {
             get

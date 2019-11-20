@@ -32,7 +32,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class RedundantToCharArrayCallCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Remove redundant 'ToCharArray' call";
+        internal const string Title = "移除多余的 'ToCharArray' 调用";
         public override ImmutableArray<string> FixableDiagnosticIds
         {
             get

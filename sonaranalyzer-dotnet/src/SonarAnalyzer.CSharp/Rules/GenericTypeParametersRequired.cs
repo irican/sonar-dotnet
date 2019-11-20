@@ -1,4 +1,4 @@
-/*
+﻿/*
  * SonarAnalyzer for .NET
  * Copyright (C) 2015-2019 SonarSource SA
  * mailto: contact AT sonarsource DOT com
@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class GenericTypeParametersRequired : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4018";
-        private const string MessageFormat = "Refactor this method to have parameters matching all the type parameters.";
+        private const string MessageFormat = "请重构此方法，令其参数与所有类型参数相符。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

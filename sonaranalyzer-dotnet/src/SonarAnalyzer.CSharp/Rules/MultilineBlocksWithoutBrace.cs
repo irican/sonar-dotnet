@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     {
         internal const string DiagnosticId = "S2681";
         private const string MessageFormat =
-            "This line will not be executed {0}; only the first line of this {2}-line block will be. The rest will execute {1}.";
+            "这行不会被执行{0}，这个{2}行的代码块只有第一行会被执行，剩下的会 {1} 执行。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

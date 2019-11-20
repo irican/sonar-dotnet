@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class EmptyNamespace : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3261";
-        private const string MessageFormat = "Remove this empty namespace.";
+        private const string MessageFormat = "请去除空的命名空间。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

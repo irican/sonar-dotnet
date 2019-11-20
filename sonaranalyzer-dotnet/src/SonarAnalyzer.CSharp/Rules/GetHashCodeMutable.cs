@@ -35,8 +35,8 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class GetHashCodeMutable : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2328";
-        private const string IssueMessage = " Refactor 'GetHashCode' to not reference mutable fields.";
-        private const string SecondaryMessageFormat = "Remove this use of '{0}' or make it 'readonly'.";
+        private const string IssueMessage = "请重构 'GetHashCode' ，不要参照可变字段。";
+        private const string SecondaryMessageFormat = "请去除 '{0}' 的使用，或令其为 'readonly' 的。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, IssueMessage, RspecStrings.ResourceManager);

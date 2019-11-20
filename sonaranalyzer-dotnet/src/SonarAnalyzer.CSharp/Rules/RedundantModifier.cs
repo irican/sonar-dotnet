@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class RedundantModifier : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2333";
-        private const string MessageFormat = "'{0}' is {1} in this context.";
+        private const string MessageFormat = "'{0}' 在此上下文环境意味着 {1} 。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

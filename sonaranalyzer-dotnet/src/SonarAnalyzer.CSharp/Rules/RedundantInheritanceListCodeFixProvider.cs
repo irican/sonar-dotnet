@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class RedundantInheritanceListCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Remove redundant declaration";
+        internal const string Title = "移除多余的声明";
         public override ImmutableArray<string> FixableDiagnosticIds
         {
             get

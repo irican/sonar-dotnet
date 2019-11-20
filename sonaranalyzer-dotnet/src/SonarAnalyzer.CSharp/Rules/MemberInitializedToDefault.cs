@@ -37,7 +37,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class MemberInitializedToDefault : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3052";
-        private const string MessageFormat = "Remove this initialization to '{0}', the compiler will do that for you.";
+        private const string MessageFormat = "请去除对 '{0}' 的初始化，编译器会帮你这样做。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

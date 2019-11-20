@@ -1,4 +1,4 @@
-/*
+﻿/*
  * SonarAnalyzer for .NET
  * Copyright (C) 2015-2019 SonarSource SA
  * mailto: contact AT sonarsource DOT com
@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class EnumStorageNeedsToBeInt32 : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4022";
-        private const string MessageFormat = "Change this enum storage to 'Int32'.";
+        private const string MessageFormat = "请将此枚举容量改变为 'Int32'。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

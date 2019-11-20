@@ -35,9 +35,9 @@ namespace SonarAnalyzer.Rules.CSharp
     {
         internal const string DiagnosticId = "S1118";
         private const string MessageFormat = "{0}";
-        internal const string MessageFormatConstructor = "Hide this public constructor by making it '{0}'.";
+        internal const string MessageFormatConstructor = "请令构造器为'{0}'的，使它隐藏公共的构造器。";
         internal const string MessageFormatStaticClass =
-            "Add a '{0}' constructor or the 'static' keyword to the class declaration.";
+            "请添加一个 '{0}' 构造器或向类声明语句中 'static' 关键字。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

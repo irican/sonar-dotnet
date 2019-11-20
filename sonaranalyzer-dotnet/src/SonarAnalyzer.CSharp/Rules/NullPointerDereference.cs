@@ -39,7 +39,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class NullPointerDereference : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2259";
-        private const string MessageFormat = "'{0}' is null on at least one execution path.";
+        private const string MessageFormat = "'{0}' 在至少一个执行路径上是空的（null）。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

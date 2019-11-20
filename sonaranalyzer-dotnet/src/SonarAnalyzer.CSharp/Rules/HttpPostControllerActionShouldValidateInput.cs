@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class HttpPostControllerActionShouldValidateInput : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4564";
-        private const string MessageFormat = "Enable input validation for this HttpPost method.";
+        private const string MessageFormat = "请对此HttpPost方法启用输入验证。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

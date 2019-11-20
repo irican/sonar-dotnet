@@ -36,9 +36,9 @@ namespace SonarAnalyzer.Rules.CSharp
     {
         internal const string DiagnosticId = "S3928";
         private const string MessageFormat = "{0}";
-        private const string ParameterLessConstructorMessage = "Use a constructor overloads that allows a more meaningful exception message to be provided.";
-        private const string ConstructorParametersInverted = "ArgumentException constructor arguments have been inverted.";
-        private const string InvalidParameterName = "The parameter name '{0}' is not declared in the argument list.";
+        private const string ParameterLessConstructorMessage = "请使用可提供更加有意义的异常信息的重载构造器。";
+        private const string ConstructorParametersInverted = "ArgumentException 构造器参数被颠倒。";
+        private const string InvalidParameterName = "参数列表中没有定义参数名 '{0}' 。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

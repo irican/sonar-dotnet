@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class UnchangedLocalVariablesShouldBeConst : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3353";
-        private const string MessageFormat = "Add the 'const' modifier to '{0}'.";
+        private const string MessageFormat = "请向'{0}'添加'const' 修饰符。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

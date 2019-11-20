@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ReturnEmptyCollectionInsteadOfNull : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1168";
-        private const string MessageFormat = "Return an empty collection instead of null.";
+        private const string MessageFormat = "请返回一个空的集合，而不是返回null。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

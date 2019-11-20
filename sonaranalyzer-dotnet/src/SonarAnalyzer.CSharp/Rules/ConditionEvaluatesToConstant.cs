@@ -83,10 +83,10 @@ namespace SonarAnalyzer.Rules.CSharp
         };
 
         private const string S2583DiagnosticId = "S2583"; // Bug
-        private const string S2583MessageFormat = "Change this condition so that it does not always evaluate to '{0}'; some subsequent code is never executed.";
+        private const string S2583MessageFormat = "改变条件，使它不要总是被评估为 '{0}'，有些代码因此永远不会执行。";
 
         private const string S2589DiagnosticId = "S2589"; // Code smell
-        private const string S2589MessageFormat = "Change this condition so that it does not always evaluate to '{0}'.";
+        private const string S2589MessageFormat = "改变条件，使它不要总是被评估为 '{0}'。";
 
         private static readonly DiagnosticDescriptor s2583 =
             DiagnosticDescriptorBuilder.GetDescriptor(S2583DiagnosticId, S2583MessageFormat, RspecStrings.ResourceManager);

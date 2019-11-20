@@ -32,7 +32,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [Rule(DiagnosticId)]
     public sealed class DoNotThrowFromDestructors : DoNotThrowFromDestructorsBase
     {
-        private const string MessageFormat = "Remove this 'throw' statement.";
+        private const string MessageFormat = "请去掉 'throw' 语句。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

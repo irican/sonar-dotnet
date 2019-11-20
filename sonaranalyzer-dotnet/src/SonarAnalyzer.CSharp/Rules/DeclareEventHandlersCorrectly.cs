@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DeclareEventHandlersCorrectly : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3906";
-        private const string MessageFormat = "Change the signature of that event handler to match the specified signature.";
+        private const string MessageFormat = "请改变那个事件处理器的签名，以符合特定的签名。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

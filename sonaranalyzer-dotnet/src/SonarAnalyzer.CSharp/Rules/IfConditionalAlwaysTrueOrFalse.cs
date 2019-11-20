@@ -32,8 +32,8 @@ namespace SonarAnalyzer.Rules.CSharp
     [Rule(DiagnosticId)]
     public sealed class IfConditionalAlwaysTrueOrFalse : IfConditionalAlwaysTrueOrFalseBase<IfStatementSyntax>
     {
-        private const string ifStatementLiteral = "'if' statement";
-        private const string elseClauseLiteral = "'else' clause";
+        private const string ifStatementLiteral = "'if' 语句";
+        private const string elseClauseLiteral = "'else' 语句";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

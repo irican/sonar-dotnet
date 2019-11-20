@@ -35,8 +35,8 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class InterfaceMethodsShouldBeCallableByChildTypes : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4039";
-        private const string MessageFormat = "Make '{0}' sealed, change to a non-explicit declaration or provide a " +
-            "new method exposing the functionality of '{1}'.";
+        private const string MessageFormat = "请密封 '{0}' ，变换为间接的声明，或提供一个" +
+            "暴露'{1}'功能的新方法。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

@@ -40,27 +40,27 @@ namespace SonarAnalyzer.Rules.CSharp
     {
         #region Rule definition
         internal const string DiagnosticId_RuleS3994 = "S3994";
-        private const string MessageFormat_RuleS3994 = "Either change this parameter type to 'System.Uri' or provide an overload which takes a 'System.Uri' parameter.";
+        private const string MessageFormat_RuleS3994 = "要么将参数类型改为'System.Uri'，要么提供接受'System.Uri'类型参数的重载版本。";
         private static readonly DiagnosticDescriptor rule_S3994 =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId_RuleS3994, MessageFormat_RuleS3994, RspecStrings.ResourceManager);
 
         internal const string DiagnosticId_RuleS3995 = "S3995";
-        private const string MessageFormat_RuleS3995 = "Change this return type to 'System.Uri'.";
+        private const string MessageFormat_RuleS3995 = "请返回'System.Uri'类型。";
         private static readonly DiagnosticDescriptor rule_S3995 =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId_RuleS3995, MessageFormat_RuleS3995, RspecStrings.ResourceManager);
 
         internal const string DiagnosticId_RuleS3996 = "S3996";
-        private const string MessageFormat_RuleS3996 = "Change this property type to 'System.Uri'.";
+        private const string MessageFormat_RuleS3996 = "请将属性类型修改为'System.Uri'。";
         private static readonly DiagnosticDescriptor rule_S3996 =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId_RuleS3996, MessageFormat_RuleS3996, RspecStrings.ResourceManager);
 
         internal const string DiagnosticId_RuleS3997 = "S3997";
-        private const string MessageFormat_RuleS3997 = "Refactor this method so it invokes the overload accepting a 'System.Uri' parameter.";
+        private const string MessageFormat_RuleS3997 = "请重构此方法，以调用接受'System.Uri'类型参数的重载方法。";
         private static readonly DiagnosticDescriptor rule_S3997 =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId_RuleS3997, MessageFormat_RuleS3997, RspecStrings.ResourceManager);
 
         internal const string DiagnosticId_RuleS4005 = "S4005";
-        private const string MessageFormat_RuleS4005 = "Call the overload that takes a 'System.Uri' as an argument instead.";
+        private const string MessageFormat_RuleS4005 = "请调用接受'System.Uri'类型参数的重载方法。";
         private static readonly DiagnosticDescriptor rule_S4005 =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId_RuleS4005, MessageFormat_RuleS4005, RspecStrings.ResourceManager);
         #endregion

@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class MethodOverrideNoParams : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3262";
-        private const string MessageFormat = "'params' should not be removed from an override.";
+        private const string MessageFormat = "不应移除重写方法的 'params' 标识符。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

@@ -37,10 +37,10 @@ namespace SonarAnalyzer.Rules.CSharp
     {
         internal const string DiagnosticId = "S2971";
         private const string MessageFormat = "{0}";
-        internal const string MessageUseInstead = "Use {0} here instead.";
-        internal const string MessageDropAndChange = "Drop '{0}' and move the condition into the '{1}'.";
-        internal const string MessageDropFromMiddle = "Drop this useless call to '{0}' or replace it by 'AsEnumerable' if " +
-            "you are using LINQ to Entities.";
+        internal const string MessageUseInstead = "请使用 {0} 。";
+        internal const string MessageDropAndChange = "移除 '{0}' ，并将条件移入 '{1}' 中。";
+        internal const string MessageDropFromMiddle = "移除不必要的 '{0}' 调用，或将其替换为 'AsEnumerable' ， " +
+            "如果正在使用LINQ to Entities的话。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

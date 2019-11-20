@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class UseWhileLoopInstead : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1264";
-        private const string MessageFormat = "Replace this 'for' loop with a 'while' loop.";
+        private const string MessageFormat = "请将 'for' 循环更换为 'while' 循环。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

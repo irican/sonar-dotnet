@@ -32,7 +32,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DoNotCallGCCollectMethod : DoNotCallMethodsCSharpBase
     {
         internal const string DiagnosticId = "S1215";
-        private const string MessageFormat = "Refactor the code to remove this use of '{0}'.";
+        private const string MessageFormat = "重构此代码，以移除对 '{0}' 的使用。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

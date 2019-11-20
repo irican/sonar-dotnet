@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class SerializationConstructorsShouldBeSecured : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S4212";
-        private const string MessageFormat = "Secure this serialization constructor.";
+        private const string MessageFormat = "请保护序列化构造器的安全。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

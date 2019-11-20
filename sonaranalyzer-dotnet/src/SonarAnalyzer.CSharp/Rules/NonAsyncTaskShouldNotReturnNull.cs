@@ -34,8 +34,8 @@ namespace SonarAnalyzer.Rules.CSharp
     [Rule(DiagnosticId)]
     public sealed class NonAsyncTaskShouldNotReturnNull : NonAsyncTaskShouldNotReturnNullBase
     {
-        private const string MessageFormat = "Do not return null from this method, instead return 'Task.FromResult<T>(null)', " +
-            "'Task.CompletedTask' or 'Task.Delay(0)'.";
+        private const string MessageFormat = "不要从此方法返回 null ，请返回 'Task.FromResult<T>(null)'，" +
+            "'Task.CompletedTask' 或 'Task.Delay(0)'。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

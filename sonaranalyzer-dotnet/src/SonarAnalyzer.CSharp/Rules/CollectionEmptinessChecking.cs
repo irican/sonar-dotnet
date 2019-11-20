@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class CollectionEmptinessChecking : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1155";
-        private const string MessageFormat = "Use '.Any()' to test whether this 'IEnumerable<{0}>' is empty or not.";
+        private const string MessageFormat = "请使用 '.Any()' 方法测试 'IEnumerable<{0}>' 是否为空。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class OptionalRefOutParameterCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Remove 'Optional' attribute";
+        internal const string Title = "移除 'Optional' 属性";
         public override ImmutableArray<string> FixableDiagnosticIds =>
             ImmutableArray.Create(OptionalRefOutParameter.DiagnosticId);
 

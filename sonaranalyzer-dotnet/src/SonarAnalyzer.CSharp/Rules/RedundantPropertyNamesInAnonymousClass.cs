@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class RedundantPropertyNamesInAnonymousClass : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3441";
-        private const string MessageFormat = "Remove the redundant '{0} ='.";
+        private const string MessageFormat = "请移除多余的 '{0} ='。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

@@ -34,10 +34,9 @@ namespace SonarAnalyzer.Rules.CSharp
     {
         internal const string DiagnosticId = "S4220";
         private const string MessageFormat = "{0}";
-        private const string NullEventArgsMessage = "Use 'EventArgs.Empty' instead of null as the event args of " +
-            "this event invocation.";
-        private const string NullSenderMessage = "Make the sender on this event invocation not null.";
-        private const string NonNullSenderMessage = "Make the sender on this static event invocation null.";
+        private const string NullEventArgsMessage = "请使用 'EventArgs.Empty' 以替代含有null参数的事件触发。";
+        private const string NullSenderMessage = "令此触发事件的发送方为非空（null）的。";
+        private const string NonNullSenderMessage = "令此静态触发事件的发送方为空（null）的。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

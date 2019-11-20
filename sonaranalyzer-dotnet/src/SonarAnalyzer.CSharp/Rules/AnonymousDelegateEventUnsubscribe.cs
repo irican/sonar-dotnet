@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class AnonymousDelegateEventUnsubscribe : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3244";
-        private const string MessageFormat = "Unsubscribe with the same delegate that was used for the subscription.";
+        private const string MessageFormat = "请使用相同的委托取消订阅。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

@@ -36,8 +36,8 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class RedundantArgumentCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string TitleRemove = "Remove redundant arguments";
-        internal const string TitleRemoveWithNameAdditions = "Remove redundant arguments with adding named arguments";
+        internal const string TitleRemove = "移除多余的参数";
+        internal const string TitleRemoveWithNameAdditions = "移除含有命名参数的多余的参数";
 
         public override ImmutableArray<string> FixableDiagnosticIds
         {

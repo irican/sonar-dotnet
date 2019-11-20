@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class GuardConditionOnEqualsOverride : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3397";
-        private const string MessageFormat = "Change this guard condition to call 'object.ReferenceEquals'.";
+        private const string MessageFormat = "请改变监护条件，以调用 'object.ReferenceEquals'。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

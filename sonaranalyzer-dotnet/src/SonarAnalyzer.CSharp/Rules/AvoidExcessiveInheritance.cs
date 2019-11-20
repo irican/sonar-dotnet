@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public class AvoidExcessiveInheritance : ParameterLoadingDiagnosticAnalyzer
     {
         private const string DiagnosticId = "S110";
-        private const string MessageFormat = "This class has {0} parents which is greater than {1} authorized.";
+        private const string MessageFormat = "此类的有 {0} 个父类，多于所要求的 {1} 个。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager,

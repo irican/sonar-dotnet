@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DoNotCallExitMethods : DoNotCallMethodsCSharpBase
     {
         internal const string DiagnosticId = "S1147";
-        private const string MessageFormat = "Remove this call to '{0}' or ensure it is really required.";
+        private const string MessageFormat = "请移除对 '{0}' 的调用，或者确保它确实需要。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

@@ -32,7 +32,7 @@ namespace SonarAnalyzer.Rules.CSharp
     [ExportCodeFixProvider(LanguageNames.CSharp)]
     public sealed class SwitchDefaultClauseEmptyCodeFixProvider : SonarCodeFixProvider
     {
-        internal const string Title = "Remove empty 'default' clause";
+        internal const string Title = "去除空的 'default' 语句";
         public override ImmutableArray<string> FixableDiagnosticIds => ImmutableArray.Create(SwitchDefaultClauseEmpty.DiagnosticId);
 
         public override FixAllProvider GetFixAllProvider() => WellKnownFixAllProviders.BatchFixer;
