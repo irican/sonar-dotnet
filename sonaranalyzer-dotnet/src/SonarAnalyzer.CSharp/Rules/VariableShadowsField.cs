@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class VariableShadowsField : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1117";
-        private const string MessageFormat = "请重命名 '{0}' ，它以同样的名称隐藏了 {1} 。";
+        private const string MessageFormat = "请重命名 '{0}' ，它以同样的名称隐藏了{1}。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);
@@ -118,7 +118,7 @@ namespace SonarAnalyzer.Rules.CSharp
 
             context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, identifier.GetLocation(),
                 identifier.Text,
-                (matchingMember is IFieldSymbol) ? "field" : "property"));
+                (matchingMember is IFieldSymbol) ? "字段" : "属性"));
         }
 
         private static List<ISymbol> GetMembers(INamedTypeSymbol classSymbol)

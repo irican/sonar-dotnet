@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class MethodOverrideChangedDefaultValue : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1006";
-        private const string MessageFormat = "{0} 默认参数值 {1}。";
+        private const string MessageFormat = "{0}默认参数值，{1}。";
         internal const string MessageAdd = "在重载方法中定义的";
         internal const string MessageRemove = "以符合重载方法的签名";
         internal const string MessageUseSame = "在重载方法中定义的";
@@ -82,7 +82,7 @@ namespace SonarAnalyzer.Rules.CSharp
             {
                 if (overridingParameter.HasExplicitDefaultValue)
                 {
-                    context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, parameterSyntax.Default.GetLocation(), "Remove", MessageRemoveExplicit));
+                    context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, parameterSyntax.Default.GetLocation(), "去除", MessageRemoveExplicit));  //remove
                 }
 
                 return;
@@ -91,14 +91,14 @@ namespace SonarAnalyzer.Rules.CSharp
             if (overridingParameter.HasExplicitDefaultValue &&
                 !overriddenParameter.HasExplicitDefaultValue)
             {
-                context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, parameterSyntax.Default.GetLocation(), "Remove", MessageRemove));
+                context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, parameterSyntax.Default.GetLocation(), "去除", MessageRemove));  //remove
                 return;
             }
 
             if (!overridingParameter.HasExplicitDefaultValue &&
                 overriddenParameter.HasExplicitDefaultValue)
             {
-                context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, parameterSyntax.Identifier.GetLocation(), "Add", MessageAdd));
+                context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, parameterSyntax.Identifier.GetLocation(), "添加", MessageAdd));  //add
                 return;
             }
 
@@ -106,7 +106,7 @@ namespace SonarAnalyzer.Rules.CSharp
                 overriddenParameter.HasExplicitDefaultValue &&
                 !Equals(overridingParameter.ExplicitDefaultValue, overriddenParameter.ExplicitDefaultValue))
             {
-                context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, parameterSyntax.Default.Value.GetLocation(), "Use", MessageUseSame));
+                context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, parameterSyntax.Default.Value.GetLocation(), "使用", MessageUseSame));  //use
             }
         }
     }

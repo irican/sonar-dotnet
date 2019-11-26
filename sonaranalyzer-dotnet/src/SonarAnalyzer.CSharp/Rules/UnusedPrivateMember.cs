@@ -37,7 +37,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class UnusedPrivateMember : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1144";
-        private const string MessageFormat = "去除未使用的 {0} {1} '{2}'。";
+        private const string MessageFormat = "去除未使用的 {0} {1} '{2}'。"; //private-0 property-1 <fun_name>-2
 
         private static readonly ImmutableArray<KnownType> IgnoredTypes =
             ImmutableArray.Create(
@@ -105,7 +105,7 @@ namespace SonarAnalyzer.Rules.CSharp
                                 return;
                             }
 
-                            var diagnostics = GetDiagnostics(usageCollector, removableSymbolsCollector.PrivateSymbols, "private",
+                            var diagnostics = GetDiagnostics(usageCollector, removableSymbolsCollector.PrivateSymbols, "私有的",
                                 removableSymbolsCollector.FieldLikeSymbols);
                             foreach (var diagnostic in diagnostics)
                             {
@@ -136,7 +136,7 @@ namespace SonarAnalyzer.Rules.CSharp
                                 usageCollector.SafeVisit(syntaxTree.GetRoot());
                             }
 
-                            var diagnostics = GetDiagnostics(usageCollector, removableInternalTypes.ToHashSet(), "internal",
+                            var diagnostics = GetDiagnostics(usageCollector, removableInternalTypes.ToHashSet(), "内部的",
                                 new BidirectionalDictionary<ISymbol, SyntaxNode>());
                             foreach (var diagnostic in diagnostics)
                             {
@@ -236,8 +236,8 @@ namespace SonarAnalyzer.Rules.CSharp
                 var accessorSyntax = GetAccessorSyntax(property.SetMethod);
                 if (accessorSyntax != null)
                 {
-                    yield return Diagnostic.Create(rule, accessorSyntax.GetLocation(), "private",
-                        "set accessor in property", property.Name);
+                    yield return Diagnostic.Create(rule, accessorSyntax.GetLocation(), "私有",
+                        "属性的set访问器", property.Name);
                 }
             }
             else if (access == AccessorAccess.Set && property.GetMethod != null)
@@ -245,8 +245,8 @@ namespace SonarAnalyzer.Rules.CSharp
                 var accessorSyntax = GetAccessorSyntax(property.GetMethod);
                 if (accessorSyntax != null && accessorSyntax.HasBodyOrExpressionBody())
                 {
-                    yield return Diagnostic.Create(rule, accessorSyntax.GetLocation(), "private",
-                        "get accessor in property", property.Name);
+                    yield return Diagnostic.Create(rule, accessorSyntax.GetLocation(), "私有",
+                        "属性的get访问器", property.Name);
                 }
             }
             else
@@ -267,7 +267,7 @@ namespace SonarAnalyzer.Rules.CSharp
         {
             if (symbol.IsConstructor())
             {
-                return "constructor";
+                return "构造器";
             }
 
             switch (symbol.Kind)
@@ -279,10 +279,10 @@ namespace SonarAnalyzer.Rules.CSharp
                     return symbol.Kind.ToString().ToLowerInvariant();
 
                 case SymbolKind.NamedType:
-                    return "type";
+                    return "类型";
 
                 default:
-                    return "member";
+                    return "成员";
             }
         }
 

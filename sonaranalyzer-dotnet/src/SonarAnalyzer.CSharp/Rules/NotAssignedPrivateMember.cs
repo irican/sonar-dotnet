@@ -43,7 +43,7 @@ namespace SonarAnalyzer.Rules.CSharp
         */
 
         internal const string DiagnosticId = "S3459";
-        private const string MessageFormat = "移除未分配的 {0} '{1}'，或设置它的值。";
+        private const string MessageFormat = "移除未分配的{0} '{1}'，或设置它的值。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);
@@ -101,7 +101,7 @@ namespace SonarAnalyzer.Rules.CSharp
                             var field = candidateMember.SyntaxNode as VariableDeclaratorSyntax;
                             var property = candidateMember.SyntaxNode as PropertyDeclarationSyntax;
 
-                            var memberType = field != null ? "field" : "auto-property";
+                            var memberType = field != null ? "字段" : "自动属性";  //field auto-property
 
                             var location = field != null
                                 ? field.Identifier.GetLocation()

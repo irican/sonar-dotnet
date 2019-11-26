@@ -91,7 +91,7 @@ namespace SonarAnalyzer.Rules.CSharp
             if (accessorDeclaration.IsKind(SyntaxKind.AddAccessorDeclaration) ||
                 accessorDeclaration.IsKind(SyntaxKind.RemoveAccessorDeclaration))
             {
-                return "event";
+                return "事件";  //event
             }
 
             var accessorList = accessorDeclaration.Parent;
@@ -103,11 +103,11 @@ namespace SonarAnalyzer.Rules.CSharp
             var indexerOrProperty = accessorList.Parent;
             if (indexerOrProperty is IndexerDeclarationSyntax)
             {
-                return "indexer set";
+                return "索引设定（indexer set）";   //indexer set
             }
             else if (indexerOrProperty is PropertyDeclarationSyntax)
             {
-                return "property set";
+                return "属性设定（property set）";  //property set
             }
             else
             {

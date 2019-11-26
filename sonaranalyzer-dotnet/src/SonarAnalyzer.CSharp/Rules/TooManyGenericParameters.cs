@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public class TooManyGenericParameters : ParameterLoadingDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2436";
-        internal const string MessageFormat = "请减少在'{0}'中泛型参数的数量{1}至不多于{2}个的要求。";
+        internal const string MessageFormat = "请减少在'{0}'中泛型参数的{1}数量至不多于{2}个的要求。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager,
@@ -84,7 +84,7 @@ namespace SonarAnalyzer.Rules.CSharp
                     }
 
                     c.ReportDiagnosticWhenActive(Diagnostic.Create(rule, methodDeclaration.Identifier.GetLocation(),
-                        $"{GetEnclosingTypeName(methodDeclaration)}.{methodDeclaration.Identifier.ValueText}", "method",
+                        $"{GetEnclosingTypeName(methodDeclaration)}.{methodDeclaration.Identifier.ValueText}", "方法", //method
                         MaxNumberOfGenericParametersInMethod));
                 },
                 SyntaxKind.MethodDeclaration);
@@ -95,17 +95,17 @@ namespace SonarAnalyzer.Rules.CSharp
             switch (typeDeclaration.Kind())
             {
                 case SyntaxKind.ClassDeclaration:
-                    return "class";
+                    return "类";  //class
 
                 case SyntaxKind.StructDeclaration:
-                    return "struct";
+                    return "结构体";  //struct
 
                 case SyntaxKind.InterfaceDeclaration:
-                    return "interface";
+                    return "接口"; //interface
 
                 default:
                     Debug.Fail($"Unexpected type: {typeDeclaration.ToString()}");
-                    return "type";
+                    return "类型";  //type
             }
         }
 

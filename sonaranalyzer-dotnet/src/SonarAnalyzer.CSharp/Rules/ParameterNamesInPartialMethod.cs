@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ParameterNamesInPartialMethod : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S927";
-        private const string MessageFormat = "请重命名参数'{0}' 至 '{1}' 以符合声明 {2}。";
+        private const string MessageFormat = "请重命名参数'{0}'至'{1}'以符合{2}声明。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);
@@ -55,19 +55,19 @@ namespace SonarAnalyzer.Rules.CSharp
                         if (methodSymbol.PartialImplementationPart.DeclaringSyntaxReferences
                              .FirstOrDefault()?.GetSyntax() is MethodDeclarationSyntax methodImplementationSyntax)
                         {
-                            VerifyParameters(c, methodImplementationSyntax, methodSymbol.Parameters, "partial class");
+                            VerifyParameters(c, methodImplementationSyntax, methodSymbol.Parameters, "部分类");
                         }
                     }
                     else if (methodSymbol?.OverriddenMethod != null)
                     {
-                        VerifyParameters(c, methodSyntax, methodSymbol.OverriddenMethod.Parameters, "base class");
+                        VerifyParameters(c, methodSyntax, methodSymbol.OverriddenMethod.Parameters, "基类");
                     }
                     else
                     {
                         var interfaceMember = methodSymbol.GetInterfaceMember();
                         if (interfaceMember != null)
                         {
-                            VerifyParameters(c, methodSyntax, interfaceMember.Parameters, "interface");
+                            VerifyParameters(c, methodSyntax, interfaceMember.Parameters, "接口");
                         }
                     }
                 },

@@ -44,12 +44,12 @@ namespace SonarAnalyzer.Rules.CSharp
 
         private static readonly ImmutableDictionary<SyntaxKind, string> nodeToDeclarationName = new Dictionary<SyntaxKind, string>
         {
-            { SyntaxKind.ConstructorDeclaration, "Constructor" },
-            { SyntaxKind.MethodDeclaration, "Method" },
-            { SyntaxKind.DelegateDeclaration, "Delegate" },
-            { SyntaxKind.AnonymousMethodExpression, "Delegate" },
-            { SyntaxKind.ParenthesizedLambdaExpression, "Lambda" },
-            { SyntaxKind.SimpleLambdaExpression, "Lambda" }
+            { SyntaxKind.ConstructorDeclaration, "构造器" },
+            { SyntaxKind.MethodDeclaration, "方法" },
+            { SyntaxKind.DelegateDeclaration, "委托" },
+            { SyntaxKind.AnonymousMethodExpression, "委托" },
+            { SyntaxKind.ParenthesizedLambdaExpression, "Lambda表达式" },
+            { SyntaxKind.SimpleLambdaExpression, "Lambda表达式" }
         }.ToImmutableDictionary();
 
         protected override string UserFriendlyNameForNode(SyntaxNode node) => nodeToDeclarationName[node.Kind()];

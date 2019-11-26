@@ -363,33 +363,29 @@ namespace SonarAnalyzer.Rules.CSharp
         public class ValidationFailure
         {
             public static readonly ValidationFailure NullFormatString =
-                new ValidationFailure("Invalid string format, the format string cannot be null.");
+                new ValidationFailure("非法的字符串格式，格式化字符串不能为空。"); //Invalid string format, the format string cannot be null.
             public static readonly ValidationFailure InvalidCharacterAfterOpenCurlyBrace =
-                new ValidationFailure("Invalid string format, opening curly brace can only be followed by a digit " +
-                    "or an opening curly brace.");
+                new ValidationFailure("非法的字符串格式，花括号后只能跟随一个数字或另一个花括号。");  //Invalid string format, opening curly brace can only be followed by a digit or an opening curly brace.
             public static readonly ValidationFailure UnbalancedCurlyBraceCount =
-                new ValidationFailure("Invalid string format, unbalanced curly brace count.");
+                new ValidationFailure("非法的字符串格式，花括号不配对。"); //Invalid string format, unbalanced curly brace count.
             public static readonly ValidationFailure FormatItemMalformed =
-                new ValidationFailure("Invalid string format, all format items should comply with the following " +
-                    "pattern '{index[,alignment][:formatString]}'.");
+                new ValidationFailure("非法的字符串格式，所有格式化字符串需要遵守此格式：'{索引值[,对齐值][:格式化字符串]}'。");  //Invalid string format, all format items should comply with the following pattern '{index[,alignment][:formatString]}'.
             public static readonly ValidationFailure FormatItemIndexBiggerThanArgsCount =
-                new ValidationFailure("Invalid string format, the highest string format item index should not be " +
-                    "greater than the arguments count.");
+                new ValidationFailure("非法的字符串格式，最大的格式索引不能大于格式化字符串的参数数量。");//Invalid string format, the highest string format item index should not be greater than the arguments count.
             public static readonly ValidationFailure FormatItemIndexBiggerThanMaxValue =
-                new ValidationFailure("Invalid string format, the string format item index should not be " +
-                    $"greater than {MaxValueForArgumentIndexAndAlignment}.");
+                new ValidationFailure("非法的字符串格式，最大的格式索引不能" +
+                    $"超过 {MaxValueForArgumentIndexAndAlignment}。");//Invalid string format, the string format item index should not be great than xxx.
             public static readonly ValidationFailure FormatItemAlignmentBiggerThanMaxValue =
-                new ValidationFailure("Invalid string format, the string format item alignment should not be " +
-                    $"greater than {MaxValueForArgumentIndexAndAlignment}.");
+                new ValidationFailure("非法的字符串格式，格式化字符串的对齐参数不能" +
+                    $"超过 {MaxValueForArgumentIndexAndAlignment}。");//Invalid string format, the string format item alignment should not be greater than xxx.
             public static readonly ValidationFailure SimpleString =
-                new ValidationFailure("Remove this formatting call and simply use the input string.");
+                new ValidationFailure("请移除格式化调用，使用输入字符串（input string）即可。");//Remove this formatting call and simply use the input string.
             public static readonly ValidationFailure UnknownError =
-                new ValidationFailure("Invalid string format, the format string is invalid and is likely to throw at " +
-                    "runtime.");
+                new ValidationFailure("非法的字符串格式，格式化字符串不合法且容易导致运行时错误。");//Invalid string format, the format string is invalid and is likely to throw at runtime.
             public static readonly ValidationFailure MissingFormatItemIndex =
-                new ValidationFailure("The format string might be wrong, the following item indexes are missing: ");
+                new ValidationFailure("格式化字符串可能有错误，以下索引丢失：");//The format string might be wrong, the following item indexes are missing: 
             public static readonly ValidationFailure UnusedFormatArguments =
-                new ValidationFailure("The format string might be wrong, the following arguments are unused: ");
+                new ValidationFailure("格式化字符串可能有错误，以下参数没有被使用：");//The format string might be wrong, the following arguments are unused: 
 
             private readonly string message;
 
@@ -404,7 +400,7 @@ namespace SonarAnalyzer.Rules.CSharp
             {
                 return AdditionalData == null
                     ? this.message
-                    : string.Concat(this.message, AdditionalData.ToSentence(quoteWords: true), ".");
+                    : string.Concat(this.message, AdditionalData.ToSentence(quoteWords: true), "。");
             }
         }
 

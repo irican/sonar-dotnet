@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class MemberShadowsOuterStaticMember : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3218";
-        private const string MessageFormat = "请重命名 {0} ，不要与外部类成员的名字相同。";
+        private const string MessageFormat = "请重命名{0}，不要与外部类成员的名字相同。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);
@@ -110,13 +110,13 @@ namespace SonarAnalyzer.Rules.CSharp
 
                 if (syntax is DelegateDeclarationSyntax delegateSyntax)
                 {
-                    context.ReportDiagnosticIfNonGenerated(Diagnostic.Create(rule, delegateSyntax.Identifier.GetLocation(), "delegate"));
+                    context.ReportDiagnosticIfNonGenerated(Diagnostic.Create(rule, delegateSyntax.Identifier.GetLocation(), "委托"));  //delegate
                     continue;
                 }
 
                 if (syntax is ClassDeclarationSyntax classSyntax)
                 {
-                    context.ReportDiagnosticIfNonGenerated(Diagnostic.Create(rule, classSyntax.Identifier.GetLocation(), "class"));
+                    context.ReportDiagnosticIfNonGenerated(Diagnostic.Create(rule, classSyntax.Identifier.GetLocation(), "类"));  //class
                 }
             }
         }
@@ -130,7 +130,7 @@ namespace SonarAnalyzer.Rules.CSharp
                     var syntax = reference?.GetSyntax() as MethodDeclarationSyntax;
                     return syntax?.Identifier.GetLocation();
                 },
-                "method");
+                "方法");  //method
         }
 
         private static void CheckEvent(SymbolAnalysisContext context, INamedTypeSymbol containerClassSymbol, IEventSymbol @event)
@@ -152,7 +152,7 @@ namespace SonarAnalyzer.Rules.CSharp
                     var eventSyntax = reference.GetSyntax() as EventDeclarationSyntax;
                     return eventSyntax?.Identifier.GetLocation();
                 },
-                "event");
+                "事件");  //event
         }
 
         private static void CheckField(SymbolAnalysisContext context, INamedTypeSymbol containerClassSymbol, IFieldSymbol field)
@@ -164,7 +164,7 @@ namespace SonarAnalyzer.Rules.CSharp
                     var syntax = reference?.GetSyntax() as VariableDeclaratorSyntax;
                     return syntax?.Identifier.GetLocation();
                 },
-                "field");
+                "字段");  //field
         }
 
         private static void CheckProperty(SymbolAnalysisContext context, INamedTypeSymbol containerClassSymbol, IPropertySymbol property)
@@ -181,7 +181,7 @@ namespace SonarAnalyzer.Rules.CSharp
                     return null;
                 }
                 return syntax.Identifier.GetLocation();
-            }, "property");
+            }, "属性"); //property
         }
 
         private static void CheckFieldOrProperty<T>(T propertyOrField, INamedTypeSymbol containerClassSymbol,

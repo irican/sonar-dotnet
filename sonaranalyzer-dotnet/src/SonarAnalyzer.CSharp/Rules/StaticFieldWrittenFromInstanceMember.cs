@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     {
         internal const string DiagnosticId = "S2696";
         private const string MessageFormat = "{0}";
-        internal const string MessageFormatMultipleOptions = "使其外围实例 {0} 为'static'的，或移除对此'static'字段的设置。";
+        internal const string MessageFormatMultipleOptions = "使其外围实例{0}为'static'的，或移除对此'static'字段的设置。";
         internal const string MessageFormatRemoveSet = "移除这个设置，它在实例{0}中更新了一个'static'字段。";
 
         private static readonly DiagnosticDescriptor rule =
@@ -74,12 +74,12 @@ namespace SonarAnalyzer.Rules.CSharp
         {
             if (declaration is MethodDeclarationSyntax)
             {
-                return "method";
+                return "方法";   //method
             }
 
             if (declaration is AccessorDeclarationSyntax)
             {
-                return "property";
+                return "属性";   //property
             }
 
             return string.Empty;
