@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class RedundancyInConstructorDestructorDeclaration : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3253";
-        private const string MessageFormat = "请去除多余的 {0}。";
+        private const string MessageFormat = "请去除多余的{0}。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);
@@ -58,7 +58,7 @@ namespace SonarAnalyzer.Rules.CSharp
 
             if (IsBodyEmpty(destructorDeclaration.Body))
             {
-                context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, destructorDeclaration.GetLocation(), "destructor"));
+                context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, destructorDeclaration.GetLocation(), "析构器"));  //destructor
             }
         }
 
@@ -68,7 +68,7 @@ namespace SonarAnalyzer.Rules.CSharp
 
             if (IsConstructorRedundant(constructorDeclaration, context.SemanticModel))
             {
-                context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, constructorDeclaration.GetLocation(), "constructor"));
+                context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, constructorDeclaration.GetLocation(), "构造器")); //constructor
                 return;
             }
 
@@ -76,7 +76,7 @@ namespace SonarAnalyzer.Rules.CSharp
             if (initializer != null &&
                 IsInitializerRedundant(initializer))
             {
-                context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, initializer.GetLocation(), "'base()' call"));
+                context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, initializer.GetLocation(), "'base()' 调用")); //'base()' call
             }
         }
 

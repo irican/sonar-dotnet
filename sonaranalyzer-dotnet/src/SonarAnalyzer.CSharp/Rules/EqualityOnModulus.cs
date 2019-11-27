@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class EqualityOnModulus : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2197";
-        private const string MessageFormat = "模运算的结果可能不是 {0}。";
+        private const string MessageFormat = "模运算的结果可能不是{0}。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);
@@ -51,7 +51,7 @@ namespace SonarAnalyzer.Rules.CSharp
                         CheckExpression(equalsExpression.Right, equalsExpression.Left, c.SemanticModel, out constantValue))
                     {
                         c.ReportDiagnosticWhenActive(Diagnostic.Create(rule, equalsExpression.GetLocation(),
-                            constantValue < 0 ? "negative" : "positive"));
+                            constantValue < 0 ? "负值" : "正值"));  //true->negative false->positive
                     }
                 },
                 SyntaxKind.EqualsExpression,

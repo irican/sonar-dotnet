@@ -55,19 +55,19 @@ namespace SonarAnalyzer.Rules.CSharp
                         if (methodSymbol.PartialImplementationPart.DeclaringSyntaxReferences
                              .FirstOrDefault()?.GetSyntax() is MethodDeclarationSyntax methodImplementationSyntax)
                         {
-                            VerifyParameters(c, methodImplementationSyntax, methodSymbol.Parameters, "部分类");
+                            VerifyParameters(c, methodImplementationSyntax, methodSymbol.Parameters, "部分类");  //partial class
                         }
                     }
                     else if (methodSymbol?.OverriddenMethod != null)
                     {
-                        VerifyParameters(c, methodSyntax, methodSymbol.OverriddenMethod.Parameters, "基类");
+                        VerifyParameters(c, methodSyntax, methodSymbol.OverriddenMethod.Parameters, "基类");  //base class
                     }
                     else
                     {
                         var interfaceMember = methodSymbol.GetInterfaceMember();
                         if (interfaceMember != null)
                         {
-                            VerifyParameters(c, methodSyntax, interfaceMember.Parameters, "接口");
+                            VerifyParameters(c, methodSyntax, interfaceMember.Parameters, "接口"); //interface
                         }
                     }
                 },

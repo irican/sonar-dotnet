@@ -37,7 +37,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class PublicMethodArgumentsShouldBeCheckedForNull : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3900";
-        private const string MessageFormat = "重构此 {0}。";
+        private const string MessageFormat = "重构此{0}。";
         private const string Constructor = "构造器以避免使用可能含有为空（null）的参数'{0}'";
         private const string Method = "方法以在使用前添加对参数'{0}'的验证";
 

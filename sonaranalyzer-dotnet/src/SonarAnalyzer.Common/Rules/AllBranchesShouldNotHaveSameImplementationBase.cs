@@ -30,13 +30,13 @@ namespace SonarAnalyzer.Rules
     public abstract class AllBranchesShouldNotHaveSameImplementationBase : SonarDiagnosticAnalyzer
     {
         protected const string SelectMessage =
-            "去掉或编辑这个区域'{0}'，使得它们不是相同的。";
+            "去掉或编辑这个{0}，使得它们不是相同的。";
 
         protected const string TernaryMessage =
             "去掉或编辑这个三目运算符，使得true分支和false分支执行内容不相同。";
 
         protected const string IfMessage =
-            "去掉或编辑这个区域 '{0}' ，使得它们不是相同的。";
+            "去掉或编辑这个{0}，使得它们不是相同的。";
 
         internal const string DiagnosticId = "S3923";
         internal const string MessageFormat = "{0}";

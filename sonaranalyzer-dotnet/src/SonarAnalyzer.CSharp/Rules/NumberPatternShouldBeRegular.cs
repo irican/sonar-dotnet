@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class NumberPatternShouldBeRegular : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3937";
-        private const string MessageFormat = "请审视这个数字，不规范的格式可能会引发错误。n indicates an error.";
+        private const string MessageFormat = "请审视这个数字，不规范的格式可能会引发错误。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

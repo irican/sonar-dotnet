@@ -40,7 +40,7 @@ namespace SonarAnalyzer.Rules.CSharp
         internal const string MethodNameDiagnosticId = "S100";
         internal const string TypeNameDiagnosticId = "S101";
 
-        private const string MessageFormat = "请重命名{0} '{1}' 以符合帕斯卡命名规则，{2}。";
+        private const string MessageFormat = "请重命名{0} '{1}' 以符合帕斯卡命名规则，{2}。"; //0->TypeKindNameMapping[value] 2->MessageFormatNonUnderscore|MessageFormatUnderscore
         internal const string MessageFormatNonUnderscore = "请考虑使用 '{0}'";
         internal const string MessageFormatUnderscore = "从名字中修剪多余的下划线";
 
@@ -56,11 +56,11 @@ namespace SonarAnalyzer.Rules.CSharp
         private static readonly Dictionary<SyntaxKind, string> TypeKindNameMapping =
             new Dictionary<SyntaxKind, string>
             {
-                { SyntaxKind.StructDeclaration, "结构体" },
-                { SyntaxKind.ClassDeclaration, "类" },
-                { SyntaxKind.InterfaceDeclaration, "接口" },
-                { SyntaxKind.MethodDeclaration, "方法" },
-                { SyntaxKind.PropertyDeclaration, "属性" }
+                { SyntaxKind.StructDeclaration, "结构体" },  //struct
+                { SyntaxKind.ClassDeclaration, "类" },       //class
+                { SyntaxKind.InterfaceDeclaration, "接口" }, //interface
+                { SyntaxKind.MethodDeclaration, "方法" },    //method
+                { SyntaxKind.PropertyDeclaration, "属性" }   //property
             };
 
         private static readonly ImmutableArray<KnownType> ComRelatedTypes =

@@ -25,6 +25,6 @@ namespace SonarAnalyzer.Rules
     public abstract class ConditionalStructureSameImplementationBase : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1871";
-        internal const string MessageFormat = "要么改变其中一个分支的实现，要么将此段代码 {1} 与第 {0} 行代码合并。";
+        internal const string MessageFormat = "要么改变其中一个分支的实现，要么将此段代码{1}与第 {0} 行代码合并。";
     }
 }

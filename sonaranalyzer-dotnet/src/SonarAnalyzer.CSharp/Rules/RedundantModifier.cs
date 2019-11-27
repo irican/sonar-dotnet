@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class RedundantModifier : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2333";
-        private const string MessageFormat = "'{0}' 在此上下文环境意味着 {1} 。";
+        private const string MessageFormat = "'{0}' 在此上下文环境意味着{1}。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);
@@ -213,7 +213,7 @@ namespace SonarAnalyzer.Rules.CSharp
 
         private static void ReportOnUnsafeBlock(SyntaxNodeAnalysisContext context, Location issueLocation)
         {
-            context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, issueLocation, "unsafe", "redundant"));
+            context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, issueLocation, "unsafe", "多余的"));  //unsafe redundant
         }
 
         private static bool TryGetUnsafeKeyword(MemberDeclarationSyntax memberDeclaration, out SyntaxToken unsafeKeyword)
@@ -265,7 +265,7 @@ namespace SonarAnalyzer.Rules.CSharp
             }
 
             var keyword = classDeclaration.Modifiers.First(m => m.IsKind(SyntaxKind.PartialKeyword));
-            context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, keyword.GetLocation(), "partial", "gratuitous"));
+            context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, keyword.GetLocation(), "partial", "多余的")); //partial gratuitous
         }
 
         private static SyntaxTokenList GetModifiers(MemberDeclarationSyntax memberDeclaration)
@@ -298,7 +298,7 @@ namespace SonarAnalyzer.Rules.CSharp
             if (modifiers.Any(SyntaxKind.SealedKeyword))
             {
                 var keyword = modifiers.First(m => m.IsKind(SyntaxKind.SealedKeyword));
-                context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, keyword.GetLocation(), "sealed", "redundant"));
+                context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, keyword.GetLocation(), "sealed", "多余的")); //sealed redundant
             }
         }
 
@@ -393,8 +393,8 @@ namespace SonarAnalyzer.Rules.CSharp
 
                 if (isSimplyRendundant || !this.currentContextHasIntegralOperation)
                 {
-                    var keywordToReport = isThisNodeChecked ? "checked" : "unchecked";
-                    this.context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, tokenToReport.GetLocation(), keywordToReport, "redundant"));
+                    var keywordToReport = isThisNodeChecked ? "checked" : "unchecked"; 
+                    this.context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, tokenToReport.GetLocation(), keywordToReport, "多余的")); //redundant
                 }
 
                 this.isCurrentContextChecked = originalIsCurrentContextChecked;

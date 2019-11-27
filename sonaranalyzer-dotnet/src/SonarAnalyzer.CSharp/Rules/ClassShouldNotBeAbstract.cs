@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class ClassShouldNotBeAbstract : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1694";
-        private const string MessageFormat = "请将此抽象类转化为{0}。";
+        private const string MessageFormat = "请将此抽象类转化为{0}。";  //0->MessageToInterface|MessageToConcreteClass
         internal const string MessageToInterface = "一个接口";
         internal const string MessageToConcreteClass = "一个含有保护（protected）级构造器的具体类";
 

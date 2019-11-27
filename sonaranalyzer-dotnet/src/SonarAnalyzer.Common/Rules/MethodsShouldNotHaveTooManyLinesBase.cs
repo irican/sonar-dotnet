@@ -33,7 +33,7 @@ namespace SonarAnalyzer.Rules
         where TBaseMethodSyntax : SyntaxNode
     {
         internal const string DiagnosticId = "S138";
-        protected const string MessageFormat = "这个 {0} 有 {1} 行，多余所要求的 {2} 行。把它分离为规模稍小的 {3}。";
+        protected const string MessageFormat = "这个{0}有 {1} 行，多余所要求的 {2} 行。把它分离为规模稍小的 {3}。";
 
         private const int DefaultMaxMethodLines = 80;
         [RuleParameter("max", PropertyType.Integer, "Maximum authorized lines of code in a method", DefaultMaxMethodLines)]

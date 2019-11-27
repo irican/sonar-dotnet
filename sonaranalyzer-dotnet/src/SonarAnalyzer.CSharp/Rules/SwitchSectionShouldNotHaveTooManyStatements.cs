@@ -56,7 +56,7 @@ namespace SonarAnalyzer.Rules.CSharp
                     if (statementsCount > Threshold)
                     {
                         c.ReportDiagnosticWhenActive(Diagnostic.Create(rule, switchSection.Labels.First().GetLocation(),
-                            "switch section", statementsCount, Threshold, "method"));
+                            "switch 区域", statementsCount, Threshold, "方法")); //switch section    method
                     }
                 },
                 SyntaxKind.SwitchSection);

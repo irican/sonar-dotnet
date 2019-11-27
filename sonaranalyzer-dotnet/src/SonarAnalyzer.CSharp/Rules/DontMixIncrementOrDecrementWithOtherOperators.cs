@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DontMixIncrementOrDecrementWithOtherOperators : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S881";
-        private const string MessageFormat = "请分离 {0} 操作到一个单独的语句上。";
+        private const string MessageFormat = "请分离{0}操作到一个单独的语句上。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);
@@ -63,7 +63,7 @@ namespace SonarAnalyzer.Rules.CSharp
                         c.Node.Ancestors().FirstOrDefault(node => node.IsAnyKind(arithmeticOperator)) is BinaryExpressionSyntax)
                     {
                         c.ReportDiagnosticWhenActive(Diagnostic.Create(rule, operatorToken.Value.GetLocation(),
-                            operatorToken.Value.IsKind(SyntaxKind.PlusPlusToken) ? "increment" : "decrement"));
+                            operatorToken.Value.IsKind(SyntaxKind.PlusPlusToken) ? "增量" : "减量"));   //true->increment false->decrement
                     }
                 },
                 SyntaxKind.PreDecrementExpression,

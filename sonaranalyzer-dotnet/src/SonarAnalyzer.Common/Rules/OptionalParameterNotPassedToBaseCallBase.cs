@@ -29,7 +29,7 @@ namespace SonarAnalyzer.Rules
         where TInvocationExpressionSyntax : SyntaxNode
     {
         protected const string DiagnosticId = "S3466";
-        protected const string MessageFormat = "请向此'base'调用传入用户提供的参数值 {0} 。";
+        protected const string MessageFormat = "请向此'base'调用传入用户提供的{0}参数值。";
 
         protected void ReportOptionalParameterNotPassedToBase(SyntaxNodeAnalysisContext c, TInvocationExpressionSyntax invocation)
         {
@@ -48,7 +48,7 @@ namespace SonarAnalyzer.Rules
             }
 
             var pluralize = difference > 1
-                ? "s"
+                ? "多个"  //true->value"s"
                 : string.Empty;
             c.ReportDiagnosticWhenActive(Diagnostic.Create(Rule, invocation.GetLocation(), pluralize));
         }

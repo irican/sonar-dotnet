@@ -45,33 +45,33 @@ namespace SonarAnalyzer.Rules.CSharp
         {
             context.RegisterSyntaxNodeActionInNonGenerated(
                 c => CheckComplexity<MethodDeclarationSyntax>(c, m => m, m => m.Identifier.GetLocation(),
-                    CSharpCognitiveComplexityMetric.GetComplexity, "方法", Threshold),
+                    CSharpCognitiveComplexityMetric.GetComplexity, "方法", Threshold),  //method
                 SyntaxKind.MethodDeclaration);
 
             // Here, we only care about arrowed properties, others will be handled by the accessor.
             context.RegisterSyntaxNodeActionInNonGenerated(
                 c => CheckComplexity<PropertyDeclarationSyntax>(c, p => p.ExpressionBody, p => p.Identifier.GetLocation(),
-                    CSharpCognitiveComplexityMetric.GetComplexity, "属性", PropertyThreshold),
+                    CSharpCognitiveComplexityMetric.GetComplexity, "属性", PropertyThreshold),  //property
                 SyntaxKind.PropertyDeclaration);
 
             context.RegisterSyntaxNodeActionInNonGenerated(
                 c => CheckComplexity<ConstructorDeclarationSyntax>(c, co => co, co => co.Identifier.GetLocation(),
-                    CSharpCognitiveComplexityMetric.GetComplexity, "构造器", Threshold),
+                    CSharpCognitiveComplexityMetric.GetComplexity, "构造器", Threshold),   //constructor
                 SyntaxKind.ConstructorDeclaration);
 
             context.RegisterSyntaxNodeActionInNonGenerated(
                 c => CheckComplexity<DestructorDeclarationSyntax>(c, d => d, d => d.Identifier.GetLocation(),
-                    CSharpCognitiveComplexityMetric.GetComplexity, "析构器", Threshold),
+                    CSharpCognitiveComplexityMetric.GetComplexity, "析构器", Threshold),  //destructor
                 SyntaxKind.DestructorDeclaration);
 
             context.RegisterSyntaxNodeActionInNonGenerated(
                 c => CheckComplexity<OperatorDeclarationSyntax>(c, o => o, o => o.OperatorToken.GetLocation(),
-                    CSharpCognitiveComplexityMetric.GetComplexity, "运算符", Threshold),
+                    CSharpCognitiveComplexityMetric.GetComplexity, "运算符", Threshold),  //operator
                 SyntaxKind.OperatorDeclaration);
 
             context.RegisterSyntaxNodeActionInNonGenerated(
                 c => CheckComplexity<AccessorDeclarationSyntax>(c, a => a, a => a.Keyword.GetLocation(),
-                    CSharpCognitiveComplexityMetric.GetComplexity, "访问器", PropertyThreshold),
+                    CSharpCognitiveComplexityMetric.GetComplexity, "访问器", PropertyThreshold),  //accessor
                 SyntaxKind.GetAccessorDeclaration,
                 SyntaxKind.SetAccessorDeclaration,
                 SyntaxKind.AddAccessorDeclaration,
@@ -79,7 +79,7 @@ namespace SonarAnalyzer.Rules.CSharp
 
             context.RegisterSyntaxNodeActionInNonGenerated(
                c => CheckComplexity<FieldDeclarationSyntax>(c, f => f, f => f.Declaration.Variables[0].Identifier.GetLocation(),
-                   CSharpCognitiveComplexityMetric.GetComplexity, "字段", Threshold),
+                   CSharpCognitiveComplexityMetric.GetComplexity, "字段", Threshold),   //field
                SyntaxKind.FieldDeclaration);
         }
     }

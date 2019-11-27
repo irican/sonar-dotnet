@@ -86,7 +86,7 @@ namespace SonarAnalyzer.Rules.CSharp
 
                     if (precedingSection != null)
                     {
-                        ReportSyntaxNode(c, switchSection, precedingSection, "case");
+                        ReportSyntaxNode(c, switchSection, precedingSection, "实例");   //case
                     }
                 },
                 SyntaxKind.SwitchSection);
@@ -112,7 +112,7 @@ namespace SonarAnalyzer.Rules.CSharp
 
             if (precedingStatement != null)
             {
-                ReportSyntaxNode(context, statement, precedingStatement, "branch");
+                ReportSyntaxNode(context, statement, precedingStatement, "分支");  //branch
             }
         }
 

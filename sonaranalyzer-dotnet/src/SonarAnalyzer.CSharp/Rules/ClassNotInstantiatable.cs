@@ -65,8 +65,8 @@ namespace SonarAnalyzer.Rules.CSharp
                 (namedType, typeDeclarations))
             {
                 var message = constructors.Count > 1
-                    ? "at least one of its constructors"
-                    : "its constructor";
+                    ? "它的至少一个构造器"   //at least one of its constructors
+                    : "它的构造器";  //its constructor
 
                 foreach (var classDeclaration in typeDeclarations)
                 {

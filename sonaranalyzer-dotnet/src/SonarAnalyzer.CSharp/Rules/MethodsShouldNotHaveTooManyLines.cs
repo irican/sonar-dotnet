@@ -52,7 +52,7 @@ namespace SonarAnalyzer.Rules.CSharp
                 SyntaxKind.DestructorDeclaration
             };
 
-        protected override string MethodKeyword { get; } = "methods";
+        protected override string MethodKeyword { get; } = "方法";  //methods
 
         protected override IEnumerable<SyntaxToken> GetMethodTokens(BaseMethodDeclarationSyntax baseMethodDeclaration) =>
             baseMethodDeclaration.ExpressionBody()?.Expression?.DescendantTokens()
@@ -67,26 +67,26 @@ namespace SonarAnalyzer.Rules.CSharp
             var identifierName = identifierToken.ValueText;
             if (string.IsNullOrEmpty(identifierName))
             {
-                return "method";
+                return "方法";  //method
             }
 
             var declaration = identifierToken.Parent;
             if (declaration.IsKind(SyntaxKind.ConstructorDeclaration))
             {
-                return $"constructor '{identifierName}'";
+                return $"构造器 '{identifierName}'";  //constructor 
             }
 
             if (declaration.IsKind(SyntaxKind.DestructorDeclaration))
             {
-                return $"finalizer '~{identifierName}'";
+                return $"终结器 '~{identifierName}'";   //finalizer
             }
 
             if (declaration is MethodDeclarationSyntax)
             {
-                return $"method '{identifierName}'";
+                return $"方法 '{identifierName}'";      //method
             }
 
-            return "method";
+            return "方法";  //method
         }
     }
 }

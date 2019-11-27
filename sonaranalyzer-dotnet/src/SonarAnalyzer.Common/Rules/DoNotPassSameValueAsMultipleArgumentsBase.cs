@@ -30,7 +30,7 @@ namespace SonarAnalyzer.Rules
         protected const string DiagnosticId = "S4142";
 
         protected const string MessageFormat =
-            "请检验这是否为预期的值，这与 {0} 参数的值一样。";
+            "请检验这是否为预期的值，这与{0}参数的值一样。";
     }
 
     public abstract class DoNotPassSameValueAsMultipleArgumentsBase<TSyntaxKind, TInvocationSyntax, TArgumentSyntax>
@@ -96,20 +96,22 @@ namespace SonarAnalyzer.Rules
 
         private static string ToOrdinalNumberString(int number)
         {
-            switch (number)
-            {
-                case 1:
-                    return number + "st";
+            //this is commented out because of the difference between Chinese and English ordinal number expression
+            //switch (number)
+            //{
+            //    case 1:
+            //        return number + "st";
 
-                case 2:
-                    return number + "nd";
+            //    case 2:
+            //        return number + "nd";
 
-                case 3:
-                    return number + "rd";
+            //    case 3:
+            //        return number + "rd";
 
-                default:
-                    return number + "th";
-            }
+            //    default:
+            //        return number + "th";
+            //}
+            return "第" + number + "个";
         }
     }
 }

@@ -42,7 +42,7 @@ namespace SonarAnalyzer.Rules.CSharp
         protected override void Initialize(SonarAnalysisContext context)
         {
             context.RegisterSyntaxNodeActionInNonGenerated(
-                new SwitchStatementAnalyzer().GetAnalysisAction(rule, "switch"),
+                new SwitchStatementAnalyzer().GetAnalysisAction(rule, "switch语句"),  //switch
                 SyntaxKind.SwitchStatement);
 
             context.RegisterSyntaxNodeActionInNonGenerated(
@@ -50,7 +50,7 @@ namespace SonarAnalyzer.Rules.CSharp
                 SyntaxKind.ConditionalExpression);
 
             context.RegisterSyntaxNodeActionInNonGenerated(
-                new IfStatementAnalyzer().GetAnalysisAction(rule, "if"),
+                new IfStatementAnalyzer().GetAnalysisAction(rule, "if语句"),   //if
                 SyntaxKind.ElseClause);
         }
 

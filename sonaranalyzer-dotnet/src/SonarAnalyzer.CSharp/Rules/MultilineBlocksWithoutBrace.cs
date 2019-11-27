@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     {
         internal const string DiagnosticId = "S2681";
         private const string MessageFormat =
-            "这行不会被执行{0}，这个{2}行的代码块只有第一行会被执行，剩下的会 {1} 执行。";
+            "此行代码不会{0}；这个{2}行的代码块只有第一行会被执行，剩下的会 {1} 执行。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);
@@ -69,7 +69,7 @@ namespace SonarAnalyzer.Rules.CSharp
                 return;
             }
 
-            CheckStatement(context, statement, "in a loop", "only once");
+            CheckStatement(context, statement, "在循环中执行", "执行仅一次");  //in a loop   only once -> {0}
         }
 
         private static void CheckIf(SyntaxNodeAnalysisContext context, IfStatementSyntax ifStatement)
@@ -90,7 +90,7 @@ namespace SonarAnalyzer.Rules.CSharp
                 return;
             }
 
-            CheckStatement(context, lastStatementInIfChain, "conditionally", "unconditionally");
+            CheckStatement(context, lastStatementInIfChain, "有条件地", "无条件地");  //conditionally unconditionally ->{1}
         }
 
         private static bool IsNestedStatement(StatementSyntax nested) =>

@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class InheritedCollidingInterfaceMembers : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3444";
-        private const string MessageFormat = "请重命名或向接口中添加成员{1} {0} 以解决歧义。";
+        private const string MessageFormat = "请重命名或向接口中添加{1}成员 {0} 以解决歧义。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);
@@ -69,7 +69,7 @@ namespace SonarAnalyzer.Rules.CSharp
                     if (collidingMembers.Any())
                     {
                         var membersText = GetIssueMessageText(collidingMembers, c.SemanticModel, interfaceDeclaration.SpanStart);
-                        var pluralize = collidingMembers.Count > 1 ? "s" : string.Empty;
+                        var pluralize = collidingMembers.Count > 1 ? "多个" : string.Empty;  //true-> "members"
 
                         var secondaryLocations = collidingMembers.SelectMany(x => x.Locations)
                                                                  .Where(x => x.IsInSource);
@@ -137,7 +137,7 @@ namespace SonarAnalyzer.Rules.CSharp
 
             if (collidingMembers.Count == 2)
             {
-                return $"{names[0]} and {names[1]}";
+                return $"{names[0]} 和 {names[1]}";  //name[0] and name[1]
             }
 
             names.Add("...");

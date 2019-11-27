@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class GenericTypeParameterInOut : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3246";
-        private const string MessageFormat = "请向参数'{1}'添加关键字'{0}'，以使其为 '{2}'。";
+        private const string MessageFormat = "请向参数'{1}'添加关键字'{0}'，以使其 '{2}'。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);
@@ -197,13 +197,13 @@ namespace SonarAnalyzer.Rules.CSharp
 
             if (variance == VarianceKind.In)
             {
-                context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, location, "in", typeParameter.Name, "contravariant"));
+                context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, location, "其中的", typeParameter.Name, "逆变的（contravariant）"));  //in+name+contravariant
                 return;
             }
 
             if (variance == VarianceKind.Out)
             {
-                context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, location, "out", typeParameter.Name, "covariant"));
+                context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, location, "外部的", typeParameter.Name, "协变的（covariant）"));   //out+name+covariant
             }
         }
 

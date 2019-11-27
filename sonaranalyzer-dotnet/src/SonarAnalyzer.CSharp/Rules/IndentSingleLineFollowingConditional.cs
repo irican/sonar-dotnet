@@ -37,7 +37,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class IndentSingleLineFollowingConditional : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3973";
-        private const string MessageFormat = "请使用花括号或缩进来突出即将被'{0}'执行的条件代码。";
+        private const string MessageFormat = "请使用花括号或缩进来突出即将被 '{0}' 执行的条件代码。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);

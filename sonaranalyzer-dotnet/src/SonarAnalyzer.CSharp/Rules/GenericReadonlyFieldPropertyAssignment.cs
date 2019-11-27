@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     {
         internal const string DiagnosticId = "S2934";
         private const string MessageFormat =
-            "请把 '{0}' 限制为参考类型（reference type），'{0}' 或移除对于 '{1}' 的赋值，如果 '{0}' 是一个值，'{0}' " +
+            "请把 '{0}' 限制为参考类型（reference type），'{0}' 或移除对于 '{1}' 的赋值，如果 '{0}' 是一个值，" +
             "上述操作将失败。";
 
         private static readonly DiagnosticDescriptor rule =

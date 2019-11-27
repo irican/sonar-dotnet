@@ -28,7 +28,7 @@ namespace SonarAnalyzer.Rules
     public abstract class ClassNotInstantiatableBase : SonarDiagnosticAnalyzer
     {
         protected const string DiagnosticId = "S3453";
-        protected const string MessageFormat = "此类不可被实例化，请把 {0} 设为 'public'。";
+        protected const string MessageFormat = "此类不可被实例化，请把{0}设为 'public'。";
 
         protected static bool HasNonPrivateConstructor(IEnumerable<IMethodSymbol> constructors)
         {

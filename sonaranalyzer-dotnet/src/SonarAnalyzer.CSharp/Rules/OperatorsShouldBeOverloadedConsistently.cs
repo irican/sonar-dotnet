@@ -43,10 +43,10 @@ namespace SonarAnalyzer.Rules.CSharp
 
         private static class MethodName
         {
-            public const string OperatorPlus = "operator+";
-            public const string OperatorMinus = "operator-";
-            public const string OperatorEquals = "operator==";
-            public const string OperatorNotEquals = "operator!=";
+            public const string OperatorPlus = "加运算符+"; //operator+
+            public const string OperatorMinus = "减运算符-"; //operator-
+            public const string OperatorEquals = "相等运算符=="; //operator==
+            public const string OperatorNotEquals = "不等运算符!="; //operator!=
 
             public const string ObjectEquals = "Object.Equals";
             public const string ObjectGetHashCode = "Object.GetHashCode";

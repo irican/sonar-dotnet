@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class GenericTypeParameterUnused : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2326";
-        private const string MessageFormat = "'{0}' 没有在 {1} 中使用。";
+        private const string MessageFormat = "'{0}' 没有在{1}中使用。";
 
 
         private static readonly DiagnosticDescriptor rule =
@@ -97,12 +97,12 @@ namespace SonarAnalyzer.Rules.CSharp
                 ? new TypeParameterHelper
                 {
                     TypeParameterList = methodDeclaration.TypeParameterList,
-                    ContainerSyntaxTypeName = "method"
+                    ContainerSyntaxTypeName = "方法"  //method
                 }
                 : new TypeParameterHelper
                 {
                     TypeParameterList = classDeclaration.TypeParameterList,
-                    ContainerSyntaxTypeName = "class"
+                    ContainerSyntaxTypeName = "类"   //class
                 };
         }
 

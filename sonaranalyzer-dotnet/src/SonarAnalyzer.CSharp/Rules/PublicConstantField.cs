@@ -39,7 +39,7 @@ namespace SonarAnalyzer.Rules.CSharp
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics { get; } = ImmutableArray.Create(rule);
 
         public override SyntaxKind FieldDeclarationKind => SyntaxKind.FieldDeclaration;
-        public override string MessageArgument => "'static' read-only";
+        public override string MessageArgument => "静态的只读"; //'static' read-only
 
         protected override Location GetReportLocation(VariableDeclaratorSyntax node) =>
             node.Identifier.GetLocation();

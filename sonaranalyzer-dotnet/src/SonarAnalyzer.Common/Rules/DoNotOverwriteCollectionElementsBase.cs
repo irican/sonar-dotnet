@@ -32,7 +32,7 @@ namespace SonarAnalyzer.Rules
         where TStatementSyntax : SyntaxNode
     {
         protected const string DiagnosticId = "S4143";
-        protected const string MessageFormat = "请检验这是否是预期的索引， " +
+        protected const string MessageFormat = "请检验这是否是预期的索引，" +
             "已经有值被指定在此索引上了。";
 
         protected abstract DiagnosticDescriptor Rule { get; }

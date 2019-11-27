@@ -38,8 +38,8 @@ namespace SonarAnalyzer.Rules.CSharp
         internal const string DiagnosticId = "S2183";
 
         private const string MessageFormat_UseLargerTypeOrPromote
-            = "要么将移位操作的目标提升至一个更大的整数类型，或移位 {0} 。";
-        private const string MessageFormat_ShiftTooLarge = "改正这个移位，请移位 {0} 。";
+            = "要么将移位操作的目标提升至一个更大的整数类型，或移位{0}位。";
+        private const string MessageFormat_ShiftTooLarge = "改正这个移位，请移位{0}位。";
         private const string MessageFormat_RightShiftTooLarge = "改正这个移位， '{0}' 大于移位后数据类型的大小。";
         private const string MessageFormat_UselessShift = "去除无用的 {0} 移位。";
 
@@ -215,7 +215,7 @@ namespace SonarAnalyzer.Rules.CSharp
             if (shiftSuggestion == 0)
             {
                 return string.Format(MessageFormat_UseLargerTypeOrPromote,
-                    "less than " + typeSizeInBits);
+                    "少于" + typeSizeInBits);  //less than
             }
 
             return string.Format(MessageFormat_UseLargerTypeOrPromote, shiftSuggestion);

@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class MemberOverrideCallsBaseMember : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1185";
-        private const string MessageFormat = "去除只是对'{0}'方法简单继承的{1}。";
+        private const string MessageFormat = "去除只是对'{0}'简单继承的{1}。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);
@@ -53,7 +53,7 @@ namespace SonarAnalyzer.Rules.CSharp
                     var method = (MethodDeclarationSyntax)c.Node;
                     if (IsMethodCandidate(method, c.SemanticModel))
                     {
-                        c.ReportDiagnosticWhenActive(Diagnostic.Create(rule, method.GetLocation(), method.Identifier.ValueText, "method"));
+                        c.ReportDiagnosticWhenActive(Diagnostic.Create(rule, method.GetLocation(), method.Identifier.ValueText, "方法")); //method
                     }
                 },
                 SyntaxKind.MethodDeclaration);
@@ -64,7 +64,7 @@ namespace SonarAnalyzer.Rules.CSharp
                     var property = (PropertyDeclarationSyntax)c.Node;
                     if (IsPropertyCandidate(property, c.SemanticModel))
                     {
-                        c.ReportDiagnosticWhenActive(Diagnostic.Create(rule, property.GetLocation(), property.Identifier.ValueText, "property"));
+                        c.ReportDiagnosticWhenActive(Diagnostic.Create(rule, property.GetLocation(), property.Identifier.ValueText, "属性")); //property
                     }
                 },
                 SyntaxKind.PropertyDeclaration);

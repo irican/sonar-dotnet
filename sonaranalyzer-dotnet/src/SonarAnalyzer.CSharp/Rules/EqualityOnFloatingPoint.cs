@@ -36,7 +36,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class EqualityOnFloatingPoint : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S1244";
-        private const string MessageFormat = "不要与具体值比较浮点数 {0} ，请使用范围。";
+        private const string MessageFormat = "不要与具体值比较浮点数{0}，请使用范围。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);
@@ -89,7 +89,7 @@ namespace SonarAnalyzer.Rules.CSharp
 
         private static string GetMessageEqualityPart(bool isEquality)
         {
-            return isEquality ? "equality" : "inequality";
+            return isEquality ? "相等性" : "不相等性";   //true->equality false->inequality
         }
 
         private static void CheckEquality(SyntaxNodeAnalysisContext context)

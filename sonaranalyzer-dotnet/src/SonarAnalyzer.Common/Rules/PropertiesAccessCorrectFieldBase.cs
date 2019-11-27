@@ -31,7 +31,7 @@ namespace SonarAnalyzer.Rules
     public abstract class PropertiesAccessCorrectFieldBase : SonarDiagnosticAnalyzer
     {
         protected const string DiagnosticId = "S4275";
-        protected const string MessageFormat = "重构它 {0} ，使得它准确地对字段 '{1}' 进行操作。";
+        protected const string MessageFormat = "重构此{0}，使得它准确地对字段 '{1}' 进行操作。";
 
         protected abstract DiagnosticDescriptor Rule { get; }
 

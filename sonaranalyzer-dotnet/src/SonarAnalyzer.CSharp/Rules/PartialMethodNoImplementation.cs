@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class PartialMethodNoImplementation : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3251";
-        private const string MessageFormat = "请为 {0} 部分方法{1}提供一个实现。";
+        private const string MessageFormat = "请为{0}部分方法提供一个实现{1}。";
         internal const string MessageAdditional = "，否则此调用会被忽略";
 
         private static readonly DiagnosticDescriptor rule =
@@ -68,7 +68,7 @@ namespace SonarAnalyzer.Rules.CSharp
             if (methodSymbol != null &&
                 methodSymbol.PartialImplementationPart == null)
             {
-                context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, partialKeyword.GetLocation(), "this", string.Empty));
+                context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, partialKeyword.GetLocation(), "此", string.Empty)); //this
             }
         }
 
@@ -101,7 +101,7 @@ namespace SonarAnalyzer.Rules.CSharp
                 return;
             }
 
-            context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, statement.GetLocation(), "the", MessageAdditional));
+            context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, statement.GetLocation(), "这个", MessageAdditional));  //the
         }
     }
 }

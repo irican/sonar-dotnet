@@ -37,7 +37,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class RedundantDeclaration : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3257";
-        private const string MessageFormat = "请移除 {0}，这是多余的。";
+        private const string MessageFormat = "请移除{0}，这是多余的。";
 
 
         private static readonly DiagnosticDescriptor rule =
@@ -119,7 +119,7 @@ namespace SonarAnalyzer.Rules.CSharp
             {
                 context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, parameter.Type.GetLocation(),
                     ImmutableDictionary<string, string>.Empty.Add(DiagnosticTypeKey, RedundancyType.LambdaParameterType.ToString()),
-                    "type specification"));
+                    "类型指定")); //type specification
             }
         }
 
@@ -159,7 +159,7 @@ namespace SonarAnalyzer.Rules.CSharp
                 IsInAssignmentOrReturnValue(objectCreation) ||
                 IsInArgumentAndCanBeChanged(objectCreation, context.SemanticModel))
             {
-                ReportIssueOnRedundantObjectCreation(context, objectCreation, "explicit nullable type creation", RedundancyType.ExplicitNullable);
+                ReportIssueOnRedundantObjectCreation(context, objectCreation, "直接的可空（nullable）类型创建", RedundancyType.ExplicitNullable); //explicit nullable type creation
             }
         }
 
@@ -223,7 +223,7 @@ namespace SonarAnalyzer.Rules.CSharp
             {
                 context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, size.GetLocation(),
                     ImmutableDictionary<string, string>.Empty.Add(DiagnosticTypeKey, RedundancyType.ArraySize.ToString()),
-                    "array size specification"));
+                    "数组大小指定"));//array size specification
             }
         }
 
@@ -260,7 +260,7 @@ namespace SonarAnalyzer.Rules.CSharp
 
                 context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, location,
                     ImmutableDictionary<string, string>.Empty.Add(DiagnosticTypeKey, RedundancyType.ArrayType.ToString()),
-                    "array type"));
+                    "数组类型")); //array type
             }
         }
 
@@ -281,7 +281,7 @@ namespace SonarAnalyzer.Rules.CSharp
             {
                 context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, objectCreation.Initializer.GetLocation(),
                     ImmutableDictionary<string, string>.Empty.Add(DiagnosticTypeKey, RedundancyType.ObjectInitializer.ToString()),
-                    "initializer"));
+                    "初始化器")); //initializer
             }
         }
 
@@ -309,7 +309,7 @@ namespace SonarAnalyzer.Rules.CSharp
                 IsInArgumentAndCanBeChanged(objectCreation, context.SemanticModel,
                     invocation => invocation.ArgumentList.Arguments.Any(a => IsDynamic(a, context.SemanticModel))))
             {
-                ReportIssueOnRedundantObjectCreation(context, objectCreation, "explicit delegate creation", RedundancyType.ExplicitDelegate);
+                ReportIssueOnRedundantObjectCreation(context, objectCreation, "直接的委托创建", RedundancyType.ExplicitDelegate); //explicit delegate creation
             }
         }
 
@@ -409,7 +409,7 @@ namespace SonarAnalyzer.Rules.CSharp
             {
                 context.ReportDiagnosticWhenActive(Diagnostic.Create(rule, anonymousMethod.ParameterList.GetLocation(),
                     ImmutableDictionary<string, string>.Empty.Add(DiagnosticTypeKey, RedundancyType.DelegateParameterList.ToString()),
-                    "parameter list"));
+                    "参数列表"));  //parameter list
             }
         }
 

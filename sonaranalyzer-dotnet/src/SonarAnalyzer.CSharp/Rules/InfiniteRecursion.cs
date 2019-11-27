@@ -39,7 +39,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class InfiniteRecursion : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S2190";
-        private const string MessageFormat = "请想办法跳出这个 {0}。";
+        private const string MessageFormat = "请想办法跳出这个{0}。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);
@@ -73,7 +73,7 @@ namespace SonarAnalyzer.Rules.CSharp
                 {
                     var walker = new CfgWalkerForProperty(
                          new RecursionAnalysisContext(cfg, propertySymbol, property.Identifier.GetLocation(), c),
-                        "property's recursion",
+                        "属性的递归",  //property's recursion
                         isSetAccessor: false);
                     walker.CheckPaths();
                 }
@@ -90,11 +90,11 @@ namespace SonarAnalyzer.Rules.CSharp
                     {
                         var walker = new CfgWalkerForProperty(
                             new RecursionAnalysisContext(cfg, propertySymbol, accessor.Keyword.GetLocation(), c),
-                            "property accessor's recursion",
+                            "属性访问器的递归",  //property accessor's recursion
                             isSetAccessor: accessor.Keyword.IsKind(SyntaxKind.SetKeyword));
                         walker.CheckPaths();
 
-                        CheckInfiniteJumpLoop(bodyNode, cfg, "property accessor", c);
+                        CheckInfiniteJumpLoop(bodyNode, cfg, "属性访问器", c);  //property accessor
                     }
                 }
             }
@@ -118,7 +118,7 @@ namespace SonarAnalyzer.Rules.CSharp
                     new RecursionAnalysisContext(cfg, methodSymbol, method.Identifier.GetLocation(), c));
                 walker.CheckPaths();
 
-                CheckInfiniteJumpLoop(bodyNode, cfg, "method", c);
+                CheckInfiniteJumpLoop(bodyNode, cfg, "方法", c);  //method
             }
         }
 

@@ -28,7 +28,7 @@ namespace SonarAnalyzer.Rules.Common
     public abstract class PublicConstantFieldBase : SonarDiagnosticAnalyzer
     {
         protected const string DiagnosticId = "S2339";
-        protected const string MessageFormat = "请将此常量值替换为 {0} 属性。";
+        protected const string MessageFormat = "请将此常量值替换为{0}属性。";
 
         protected abstract GeneratedCodeRecognizer GeneratedCodeRecognizer { get; }
     }

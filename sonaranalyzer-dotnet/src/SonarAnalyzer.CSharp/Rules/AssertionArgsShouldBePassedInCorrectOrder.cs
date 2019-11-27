@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class AssertionArgsShouldBePassedInCorrectOrder : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3415";
-        private const string MessageFormat = "确保以下两个参数以正确的顺序被传入： 期待值（expected value）， " +
+        private const string MessageFormat = "确保以下两个参数以正确的顺序被传入：期待值（expected value）， " +
             "实际值（actual value）。";
 
         private static readonly DiagnosticDescriptor rule =

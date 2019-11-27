@@ -34,7 +34,7 @@ namespace SonarAnalyzer.Rules.CSharp
     public sealed class DoNotExposeListT : SonarDiagnosticAnalyzer
     {
         internal const string DiagnosticId = "S3956";
-        private const string MessageFormat = "重构 {0} ，以使用专门为继承设计的泛型集合。";
+        private const string MessageFormat = "重构此{0}，以使用专门为继承设计的泛型集合。";
 
         private static readonly DiagnosticDescriptor rule =
             DiagnosticDescriptorBuilder.GetDescriptor(DiagnosticId, MessageFormat, RspecStrings.ResourceManager);
@@ -56,7 +56,7 @@ namespace SonarAnalyzer.Rules.CSharp
                         return;
                     }
 
-                    var methodType = methodSymbol.IsConstructor() ? "constructor" : "method";
+                    var methodType = methodSymbol.IsConstructor() ? "构造器" : "方法";  //true->constructor false->method
 
                     if (baseMethodDeclaration is MethodDeclarationSyntax methodDeclaration)
                     {
@@ -82,7 +82,7 @@ namespace SonarAnalyzer.Rules.CSharp
                         propertySymbol.IsPubliclyAccessible() &&
                         !propertySymbol.IsOverride)
                     {
-                        ReportIfListT(propertyDeclaration.Type, c, "property");
+                        ReportIfListT(propertyDeclaration.Type, c, "属性");  //property
                     }
                 },
                 SyntaxKind.PropertyDeclaration);
@@ -104,7 +104,7 @@ namespace SonarAnalyzer.Rules.CSharp
                         fieldSymbol.IsPubliclyAccessible() &&
                         !fieldSymbol.IsOverride)
                     {
-                        ReportIfListT(fieldDeclaration.Declaration.Type, c, "field");
+                        ReportIfListT(fieldDeclaration.Declaration.Type, c, "字段");  //field
                     }
                 },
                 SyntaxKind.FieldDeclaration);

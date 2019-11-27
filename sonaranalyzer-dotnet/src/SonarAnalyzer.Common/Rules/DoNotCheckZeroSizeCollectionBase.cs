@@ -35,7 +35,7 @@ namespace SonarAnalyzer.Rules
         protected const string DiagnosticId = "S3981";
 
         protected const string MessageFormat =
-            "{0} 的 '{1}' 总是大于等于零，请修复此测试以得到预期行为。";
+            "{0}的 '{1}' 总是大于等于零，请修复此测试以得到预期行为。";
 
         protected abstract TLanguageKindEnum GreaterThanOrEqualExpression { get; }
         protected abstract TLanguageKindEnum LessThanOrEqualExpression { get; }
@@ -94,7 +94,7 @@ namespace SonarAnalyzer.Rules
         {
             if (IsArrayLengthProperty(symbol))
             {
-                return "Array";
+                return "数组";  //array
             }
 
             if (IsEnumerableCountMethod(symbol))
@@ -104,7 +104,7 @@ namespace SonarAnalyzer.Rules
 
             if (IsCollectionProperty(symbol))
             {
-                return "ICollection";
+                return "ICollection接口"; //Icollection
             }
 
             return null;

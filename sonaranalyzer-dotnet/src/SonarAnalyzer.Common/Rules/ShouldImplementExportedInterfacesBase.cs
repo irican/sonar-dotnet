@@ -32,7 +32,7 @@ namespace SonarAnalyzer.Rules.Common
         internal const string DiagnosticId = "S4159";
         protected const string MessageFormat = "{0} 在 '{2}' 上的 '{1}' 或移除这个导出属性。";
         protected const string ActionForInterface = "实现";
-        protected const string ActionForClass = "派生于";
+        protected const string ActionForClass = "派生";
 
         internal static readonly ImmutableArray<KnownType> ExportAttributes =
             ImmutableArray.Create(
